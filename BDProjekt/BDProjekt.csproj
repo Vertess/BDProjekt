@@ -32,8 +32,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LGBS.MVPFramework.Controls">
+      <HintPath>E:\LGBS\Projekty\CarsApp\CarsApp\DemoApp\CarsApp\CarsApp\LGBS.MVPFramework\LGBS.MVPFramework.Controls.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,16 +54,124 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2011.2.11.831, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2011.2.11.831, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.RadDock, Version=2011.2.11.831, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2011.2.11.831, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2011.2.11.831, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.UI, Version=2011.2.11.831, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autor.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Autorzy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Autorzy.Designer.cs">
+      <DependentUpon>Autorzy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutorzyKsiazki.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dostawa.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Egzemplarz.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ElementyDostawy.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ElementyZamowienia.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gatunek.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GatunekControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GatunekControl.Designer.cs">
+      <DependentUpon>GatunekControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klient.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KlientControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KlientControl.Designer.cs">
+      <DependentUpon>KlientControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ksiazka.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ksiegarnia.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ksiegarnia.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ksiegarnia.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ksiegarnia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ksiegarnia.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Oferent.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OfertaOferenta.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pracownik.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rabat.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RealizacjaZamowienia.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RealizacjeReklamacji.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reklamacja.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RodzajWysylki.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Wydawnictwo.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zamowieny.cs">
+      <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Autorzy.resx">
+      <DependentUpon>Autorzy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GatunekControl.resx">
+      <DependentUpon>GatunekControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KlientControl.resx">
+      <DependentUpon>KlientControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,6 +181,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="Ksiegarnia.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Ksiegarnia.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Ksiegarnia.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Ksiegarnia.edmx</DependentUpon>
+      <LastGenOutput>Ksiegarnia.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Ksiegarnia.edmx.diagram">
+      <DependentUpon>Ksiegarnia.edmx</DependentUpon>
+    </None>
+    <None Include="Ksiegarnia.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Ksiegarnia.edmx</DependentUpon>
+      <LastGenOutput>Ksiegarnia.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Autor.datasource" />
+    <None Include="Properties\DataSources\Gatunek.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -73,6 +213,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

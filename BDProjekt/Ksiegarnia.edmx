@@ -1,0 +1,1327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KsiegarniaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Autors">
+          <Key>
+            <PropertyRef Name="IdAutora" />
+          </Key>
+          <Property Name="IdAutora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DataUrodzenia" Type="int" Nullable="false" />
+          <Property Name="Imie" Type="nvarchar(max)" />
+          <Property Name="Nazwisko" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AutorzyKsiazkis">
+          <Key>
+            <PropertyRef Name="IDAutorzyKsiazki" />
+          </Key>
+          <Property Name="IDAutorzyKsiazki" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Autor_IdAutora" Type="int" Nullable="false" />
+          <Property Name="IdKsiazka_IdKsiazki" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dostawas">
+          <Key>
+            <PropertyRef Name="IdDostawy" />
+          </Key>
+          <Property Name="IdDostawy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Oferent_IdOferenta" Type="int" Nullable="false" />
+          <Property Name="Pracownik_IdPracownika" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Egzemplarzs">
+          <Key>
+            <PropertyRef Name="IdEgzemplarza" />
+          </Key>
+          <Property Name="IdEgzemplarza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cena" Type="int" Nullable="false" />
+          <Property Name="Iloscc" Type="int" Nullable="false" />
+          <Property Name="TypOkladki" Type="bit" Nullable="false" />
+          <Property Name="Ksiazka_IdKsiazki" Type="int" Nullable="false" />
+          <Property Name="Wydawnictwo_IdWydawnictwa" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ElementyDostawies">
+          <Key>
+            <PropertyRef Name="IdEgzemplarza" />
+            <PropertyRef Name="IdDostawy" />
+          </Key>
+          <Property Name="IdEgzemplarza" Type="int" Nullable="false" />
+          <Property Name="IdDostawy" Type="int" Nullable="false" />
+          <Property Name="Ilosc" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ElementyZamowienias">
+          <Key>
+            <PropertyRef Name="IdEgzemplarza" />
+            <PropertyRef Name="IdZamowienia" />
+          </Key>
+          <Property Name="IdEgzemplarza" Type="int" Nullable="false" />
+          <Property Name="IdZamowienia" Type="int" Nullable="false" />
+          <Property Name="Ilosc" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gatuneks">
+          <Key>
+            <PropertyRef Name="IdGatunku" />
+          </Key>
+          <Property Name="IdGatunku" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazwaGatunku" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Klients">
+          <Key>
+            <PropertyRef Name="IdKlienta" />
+          </Key>
+          <Property Name="IdKlienta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imie" Type="nvarchar(max)" />
+          <Property Name="Nazwisko" Type="nvarchar(max)" />
+          <Property Name="Login" Type="nvarchar(max)" />
+          <Property Name="Haslo" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Ksiazkas">
+          <Key>
+            <PropertyRef Name="IdKsiazki" />
+          </Key>
+          <Property Name="IdKsiazki" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+          <Property Name="Tytul" Type="nvarchar(max)" />
+          <Property Name="Gatunek_IdGatunku" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Oferents">
+          <Key>
+            <PropertyRef Name="IdOferenta" />
+          </Key>
+          <Property Name="IdOferenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adres" Type="nvarchar(max)" />
+          <Property Name="NazwaFirmy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="OfertaOferentas">
+          <Key>
+            <PropertyRef Name="IdOfertyOferenta" />
+          </Key>
+          <Property Name="IdOfertyOferenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CenaHurtowa" Type="int" Nullable="false" />
+          <Property Name="Egzemplarz_IdEgzemplarza" Type="int" Nullable="false" />
+          <Property Name="Oferent_IdOferenta" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pracowniks">
+          <Key>
+            <PropertyRef Name="IdPracownika" />
+          </Key>
+          <Property Name="IdPracownika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imie" Type="nvarchar(max)" />
+          <Property Name="Nazwisko" Type="nvarchar(max)" />
+          <Property Name="Login" Type="nvarchar(max)" />
+          <Property Name="Haslo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Rabats">
+          <Key>
+            <PropertyRef Name="IdRabatu" />
+          </Key>
+          <Property Name="IdRabatu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OpisRabatu" Type="nvarchar(max)" />
+          <Property Name="WysokoscRabatu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RealizacjaZamowienias">
+          <Key>
+            <PropertyRef Name="IdRealizacji" />
+          </Key>
+          <Property Name="IdRealizacji" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+          <Property Name="StatusZamowienia" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RealizacjeReklamacjis">
+          <Key>
+            <PropertyRef Name="IdRealizacji" />
+          </Key>
+          <Property Name="IdRealizacji" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Reklamacjas">
+          <Key>
+            <PropertyRef Name="IdReklamacji" />
+          </Key>
+          <Property Name="IdReklamacji" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+          <Property Name="Typ" Type="bit" Nullable="false" />
+          <Property Name="IdTypu" Type="int" Nullable="false" />
+          <Property Name="RealizacjeReklamacji_IdRealizacji" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RodzajWysylkis">
+          <Key>
+            <PropertyRef Name="IdRodzajWysylki" />
+          </Key>
+          <Property Name="IdRodzajWysylki" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cena" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Wydawnictwoes">
+          <Key>
+            <PropertyRef Name="IdWydawnictwa" />
+          </Key>
+          <Property Name="IdWydawnictwa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazwaWydawnictwa" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Zamowienies">
+          <Key>
+            <PropertyRef Name="IdZamowienia" />
+          </Key>
+          <Property Name="IdZamowienia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KosztZamowienia" Type="int" Nullable="false" />
+          <Property Name="Klient_IdKlienta" Type="int" Nullable="false" />
+          <Property Name="Pracownik_IdPracownika" Type="int" Nullable="false" />
+          <Property Name="Rabat_IdRabatu" Type="int" Nullable="false" />
+          <Property Name="RealizacjaZamowienia_IdRealizacji" Type="int" Nullable="false" />
+          <Property Name="RodzajuWysylki_IdRodzajWysylki" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_AutorzyKsiazkis_dbo_Autors_Autor_IdAutora">
+          <End Role="Autors" Type="Self.Autors" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AutorzyKsiazkis" Type="Self.AutorzyKsiazkis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Autors">
+              <PropertyRef Name="IdAutora" />
+            </Principal>
+            <Dependent Role="AutorzyKsiazkis">
+              <PropertyRef Name="Autor_IdAutora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AutorzyKsiazkis_dbo_Ksiazkas_IdKsiazka_IdKsiazki">
+          <End Role="Ksiazkas" Type="Self.Ksiazkas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AutorzyKsiazkis" Type="Self.AutorzyKsiazkis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ksiazkas">
+              <PropertyRef Name="IdKsiazki" />
+            </Principal>
+            <Dependent Role="AutorzyKsiazkis">
+              <PropertyRef Name="IdKsiazka_IdKsiazki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Dostawas_dbo_Oferents_Oferent_IdOferenta">
+          <End Role="Oferents" Type="Self.Oferents" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dostawas" Type="Self.Dostawas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oferents">
+              <PropertyRef Name="IdOferenta" />
+            </Principal>
+            <Dependent Role="Dostawas">
+              <PropertyRef Name="Oferent_IdOferenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Dostawas_dbo_Pracowniks_Pracownik_IdPracownika">
+          <End Role="Pracowniks" Type="Self.Pracowniks" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dostawas" Type="Self.Dostawas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pracowniks">
+              <PropertyRef Name="IdPracownika" />
+            </Principal>
+            <Dependent Role="Dostawas">
+              <PropertyRef Name="Pracownik_IdPracownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Egzemplarzs_dbo_Ksiazkas_Ksiazka_IdKsiazki">
+          <End Role="Ksiazkas" Type="Self.Ksiazkas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Egzemplarzs" Type="Self.Egzemplarzs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ksiazkas">
+              <PropertyRef Name="IdKsiazki" />
+            </Principal>
+            <Dependent Role="Egzemplarzs">
+              <PropertyRef Name="Ksiazka_IdKsiazki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Egzemplarzs_dbo_Wydawnictwoes_Wydawnictwo_IdWydawnictwa">
+          <End Role="Wydawnictwoes" Type="Self.Wydawnictwoes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Egzemplarzs" Type="Self.Egzemplarzs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Wydawnictwoes">
+              <PropertyRef Name="IdWydawnictwa" />
+            </Principal>
+            <Dependent Role="Egzemplarzs">
+              <PropertyRef Name="Wydawnictwo_IdWydawnictwa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ElementyDostawies_dbo_Dostawas_IdDostawy">
+          <End Role="Dostawas" Type="Self.Dostawas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ElementyDostawies" Type="Self.ElementyDostawies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dostawas">
+              <PropertyRef Name="IdDostawy" />
+            </Principal>
+            <Dependent Role="ElementyDostawies">
+              <PropertyRef Name="IdDostawy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ElementyDostawies_dbo_Egzemplarzs_IdEgzemplarza">
+          <End Role="Egzemplarzs" Type="Self.Egzemplarzs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ElementyDostawies" Type="Self.ElementyDostawies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egzemplarzs">
+              <PropertyRef Name="IdEgzemplarza" />
+            </Principal>
+            <Dependent Role="ElementyDostawies">
+              <PropertyRef Name="IdEgzemplarza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ElementyZamowienias_dbo_Egzemplarzs_IdEgzemplarza">
+          <End Role="Egzemplarzs" Type="Self.Egzemplarzs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ElementyZamowienias" Type="Self.ElementyZamowienias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egzemplarzs">
+              <PropertyRef Name="IdEgzemplarza" />
+            </Principal>
+            <Dependent Role="ElementyZamowienias">
+              <PropertyRef Name="IdEgzemplarza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ElementyZamowienias_dbo_Zamowienies_IdZamowienia">
+          <End Role="Zamowienies" Type="Self.Zamowienies" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ElementyZamowienias" Type="Self.ElementyZamowienias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zamowienies">
+              <PropertyRef Name="IdZamowienia" />
+            </Principal>
+            <Dependent Role="ElementyZamowienias">
+              <PropertyRef Name="IdZamowienia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Ksiazkas_dbo_Gatuneks_Gatunek_IdGatunku">
+          <End Role="Gatuneks" Type="Self.Gatuneks" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Ksiazkas" Type="Self.Ksiazkas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gatuneks">
+              <PropertyRef Name="IdGatunku" />
+            </Principal>
+            <Dependent Role="Ksiazkas">
+              <PropertyRef Name="Gatunek_IdGatunku" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OfertaOferentas_dbo_Egzemplarzs_Egzemplarz_IdEgzemplarza">
+          <End Role="Egzemplarzs" Type="Self.Egzemplarzs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OfertaOferentas" Type="Self.OfertaOferentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egzemplarzs">
+              <PropertyRef Name="IdEgzemplarza" />
+            </Principal>
+            <Dependent Role="OfertaOferentas">
+              <PropertyRef Name="Egzemplarz_IdEgzemplarza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OfertaOferentas_dbo_Oferents_Oferent_IdOferenta">
+          <End Role="Oferents" Type="Self.Oferents" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OfertaOferentas" Type="Self.OfertaOferentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oferents">
+              <PropertyRef Name="IdOferenta" />
+            </Principal>
+            <Dependent Role="OfertaOferentas">
+              <PropertyRef Name="Oferent_IdOferenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Reklamacjas_dbo_RealizacjeReklamacjis_RealizacjeReklamacji_IdRealizacji">
+          <End Role="RealizacjeReklamacjis" Type="Self.RealizacjeReklamacjis" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Reklamacjas" Type="Self.Reklamacjas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RealizacjeReklamacjis">
+              <PropertyRef Name="IdRealizacji" />
+            </Principal>
+            <Dependent Role="Reklamacjas">
+              <PropertyRef Name="RealizacjeReklamacji_IdRealizacji" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Zamowienies_dbo_Klients_Klient_IdKlienta">
+          <End Role="Klients" Type="Self.Klients" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienies" Type="Self.Zamowienies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klients">
+              <PropertyRef Name="IdKlienta" />
+            </Principal>
+            <Dependent Role="Zamowienies">
+              <PropertyRef Name="Klient_IdKlienta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Zamowienies_dbo_Pracowniks_Pracownik_IdPracownika">
+          <End Role="Pracowniks" Type="Self.Pracowniks" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienies" Type="Self.Zamowienies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pracowniks">
+              <PropertyRef Name="IdPracownika" />
+            </Principal>
+            <Dependent Role="Zamowienies">
+              <PropertyRef Name="Pracownik_IdPracownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Zamowienies_dbo_Rabats_Rabat_IdRabatu">
+          <End Role="Rabats" Type="Self.Rabats" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienies" Type="Self.Zamowienies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rabats">
+              <PropertyRef Name="IdRabatu" />
+            </Principal>
+            <Dependent Role="Zamowienies">
+              <PropertyRef Name="Rabat_IdRabatu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Zamowienies_dbo_RealizacjaZamowienias_RealizacjaZamowienia_IdRealizacji">
+          <End Role="RealizacjaZamowienias" Type="Self.RealizacjaZamowienias" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienies" Type="Self.Zamowienies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RealizacjaZamowienias">
+              <PropertyRef Name="IdRealizacji" />
+            </Principal>
+            <Dependent Role="Zamowienies">
+              <PropertyRef Name="RealizacjaZamowienia_IdRealizacji" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Zamowienies_dbo_RodzajWysylkis_RodzajuWysylki_IdRodzajWysylki">
+          <End Role="RodzajWysylkis" Type="Self.RodzajWysylkis" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienies" Type="Self.Zamowienies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajWysylkis">
+              <PropertyRef Name="IdRodzajWysylki" />
+            </Principal>
+            <Dependent Role="Zamowienies">
+              <PropertyRef Name="RodzajuWysylki_IdRodzajWysylki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KsiegarniaModelStoreContainer">
+          <EntitySet Name="Autors" EntityType="Self.Autors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AutorzyKsiazkis" EntityType="Self.AutorzyKsiazkis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dostawas" EntityType="Self.Dostawas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Egzemplarzs" EntityType="Self.Egzemplarzs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElementyDostawies" EntityType="Self.ElementyDostawies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElementyZamowienias" EntityType="Self.ElementyZamowienias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gatuneks" EntityType="Self.Gatuneks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Klients" EntityType="Self.Klients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ksiazkas" EntityType="Self.Ksiazkas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Oferents" EntityType="Self.Oferents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OfertaOferentas" EntityType="Self.OfertaOferentas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pracowniks" EntityType="Self.Pracowniks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rabats" EntityType="Self.Rabats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RealizacjaZamowienias" EntityType="Self.RealizacjaZamowienias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RealizacjeReklamacjis" EntityType="Self.RealizacjeReklamacjis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reklamacjas" EntityType="Self.Reklamacjas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RodzajWysylkis" EntityType="Self.RodzajWysylkis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wydawnictwoes" EntityType="Self.Wydawnictwoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zamowienies" EntityType="Self.Zamowienies" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_AutorzyKsiazkis_dbo_Autors_Autor_IdAutora" Association="Self.FK_dbo_AutorzyKsiazkis_dbo_Autors_Autor_IdAutora">
+            <End Role="Autors" EntitySet="Autors" />
+            <End Role="AutorzyKsiazkis" EntitySet="AutorzyKsiazkis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AutorzyKsiazkis_dbo_Ksiazkas_IdKsiazka_IdKsiazki" Association="Self.FK_dbo_AutorzyKsiazkis_dbo_Ksiazkas_IdKsiazka_IdKsiazki">
+            <End Role="Ksiazkas" EntitySet="Ksiazkas" />
+            <End Role="AutorzyKsiazkis" EntitySet="AutorzyKsiazkis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Dostawas_dbo_Oferents_Oferent_IdOferenta" Association="Self.FK_dbo_Dostawas_dbo_Oferents_Oferent_IdOferenta">
+            <End Role="Oferents" EntitySet="Oferents" />
+            <End Role="Dostawas" EntitySet="Dostawas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Dostawas_dbo_Pracowniks_Pracownik_IdPracownika" Association="Self.FK_dbo_Dostawas_dbo_Pracowniks_Pracownik_IdPracownika">
+            <End Role="Pracowniks" EntitySet="Pracowniks" />
+            <End Role="Dostawas" EntitySet="Dostawas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Egzemplarzs_dbo_Ksiazkas_Ksiazka_IdKsiazki" Association="Self.FK_dbo_Egzemplarzs_dbo_Ksiazkas_Ksiazka_IdKsiazki">
+            <End Role="Ksiazkas" EntitySet="Ksiazkas" />
+            <End Role="Egzemplarzs" EntitySet="Egzemplarzs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Egzemplarzs_dbo_Wydawnictwoes_Wydawnictwo_IdWydawnictwa" Association="Self.FK_dbo_Egzemplarzs_dbo_Wydawnictwoes_Wydawnictwo_IdWydawnictwa">
+            <End Role="Wydawnictwoes" EntitySet="Wydawnictwoes" />
+            <End Role="Egzemplarzs" EntitySet="Egzemplarzs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ElementyDostawies_dbo_Dostawas_IdDostawy" Association="Self.FK_dbo_ElementyDostawies_dbo_Dostawas_IdDostawy">
+            <End Role="Dostawas" EntitySet="Dostawas" />
+            <End Role="ElementyDostawies" EntitySet="ElementyDostawies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ElementyDostawies_dbo_Egzemplarzs_IdEgzemplarza" Association="Self.FK_dbo_ElementyDostawies_dbo_Egzemplarzs_IdEgzemplarza">
+            <End Role="Egzemplarzs" EntitySet="Egzemplarzs" />
+            <End Role="ElementyDostawies" EntitySet="ElementyDostawies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ElementyZamowienias_dbo_Egzemplarzs_IdEgzemplarza" Association="Self.FK_dbo_ElementyZamowienias_dbo_Egzemplarzs_IdEgzemplarza">
+            <End Role="Egzemplarzs" EntitySet="Egzemplarzs" />
+            <End Role="ElementyZamowienias" EntitySet="ElementyZamowienias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ElementyZamowienias_dbo_Zamowienies_IdZamowienia" Association="Self.FK_dbo_ElementyZamowienias_dbo_Zamowienies_IdZamowienia">
+            <End Role="Zamowienies" EntitySet="Zamowienies" />
+            <End Role="ElementyZamowienias" EntitySet="ElementyZamowienias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Ksiazkas_dbo_Gatuneks_Gatunek_IdGatunku" Association="Self.FK_dbo_Ksiazkas_dbo_Gatuneks_Gatunek_IdGatunku">
+            <End Role="Gatuneks" EntitySet="Gatuneks" />
+            <End Role="Ksiazkas" EntitySet="Ksiazkas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OfertaOferentas_dbo_Egzemplarzs_Egzemplarz_IdEgzemplarza" Association="Self.FK_dbo_OfertaOferentas_dbo_Egzemplarzs_Egzemplarz_IdEgzemplarza">
+            <End Role="Egzemplarzs" EntitySet="Egzemplarzs" />
+            <End Role="OfertaOferentas" EntitySet="OfertaOferentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OfertaOferentas_dbo_Oferents_Oferent_IdOferenta" Association="Self.FK_dbo_OfertaOferentas_dbo_Oferents_Oferent_IdOferenta">
+            <End Role="Oferents" EntitySet="Oferents" />
+            <End Role="OfertaOferentas" EntitySet="OfertaOferentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Reklamacjas_dbo_RealizacjeReklamacjis_RealizacjeReklamacji_IdRealizacji" Association="Self.FK_dbo_Reklamacjas_dbo_RealizacjeReklamacjis_RealizacjeReklamacji_IdRealizacji">
+            <End Role="RealizacjeReklamacjis" EntitySet="RealizacjeReklamacjis" />
+            <End Role="Reklamacjas" EntitySet="Reklamacjas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Zamowienies_dbo_Klients_Klient_IdKlienta" Association="Self.FK_dbo_Zamowienies_dbo_Klients_Klient_IdKlienta">
+            <End Role="Klients" EntitySet="Klients" />
+            <End Role="Zamowienies" EntitySet="Zamowienies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Zamowienies_dbo_Pracowniks_Pracownik_IdPracownika" Association="Self.FK_dbo_Zamowienies_dbo_Pracowniks_Pracownik_IdPracownika">
+            <End Role="Pracowniks" EntitySet="Pracowniks" />
+            <End Role="Zamowienies" EntitySet="Zamowienies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Zamowienies_dbo_Rabats_Rabat_IdRabatu" Association="Self.FK_dbo_Zamowienies_dbo_Rabats_Rabat_IdRabatu">
+            <End Role="Rabats" EntitySet="Rabats" />
+            <End Role="Zamowienies" EntitySet="Zamowienies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Zamowienies_dbo_RealizacjaZamowienias_RealizacjaZamowienia_IdRealizacji" Association="Self.FK_dbo_Zamowienies_dbo_RealizacjaZamowienias_RealizacjaZamowienia_IdRealizacji">
+            <End Role="RealizacjaZamowienias" EntitySet="RealizacjaZamowienias" />
+            <End Role="Zamowienies" EntitySet="Zamowienies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Zamowienies_dbo_RodzajWysylkis_RodzajuWysylki_IdRodzajWysylki" Association="Self.FK_dbo_Zamowienies_dbo_RodzajWysylkis_RodzajuWysylki_IdRodzajWysylki">
+            <End Role="RodzajWysylkis" EntitySet="RodzajWysylkis" />
+            <End Role="Zamowienies" EntitySet="Zamowienies" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KsiegarniaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Autor">
+          <Key>
+            <PropertyRef Name="IdAutora" />
+          </Key>
+          <Property Name="IdAutora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataUrodzenia" Type="Int32" Nullable="false" />
+          <Property Name="Imie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwisko" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AutorzyKsiazkis" Relationship="Self.FK_dbo_AutorzyKsiazkis_dbo_Autors_Autor_IdAutora" FromRole="Autors" ToRole="AutorzyKsiazkis" />
+        </EntityType>
+        <EntityType Name="AutorzyKsiazki">
+          <Key>
+            <PropertyRef Name="IDAutorzyKsiazki" />
+          </Key>
+          <Property Name="IDAutorzyKsiazki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Autor_IdAutora" Type="Int32" Nullable="false" />
+          <Property Name="IdKsiazka_IdKsiazki" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Autor" Relationship="Self.FK_dbo_AutorzyKsiazkis_dbo_Autors_Autor_IdAutora" FromRole="AutorzyKsiazkis" ToRole="Autors" />
+          <NavigationProperty Name="Ksiazka" Relationship="Self.FK_dbo_AutorzyKsiazkis_dbo_Ksiazkas_IdKsiazka_IdKsiazki" FromRole="AutorzyKsiazkis" ToRole="Ksiazkas" />
+        </EntityType>
+        <EntityType Name="Dostawa">
+          <Key>
+            <PropertyRef Name="IdDostawy" />
+          </Key>
+          <Property Name="IdDostawy" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Oferent_IdOferenta" Type="Int32" Nullable="false" />
+          <Property Name="Pracownik_IdPracownika" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Oferent" Relationship="Self.FK_dbo_Dostawas_dbo_Oferents_Oferent_IdOferenta" FromRole="Dostawas" ToRole="Oferents" />
+          <NavigationProperty Name="Pracownik" Relationship="Self.FK_dbo_Dostawas_dbo_Pracowniks_Pracownik_IdPracownika" FromRole="Dostawas" ToRole="Pracowniks" />
+          <NavigationProperty Name="ElementyDostawies" Relationship="Self.FK_dbo_ElementyDostawies_dbo_Dostawas_IdDostawy" FromRole="Dostawas" ToRole="ElementyDostawies" />
+        </EntityType>
+        <EntityType Name="Egzemplarz">
+          <Key>
+            <PropertyRef Name="IdEgzemplarza" />
+          </Key>
+          <Property Name="IdEgzemplarza" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cena" Type="Int32" Nullable="false" />
+          <Property Name="Iloscc" Type="Int32" Nullable="false" />
+          <Property Name="TypOkladki" Type="Boolean" Nullable="false" />
+          <Property Name="Ksiazka_IdKsiazki" Type="Int32" Nullable="false" />
+          <Property Name="Wydawnictwo_IdWydawnictwa" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ksiazka" Relationship="Self.FK_dbo_Egzemplarzs_dbo_Ksiazkas_Ksiazka_IdKsiazki" FromRole="Egzemplarzs" ToRole="Ksiazkas" />
+          <NavigationProperty Name="Wydawnictwo" Relationship="Self.FK_dbo_Egzemplarzs_dbo_Wydawnictwoes_Wydawnictwo_IdWydawnictwa" FromRole="Egzemplarzs" ToRole="Wydawnictwoes" />
+          <NavigationProperty Name="ElementyDostawies" Relationship="Self.FK_dbo_ElementyDostawies_dbo_Egzemplarzs_IdEgzemplarza" FromRole="Egzemplarzs" ToRole="ElementyDostawies" />
+          <NavigationProperty Name="ElementyZamowienias" Relationship="Self.FK_dbo_ElementyZamowienias_dbo_Egzemplarzs_IdEgzemplarza" FromRole="Egzemplarzs" ToRole="ElementyZamowienias" />
+          <NavigationProperty Name="OfertaOferentas" Relationship="Self.FK_dbo_OfertaOferentas_dbo_Egzemplarzs_Egzemplarz_IdEgzemplarza" FromRole="Egzemplarzs" ToRole="OfertaOferentas" />
+        </EntityType>
+        <EntityType Name="ElementyDostawy">
+          <Key>
+            <PropertyRef Name="IdEgzemplarza" />
+            <PropertyRef Name="IdDostawy" />
+          </Key>
+          <Property Name="IdEgzemplarza" Type="Int32" Nullable="false" />
+          <Property Name="IdDostawy" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Dostawa" Relationship="Self.FK_dbo_ElementyDostawies_dbo_Dostawas_IdDostawy" FromRole="ElementyDostawies" ToRole="Dostawas" />
+          <NavigationProperty Name="Egzemplarz" Relationship="Self.FK_dbo_ElementyDostawies_dbo_Egzemplarzs_IdEgzemplarza" FromRole="ElementyDostawies" ToRole="Egzemplarzs" />
+        </EntityType>
+        <EntityType Name="ElementyZamowienia">
+          <Key>
+            <PropertyRef Name="IdEgzemplarza" />
+            <PropertyRef Name="IdZamowienia" />
+          </Key>
+          <Property Name="IdEgzemplarza" Type="Int32" Nullable="false" />
+          <Property Name="IdZamowienia" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Egzemplarz" Relationship="Self.FK_dbo_ElementyZamowienias_dbo_Egzemplarzs_IdEgzemplarza" FromRole="ElementyZamowienias" ToRole="Egzemplarzs" />
+          <NavigationProperty Name="Zamowieny" Relationship="Self.FK_dbo_ElementyZamowienias_dbo_Zamowienies_IdZamowienia" FromRole="ElementyZamowienias" ToRole="Zamowienies" />
+        </EntityType>
+        <EntityType Name="Gatunek">
+          <Key>
+            <PropertyRef Name="IdGatunku" />
+          </Key>
+          <Property Name="IdGatunku" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazwaGatunku" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ksiazkas" Relationship="Self.FK_dbo_Ksiazkas_dbo_Gatuneks_Gatunek_IdGatunku" FromRole="Gatuneks" ToRole="Ksiazkas" />
+        </EntityType>
+        <EntityType Name="Klient">
+          <Key>
+            <PropertyRef Name="IdKlienta" />
+          </Key>
+          <Property Name="IdKlienta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwisko" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Haslo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Zamowienies" Relationship="Self.FK_dbo_Zamowienies_dbo_Klients_Klient_IdKlienta" FromRole="Klients" ToRole="Zamowienies" />
+        </EntityType>
+        <EntityType Name="Ksiazka">
+          <Key>
+            <PropertyRef Name="IdKsiazki" />
+          </Key>
+          <Property Name="IdKsiazki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tytul" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Gatunek_IdGatunku" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AutorzyKsiazkis" Relationship="Self.FK_dbo_AutorzyKsiazkis_dbo_Ksiazkas_IdKsiazka_IdKsiazki" FromRole="Ksiazkas" ToRole="AutorzyKsiazkis" />
+          <NavigationProperty Name="Egzemplarzs" Relationship="Self.FK_dbo_Egzemplarzs_dbo_Ksiazkas_Ksiazka_IdKsiazki" FromRole="Ksiazkas" ToRole="Egzemplarzs" />
+          <NavigationProperty Name="Gatunek" Relationship="Self.FK_dbo_Ksiazkas_dbo_Gatuneks_Gatunek_IdGatunku" FromRole="Ksiazkas" ToRole="Gatuneks" />
+        </EntityType>
+        <EntityType Name="Oferent">
+          <Key>
+            <PropertyRef Name="IdOferenta" />
+          </Key>
+          <Property Name="IdOferenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NazwaFirmy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Dostawas" Relationship="Self.FK_dbo_Dostawas_dbo_Oferents_Oferent_IdOferenta" FromRole="Oferents" ToRole="Dostawas" />
+          <NavigationProperty Name="OfertaOferentas" Relationship="Self.FK_dbo_OfertaOferentas_dbo_Oferents_Oferent_IdOferenta" FromRole="Oferents" ToRole="OfertaOferentas" />
+        </EntityType>
+        <EntityType Name="OfertaOferenta">
+          <Key>
+            <PropertyRef Name="IdOfertyOferenta" />
+          </Key>
+          <Property Name="IdOfertyOferenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CenaHurtowa" Type="Int32" Nullable="false" />
+          <Property Name="Egzemplarz_IdEgzemplarza" Type="Int32" Nullable="false" />
+          <Property Name="Oferent_IdOferenta" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Egzemplarz" Relationship="Self.FK_dbo_OfertaOferentas_dbo_Egzemplarzs_Egzemplarz_IdEgzemplarza" FromRole="OfertaOferentas" ToRole="Egzemplarzs" />
+          <NavigationProperty Name="Oferent" Relationship="Self.FK_dbo_OfertaOferentas_dbo_Oferents_Oferent_IdOferenta" FromRole="OfertaOferentas" ToRole="Oferents" />
+        </EntityType>
+        <EntityType Name="Pracownik">
+          <Key>
+            <PropertyRef Name="IdPracownika" />
+          </Key>
+          <Property Name="IdPracownika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwisko" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Haslo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Dostawas" Relationship="Self.FK_dbo_Dostawas_dbo_Pracowniks_Pracownik_IdPracownika" FromRole="Pracowniks" ToRole="Dostawas" />
+          <NavigationProperty Name="Zamowienies" Relationship="Self.FK_dbo_Zamowienies_dbo_Pracowniks_Pracownik_IdPracownika" FromRole="Pracowniks" ToRole="Zamowienies" />
+        </EntityType>
+        <EntityType Name="Rabat">
+          <Key>
+            <PropertyRef Name="IdRabatu" />
+          </Key>
+          <Property Name="IdRabatu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OpisRabatu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WysokoscRabatu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Zamowienies" Relationship="Self.FK_dbo_Zamowienies_dbo_Rabats_Rabat_IdRabatu" FromRole="Rabats" ToRole="Zamowienies" />
+        </EntityType>
+        <EntityType Name="RealizacjaZamowienia">
+          <Key>
+            <PropertyRef Name="IdRealizacji" />
+          </Key>
+          <Property Name="IdRealizacji" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StatusZamowienia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Zamowienies" Relationship="Self.FK_dbo_Zamowienies_dbo_RealizacjaZamowienias_RealizacjaZamowienia_IdRealizacji" FromRole="RealizacjaZamowienias" ToRole="Zamowienies" />
+        </EntityType>
+        <EntityType Name="RealizacjeReklamacji">
+          <Key>
+            <PropertyRef Name="IdRealizacji" />
+          </Key>
+          <Property Name="IdRealizacji" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Reklamacjas" Relationship="Self.FK_dbo_Reklamacjas_dbo_RealizacjeReklamacjis_RealizacjeReklamacji_IdRealizacji" FromRole="RealizacjeReklamacjis" ToRole="Reklamacjas" />
+        </EntityType>
+        <EntityType Name="Reklamacja">
+          <Key>
+            <PropertyRef Name="IdReklamacji" />
+          </Key>
+          <Property Name="IdReklamacji" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Typ" Type="Boolean" Nullable="false" />
+          <Property Name="IdTypu" Type="Int32" Nullable="false" />
+          <Property Name="RealizacjeReklamacji_IdRealizacji" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RealizacjeReklamacji" Relationship="Self.FK_dbo_Reklamacjas_dbo_RealizacjeReklamacjis_RealizacjeReklamacji_IdRealizacji" FromRole="Reklamacjas" ToRole="RealizacjeReklamacjis" />
+        </EntityType>
+        <EntityType Name="RodzajWysylki">
+          <Key>
+            <PropertyRef Name="IdRodzajWysylki" />
+          </Key>
+          <Property Name="IdRodzajWysylki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cena" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Zamowienies" Relationship="Self.FK_dbo_Zamowienies_dbo_RodzajWysylkis_RodzajuWysylki_IdRodzajWysylki" FromRole="RodzajWysylkis" ToRole="Zamowienies" />
+        </EntityType>
+        <EntityType Name="Wydawnictwo">
+          <Key>
+            <PropertyRef Name="IdWydawnictwa" />
+          </Key>
+          <Property Name="IdWydawnictwa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazwaWydawnictwa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Egzemplarzs" Relationship="Self.FK_dbo_Egzemplarzs_dbo_Wydawnictwoes_Wydawnictwo_IdWydawnictwa" FromRole="Wydawnictwoes" ToRole="Egzemplarzs" />
+        </EntityType>
+        <EntityType Name="Zamowieny">
+          <Key>
+            <PropertyRef Name="IdZamowienia" />
+          </Key>
+          <Property Name="IdZamowienia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KosztZamowienia" Type="Int32" Nullable="false" />
+          <Property Name="Klient_IdKlienta" Type="Int32" Nullable="false" />
+          <Property Name="Pracownik_IdPracownika" Type="Int32" Nullable="false" />
+          <Property Name="Rabat_IdRabatu" Type="Int32" Nullable="false" />
+          <Property Name="RealizacjaZamowienia_IdRealizacji" Type="Int32" Nullable="false" />
+          <Property Name="RodzajuWysylki_IdRodzajWysylki" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ElementyZamowienias" Relationship="Self.FK_dbo_ElementyZamowienias_dbo_Zamowienies_IdZamowienia" FromRole="Zamowienies" ToRole="ElementyZamowienias" />
+          <NavigationProperty Name="Klient" Relationship="Self.FK_dbo_Zamowienies_dbo_Klients_Klient_IdKlienta" FromRole="Zamowienies" ToRole="Klients" />
+          <NavigationProperty Name="Pracownik" Relationship="Self.FK_dbo_Zamowienies_dbo_Pracowniks_Pracownik_IdPracownika" FromRole="Zamowienies" ToRole="Pracowniks" />
+          <NavigationProperty Name="Rabat" Relationship="Self.FK_dbo_Zamowienies_dbo_Rabats_Rabat_IdRabatu" FromRole="Zamowienies" ToRole="Rabats" />
+          <NavigationProperty Name="RealizacjaZamowienia" Relationship="Self.FK_dbo_Zamowienies_dbo_RealizacjaZamowienias_RealizacjaZamowienia_IdRealizacji" FromRole="Zamowienies" ToRole="RealizacjaZamowienias" />
+          <NavigationProperty Name="RodzajWysylki" Relationship="Self.FK_dbo_Zamowienies_dbo_RodzajWysylkis_RodzajuWysylki_IdRodzajWysylki" FromRole="Zamowienies" ToRole="RodzajWysylkis" />
+        </EntityType>
+        <Association Name="FK_dbo_AutorzyKsiazkis_dbo_Autors_Autor_IdAutora">
+          <End Role="Autors" Type="Self.Autor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AutorzyKsiazkis" Type="Self.AutorzyKsiazki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Autors">
+              <PropertyRef Name="IdAutora" />
+            </Principal>
+            <Dependent Role="AutorzyKsiazkis">
+              <PropertyRef Name="Autor_IdAutora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AutorzyKsiazkis_dbo_Ksiazkas_IdKsiazka_IdKsiazki">
+          <End Role="Ksiazkas" Type="Self.Ksiazka" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AutorzyKsiazkis" Type="Self.AutorzyKsiazki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ksiazkas">
+              <PropertyRef Name="IdKsiazki" />
+            </Principal>
+            <Dependent Role="AutorzyKsiazkis">
+              <PropertyRef Name="IdKsiazka_IdKsiazki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Dostawas_dbo_Oferents_Oferent_IdOferenta">
+          <End Role="Oferents" Type="Self.Oferent" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dostawas" Type="Self.Dostawa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oferents">
+              <PropertyRef Name="IdOferenta" />
+            </Principal>
+            <Dependent Role="Dostawas">
+              <PropertyRef Name="Oferent_IdOferenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Dostawas_dbo_Pracowniks_Pracownik_IdPracownika">
+          <End Role="Pracowniks" Type="Self.Pracownik" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Dostawas" Type="Self.Dostawa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pracowniks">
+              <PropertyRef Name="IdPracownika" />
+            </Principal>
+            <Dependent Role="Dostawas">
+              <PropertyRef Name="Pracownik_IdPracownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ElementyDostawies_dbo_Dostawas_IdDostawy">
+          <End Role="Dostawas" Type="Self.Dostawa" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ElementyDostawies" Type="Self.ElementyDostawy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dostawas">
+              <PropertyRef Name="IdDostawy" />
+            </Principal>
+            <Dependent Role="ElementyDostawies">
+              <PropertyRef Name="IdDostawy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Egzemplarzs_dbo_Ksiazkas_Ksiazka_IdKsiazki">
+          <End Role="Ksiazkas" Type="Self.Ksiazka" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Egzemplarzs" Type="Self.Egzemplarz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ksiazkas">
+              <PropertyRef Name="IdKsiazki" />
+            </Principal>
+            <Dependent Role="Egzemplarzs">
+              <PropertyRef Name="Ksiazka_IdKsiazki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Egzemplarzs_dbo_Wydawnictwoes_Wydawnictwo_IdWydawnictwa">
+          <End Role="Wydawnictwoes" Type="Self.Wydawnictwo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Egzemplarzs" Type="Self.Egzemplarz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Wydawnictwoes">
+              <PropertyRef Name="IdWydawnictwa" />
+            </Principal>
+            <Dependent Role="Egzemplarzs">
+              <PropertyRef Name="Wydawnictwo_IdWydawnictwa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ElementyDostawies_dbo_Egzemplarzs_IdEgzemplarza">
+          <End Role="Egzemplarzs" Type="Self.Egzemplarz" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ElementyDostawies" Type="Self.ElementyDostawy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egzemplarzs">
+              <PropertyRef Name="IdEgzemplarza" />
+            </Principal>
+            <Dependent Role="ElementyDostawies">
+              <PropertyRef Name="IdEgzemplarza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ElementyZamowienias_dbo_Egzemplarzs_IdEgzemplarza">
+          <End Role="Egzemplarzs" Type="Self.Egzemplarz" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ElementyZamowienias" Type="Self.ElementyZamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egzemplarzs">
+              <PropertyRef Name="IdEgzemplarza" />
+            </Principal>
+            <Dependent Role="ElementyZamowienias">
+              <PropertyRef Name="IdEgzemplarza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OfertaOferentas_dbo_Egzemplarzs_Egzemplarz_IdEgzemplarza">
+          <End Role="Egzemplarzs" Type="Self.Egzemplarz" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OfertaOferentas" Type="Self.OfertaOferenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egzemplarzs">
+              <PropertyRef Name="IdEgzemplarza" />
+            </Principal>
+            <Dependent Role="OfertaOferentas">
+              <PropertyRef Name="Egzemplarz_IdEgzemplarza" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ElementyZamowienias_dbo_Zamowienies_IdZamowienia">
+          <End Role="Zamowienies" Type="Self.Zamowieny" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ElementyZamowienias" Type="Self.ElementyZamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zamowienies">
+              <PropertyRef Name="IdZamowienia" />
+            </Principal>
+            <Dependent Role="ElementyZamowienias">
+              <PropertyRef Name="IdZamowienia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Ksiazkas_dbo_Gatuneks_Gatunek_IdGatunku">
+          <End Role="Gatuneks" Type="Self.Gatunek" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Ksiazkas" Type="Self.Ksiazka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gatuneks">
+              <PropertyRef Name="IdGatunku" />
+            </Principal>
+            <Dependent Role="Ksiazkas">
+              <PropertyRef Name="Gatunek_IdGatunku" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Zamowienies_dbo_Klients_Klient_IdKlienta">
+          <End Role="Klients" Type="Self.Klient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienies" Type="Self.Zamowieny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klients">
+              <PropertyRef Name="IdKlienta" />
+            </Principal>
+            <Dependent Role="Zamowienies">
+              <PropertyRef Name="Klient_IdKlienta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OfertaOferentas_dbo_Oferents_Oferent_IdOferenta">
+          <End Role="Oferents" Type="Self.Oferent" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OfertaOferentas" Type="Self.OfertaOferenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oferents">
+              <PropertyRef Name="IdOferenta" />
+            </Principal>
+            <Dependent Role="OfertaOferentas">
+              <PropertyRef Name="Oferent_IdOferenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Zamowienies_dbo_Pracowniks_Pracownik_IdPracownika">
+          <End Role="Pracowniks" Type="Self.Pracownik" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienies" Type="Self.Zamowieny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pracowniks">
+              <PropertyRef Name="IdPracownika" />
+            </Principal>
+            <Dependent Role="Zamowienies">
+              <PropertyRef Name="Pracownik_IdPracownika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Zamowienies_dbo_Rabats_Rabat_IdRabatu">
+          <End Role="Rabats" Type="Self.Rabat" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienies" Type="Self.Zamowieny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rabats">
+              <PropertyRef Name="IdRabatu" />
+            </Principal>
+            <Dependent Role="Zamowienies">
+              <PropertyRef Name="Rabat_IdRabatu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Zamowienies_dbo_RealizacjaZamowienias_RealizacjaZamowienia_IdRealizacji">
+          <End Role="RealizacjaZamowienias" Type="Self.RealizacjaZamowienia" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienies" Type="Self.Zamowieny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RealizacjaZamowienias">
+              <PropertyRef Name="IdRealizacji" />
+            </Principal>
+            <Dependent Role="Zamowienies">
+              <PropertyRef Name="RealizacjaZamowienia_IdRealizacji" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Reklamacjas_dbo_RealizacjeReklamacjis_RealizacjeReklamacji_IdRealizacji">
+          <End Role="RealizacjeReklamacjis" Type="Self.RealizacjeReklamacji" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Reklamacjas" Type="Self.Reklamacja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RealizacjeReklamacjis">
+              <PropertyRef Name="IdRealizacji" />
+            </Principal>
+            <Dependent Role="Reklamacjas">
+              <PropertyRef Name="RealizacjeReklamacji_IdRealizacji" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Zamowienies_dbo_RodzajWysylkis_RodzajuWysylki_IdRodzajWysylki">
+          <End Role="RodzajWysylkis" Type="Self.RodzajWysylki" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienies" Type="Self.Zamowieny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajWysylkis">
+              <PropertyRef Name="IdRodzajWysylki" />
+            </Principal>
+            <Dependent Role="Zamowienies">
+              <PropertyRef Name="RodzajuWysylki_IdRodzajWysylki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KsiegarniaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Autors" EntityType="Self.Autor" />
+          <EntitySet Name="AutorzyKsiazkis" EntityType="Self.AutorzyKsiazki" />
+          <EntitySet Name="Dostawas" EntityType="Self.Dostawa" />
+          <EntitySet Name="Egzemplarzs" EntityType="Self.Egzemplarz" />
+          <EntitySet Name="ElementyDostawies" EntityType="Self.ElementyDostawy" />
+          <EntitySet Name="ElementyZamowienias" EntityType="Self.ElementyZamowienia" />
+          <EntitySet Name="Gatuneks" EntityType="Self.Gatunek" />
+          <EntitySet Name="Klients" EntityType="Self.Klient" />
+          <EntitySet Name="Ksiazkas" EntityType="Self.Ksiazka" />
+          <EntitySet Name="Oferents" EntityType="Self.Oferent" />
+          <EntitySet Name="OfertaOferentas" EntityType="Self.OfertaOferenta" />
+          <EntitySet Name="Pracowniks" EntityType="Self.Pracownik" />
+          <EntitySet Name="Rabats" EntityType="Self.Rabat" />
+          <EntitySet Name="RealizacjaZamowienias" EntityType="Self.RealizacjaZamowienia" />
+          <EntitySet Name="RealizacjeReklamacjis" EntityType="Self.RealizacjeReklamacji" />
+          <EntitySet Name="Reklamacjas" EntityType="Self.Reklamacja" />
+          <EntitySet Name="RodzajWysylkis" EntityType="Self.RodzajWysylki" />
+          <EntitySet Name="Wydawnictwoes" EntityType="Self.Wydawnictwo" />
+          <EntitySet Name="Zamowienies" EntityType="Self.Zamowieny" />
+          <AssociationSet Name="FK_dbo_AutorzyKsiazkis_dbo_Autors_Autor_IdAutora" Association="Self.FK_dbo_AutorzyKsiazkis_dbo_Autors_Autor_IdAutora">
+            <End Role="Autors" EntitySet="Autors" />
+            <End Role="AutorzyKsiazkis" EntitySet="AutorzyKsiazkis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AutorzyKsiazkis_dbo_Ksiazkas_IdKsiazka_IdKsiazki" Association="Self.FK_dbo_AutorzyKsiazkis_dbo_Ksiazkas_IdKsiazka_IdKsiazki">
+            <End Role="Ksiazkas" EntitySet="Ksiazkas" />
+            <End Role="AutorzyKsiazkis" EntitySet="AutorzyKsiazkis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Dostawas_dbo_Oferents_Oferent_IdOferenta" Association="Self.FK_dbo_Dostawas_dbo_Oferents_Oferent_IdOferenta">
+            <End Role="Oferents" EntitySet="Oferents" />
+            <End Role="Dostawas" EntitySet="Dostawas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Dostawas_dbo_Pracowniks_Pracownik_IdPracownika" Association="Self.FK_dbo_Dostawas_dbo_Pracowniks_Pracownik_IdPracownika">
+            <End Role="Pracowniks" EntitySet="Pracowniks" />
+            <End Role="Dostawas" EntitySet="Dostawas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ElementyDostawies_dbo_Dostawas_IdDostawy" Association="Self.FK_dbo_ElementyDostawies_dbo_Dostawas_IdDostawy">
+            <End Role="Dostawas" EntitySet="Dostawas" />
+            <End Role="ElementyDostawies" EntitySet="ElementyDostawies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Egzemplarzs_dbo_Ksiazkas_Ksiazka_IdKsiazki" Association="Self.FK_dbo_Egzemplarzs_dbo_Ksiazkas_Ksiazka_IdKsiazki">
+            <End Role="Ksiazkas" EntitySet="Ksiazkas" />
+            <End Role="Egzemplarzs" EntitySet="Egzemplarzs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Egzemplarzs_dbo_Wydawnictwoes_Wydawnictwo_IdWydawnictwa" Association="Self.FK_dbo_Egzemplarzs_dbo_Wydawnictwoes_Wydawnictwo_IdWydawnictwa">
+            <End Role="Wydawnictwoes" EntitySet="Wydawnictwoes" />
+            <End Role="Egzemplarzs" EntitySet="Egzemplarzs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ElementyDostawies_dbo_Egzemplarzs_IdEgzemplarza" Association="Self.FK_dbo_ElementyDostawies_dbo_Egzemplarzs_IdEgzemplarza">
+            <End Role="Egzemplarzs" EntitySet="Egzemplarzs" />
+            <End Role="ElementyDostawies" EntitySet="ElementyDostawies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ElementyZamowienias_dbo_Egzemplarzs_IdEgzemplarza" Association="Self.FK_dbo_ElementyZamowienias_dbo_Egzemplarzs_IdEgzemplarza">
+            <End Role="Egzemplarzs" EntitySet="Egzemplarzs" />
+            <End Role="ElementyZamowienias" EntitySet="ElementyZamowienias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OfertaOferentas_dbo_Egzemplarzs_Egzemplarz_IdEgzemplarza" Association="Self.FK_dbo_OfertaOferentas_dbo_Egzemplarzs_Egzemplarz_IdEgzemplarza">
+            <End Role="Egzemplarzs" EntitySet="Egzemplarzs" />
+            <End Role="OfertaOferentas" EntitySet="OfertaOferentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ElementyZamowienias_dbo_Zamowienies_IdZamowienia" Association="Self.FK_dbo_ElementyZamowienias_dbo_Zamowienies_IdZamowienia">
+            <End Role="Zamowienies" EntitySet="Zamowienies" />
+            <End Role="ElementyZamowienias" EntitySet="ElementyZamowienias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Ksiazkas_dbo_Gatuneks_Gatunek_IdGatunku" Association="Self.FK_dbo_Ksiazkas_dbo_Gatuneks_Gatunek_IdGatunku">
+            <End Role="Gatuneks" EntitySet="Gatuneks" />
+            <End Role="Ksiazkas" EntitySet="Ksiazkas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Zamowienies_dbo_Klients_Klient_IdKlienta" Association="Self.FK_dbo_Zamowienies_dbo_Klients_Klient_IdKlienta">
+            <End Role="Klients" EntitySet="Klients" />
+            <End Role="Zamowienies" EntitySet="Zamowienies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OfertaOferentas_dbo_Oferents_Oferent_IdOferenta" Association="Self.FK_dbo_OfertaOferentas_dbo_Oferents_Oferent_IdOferenta">
+            <End Role="Oferents" EntitySet="Oferents" />
+            <End Role="OfertaOferentas" EntitySet="OfertaOferentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Zamowienies_dbo_Pracowniks_Pracownik_IdPracownika" Association="Self.FK_dbo_Zamowienies_dbo_Pracowniks_Pracownik_IdPracownika">
+            <End Role="Pracowniks" EntitySet="Pracowniks" />
+            <End Role="Zamowienies" EntitySet="Zamowienies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Zamowienies_dbo_Rabats_Rabat_IdRabatu" Association="Self.FK_dbo_Zamowienies_dbo_Rabats_Rabat_IdRabatu">
+            <End Role="Rabats" EntitySet="Rabats" />
+            <End Role="Zamowienies" EntitySet="Zamowienies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Zamowienies_dbo_RealizacjaZamowienias_RealizacjaZamowienia_IdRealizacji" Association="Self.FK_dbo_Zamowienies_dbo_RealizacjaZamowienias_RealizacjaZamowienia_IdRealizacji">
+            <End Role="RealizacjaZamowienias" EntitySet="RealizacjaZamowienias" />
+            <End Role="Zamowienies" EntitySet="Zamowienies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Reklamacjas_dbo_RealizacjeReklamacjis_RealizacjeReklamacji_IdRealizacji" Association="Self.FK_dbo_Reklamacjas_dbo_RealizacjeReklamacjis_RealizacjeReklamacji_IdRealizacji">
+            <End Role="RealizacjeReklamacjis" EntitySet="RealizacjeReklamacjis" />
+            <End Role="Reklamacjas" EntitySet="Reklamacjas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Zamowienies_dbo_RodzajWysylkis_RodzajuWysylki_IdRodzajWysylki" Association="Self.FK_dbo_Zamowienies_dbo_RodzajWysylkis_RodzajuWysylki_IdRodzajWysylki">
+            <End Role="RodzajWysylkis" EntitySet="RodzajWysylkis" />
+            <End Role="Zamowienies" EntitySet="Zamowienies" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KsiegarniaModelStoreContainer" CdmEntityContainer="KsiegarniaEntities">
+          <EntitySetMapping Name="Autors">
+            <EntityTypeMapping TypeName="KsiegarniaModel.Autor">
+              <MappingFragment StoreEntitySet="Autors">
+                <ScalarProperty Name="IdAutora" ColumnName="IdAutora" />
+                <ScalarProperty Name="DataUrodzenia" ColumnName="DataUrodzenia" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AutorzyKsiazkis">
+            <EntityTypeMapping TypeName="KsiegarniaModel.AutorzyKsiazki">
+              <MappingFragment StoreEntitySet="AutorzyKsiazkis">
+                <ScalarProperty Name="IDAutorzyKsiazki" ColumnName="IDAutorzyKsiazki" />
+                <ScalarProperty Name="Autor_IdAutora" ColumnName="Autor_IdAutora" />
+                <ScalarProperty Name="IdKsiazka_IdKsiazki" ColumnName="IdKsiazka_IdKsiazki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dostawas">
+            <EntityTypeMapping TypeName="KsiegarniaModel.Dostawa">
+              <MappingFragment StoreEntitySet="Dostawas">
+                <ScalarProperty Name="IdDostawy" ColumnName="IdDostawy" />
+                <ScalarProperty Name="Oferent_IdOferenta" ColumnName="Oferent_IdOferenta" />
+                <ScalarProperty Name="Pracownik_IdPracownika" ColumnName="Pracownik_IdPracownika" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Egzemplarzs">
+            <EntityTypeMapping TypeName="KsiegarniaModel.Egzemplarz">
+              <MappingFragment StoreEntitySet="Egzemplarzs">
+                <ScalarProperty Name="IdEgzemplarza" ColumnName="IdEgzemplarza" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="Iloscc" ColumnName="Iloscc" />
+                <ScalarProperty Name="TypOkladki" ColumnName="TypOkladki" />
+                <ScalarProperty Name="Ksiazka_IdKsiazki" ColumnName="Ksiazka_IdKsiazki" />
+                <ScalarProperty Name="Wydawnictwo_IdWydawnictwa" ColumnName="Wydawnictwo_IdWydawnictwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElementyDostawies">
+            <EntityTypeMapping TypeName="KsiegarniaModel.ElementyDostawy">
+              <MappingFragment StoreEntitySet="ElementyDostawies">
+                <ScalarProperty Name="IdEgzemplarza" ColumnName="IdEgzemplarza" />
+                <ScalarProperty Name="IdDostawy" ColumnName="IdDostawy" />
+                <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElementyZamowienias">
+            <EntityTypeMapping TypeName="KsiegarniaModel.ElementyZamowienia">
+              <MappingFragment StoreEntitySet="ElementyZamowienias">
+                <ScalarProperty Name="IdEgzemplarza" ColumnName="IdEgzemplarza" />
+                <ScalarProperty Name="IdZamowienia" ColumnName="IdZamowienia" />
+                <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gatuneks">
+            <EntityTypeMapping TypeName="KsiegarniaModel.Gatunek">
+              <MappingFragment StoreEntitySet="Gatuneks">
+                <ScalarProperty Name="IdGatunku" ColumnName="IdGatunku" />
+                <ScalarProperty Name="NazwaGatunku" ColumnName="NazwaGatunku" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Klients">
+            <EntityTypeMapping TypeName="KsiegarniaModel.Klient">
+              <MappingFragment StoreEntitySet="Klients">
+                <ScalarProperty Name="IdKlienta" ColumnName="IdKlienta" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ksiazkas">
+            <EntityTypeMapping TypeName="KsiegarniaModel.Ksiazka">
+              <MappingFragment StoreEntitySet="Ksiazkas">
+                <ScalarProperty Name="IdKsiazki" ColumnName="IdKsiazki" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+                <ScalarProperty Name="Gatunek_IdGatunku" ColumnName="Gatunek_IdGatunku" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Oferents">
+            <EntityTypeMapping TypeName="KsiegarniaModel.Oferent">
+              <MappingFragment StoreEntitySet="Oferents">
+                <ScalarProperty Name="IdOferenta" ColumnName="IdOferenta" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="NazwaFirmy" ColumnName="NazwaFirmy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OfertaOferentas">
+            <EntityTypeMapping TypeName="KsiegarniaModel.OfertaOferenta">
+              <MappingFragment StoreEntitySet="OfertaOferentas">
+                <ScalarProperty Name="IdOfertyOferenta" ColumnName="IdOfertyOferenta" />
+                <ScalarProperty Name="CenaHurtowa" ColumnName="CenaHurtowa" />
+                <ScalarProperty Name="Egzemplarz_IdEgzemplarza" ColumnName="Egzemplarz_IdEgzemplarza" />
+                <ScalarProperty Name="Oferent_IdOferenta" ColumnName="Oferent_IdOferenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pracowniks">
+            <EntityTypeMapping TypeName="KsiegarniaModel.Pracownik">
+              <MappingFragment StoreEntitySet="Pracowniks">
+                <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rabats">
+            <EntityTypeMapping TypeName="KsiegarniaModel.Rabat">
+              <MappingFragment StoreEntitySet="Rabats">
+                <ScalarProperty Name="IdRabatu" ColumnName="IdRabatu" />
+                <ScalarProperty Name="OpisRabatu" ColumnName="OpisRabatu" />
+                <ScalarProperty Name="WysokoscRabatu" ColumnName="WysokoscRabatu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RealizacjaZamowienias">
+            <EntityTypeMapping TypeName="KsiegarniaModel.RealizacjaZamowienia">
+              <MappingFragment StoreEntitySet="RealizacjaZamowienias">
+                <ScalarProperty Name="IdRealizacji" ColumnName="IdRealizacji" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="StatusZamowienia" ColumnName="StatusZamowienia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RealizacjeReklamacjis">
+            <EntityTypeMapping TypeName="KsiegarniaModel.RealizacjeReklamacji">
+              <MappingFragment StoreEntitySet="RealizacjeReklamacjis">
+                <ScalarProperty Name="IdRealizacji" ColumnName="IdRealizacji" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reklamacjas">
+            <EntityTypeMapping TypeName="KsiegarniaModel.Reklamacja">
+              <MappingFragment StoreEntitySet="Reklamacjas">
+                <ScalarProperty Name="IdReklamacji" ColumnName="IdReklamacji" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="IdTypu" ColumnName="IdTypu" />
+                <ScalarProperty Name="RealizacjeReklamacji_IdRealizacji" ColumnName="RealizacjeReklamacji_IdRealizacji" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RodzajWysylkis">
+            <EntityTypeMapping TypeName="KsiegarniaModel.RodzajWysylki">
+              <MappingFragment StoreEntitySet="RodzajWysylkis">
+                <ScalarProperty Name="IdRodzajWysylki" ColumnName="IdRodzajWysylki" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wydawnictwoes">
+            <EntityTypeMapping TypeName="KsiegarniaModel.Wydawnictwo">
+              <MappingFragment StoreEntitySet="Wydawnictwoes">
+                <ScalarProperty Name="IdWydawnictwa" ColumnName="IdWydawnictwa" />
+                <ScalarProperty Name="NazwaWydawnictwa" ColumnName="NazwaWydawnictwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zamowienies">
+            <EntityTypeMapping TypeName="KsiegarniaModel.Zamowieny">
+              <MappingFragment StoreEntitySet="Zamowienies">
+                <ScalarProperty Name="IdZamowienia" ColumnName="IdZamowienia" />
+                <ScalarProperty Name="KosztZamowienia" ColumnName="KosztZamowienia" />
+                <ScalarProperty Name="Klient_IdKlienta" ColumnName="Klient_IdKlienta" />
+                <ScalarProperty Name="Pracownik_IdPracownika" ColumnName="Pracownik_IdPracownika" />
+                <ScalarProperty Name="Rabat_IdRabatu" ColumnName="Rabat_IdRabatu" />
+                <ScalarProperty Name="RealizacjaZamowienia_IdRealizacji" ColumnName="RealizacjaZamowienia_IdRealizacji" />
+                <ScalarProperty Name="RodzajuWysylki_IdRodzajWysylki" ColumnName="RodzajuWysylki_IdRodzajWysylki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

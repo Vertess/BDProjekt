@@ -16,5 +16,17 @@ namespace BDProjekt
         {
             InitializeComponent();
         }
+
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+            gatunekControl1.gatunekBindingSource.ResetBindings(false);
+            ContextInformation.Instance._context.SaveChanges();
+        }
+
+        private void GatunekControl_Load(object sender, EventArgs e)
+        {
+            ContextInformation.Instance._context.Gatuneks.Load();
+            gatunekBindingSource.DataSource = ContextInformation.Instance._context.Gatuneks.Local.ToBindingList();
+        }
     }
 }

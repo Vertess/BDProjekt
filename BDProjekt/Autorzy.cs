@@ -11,8 +11,10 @@ using System.Data.Entity;
 
 namespace BDProjekt
 {
+
     public partial class Autorzy : UserControl
     {
+
         public Autorzy()
         {
             InitializeComponent();
@@ -20,15 +22,26 @@ namespace BDProjekt
 
         private void Autorzy_Load(object sender, EventArgs e)
         {
+            if (!DesignMode)
+            {
+                ContextInformation.Instance._context.Autors.Load();
+                ContextInformation.Instance._context.Gatuneks.Load();
+                autorBindingSource.DataSource = ContextInformation.Instance._context.Autors.Local.ToBindingList();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (!DesignMode)
+            {
+                autorBindingSource.ResetBindings(false);
+                ContextInformation.Instance._context.SaveChanges();
+            }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void searchButton_Click(object sender, EventArgs e)
         {
+            autorBindingSource.DataSource = ContextInformation.Instance._context.Autors.Local.ToBindingList().Where(n => n.Imie.Contains(this.searchTextBox.Text));
 
         }
     }

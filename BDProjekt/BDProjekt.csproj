@@ -56,10 +56,10 @@
     <Compile Include="Autor.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
-    <Compile Include="Autorzy.cs">
+    <Compile Include="Controls\Autorzy.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Autorzy.Designer.cs">
+    <Compile Include="Controls\Autorzy.Designer.cs">
       <DependentUpon>Autorzy.cs</DependentUpon>
     </Compile>
     <Compile Include="AutorzyKsiazki.cs">
@@ -87,23 +87,29 @@
     <Compile Include="Gatunek.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
-    <Compile Include="GatunekControl.cs">
+    <Compile Include="Controls\GatunekControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GatunekControl.Designer.cs">
+    <Compile Include="Controls\GatunekControl.Designer.cs">
       <DependentUpon>GatunekControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Klient.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
-    <Compile Include="KlientControl.cs">
+    <Compile Include="Controls\KlientControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="KlientControl.Designer.cs">
+    <Compile Include="Controls\KlientControl.Designer.cs">
       <DependentUpon>KlientControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Ksiazka.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\KsiazkaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\KsiazkaControl.Designer.cs">
+      <DependentUpon>KsiazkaControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Ksiegarnia.Context.cs">
       <AutoGen>True</AutoGen>
@@ -152,16 +158,19 @@
     <Compile Include="Zamowieny.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Autorzy.resx">
+    <EmbeddedResource Include="Controls\Autorzy.resx">
       <DependentUpon>Autorzy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\KsiazkaControl.resx">
+      <DependentUpon>KsiazkaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GatunekControl.resx">
+    <EmbeddedResource Include="Controls\GatunekControl.resx">
       <DependentUpon>GatunekControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KlientControl.resx">
+    <EmbeddedResource Include="Controls\KlientControl.resx">
       <DependentUpon>KlientControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -194,6 +203,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Autor.datasource" />
     <None Include="Properties\DataSources\Gatunek.datasource" />
+    <None Include="Properties\DataSources\Ksiazka.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

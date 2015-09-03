@@ -54,5 +54,10 @@ namespace BDProjekt
         {
 
         }
+
+		private void resetButton_Click(object sender, EventArgs e)
+		{
+			autorBindingSource.DataSource = ContextInformation.Instance._context.Autors.Local.ToBindingList();
+		}
     }
 }

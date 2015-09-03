@@ -50,7 +50,6 @@
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.logowanieHasloText = new System.Windows.Forms.Label();
             this.okienkoKlienta = new System.Windows.Forms.TabPage();
-            this.autorzy1 = new BDProjekt.Autorzy();
             this.okienkoPracownika = new System.Windows.Forms.TabPage();
             this.PracownikWiadomoscBleduText = new System.Windows.Forms.Label();
             this.pracownikText1 = new System.Windows.Forms.Label();
@@ -83,19 +82,9 @@
             this.pracownikDodajKsiazkeOpisText = new System.Windows.Forms.Label();
             this.pracownikDodajKsiazkeTytulText = new System.Windows.Forms.Label();
             this.pracownikDodajAutoraTabPage = new System.Windows.Forms.TabPage();
-            this.pracownikDodajAutoraFilter_Label = new System.Windows.Forms.Label();
-            this.pracownikDodajAutoraFilterTextBox = new System.Windows.Forms.TextBox();
-            this.PracownikDodajAutoraSzukajButton = new System.Windows.Forms.Button();
-            this.PracownikDodajAutoraListBox = new System.Windows.Forms.ListBox();
-            this.pracownikDodajAutoraUsunButton = new System.Windows.Forms.Button();
-            this.pracownikDodajAutoraDataUrodzeniaTextBox = new System.Windows.Forms.TextBox();
-            this.pracownikDodajAutoraNazwiskoTextBox = new System.Windows.Forms.TextBox();
-            this.pracownikDodajAutoraImieTextBox = new System.Windows.Forms.TextBox();
-            this.PracownikDodajAutoraDodajButton = new System.Windows.Forms.Button();
-            this.pracownikDodajAutoraDataUrodzeniaText = new System.Windows.Forms.Label();
-            this.pracownikDodajAutoraNazwiskoText = new System.Windows.Forms.Label();
-            this.pracownikDodajAutoraImieText = new System.Windows.Forms.Label();
+            this.autorzy1 = new BDProjekt.Autorzy();
             this.pracownikDodajGatunekTabPage = new System.Windows.Forms.TabPage();
+            this.gatunekControl1 = new BDProjekt.GatunekControl();
             this.pracownikDodajEgzemplarzTabPage = new System.Windows.Forms.TabPage();
             this.pracownikDodajEgzemplarzWydawnictwoTextBox = new System.Windows.Forms.TextBox();
             this.pracownikDodajEgzemplarzWydawnictwoText = new System.Windows.Forms.Label();
@@ -203,10 +192,8 @@
             this.oferentPrzegladajListeEgzemplarzyListBox = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.gatunekControl1 = new BDProjekt.GatunekControl();
             this.Glowna_tabControl.SuspendLayout();
             this.okienkoLogowania.SuspendLayout();
-            this.okienkoKlienta.SuspendLayout();
             this.okienkoPracownika.SuspendLayout();
             this.pracownikDodatkowaTabControl.SuspendLayout();
             this.pacownikStworzRabatTabPage.SuspendLayout();
@@ -427,7 +414,6 @@
             // okienkoKlienta
             // 
             this.okienkoKlienta.CausesValidation = false;
-            this.okienkoKlienta.Controls.Add(this.autorzy1);
             this.okienkoKlienta.Location = new System.Drawing.Point(4, 22);
             this.okienkoKlienta.Name = "okienkoKlienta";
             this.okienkoKlienta.Padding = new System.Windows.Forms.Padding(3);
@@ -435,13 +421,6 @@
             this.okienkoKlienta.TabIndex = 0;
             this.okienkoKlienta.Text = "Klient";
             this.okienkoKlienta.UseVisualStyleBackColor = true;
-            // 
-            // autorzy1
-            // 
-            this.autorzy1.Location = new System.Drawing.Point(50, 18);
-            this.autorzy1.Name = "autorzy1";
-            this.autorzy1.Size = new System.Drawing.Size(631, 263);
-            this.autorzy1.TabIndex = 0;
             // 
             // okienkoPracownika
             // 
@@ -748,18 +727,7 @@
             // 
             // pracownikDodajAutoraTabPage
             // 
-            this.pracownikDodajAutoraTabPage.Controls.Add(this.pracownikDodajAutoraFilter_Label);
-            this.pracownikDodajAutoraTabPage.Controls.Add(this.pracownikDodajAutoraFilterTextBox);
-            this.pracownikDodajAutoraTabPage.Controls.Add(this.PracownikDodajAutoraSzukajButton);
-            this.pracownikDodajAutoraTabPage.Controls.Add(this.PracownikDodajAutoraListBox);
-            this.pracownikDodajAutoraTabPage.Controls.Add(this.pracownikDodajAutoraUsunButton);
-            this.pracownikDodajAutoraTabPage.Controls.Add(this.pracownikDodajAutoraDataUrodzeniaTextBox);
-            this.pracownikDodajAutoraTabPage.Controls.Add(this.pracownikDodajAutoraNazwiskoTextBox);
-            this.pracownikDodajAutoraTabPage.Controls.Add(this.pracownikDodajAutoraImieTextBox);
-            this.pracownikDodajAutoraTabPage.Controls.Add(this.PracownikDodajAutoraDodajButton);
-            this.pracownikDodajAutoraTabPage.Controls.Add(this.pracownikDodajAutoraDataUrodzeniaText);
-            this.pracownikDodajAutoraTabPage.Controls.Add(this.pracownikDodajAutoraNazwiskoText);
-            this.pracownikDodajAutoraTabPage.Controls.Add(this.pracownikDodajAutoraImieText);
+            this.pracownikDodajAutoraTabPage.Controls.Add(this.autorzy1);
             this.pracownikDodajAutoraTabPage.Location = new System.Drawing.Point(4, 22);
             this.pracownikDodajAutoraTabPage.Name = "pracownikDodajAutoraTabPage";
             this.pracownikDodajAutoraTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -768,104 +736,13 @@
             this.pracownikDodajAutoraTabPage.Text = "Dodaj autora";
             this.pracownikDodajAutoraTabPage.UseVisualStyleBackColor = true;
             // 
-            // pracownikDodajAutoraFilter_Label
+            // autorzy1
             // 
-            this.pracownikDodajAutoraFilter_Label.AutoSize = true;
-            this.pracownikDodajAutoraFilter_Label.Location = new System.Drawing.Point(547, 57);
-            this.pracownikDodajAutoraFilter_Label.Name = "pracownikDodajAutoraFilter_Label";
-            this.pracownikDodajAutoraFilter_Label.Size = new System.Drawing.Size(32, 13);
-            this.pracownikDodajAutoraFilter_Label.TabIndex = 94;
-            this.pracownikDodajAutoraFilter_Label.Text = "Filter:";
-            // 
-            // pracownikDodajAutoraFilterTextBox
-            // 
-            this.pracownikDodajAutoraFilterTextBox.Location = new System.Drawing.Point(527, 73);
-            this.pracownikDodajAutoraFilterTextBox.Name = "pracownikDodajAutoraFilterTextBox";
-            this.pracownikDodajAutoraFilterTextBox.Size = new System.Drawing.Size(100, 20);
-            this.pracownikDodajAutoraFilterTextBox.TabIndex = 93;
-            // 
-            // PracownikDodajAutoraSzukajButton
-            // 
-            this.PracownikDodajAutoraSzukajButton.Location = new System.Drawing.Point(346, 65);
-            this.PracownikDodajAutoraSzukajButton.Name = "PracownikDodajAutoraSzukajButton";
-            this.PracownikDodajAutoraSzukajButton.Size = new System.Drawing.Size(167, 23);
-            this.PracownikDodajAutoraSzukajButton.TabIndex = 90;
-            this.PracownikDodajAutoraSzukajButton.Text = "SzukajAutora";
-            this.PracownikDodajAutoraSzukajButton.UseVisualStyleBackColor = true;
-            // 
-            // PracownikDodajAutoraListBox
-            // 
-            this.PracownikDodajAutoraListBox.FormattingEnabled = true;
-            this.PracownikDodajAutoraListBox.Location = new System.Drawing.Point(346, 96);
-            this.PracownikDodajAutoraListBox.Name = "PracownikDodajAutoraListBox";
-            this.PracownikDodajAutoraListBox.Size = new System.Drawing.Size(442, 95);
-            this.PracownikDodajAutoraListBox.TabIndex = 88;
-            // 
-            // pracownikDodajAutoraUsunButton
-            // 
-            this.pracownikDodajAutoraUsunButton.Location = new System.Drawing.Point(219, 131);
-            this.pracownikDodajAutoraUsunButton.Name = "pracownikDodajAutoraUsunButton";
-            this.pracownikDodajAutoraUsunButton.Size = new System.Drawing.Size(116, 23);
-            this.pracownikDodajAutoraUsunButton.TabIndex = 27;
-            this.pracownikDodajAutoraUsunButton.Text = "Usuń autora";
-            this.pracownikDodajAutoraUsunButton.UseVisualStyleBackColor = true;
-            // 
-            // pracownikDodajAutoraDataUrodzeniaTextBox
-            // 
-            this.pracownikDodajAutoraDataUrodzeniaTextBox.Location = new System.Drawing.Point(81, 61);
-            this.pracownikDodajAutoraDataUrodzeniaTextBox.Name = "pracownikDodajAutoraDataUrodzeniaTextBox";
-            this.pracownikDodajAutoraDataUrodzeniaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.pracownikDodajAutoraDataUrodzeniaTextBox.TabIndex = 25;
-            // 
-            // pracownikDodajAutoraNazwiskoTextBox
-            // 
-            this.pracownikDodajAutoraNazwiskoTextBox.Location = new System.Drawing.Point(81, 35);
-            this.pracownikDodajAutoraNazwiskoTextBox.Name = "pracownikDodajAutoraNazwiskoTextBox";
-            this.pracownikDodajAutoraNazwiskoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.pracownikDodajAutoraNazwiskoTextBox.TabIndex = 24;
-            // 
-            // pracownikDodajAutoraImieTextBox
-            // 
-            this.pracownikDodajAutoraImieTextBox.Location = new System.Drawing.Point(81, 10);
-            this.pracownikDodajAutoraImieTextBox.Name = "pracownikDodajAutoraImieTextBox";
-            this.pracownikDodajAutoraImieTextBox.Size = new System.Drawing.Size(100, 20);
-            this.pracownikDodajAutoraImieTextBox.TabIndex = 23;
-            // 
-            // PracownikDodajAutoraDodajButton
-            // 
-            this.PracownikDodajAutoraDodajButton.Location = new System.Drawing.Point(4, 96);
-            this.PracownikDodajAutoraDodajButton.Name = "PracownikDodajAutoraDodajButton";
-            this.PracownikDodajAutoraDodajButton.Size = new System.Drawing.Size(116, 23);
-            this.PracownikDodajAutoraDodajButton.TabIndex = 22;
-            this.PracownikDodajAutoraDodajButton.Text = "Dodaj autora";
-            this.PracownikDodajAutoraDodajButton.UseVisualStyleBackColor = true;
-            // 
-            // pracownikDodajAutoraDataUrodzeniaText
-            // 
-            this.pracownikDodajAutoraDataUrodzeniaText.AutoSize = true;
-            this.pracownikDodajAutoraDataUrodzeniaText.Location = new System.Drawing.Point(4, 67);
-            this.pracownikDodajAutoraDataUrodzeniaText.Name = "pracownikDodajAutoraDataUrodzeniaText";
-            this.pracownikDodajAutoraDataUrodzeniaText.Size = new System.Drawing.Size(81, 13);
-            this.pracownikDodajAutoraDataUrodzeniaText.TabIndex = 21;
-            this.pracownikDodajAutoraDataUrodzeniaText.Text = "Data Urodzenia";
-            // 
-            // pracownikDodajAutoraNazwiskoText
-            // 
-            this.pracownikDodajAutoraNazwiskoText.AutoSize = true;
-            this.pracownikDodajAutoraNazwiskoText.Location = new System.Drawing.Point(4, 38);
-            this.pracownikDodajAutoraNazwiskoText.Name = "pracownikDodajAutoraNazwiskoText";
-            this.pracownikDodajAutoraNazwiskoText.Size = new System.Drawing.Size(53, 13);
-            this.pracownikDodajAutoraNazwiskoText.TabIndex = 20;
-            this.pracownikDodajAutoraNazwiskoText.Text = "Nazwisko";
-            // 
-            // pracownikDodajAutoraImieText
-            // 
-            this.pracownikDodajAutoraImieText.AutoSize = true;
-            this.pracownikDodajAutoraImieText.Location = new System.Drawing.Point(6, 13);
-            this.pracownikDodajAutoraImieText.Name = "pracownikDodajAutoraImieText";
-            this.pracownikDodajAutoraImieText.Size = new System.Drawing.Size(26, 13);
-            this.pracownikDodajAutoraImieText.TabIndex = 19;
-            this.pracownikDodajAutoraImieText.Text = "Imie";
+            this.autorzy1.Location = new System.Drawing.Point(88, -11);
+            this.autorzy1.Name = "autorzy1";
+            this.autorzy1.Size = new System.Drawing.Size(631, 263);
+            this.autorzy1.TabIndex = 0;
+            this.autorzy1.Load += new System.EventHandler(this.autorzy1_Load);
             // 
             // pracownikDodajGatunekTabPage
             // 
@@ -877,6 +754,13 @@
             this.pracownikDodajGatunekTabPage.TabIndex = 5;
             this.pracownikDodajGatunekTabPage.Text = "Dodaj gatunek";
             this.pracownikDodajGatunekTabPage.UseVisualStyleBackColor = true;
+            // 
+            // gatunekControl1
+            // 
+            this.gatunekControl1.Location = new System.Drawing.Point(54, -57);
+            this.gatunekControl1.Name = "gatunekControl1";
+            this.gatunekControl1.Size = new System.Drawing.Size(622, 348);
+            this.gatunekControl1.TabIndex = 0;
             // 
             // pracownikDodajEgzemplarzTabPage
             // 
@@ -1887,13 +1771,6 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 93;
             // 
-            // gatunekControl1
-            // 
-            this.gatunekControl1.Location = new System.Drawing.Point(135, 6);
-            this.gatunekControl1.Name = "gatunekControl1";
-            this.gatunekControl1.Size = new System.Drawing.Size(207, 221);
-            this.gatunekControl1.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1909,7 +1786,6 @@
             this.Glowna_tabControl.ResumeLayout(false);
             this.okienkoLogowania.ResumeLayout(false);
             this.okienkoLogowania.PerformLayout();
-            this.okienkoKlienta.ResumeLayout(false);
             this.okienkoPracownika.ResumeLayout(false);
             this.okienkoPracownika.PerformLayout();
             this.pracownikDodatkowaTabControl.ResumeLayout(false);
@@ -1918,7 +1794,6 @@
             this.pracownikDodajKsiazkeTabPage.ResumeLayout(false);
             this.pracownikDodajKsiazkeTabPage.PerformLayout();
             this.pracownikDodajAutoraTabPage.ResumeLayout(false);
-            this.pracownikDodajAutoraTabPage.PerformLayout();
             this.pracownikDodajGatunekTabPage.ResumeLayout(false);
             this.pracownikDodajEgzemplarzTabPage.ResumeLayout(false);
             this.pracownikDodajEgzemplarzTabPage.PerformLayout();
@@ -1997,18 +1872,6 @@
         private System.Windows.Forms.Label pracownikDodajKsiazkeOpisText;
         private System.Windows.Forms.Label pracownikDodajKsiazkeTytulText;
         private System.Windows.Forms.TabPage pracownikDodajAutoraTabPage;
-        private System.Windows.Forms.Label pracownikDodajAutoraFilter_Label;
-        private System.Windows.Forms.TextBox pracownikDodajAutoraFilterTextBox;
-        private System.Windows.Forms.Button PracownikDodajAutoraSzukajButton;
-        private System.Windows.Forms.ListBox PracownikDodajAutoraListBox;
-        private System.Windows.Forms.Button pracownikDodajAutoraUsunButton;
-        private System.Windows.Forms.TextBox pracownikDodajAutoraDataUrodzeniaTextBox;
-        private System.Windows.Forms.TextBox pracownikDodajAutoraNazwiskoTextBox;
-        private System.Windows.Forms.TextBox pracownikDodajAutoraImieTextBox;
-        private System.Windows.Forms.Button PracownikDodajAutoraDodajButton;
-        private System.Windows.Forms.Label pracownikDodajAutoraDataUrodzeniaText;
-        private System.Windows.Forms.Label pracownikDodajAutoraNazwiskoText;
-        private System.Windows.Forms.Label pracownikDodajAutoraImieText;
         private System.Windows.Forms.TabPage pracownikDodajGatunekTabPage;
         private System.Windows.Forms.TabPage pracownikDodajEgzemplarzTabPage;
         private System.Windows.Forms.TextBox pracownikDodajEgzemplarzWydawnictwoTextBox;
@@ -2115,10 +1978,10 @@
         private System.Windows.Forms.Label OferentNazwaText;
         private System.Windows.Forms.Label OferentDaneText;
         private System.Windows.Forms.ListBox oferentPrzegladajListeEgzemplarzyListBox;
-        private Autorzy autorzy1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private GatunekControl gatunekControl1;
+        private Autorzy autorzy1;
     }
 }
 

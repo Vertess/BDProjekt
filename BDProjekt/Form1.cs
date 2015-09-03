@@ -31,5 +31,15 @@ namespace BDProjekt
         private void button2_Click(object sender, EventArgs e)
         {
         }
+
+        private void autorzy2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void autorzy1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace BDProjekt
 {
@@ -21,7 +22,7 @@ namespace BDProjekt
         {
             if (!DesignMode)
             {
-                gatunekControl1.gatunekBindingSource.ResetBindings(false);
+              this.gatunekBindingSource.ResetBindings(false);
                 ContextInformation.Instance._context.SaveChanges();
             }
 
@@ -31,10 +32,25 @@ namespace BDProjekt
         {
             if (!DesignMode)
             {
-                ContextInformation.Instance._context.Gatuneks.Load();
-                gatunekBindingSource.DataSource = ContextInformation.Instance._context.Gatuneks.Local.ToBindingList();
+               ContextInformation.Instance._context.Gatuneks.Load();
+               gatunekBindingSource.DataSource = ContextInformation.Instance._context.Gatuneks.Local.ToBindingList();
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!DesignMode)
+            {
+                gatunekBindingSource.ResetBindings(false);
+                ContextInformation.Instance._context.SaveChanges();
+            }
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+
+            gatunekBindingSource.DataSource = ContextInformation.Instance._context.Gatuneks.Local.ToBindingList().Where(n => n.NazwaGatunku.Contains(this.searchTextBox.Text));
         }
     }
 }

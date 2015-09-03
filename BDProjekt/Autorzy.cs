@@ -25,7 +25,6 @@ namespace BDProjekt
             if (!DesignMode)
             {
                 ContextInformation.Instance._context.Autors.Load();
-                ContextInformation.Instance._context.Gatuneks.Load();
                 autorBindingSource.DataSource = ContextInformation.Instance._context.Autors.Local.ToBindingList();
             }
         }
@@ -41,7 +40,18 @@ namespace BDProjekt
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            autorBindingSource.DataSource = ContextInformation.Instance._context.Autors.Local.ToBindingList().Where(n => n.Imie.Contains(this.searchTextBox.Text));
+
+            autorBindingSource.DataSource = ContextInformation.Instance._context.Autors.Local.ToBindingList().Where(n => n.Imie.Contains(this.searchTextBox.Text) || n.Nazwisko.Contains(this.searchTextBox.Text));
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

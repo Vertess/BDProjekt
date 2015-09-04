@@ -52,5 +52,10 @@ namespace BDProjekt
 
             gatunekBindingSource.DataSource = ContextInformation.Instance._context.Gatuneks.Local.ToBindingList().Where(n => n.NazwaGatunku.Contains(this.searchTextBox.Text));
         }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            gatunekBindingSource.DataSource = ContextInformation.Instance._context.Gatuneks.Local.ToBindingList();
+        }
     }
 }

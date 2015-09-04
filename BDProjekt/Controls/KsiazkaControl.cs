@@ -36,5 +36,15 @@ namespace BDProjekt
 				ContextInformation.Instance._context.SaveChanges();
 			}
 		}
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+           ksiazkaBindingSource.DataSource = ContextInformation.Instance._context.Ksiazkas.Local.ToBindingList().Where(n => n.Tytul.Contains(this.searchTextBox.Text) || n.Opis.Contains(this.searchTextBox.Text));
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            ksiazkaBindingSource.DataSource = ContextInformation.Instance._context.Ksiazkas.Local.ToBindingList();
+        }
 	}
 }

@@ -33,6 +33,7 @@ namespace BDProjekt
 			if (!DesignMode)
 			{
 				ksiazkaBindingSource.ResetBindings(false);
+
 				ContextInformation.Instance._context.SaveChanges();
 			}
 		}

@@ -37,7 +37,7 @@
 			this.tytulDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.autorzyKsiazkisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.egzemplarzsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.gatunekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+			this.gatunekComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gatunekBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ksiazkaBindingSource)).BeginInit();
@@ -52,7 +52,7 @@
             this.tytulDataGridViewTextBoxColumn,
             this.autorzyKsiazkisDataGridViewTextBoxColumn,
             this.egzemplarzsDataGridViewTextBoxColumn,
-            this.gatunekDataGridViewTextBoxColumn});
+            this.gatunekComboBoxColumn});
 			this.dataGridView1.DataSource = this.ksiazkaBindingSource;
 			this.dataGridView1.Location = new System.Drawing.Point(3, 42);
 			this.dataGridView1.Name = "dataGridView1";
@@ -101,16 +101,15 @@
 			this.egzemplarzsDataGridViewTextBoxColumn.HeaderText = "Egzemplarzs";
 			this.egzemplarzsDataGridViewTextBoxColumn.Name = "egzemplarzsDataGridViewTextBoxColumn";
 			// 
-			// gatunekDataGridViewTextBoxColumn
+			// gatunekComboBoxColumn
 			// 
-			this.gatunekDataGridViewTextBoxColumn.DataPropertyName = "Gatunek";
-			this.gatunekDataGridViewTextBoxColumn.DataSource = this.gatunekBindingSource;
-			this.gatunekDataGridViewTextBoxColumn.DisplayMember = "NazwaGatunku";
-			this.gatunekDataGridViewTextBoxColumn.HeaderText = "Gatunek";
-			this.gatunekDataGridViewTextBoxColumn.Name = "gatunekDataGridViewTextBoxColumn";
-			this.gatunekDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.gatunekDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			this.gatunekDataGridViewTextBoxColumn.ValueMember = "IdGatunku";
+			this.gatunekComboBoxColumn.DataSource = this.gatunekBindingSource;
+			this.gatunekComboBoxColumn.DisplayMember = "NazwaGatunku";
+			this.gatunekComboBoxColumn.HeaderText = "Gatunek";
+			this.gatunekComboBoxColumn.Name = "gatunekComboBoxColumn";
+			this.gatunekComboBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.gatunekComboBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.gatunekComboBoxColumn.ValueMember = "IdGatunku";
 			// 
 			// KsiazkaControl
 			// 
@@ -138,6 +137,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn tytulDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn autorzyKsiazkisDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn egzemplarzsDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewComboBoxColumn gatunekDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewComboBoxColumn gatunekComboBoxColumn;
 	}
 }

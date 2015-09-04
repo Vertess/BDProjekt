@@ -140,6 +140,12 @@
     <Compile Include="Rabat.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controls\RabatControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RabatControl.Designer.cs">
+      <DependentUpon>RabatControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="RealizacjaZamowienia.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
@@ -154,6 +160,12 @@
     </Compile>
     <Compile Include="Wydawnictwo.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WydawnictwoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WydawnictwoControl.Designer.cs">
+      <DependentUpon>WydawnictwoControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Zamowieny.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
@@ -182,6 +194,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\RabatControl.resx">
+      <DependentUpon>RabatControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WydawnictwoControl.resx">
+      <DependentUpon>WydawnictwoControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Ksiegarnia.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Ksiegarnia.Designer.cs</LastGenOutput>
@@ -204,6 +222,8 @@
     <None Include="Properties\DataSources\Autor.datasource" />
     <None Include="Properties\DataSources\Gatunek.datasource" />
     <None Include="Properties\DataSources\Ksiazka.datasource" />
+    <None Include="Properties\DataSources\Rabat.datasource" />
+    <None Include="Properties\DataSources\Wydawnictwo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

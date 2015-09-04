@@ -41,5 +41,15 @@ namespace BDProjekt
         {
 
         }
+
+        private void pracownikZamowieniaPrzydzielPracownika_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pracownikDodajEgzemplarzEgzemplarz_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -17,7 +17,6 @@ namespace BDProjekt
 		{
 			InitializeComponent();
 		}
-
 		private void KsiazkaControl_Load(object sender, EventArgs e)
 		{
 			if (!DesignMode)
@@ -28,24 +27,19 @@ namespace BDProjekt
 				ksiazkaBindingSource.DataSource = ContextInformation.Instance._context.Ksiazkas.Local.ToBindingList();
 			}
 		}
-		private void zatwierdzButton_Click(object sender, System.EventArgs e)
+		private void zatwierdzButton_Click(object sender, EventArgs e)
 		{
 			if (!DesignMode)
 			{
+				Ksiazka ks = new Ksiazka();
+				Gatunek gt = new Gatunek();
+				gt = (Gatunek)gatunekBindingSource.Current;
+				ks = (Ksiazka)ksiazkaBindingSource.Current;
+				ks.Gatunek_IdGatunku = gt.IdGatunku;
 				ksiazkaBindingSource.ResetBindings(false);
-
 				ContextInformation.Instance._context.SaveChanges();
 			}
+
 		}
-
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-           ksiazkaBindingSource.DataSource = ContextInformation.Instance._context.Ksiazkas.Local.ToBindingList().Where(n => n.Tytul.Contains(this.searchTextBox.Text) || n.Opis.Contains(this.searchTextBox.Text));
-        }
-
-        private void resetButton_Click(object sender, EventArgs e)
-        {
-            ksiazkaBindingSource.DataSource = ContextInformation.Instance._context.Ksiazkas.Local.ToBindingList();
-        }
 	}
 }

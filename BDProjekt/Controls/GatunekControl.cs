@@ -34,6 +34,7 @@ namespace BDProjekt
             {
                ContextInformation.Instance._context.Gatuneks.Load();
                gatunekBindingSource.DataSource = ContextInformation.Instance._context.Gatuneks.Local.ToBindingList();
+
             }
 
         }

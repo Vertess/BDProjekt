@@ -37,7 +37,12 @@ namespace BDProjekt.Controls
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            
+            //dostawaBindingSource.DataSource = ContextInformation.Instance._context.Dostawas.Local.ToBindingList().Where(p => p.Pracownik.Contains(this.searchTextBox.Text));
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            dostawaBindingSource.DataSource = ContextInformation.Instance._context.Dostawas.Local.ToBindingList();
         }
     }
 }

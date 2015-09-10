@@ -78,6 +78,12 @@
     <Compile Include="Controls\EgzemplarzControl.Designer.cs">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\OfertyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OfertyControl.Designer.cs">
+      <DependentUpon>OfertyControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dostawa.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
@@ -191,6 +197,9 @@
     <EmbeddedResource Include="Controls\EgzemplarzControl.resx">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OfertyControl.resx">
+      <DependentUpon>OfertyControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +255,7 @@
     <None Include="Properties\DataSources\Ksiazka.datasource" />
     <None Include="Properties\DataSources\Ksiazka1.datasource" />
     <None Include="Properties\DataSources\Oferent.datasource" />
+    <None Include="Properties\DataSources\OfertaOferenta.datasource" />
     <None Include="Properties\DataSources\Pracownik.datasource" />
     <None Include="Properties\DataSources\Rabat.datasource" />
     <None Include="Properties\DataSources\Wydawnictwo.datasource" />

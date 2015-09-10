@@ -66,6 +66,12 @@
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
     <Compile Include="ContextInformation.cs" />
+    <Compile Include="Controls\DostawaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DostawaControl.Designer.cs">
+      <DependentUpon>DostawaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\EgzemplarzControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     <EmbeddedResource Include="Controls\Autorzy.resx">
       <DependentUpon>Autorzy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DostawaControl.resx">
+      <DependentUpon>DostawaControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\EgzemplarzControl.resx">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,10 +240,13 @@
     <None Include="Properties\DataSources\Autor.datasource" />
     <None Include="Properties\DataSources\AutorzyKsiazki.datasource" />
     <None Include="Properties\DataSources\BDProjekt.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Dostawa.datasource" />
     <None Include="Properties\DataSources\Egzemplarz.datasource" />
     <None Include="Properties\DataSources\Gatunek.datasource" />
     <None Include="Properties\DataSources\Ksiazka.datasource" />
     <None Include="Properties\DataSources\Ksiazka1.datasource" />
+    <None Include="Properties\DataSources\Oferent.datasource" />
+    <None Include="Properties\DataSources\Pracownik.datasource" />
     <None Include="Properties\DataSources\Rabat.datasource" />
     <None Include="Properties\DataSources\Wydawnictwo.datasource" />
     <None Include="Properties\DataSources\Wydawnictwo1.datasource" />

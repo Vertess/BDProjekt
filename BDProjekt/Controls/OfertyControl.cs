@@ -17,7 +17,9 @@ namespace BDProjekt.Controls
         {
             InitializeComponent();
         }
-        private void KsiazkaControl_Load(object sender, EventArgs e)
+        
+
+        private void OfertyControl_Load(object sender, EventArgs e)
         {
             if (!DesignMode)
             {
@@ -44,7 +46,6 @@ namespace BDProjekt.Controls
                 ofertaOferentaBindingSource.ResetBindings(false);
                 ContextInformation.Instance._context.SaveChanges();
             }
-
         }
     }
 }

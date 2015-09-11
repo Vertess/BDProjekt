@@ -21,12 +21,12 @@ namespace BDProjekt.Controls
         {
             if (!DesignMode)
             {
-                ContextInformation.Instance._context.Gatuneks.Load();
-                egzemplarzBindingSource.DataSource = ContextInformation.Instance._context.Gatuneks.Local.ToBindingList();
-                ContextInformation.Instance._context.Ksiazkas.Load();
-                ksiazkaBindingSource.DataSource = ContextInformation.Instance._context.Ksiazkas.Local.ToBindingList();
-                ContextInformation.Instance._context.Wydawnictwoes.Load();
-                wydawnictwoBindingSource.DataSource = ContextInformation.Instance._context.Wydawnictwoes.Local.ToBindingList();
+                Funckje.Instance._context.Gatuneks.Load();
+                egzemplarzBindingSource.DataSource = Funckje.Instance._context.Gatuneks.Local.ToBindingList();
+                Funckje.Instance._context.Ksiazkas.Load();
+                ksiazkaBindingSource.DataSource = Funckje.Instance._context.Ksiazkas.Local.ToBindingList();
+                Funckje.Instance._context.Wydawnictwoes.Load();
+                wydawnictwoBindingSource.DataSource = Funckje.Instance._context.Wydawnictwoes.Local.ToBindingList();
             }
         }
         private void zatwierdzButton_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace BDProjekt.Controls
                 eg.Ksiazka_IdKsiazki = ks.IdKsiazki;
                 eg.Wydawnictwo_IdWydawnictwa = wd.IdWydawnictwa;
                 egzemplarzBindingSource.ResetBindings(false);
-                ContextInformation.Instance._context.SaveChanges();
+                Funckje.Instance._context.SaveChanges();
             }
         }
     }

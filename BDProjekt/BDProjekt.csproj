@@ -65,17 +65,13 @@
     <Compile Include="AutorzyKsiazki.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Funckje.cs" />
-=======
-    <Compile Include="ContextInformation.cs" />
     <Compile Include="Controls\EgzemplarzControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\EgzemplarzControl.Designer.cs">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
     </Compile>
->>>>>>> 36acdb20770f2eca2979929f3b7646781f0f6d4e
     <Compile Include="Dostawa.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
@@ -234,14 +230,11 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Autor.datasource" />
     <None Include="Properties\DataSources\AutorzyKsiazki.datasource" />
-    <None Include="Properties\DataSources\BDProjekt.Properties.Settings.datasource" />
     <None Include="Properties\DataSources\Egzemplarz.datasource" />
     <None Include="Properties\DataSources\Gatunek.datasource" />
     <None Include="Properties\DataSources\Ksiazka.datasource" />
-    <None Include="Properties\DataSources\Ksiazka1.datasource" />
     <None Include="Properties\DataSources\Rabat.datasource" />
     <None Include="Properties\DataSources\Wydawnictwo.datasource" />
-    <None Include="Properties\DataSources\Wydawnictwo1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -261,7 +254,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

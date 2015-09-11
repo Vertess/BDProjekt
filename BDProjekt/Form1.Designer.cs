@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.button1 = new System.Windows.Forms.Button();
 			this.Glowna_tabControl = new System.Windows.Forms.TabControl();
 			this.okienkoLogowania = new System.Windows.Forms.TabPage();
 			this.logowanieStworzKontoButton = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
 			this.loginTextBox = new System.Windows.Forms.TextBox();
 			this.logowanieHasloText = new System.Windows.Forms.Label();
 			this.okienkoKlienta = new System.Windows.Forms.TabPage();
+			this.ksiazkaControl1 = new BDProjekt.KsiazkaControl();
 			this.okienkoPracownika = new System.Windows.Forms.TabPage();
 			this.PracownikWiadomoscBleduText = new System.Windows.Forms.Label();
 			this.pracownikText1 = new System.Windows.Forms.Label();
@@ -161,9 +161,12 @@
 			this.OferentNazwaText = new System.Windows.Forms.Label();
 			this.OferentDaneText = new System.Windows.Forms.Label();
 			this.oferentPrzegladajListeEgzemplarzyListBox = new System.Windows.Forms.ListBox();
-			this.button2 = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.ksiazkaControl1 = new BDProjekt.KsiazkaControl();
+			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
+			this.logowanieComboBox = new System.Windows.Forms.ComboBox();
 			this.Glowna_tabControl.SuspendLayout();
 			this.okienkoLogowania.SuspendLayout();
 			this.okienkoKlienta.SuspendLayout();
@@ -182,16 +185,6 @@
 			this.okienkoAdmina.SuspendLayout();
 			this.okienkoOferenta.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(786, 397);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 1;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// Glowna_tabControl
 			// 
@@ -396,6 +389,13 @@
 			this.okienkoKlienta.Text = "Klient";
 			this.okienkoKlienta.UseVisualStyleBackColor = true;
 			// 
+			// ksiazkaControl1
+			// 
+			this.ksiazkaControl1.Location = new System.Drawing.Point(59, 31);
+			this.ksiazkaControl1.Name = "ksiazkaControl1";
+			this.ksiazkaControl1.Size = new System.Drawing.Size(739, 251);
+			this.ksiazkaControl1.TabIndex = 0;
+			// 
 			// okienkoPracownika
 			// 
 			this.okienkoPracownika.Controls.Add(this.PracownikWiadomoscBleduText);
@@ -510,7 +510,6 @@
 			this.autorzy1.Name = "autorzy1";
 			this.autorzy1.Size = new System.Drawing.Size(631, 263);
 			this.autorzy1.TabIndex = 0;
-			this.autorzy1.Load += new System.EventHandler(this.autorzy1_Load);
 			// 
 			// pracownikDodajGatunekTabPage
 			// 
@@ -630,7 +629,6 @@
 			this.pracownikDodajEgzemplarzEgzemplarz_ComboBox.Name = "pracownikDodajEgzemplarzEgzemplarz_ComboBox";
 			this.pracownikDodajEgzemplarzEgzemplarz_ComboBox.Size = new System.Drawing.Size(102, 21);
 			this.pracownikDodajEgzemplarzEgzemplarz_ComboBox.TabIndex = 105;
-			this.pracownikDodajEgzemplarzEgzemplarz_ComboBox.SelectedIndexChanged += new System.EventHandler(this.pracownikDodajEgzemplarzEgzemplarz_ComboBox_SelectedIndexChanged);
 			// 
 			// pracownikDodajEgzemplarzEgzemplarzText
 			// 
@@ -1014,7 +1012,6 @@
 			this.pracownikZamowieniaPrzydzielPracownika_ComboBox.Name = "pracownikZamowieniaPrzydzielPracownika_ComboBox";
 			this.pracownikZamowieniaPrzydzielPracownika_ComboBox.Size = new System.Drawing.Size(102, 21);
 			this.pracownikZamowieniaPrzydzielPracownika_ComboBox.TabIndex = 99;
-			this.pracownikZamowieniaPrzydzielPracownika_ComboBox.SelectedIndexChanged += new System.EventHandler(this.pracownikZamowieniaPrzydzielPracownika_ComboBox_SelectedIndexChanged);
 			// 
 			// pracownikZamowieniaPrzydziel_Button
 			// 
@@ -1457,39 +1454,67 @@
 			this.oferentPrzegladajListeEgzemplarzyListBox.Size = new System.Drawing.Size(682, 95);
 			this.oferentPrzegladajListeEgzemplarzyListBox.TabIndex = 68;
 			// 
-			// button2
+			// label1
 			// 
-			this.button2.Location = new System.Drawing.Point(645, 401);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 92;
-			this.button2.Text = "button2";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(52, 398);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(33, 13);
+			this.label1.TabIndex = 92;
+			this.label1.Text = "Login";
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(480, 404);
+			this.textBox1.Location = new System.Drawing.Point(92, 395);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(100, 20);
 			this.textBox1.TabIndex = 93;
 			// 
-			// ksiazkaControl1
+			// textBox2
 			// 
-			this.ksiazkaControl1.Location = new System.Drawing.Point(59, 31);
-			this.ksiazkaControl1.Name = "ksiazkaControl1";
-			this.ksiazkaControl1.Size = new System.Drawing.Size(739, 251);
-			this.ksiazkaControl1.TabIndex = 0;
+			this.textBox2.Location = new System.Drawing.Point(237, 395);
+			this.textBox2.Name = "textBox2";
+			this.textBox2.Size = new System.Drawing.Size(100, 20);
+			this.textBox2.TabIndex = 95;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(198, 398);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(36, 13);
+			this.label2.TabIndex = 94;
+			this.label2.Text = "Hasło";
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(473, 395);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 96;
+			this.button1.Text = "Zaloguj";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
+			// logowanieComboBox
+			// 
+			this.logowanieComboBox.FormattingEnabled = true;
+			this.logowanieComboBox.Location = new System.Drawing.Point(346, 395);
+			this.logowanieComboBox.Name = "logowanieComboBox";
+			this.logowanieComboBox.Size = new System.Drawing.Size(121, 21);
+			this.logowanieComboBox.TabIndex = 97;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(868, 429);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.Glowna_tabControl);
+			this.Controls.Add(this.logowanieComboBox);
 			this.Controls.Add(this.button1);
+			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.Glowna_tabControl);
 			this.Name = "Form1";
 			this.Text = "Form1";
 			this.Load += new System.EventHandler(this.Form1_Load);
@@ -1526,8 +1551,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TabControl Glowna_tabControl;
+		private System.Windows.Forms.TabControl Glowna_tabControl;
         private System.Windows.Forms.TabPage okienkoLogowania;
         private System.Windows.Forms.Button logowanieStworzKontoButton;
         private System.Windows.Forms.TextBox logowanieImieTextBox;
@@ -1653,15 +1677,19 @@
         private System.Windows.Forms.Label OferentAdresText;
         private System.Windows.Forms.Label OferentNazwaText;
         private System.Windows.Forms.Label OferentDaneText;
-        private System.Windows.Forms.ListBox oferentPrzegladajListeEgzemplarzyListBox;
-        private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.ListBox oferentPrzegladajListeEgzemplarzyListBox;
         private Autorzy autorzy1;
 		private GatunekControl gatunekControl1;
         private RabatControl rabatControl1;
         private KsiazkaControl ksiazkaControl2;
         private WydawnictwoControl wydawnictwoControl1;
 		private KsiazkaControl ksiazkaControl1;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.ComboBox logowanieComboBox;
     }
 }
 

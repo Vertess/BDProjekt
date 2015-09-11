@@ -24,8 +24,8 @@ namespace BDProjekt
         {
             if (!DesignMode)
             {
-                ContextInformation.Instance._context.Autors.Load();
-                autorBindingSource.DataSource = ContextInformation.Instance._context.Autors.Local.ToBindingList();
+                Funckje.Instance._context.Autors.Load();
+                autorBindingSource.DataSource = Funckje.Instance._context.Autors.Local.ToBindingList();
             }
         }
 
@@ -34,14 +34,15 @@ namespace BDProjekt
             if (!DesignMode)
             {
                 autorBindingSource.ResetBindings(false);
-                ContextInformation.Instance._context.SaveChanges();
+                Funckje.Instance._context.SaveChanges();
             }
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
 
-            autorBindingSource.DataSource = ContextInformation.Instance._context.Autors.Local.ToBindingList().Where(n => n.Imie.Contains(this.searchTextBox.Text) || n.Nazwisko.Contains(this.searchTextBox.Text));
+            autorBindingSource.DataSource = Funckje.Instance._context.Autors.Local.ToBindingList()
+				.Where(n => n.Imie.Contains(this.searchTextBox.Text) || n.Nazwisko.Contains(this.searchTextBox.Text));
 
         }
 
@@ -52,12 +53,18 @@ namespace BDProjekt
 
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
-
+			autorBindingSource.DataSource = Funckje.Instance._context.Autors.Local.ToBindingList()
+	.Where(n => n.Imie.Contains(this.searchTextBox.Text) || n.Nazwisko.Contains(this.searchTextBox.Text));
+			if (searchTextBox.Text.Length == 0)
+			{
+				autorBindingSource.DataSource = Funckje.Instance._context.Autors.Local.ToBindingList();
+			}
         }
 
 		private void resetButton_Click(object sender, EventArgs e)
 		{
-			autorBindingSource.DataSource = ContextInformation.Instance._context.Autors.Local.ToBindingList();
+			//autorBindingSource.DataSource = ContextInformation.Instance._context.Autors.Local.ToBindingList();
+			searchTextBox.Text = string.Empty;
 		}
     }
 }

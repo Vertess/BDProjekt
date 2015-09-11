@@ -65,7 +65,7 @@
     <Compile Include="AutorzyKsiazki.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
-    <Compile Include="ContextInformation.cs" />
+    <Compile Include="Funckje.cs" />
     <Compile Include="Dostawa.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>

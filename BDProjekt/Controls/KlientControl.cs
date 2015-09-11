@@ -17,5 +17,10 @@ namespace BDProjekt
         {
             InitializeComponent();
         }
+
+		private void klientWylogujButton_Click(object sender, EventArgs e)
+		{
+			
+		}
     }
 }

@@ -18,38 +18,14 @@ namespace BDProjekt
             InitializeComponent();
 
         }
-
-        public void button1_Click(object sender, EventArgs e)
-        {
-
-
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {   
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void autorzy2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void autorzy1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pracownikZamowieniaPrzydzielPracownika_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pracownikDodajEgzemplarzEgzemplarz_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			foreach (TabPage item in Glowna_tabControl.TabPages)
+			{
+				Funckje.Instance.pages.Add(item);
+			}
+			Funckje.Instance.Login(Glowna_tabControl, Funckje.Instance.Logowanie);
+			this.logowanieComboBox.DataSource = Enum.GetValues(typeof(Uzytkownicy));
+		}
     }
 }

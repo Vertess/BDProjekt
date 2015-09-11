@@ -23,7 +23,7 @@ namespace BDProjekt
             if (!DesignMode)
             {
                 wydawnictwoBindingSource.ResetBindings(false);
-                ContextInformation.Instance._context.SaveChanges();
+                Funckje.Instance._context.SaveChanges();
             }
         }
 
@@ -31,19 +31,19 @@ namespace BDProjekt
         {
             if (!DesignMode)
             {
-                ContextInformation.Instance._context.Wydawnictwoes.Load();
-                wydawnictwoBindingSource.DataSource = ContextInformation.Instance._context.Wydawnictwoes.Local.ToBindingList();
+                Funckje.Instance._context.Wydawnictwoes.Load();
+                wydawnictwoBindingSource.DataSource = Funckje.Instance._context.Wydawnictwoes.Local.ToBindingList();
             }
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            wydawnictwoBindingSource.DataSource = ContextInformation.Instance._context.Wydawnictwoes.Local.ToBindingList();
+            wydawnictwoBindingSource.DataSource = Funckje.Instance._context.Wydawnictwoes.Local.ToBindingList();
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-           wydawnictwoBindingSource.DataSource = ContextInformation.Instance._context.Wydawnictwoes.Local.ToBindingList().Where(n => n.NazwaWydawnictwa.Contains(this.searchTextBox.Text));
+           wydawnictwoBindingSource.DataSource = Funckje.Instance._context.Wydawnictwoes.Local.ToBindingList().Where(n => n.NazwaWydawnictwa.Contains(this.searchTextBox.Text));
         }
     }
 }

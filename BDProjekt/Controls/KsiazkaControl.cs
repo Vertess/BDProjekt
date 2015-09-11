@@ -21,10 +21,10 @@ namespace BDProjekt
 		{
 			if (!DesignMode)
 			{
-				ContextInformation.Instance._context.Gatuneks.Load();
-				gatunekBindingSource.DataSource = ContextInformation.Instance._context.Gatuneks.Local.ToBindingList();
-				ContextInformation.Instance._context.Ksiazkas.Load();
-				ksiazkaBindingSource.DataSource = ContextInformation.Instance._context.Ksiazkas.Local.ToBindingList();
+				Funckje.Instance._context.Gatuneks.Load();
+				gatunekBindingSource.DataSource = Funckje.Instance._context.Gatuneks.Local.ToBindingList();
+				Funckje.Instance._context.Ksiazkas.Load();
+				ksiazkaBindingSource.DataSource = Funckje.Instance._context.Ksiazkas.Local.ToBindingList();	
 			}
 		}
 		private void zatwierdzButton_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace BDProjekt
 				ks = (Ksiazka)ksiazkaBindingSource.Current;
 				ks.Gatunek_IdGatunku = gt.IdGatunku;
 				ksiazkaBindingSource.ResetBindings(false);
-				ContextInformation.Instance._context.SaveChanges();
+				Funckje.Instance._context.SaveChanges();
 			}
 
 		}

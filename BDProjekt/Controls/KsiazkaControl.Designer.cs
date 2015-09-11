@@ -56,6 +56,7 @@
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(436, 143);
 			this.dataGridView1.TabIndex = 0;
+			this.dataGridView1.DataError += dataGridView1_DataError;
 			// 
 			// zatwierdzButton
 			// 
@@ -95,6 +96,8 @@
 			// 
 			// gatunekComboBoxColumn
 			// 
+			this.gatunekComboBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.gatunekComboBoxColumn.DataPropertyName = "Gatunek_IdGatunku";
 			this.gatunekComboBoxColumn.DataSource = this.gatunekBindingSource;
 			this.gatunekComboBoxColumn.DisplayMember = "NazwaGatunku";
 			this.gatunekComboBoxColumn.HeaderText = "Gatunek";

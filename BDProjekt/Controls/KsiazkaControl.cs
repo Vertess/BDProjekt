@@ -24,7 +24,9 @@ namespace BDProjekt
 				Funckje.Instance._context.Gatuneks.Load();
 				gatunekBindingSource.DataSource = Funckje.Instance._context.Gatuneks.Local.ToBindingList();
 				Funckje.Instance._context.Ksiazkas.Load();
-				ksiazkaBindingSource.DataSource = Funckje.Instance._context.Ksiazkas.Local.ToBindingList();	
+				ksiazkaBindingSource.DataSource = Funckje.Instance._context.Ksiazkas.Local.ToBindingList();
+				DataGridViewComboBoxColumn gatunekColumn = dataGridView1.Columns["gatunekComboBoxColumn"] as DataGridViewComboBoxColumn;
+				gatunekColumn.ValueType = typeof(Gatunek);
 			}
 		}
 		private void zatwierdzButton_Click(object sender, EventArgs e)
@@ -40,6 +42,14 @@ namespace BDProjekt
 				Funckje.Instance._context.SaveChanges();
 			}
 
+		}
+
+		void dataGridView1_DataError(object sender, System.Windows.Forms.DataGridViewDataErrorEventArgs e)
+		{
+			if (e.Context == DataGridViewDataErrorContexts.Formatting || e.Context == DataGridViewDataErrorContexts.PreferredSize)
+			{
+				e.ThrowException = false;
+			}
 		}
 	}
 }

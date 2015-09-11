@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace BDProjekt
 {
@@ -26,21 +27,27 @@ namespace BDProjekt
 			}
 		}
 
-		public void Login(TabControl tab, Uzytkownicy uzytkownik)
+		public void Login(TabControl tab, Uzytkownicy uzytkownik, string login = "", string password = "")
 		{
 			switch (uzytkownik)
 			{
 				case Uzytkownicy.Klient:
-					tab.TabPages.Add(this.pages[(int)Uzytkownicy.Klient]);
+					_context.Klients.Load();
+					if (_context.Klients.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
+						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Klient]);
 					break;
 				case Uzytkownicy.Pracownik:
-					tab.TabPages.Add(this.pages[(int)Uzytkownicy.Pracownik]);
+					_context.Pracowniks.Load();
+					if (_context.Klients.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
+						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Pracownik]);
 					break;
 				case Uzytkownicy.Oferent:
-					tab.TabPages.Add(this.pages[(int)Uzytkownicy.Oferent]);
+					_context.Oferents.Load();
+					if (_context.Klients.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
+						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Oferent]);
 					break;
 				case Uzytkownicy.Admin:
-					tab.TabPages.Add(this.pages[(int)Uzytkownicy.Admin]);
+						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Admin]);
 					break;
 				default:
 					foreach (TabPage item in tab.TabPages)

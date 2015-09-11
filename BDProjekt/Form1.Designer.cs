@@ -64,30 +64,7 @@
 			this.pracownikDodajGatunekTabPage = new System.Windows.Forms.TabPage();
 			this.gatunekControl1 = new BDProjekt.GatunekControl();
 			this.pracownikDodajEgzemplarzTabPage = new System.Windows.Forms.TabPage();
-			this.pracownikDodajEgzemplarzWydawnictwoTextBox = new System.Windows.Forms.TextBox();
-			this.pracownikDodajEgzemplarzWydawnictwoText = new System.Windows.Forms.Label();
-			this.pracownikDodajEgzemplarzKsiazka_ComboBox = new System.Windows.Forms.ComboBox();
-			this.pracownikDodajEgzemplarzKsiazkaText = new System.Windows.Forms.Label();
-			this.pracownikDodajEgzemplarzPrzypisz_Button = new System.Windows.Forms.Button();
-			this.pracownikDodajEgzemplarzWydawnictwo_ComboBox = new System.Windows.Forms.ComboBox();
-			this.pracownikDodajEgzemplarzWydawnictwoText2 = new System.Windows.Forms.Label();
-			this.pracownikDodajEgzemplarzEgzemplarz_ComboBox = new System.Windows.Forms.ComboBox();
-			this.pracownikDodajEgzemplarzEgzemplarzText = new System.Windows.Forms.Label();
-			this.pracownikDodajEgzemplarzPrzypiszEgzemplarzeText = new System.Windows.Forms.Label();
-			this.pracownikDodajEgzemplarzPrzegladaj_Button = new System.Windows.Forms.Button();
-			this.pracownikDodajEgzemplarzPrzegladajListBox = new System.Windows.Forms.ListBox();
-			this.pracownikDodajEgzemplarzZnajdzTextBox = new System.Windows.Forms.TextBox();
-			this.pracownikDodajEgzemplarzIloscTextBox = new System.Windows.Forms.TextBox();
-			this.pracownikDodajEgzemplarzIloscText = new System.Windows.Forms.Label();
-			this.pracownikDodajEgzemplarzOkladka_ComboBox = new System.Windows.Forms.ComboBox();
-			this.pracownikDodajEgzemplarzCenaTextBox = new System.Windows.Forms.TextBox();
-			this.pracownikDodajEgzemplarzCenaText = new System.Windows.Forms.Label();
-			this.pracownikDodajEgzemplarzOkladkaText = new System.Windows.Forms.Label();
-			this.pracownikDodajEgzemplarzUsun_Button = new System.Windows.Forms.Button();
-			this.pracownikDodajEgzemplarzZnajdz_Button = new System.Windows.Forms.Button();
-			this.pracownikDodajEgzemplarzNazwaTextBox = new System.Windows.Forms.TextBox();
-			this.pracownikDodajEgzemplarzDodaj_Button = new System.Windows.Forms.Button();
-			this.pracownikDodajEgzemplarzNazwaText = new System.Windows.Forms.Label();
+			this.egzemplarzControl1 = new BDProjekt.Controls.EgzemplarzControl();
 			this.pracownikDodajWydawnictwotabPage = new System.Windows.Forms.TabPage();
 			this.wydawnictwoControl1 = new BDProjekt.WydawnictwoControl();
 			this.pracownikDostawaTabPage = new System.Windows.Forms.TabPage();
@@ -531,30 +508,7 @@
 			// 
 			// pracownikDodajEgzemplarzTabPage
 			// 
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzWydawnictwoTextBox);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzWydawnictwoText);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzKsiazka_ComboBox);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzKsiazkaText);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzPrzypisz_Button);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzWydawnictwo_ComboBox);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzWydawnictwoText2);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzEgzemplarz_ComboBox);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzEgzemplarzText);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzPrzypiszEgzemplarzeText);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzPrzegladaj_Button);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzPrzegladajListBox);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzZnajdzTextBox);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzIloscTextBox);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzIloscText);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzOkladka_ComboBox);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzCenaTextBox);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzCenaText);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzOkladkaText);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzUsun_Button);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzZnajdz_Button);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzNazwaTextBox);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzDodaj_Button);
-			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.pracownikDodajEgzemplarzNazwaText);
+			this.pracownikDodajEgzemplarzTabPage.Controls.Add(this.egzemplarzControl1);
 			this.pracownikDodajEgzemplarzTabPage.Location = new System.Drawing.Point(4, 22);
 			this.pracownikDodajEgzemplarzTabPage.Name = "pracownikDodajEgzemplarzTabPage";
 			this.pracownikDodajEgzemplarzTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -563,206 +517,12 @@
 			this.pracownikDodajEgzemplarzTabPage.Text = "Dodaj egzemplarz";
 			this.pracownikDodajEgzemplarzTabPage.UseVisualStyleBackColor = true;
 			// 
-			// pracownikDodajEgzemplarzWydawnictwoTextBox
+			// egzemplarzControl1
 			// 
-			this.pracownikDodajEgzemplarzWydawnictwoTextBox.Location = new System.Drawing.Point(251, 36);
-			this.pracownikDodajEgzemplarzWydawnictwoTextBox.Name = "pracownikDodajEgzemplarzWydawnictwoTextBox";
-			this.pracownikDodajEgzemplarzWydawnictwoTextBox.Size = new System.Drawing.Size(100, 20);
-			this.pracownikDodajEgzemplarzWydawnictwoTextBox.TabIndex = 112;
-			// 
-			// pracownikDodajEgzemplarzWydawnictwoText
-			// 
-			this.pracownikDodajEgzemplarzWydawnictwoText.AutoSize = true;
-			this.pracownikDodajEgzemplarzWydawnictwoText.Location = new System.Drawing.Point(172, 38);
-			this.pracownikDodajEgzemplarzWydawnictwoText.Name = "pracownikDodajEgzemplarzWydawnictwoText";
-			this.pracownikDodajEgzemplarzWydawnictwoText.Size = new System.Drawing.Size(74, 13);
-			this.pracownikDodajEgzemplarzWydawnictwoText.TabIndex = 111;
-			this.pracownikDodajEgzemplarzWydawnictwoText.Text = "Wydawnictwo";
-			// 
-			// pracownikDodajEgzemplarzKsiazka_ComboBox
-			// 
-			this.pracownikDodajEgzemplarzKsiazka_ComboBox.FormattingEnabled = true;
-			this.pracownikDodajEgzemplarzKsiazka_ComboBox.Location = new System.Drawing.Point(66, 8);
-			this.pracownikDodajEgzemplarzKsiazka_ComboBox.Name = "pracownikDodajEgzemplarzKsiazka_ComboBox";
-			this.pracownikDodajEgzemplarzKsiazka_ComboBox.Size = new System.Drawing.Size(102, 21);
-			this.pracownikDodajEgzemplarzKsiazka_ComboBox.TabIndex = 110;
-			// 
-			// pracownikDodajEgzemplarzKsiazkaText
-			// 
-			this.pracownikDodajEgzemplarzKsiazkaText.AutoSize = true;
-			this.pracownikDodajEgzemplarzKsiazkaText.Location = new System.Drawing.Point(9, 13);
-			this.pracownikDodajEgzemplarzKsiazkaText.Name = "pracownikDodajEgzemplarzKsiazkaText";
-			this.pracownikDodajEgzemplarzKsiazkaText.Size = new System.Drawing.Size(44, 13);
-			this.pracownikDodajEgzemplarzKsiazkaText.TabIndex = 109;
-			this.pracownikDodajEgzemplarzKsiazkaText.Text = "Książka";
-			// 
-			// pracownikDodajEgzemplarzPrzypisz_Button
-			// 
-			this.pracownikDodajEgzemplarzPrzypisz_Button.Location = new System.Drawing.Point(194, 210);
-			this.pracownikDodajEgzemplarzPrzypisz_Button.Name = "pracownikDodajEgzemplarzPrzypisz_Button";
-			this.pracownikDodajEgzemplarzPrzypisz_Button.Size = new System.Drawing.Size(116, 23);
-			this.pracownikDodajEgzemplarzPrzypisz_Button.TabIndex = 108;
-			this.pracownikDodajEgzemplarzPrzypisz_Button.Text = "Przypisz egzemplarz";
-			this.pracownikDodajEgzemplarzPrzypisz_Button.UseVisualStyleBackColor = true;
-			// 
-			// pracownikDodajEgzemplarzWydawnictwo_ComboBox
-			// 
-			this.pracownikDodajEgzemplarzWydawnictwo_ComboBox.FormattingEnabled = true;
-			this.pracownikDodajEgzemplarzWydawnictwo_ComboBox.Location = new System.Drawing.Point(86, 209);
-			this.pracownikDodajEgzemplarzWydawnictwo_ComboBox.Name = "pracownikDodajEgzemplarzWydawnictwo_ComboBox";
-			this.pracownikDodajEgzemplarzWydawnictwo_ComboBox.Size = new System.Drawing.Size(102, 21);
-			this.pracownikDodajEgzemplarzWydawnictwo_ComboBox.TabIndex = 107;
-			// 
-			// pracownikDodajEgzemplarzWydawnictwoText2
-			// 
-			this.pracownikDodajEgzemplarzWydawnictwoText2.AutoSize = true;
-			this.pracownikDodajEgzemplarzWydawnictwoText2.Location = new System.Drawing.Point(15, 206);
-			this.pracownikDodajEgzemplarzWydawnictwoText2.Name = "pracownikDodajEgzemplarzWydawnictwoText2";
-			this.pracownikDodajEgzemplarzWydawnictwoText2.Size = new System.Drawing.Size(74, 13);
-			this.pracownikDodajEgzemplarzWydawnictwoText2.TabIndex = 106;
-			this.pracownikDodajEgzemplarzWydawnictwoText2.Text = "Wydawnictwo";
-			// 
-			// pracownikDodajEgzemplarzEgzemplarz_ComboBox
-			// 
-			this.pracownikDodajEgzemplarzEgzemplarz_ComboBox.FormattingEnabled = true;
-			this.pracownikDodajEgzemplarzEgzemplarz_ComboBox.Location = new System.Drawing.Point(85, 186);
-			this.pracownikDodajEgzemplarzEgzemplarz_ComboBox.Name = "pracownikDodajEgzemplarzEgzemplarz_ComboBox";
-			this.pracownikDodajEgzemplarzEgzemplarz_ComboBox.Size = new System.Drawing.Size(102, 21);
-			this.pracownikDodajEgzemplarzEgzemplarz_ComboBox.TabIndex = 105;
-			// 
-			// pracownikDodajEgzemplarzEgzemplarzText
-			// 
-			this.pracownikDodajEgzemplarzEgzemplarzText.AutoSize = true;
-			this.pracownikDodajEgzemplarzEgzemplarzText.Location = new System.Drawing.Point(15, 189);
-			this.pracownikDodajEgzemplarzEgzemplarzText.Name = "pracownikDodajEgzemplarzEgzemplarzText";
-			this.pracownikDodajEgzemplarzEgzemplarzText.Size = new System.Drawing.Size(61, 13);
-			this.pracownikDodajEgzemplarzEgzemplarzText.TabIndex = 104;
-			this.pracownikDodajEgzemplarzEgzemplarzText.Text = "Egzemplarz";
-			// 
-			// pracownikDodajEgzemplarzPrzypiszEgzemplarzeText
-			// 
-			this.pracownikDodajEgzemplarzPrzypiszEgzemplarzeText.AutoSize = true;
-			this.pracownikDodajEgzemplarzPrzypiszEgzemplarzeText.Location = new System.Drawing.Point(12, 170);
-			this.pracownikDodajEgzemplarzPrzypiszEgzemplarzeText.Name = "pracownikDodajEgzemplarzPrzypiszEgzemplarzeText";
-			this.pracownikDodajEgzemplarzPrzypiszEgzemplarzeText.Size = new System.Drawing.Size(189, 13);
-			this.pracownikDodajEgzemplarzPrzypiszEgzemplarzeText.TabIndex = 103;
-			this.pracownikDodajEgzemplarzPrzypiszEgzemplarzeText.Text = "Przypisz egzemplarze do wydawnictwa";
-			// 
-			// pracownikDodajEgzemplarzPrzegladaj_Button
-			// 
-			this.pracownikDodajEgzemplarzPrzegladaj_Button.Location = new System.Drawing.Point(356, 100);
-			this.pracownikDodajEgzemplarzPrzegladaj_Button.Name = "pracownikDodajEgzemplarzPrzegladaj_Button";
-			this.pracownikDodajEgzemplarzPrzegladaj_Button.Size = new System.Drawing.Size(167, 23);
-			this.pracownikDodajEgzemplarzPrzegladaj_Button.TabIndex = 102;
-			this.pracownikDodajEgzemplarzPrzegladaj_Button.Text = "Przeglądaj stan magazynu";
-			this.pracownikDodajEgzemplarzPrzegladaj_Button.UseVisualStyleBackColor = true;
-			// 
-			// pracownikDodajEgzemplarzPrzegladajListBox
-			// 
-			this.pracownikDodajEgzemplarzPrzegladajListBox.FormattingEnabled = true;
-			this.pracownikDodajEgzemplarzPrzegladajListBox.Location = new System.Drawing.Point(356, 129);
-			this.pracownikDodajEgzemplarzPrzegladajListBox.Name = "pracownikDodajEgzemplarzPrzegladajListBox";
-			this.pracownikDodajEgzemplarzPrzegladajListBox.Size = new System.Drawing.Size(266, 95);
-			this.pracownikDodajEgzemplarzPrzegladajListBox.TabIndex = 101;
-			// 
-			// pracownikDodajEgzemplarzZnajdzTextBox
-			// 
-			this.pracownikDodajEgzemplarzZnajdzTextBox.Location = new System.Drawing.Point(512, 19);
-			this.pracownikDodajEgzemplarzZnajdzTextBox.Name = "pracownikDodajEgzemplarzZnajdzTextBox";
-			this.pracownikDodajEgzemplarzZnajdzTextBox.Size = new System.Drawing.Size(100, 20);
-			this.pracownikDodajEgzemplarzZnajdzTextBox.TabIndex = 100;
-			// 
-			// pracownikDodajEgzemplarzIloscTextBox
-			// 
-			this.pracownikDodajEgzemplarzIloscTextBox.Location = new System.Drawing.Point(251, 10);
-			this.pracownikDodajEgzemplarzIloscTextBox.Name = "pracownikDodajEgzemplarzIloscTextBox";
-			this.pracownikDodajEgzemplarzIloscTextBox.Size = new System.Drawing.Size(100, 20);
-			this.pracownikDodajEgzemplarzIloscTextBox.TabIndex = 99;
-			// 
-			// pracownikDodajEgzemplarzIloscText
-			// 
-			this.pracownikDodajEgzemplarzIloscText.AutoSize = true;
-			this.pracownikDodajEgzemplarzIloscText.Location = new System.Drawing.Point(172, 13);
-			this.pracownikDodajEgzemplarzIloscText.Name = "pracownikDodajEgzemplarzIloscText";
-			this.pracownikDodajEgzemplarzIloscText.Size = new System.Drawing.Size(29, 13);
-			this.pracownikDodajEgzemplarzIloscText.TabIndex = 98;
-			this.pracownikDodajEgzemplarzIloscText.Text = "Ilosc";
-			// 
-			// pracownikDodajEgzemplarzOkladka_ComboBox
-			// 
-			this.pracownikDodajEgzemplarzOkladka_ComboBox.FormattingEnabled = true;
-			this.pracownikDodajEgzemplarzOkladka_ComboBox.Location = new System.Drawing.Point(64, 61);
-			this.pracownikDodajEgzemplarzOkladka_ComboBox.Name = "pracownikDodajEgzemplarzOkladka_ComboBox";
-			this.pracownikDodajEgzemplarzOkladka_ComboBox.Size = new System.Drawing.Size(102, 21);
-			this.pracownikDodajEgzemplarzOkladka_ComboBox.TabIndex = 97;
-			// 
-			// pracownikDodajEgzemplarzCenaTextBox
-			// 
-			this.pracownikDodajEgzemplarzCenaTextBox.Location = new System.Drawing.Point(66, 36);
-			this.pracownikDodajEgzemplarzCenaTextBox.Name = "pracownikDodajEgzemplarzCenaTextBox";
-			this.pracownikDodajEgzemplarzCenaTextBox.Size = new System.Drawing.Size(100, 20);
-			this.pracownikDodajEgzemplarzCenaTextBox.TabIndex = 96;
-			// 
-			// pracownikDodajEgzemplarzCenaText
-			// 
-			this.pracownikDodajEgzemplarzCenaText.AutoSize = true;
-			this.pracownikDodajEgzemplarzCenaText.Location = new System.Drawing.Point(9, 39);
-			this.pracownikDodajEgzemplarzCenaText.Name = "pracownikDodajEgzemplarzCenaText";
-			this.pracownikDodajEgzemplarzCenaText.Size = new System.Drawing.Size(32, 13);
-			this.pracownikDodajEgzemplarzCenaText.TabIndex = 95;
-			this.pracownikDodajEgzemplarzCenaText.Text = "Cena";
-			// 
-			// pracownikDodajEgzemplarzOkladkaText
-			// 
-			this.pracownikDodajEgzemplarzOkladkaText.AutoSize = true;
-			this.pracownikDodajEgzemplarzOkladkaText.Location = new System.Drawing.Point(9, 65);
-			this.pracownikDodajEgzemplarzOkladkaText.Name = "pracownikDodajEgzemplarzOkladkaText";
-			this.pracownikDodajEgzemplarzOkladkaText.Size = new System.Drawing.Size(49, 13);
-			this.pracownikDodajEgzemplarzOkladkaText.TabIndex = 94;
-			this.pracownikDodajEgzemplarzOkladkaText.Text = "Okładka";
-			// 
-			// pracownikDodajEgzemplarzUsun_Button
-			// 
-			this.pracownikDodajEgzemplarzUsun_Button.Location = new System.Drawing.Point(12, 143);
-			this.pracownikDodajEgzemplarzUsun_Button.Name = "pracownikDodajEgzemplarzUsun_Button";
-			this.pracownikDodajEgzemplarzUsun_Button.Size = new System.Drawing.Size(116, 23);
-			this.pracownikDodajEgzemplarzUsun_Button.TabIndex = 93;
-			this.pracownikDodajEgzemplarzUsun_Button.Text = "Usuń egzemplarz";
-			this.pracownikDodajEgzemplarzUsun_Button.UseVisualStyleBackColor = true;
-			// 
-			// pracownikDodajEgzemplarzZnajdz_Button
-			// 
-			this.pracownikDodajEgzemplarzZnajdz_Button.Location = new System.Drawing.Point(390, 16);
-			this.pracownikDodajEgzemplarzZnajdz_Button.Name = "pracownikDodajEgzemplarzZnajdz_Button";
-			this.pracownikDodajEgzemplarzZnajdz_Button.Size = new System.Drawing.Size(116, 23);
-			this.pracownikDodajEgzemplarzZnajdz_Button.TabIndex = 92;
-			this.pracownikDodajEgzemplarzZnajdz_Button.Text = "Znajdź egzemplarz";
-			this.pracownikDodajEgzemplarzZnajdz_Button.UseVisualStyleBackColor = true;
-			// 
-			// pracownikDodajEgzemplarzNazwaTextBox
-			// 
-			this.pracownikDodajEgzemplarzNazwaTextBox.Location = new System.Drawing.Point(66, 88);
-			this.pracownikDodajEgzemplarzNazwaTextBox.Name = "pracownikDodajEgzemplarzNazwaTextBox";
-			this.pracownikDodajEgzemplarzNazwaTextBox.Size = new System.Drawing.Size(100, 20);
-			this.pracownikDodajEgzemplarzNazwaTextBox.TabIndex = 91;
-			// 
-			// pracownikDodajEgzemplarzDodaj_Button
-			// 
-			this.pracownikDodajEgzemplarzDodaj_Button.Location = new System.Drawing.Point(12, 114);
-			this.pracownikDodajEgzemplarzDodaj_Button.Name = "pracownikDodajEgzemplarzDodaj_Button";
-			this.pracownikDodajEgzemplarzDodaj_Button.Size = new System.Drawing.Size(116, 23);
-			this.pracownikDodajEgzemplarzDodaj_Button.TabIndex = 90;
-			this.pracownikDodajEgzemplarzDodaj_Button.Text = "Dodaj egzemplarz";
-			this.pracownikDodajEgzemplarzDodaj_Button.UseVisualStyleBackColor = true;
-			// 
-			// pracownikDodajEgzemplarzNazwaText
-			// 
-			this.pracownikDodajEgzemplarzNazwaText.AutoSize = true;
-			this.pracownikDodajEgzemplarzNazwaText.Location = new System.Drawing.Point(9, 91);
-			this.pracownikDodajEgzemplarzNazwaText.Name = "pracownikDodajEgzemplarzNazwaText";
-			this.pracownikDodajEgzemplarzNazwaText.Size = new System.Drawing.Size(40, 13);
-			this.pracownikDodajEgzemplarzNazwaText.TabIndex = 89;
-			this.pracownikDodajEgzemplarzNazwaText.Text = "Nazwa";
+			this.egzemplarzControl1.Location = new System.Drawing.Point(58, 6);
+			this.egzemplarzControl1.Name = "egzemplarzControl1";
+			this.egzemplarzControl1.Size = new System.Drawing.Size(658, 224);
+			this.egzemplarzControl1.TabIndex = 0;
 			// 
 			// pracownikDodajWydawnictwotabPage
 			// 
@@ -1494,6 +1254,7 @@
 			this.button1.TabIndex = 96;
 			this.button1.Text = "Zaloguj";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// logowanieComboBox
 			// 
@@ -1530,7 +1291,6 @@
 			this.pracownikDodajAutoraTabPage.ResumeLayout(false);
 			this.pracownikDodajGatunekTabPage.ResumeLayout(false);
 			this.pracownikDodajEgzemplarzTabPage.ResumeLayout(false);
-			this.pracownikDodajEgzemplarzTabPage.PerformLayout();
 			this.pracownikDodajWydawnictwotabPage.ResumeLayout(false);
 			this.pracownikDostawaTabPage.ResumeLayout(false);
 			this.pracownikDostawaTabPage.PerformLayout();
@@ -1581,31 +1341,7 @@
         private System.Windows.Forms.TabPage pracownikDodajKsiazkeTabPage;
         private System.Windows.Forms.TabPage pracownikDodajAutoraTabPage;
         private System.Windows.Forms.TabPage pracownikDodajGatunekTabPage;
-        private System.Windows.Forms.TabPage pracownikDodajEgzemplarzTabPage;
-        private System.Windows.Forms.TextBox pracownikDodajEgzemplarzWydawnictwoTextBox;
-        private System.Windows.Forms.Label pracownikDodajEgzemplarzWydawnictwoText;
-        private System.Windows.Forms.ComboBox pracownikDodajEgzemplarzKsiazka_ComboBox;
-        private System.Windows.Forms.Label pracownikDodajEgzemplarzKsiazkaText;
-        private System.Windows.Forms.Button pracownikDodajEgzemplarzPrzypisz_Button;
-        private System.Windows.Forms.ComboBox pracownikDodajEgzemplarzWydawnictwo_ComboBox;
-        private System.Windows.Forms.Label pracownikDodajEgzemplarzWydawnictwoText2;
-        private System.Windows.Forms.ComboBox pracownikDodajEgzemplarzEgzemplarz_ComboBox;
-        private System.Windows.Forms.Label pracownikDodajEgzemplarzEgzemplarzText;
-        private System.Windows.Forms.Label pracownikDodajEgzemplarzPrzypiszEgzemplarzeText;
-        private System.Windows.Forms.Button pracownikDodajEgzemplarzPrzegladaj_Button;
-        private System.Windows.Forms.ListBox pracownikDodajEgzemplarzPrzegladajListBox;
-        private System.Windows.Forms.TextBox pracownikDodajEgzemplarzZnajdzTextBox;
-        private System.Windows.Forms.TextBox pracownikDodajEgzemplarzIloscTextBox;
-        private System.Windows.Forms.Label pracownikDodajEgzemplarzIloscText;
-        private System.Windows.Forms.ComboBox pracownikDodajEgzemplarzOkladka_ComboBox;
-        private System.Windows.Forms.TextBox pracownikDodajEgzemplarzCenaTextBox;
-        private System.Windows.Forms.Label pracownikDodajEgzemplarzCenaText;
-        private System.Windows.Forms.Label pracownikDodajEgzemplarzOkladkaText;
-        private System.Windows.Forms.Button pracownikDodajEgzemplarzUsun_Button;
-        private System.Windows.Forms.Button pracownikDodajEgzemplarzZnajdz_Button;
-        private System.Windows.Forms.TextBox pracownikDodajEgzemplarzNazwaTextBox;
-        private System.Windows.Forms.Button pracownikDodajEgzemplarzDodaj_Button;
-        private System.Windows.Forms.Label pracownikDodajEgzemplarzNazwaText;
+		private System.Windows.Forms.TabPage pracownikDodajEgzemplarzTabPage;
         private System.Windows.Forms.TabPage pracownikDodajWydawnictwotabPage;
         private System.Windows.Forms.TabPage pracownikDostawaTabPage;
         private System.Windows.Forms.Button pracownikDostawaUsun_Button;
@@ -1690,6 +1426,7 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.ComboBox logowanieComboBox;
+		private Controls.EgzemplarzControl egzemplarzControl1;
     }
 }
 

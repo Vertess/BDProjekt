@@ -104,7 +104,6 @@
 			this.klientWylogujButton.TabIndex = 101;
 			this.klientWylogujButton.Text = "Wyloguj";
 			this.klientWylogujButton.UseVisualStyleBackColor = true;
-			this.klientWylogujButton.Click += new System.EventHandler(this.klientWylogujButton_Click);
 			// 
 			// klientZlozReklamacjetextBox
 			// 

@@ -51,5 +51,47 @@ namespace BDProjekt
 				e.ThrowException = false;
 			}
 		}
+
+        private void searchOpisTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList()
+    .Where(n => n.Opis.Contains(this.searchOpisTextBox.Text));
+            if (searchOpisTextBox.Text.Length == 0)
+            {
+                ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList();
+            }
+        }
+
+        private void searchTytulTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList()
+    .Where(n => n.Tytul.Contains(this.searchTytulTextBox.Text));
+            if (searchTytulTextBox.Text.Length == 0)
+            {
+                ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList();
+            }
+        }
+
+        private void searchOpisButton_Click(object sender, EventArgs e)
+        {
+            ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList()
+                .Where(n => n.Opis.Contains(this.searchOpisTextBox.Text));
+        }
+
+        private void searchTytulButton_Click(object sender, EventArgs e)
+        {
+            ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList()
+                .Where(n => n.Tytul.Contains(this.searchTytulTextBox.Text));
+        }
+
+        private void resetOpisButton_Click(object sender, EventArgs e)
+        {
+            searchOpisTextBox.Text = string.Empty;
+        }
+
+        private void resetTytulButton_Click(object sender, EventArgs e)
+        {
+            searchTytulTextBox.Text = string.Empty;
+        }
 	}
 }

@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.zatwierdzButton = new System.Windows.Forms.Button();
+            this.idDostawyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ElementyDostawies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oferentComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.pracownikComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.idDostawyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oferentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pracownikComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.pracownikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dostawaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zatwierdzButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oferentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pracownikBindingSource)).BeginInit();
@@ -59,15 +59,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(447, 150);
             this.dataGridView1.TabIndex = 0;
             // 
-            // zatwierdzButton
+            // idDostawyDataGridViewTextBoxColumn
             // 
-            this.zatwierdzButton.Location = new System.Drawing.Point(404, 174);
-            this.zatwierdzButton.Name = "zatwierdzButton";
-            this.zatwierdzButton.Size = new System.Drawing.Size(75, 23);
-            this.zatwierdzButton.TabIndex = 1;
-            this.zatwierdzButton.Text = "Zatwierdź";
-            this.zatwierdzButton.UseVisualStyleBackColor = true;
-            this.zatwierdzButton.Click += new System.EventHandler(this.zatwierdzButton_Click);
+            this.idDostawyDataGridViewTextBoxColumn.DataPropertyName = "IdDostawy";
+            this.idDostawyDataGridViewTextBoxColumn.HeaderText = "IdDostawy";
+            this.idDostawyDataGridViewTextBoxColumn.Name = "idDostawyDataGridViewTextBoxColumn";
             // 
             // ElementyDostawies
             // 
@@ -85,6 +81,10 @@
             this.oferentComboBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.oferentComboBoxColumn.ValueMember = "IdOferenta";
             // 
+            // oferentBindingSource
+            // 
+            this.oferentBindingSource.DataSource = typeof(BDProjekt.Oferent);
+            // 
             // pracownikComboBoxColumn
             // 
             this.pracownikComboBoxColumn.DataSource = this.pracownikBindingSource;
@@ -95,16 +95,6 @@
             this.pracownikComboBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.pracownikComboBoxColumn.ValueMember = "IdPracownika";
             // 
-            // idDostawyDataGridViewTextBoxColumn
-            // 
-            this.idDostawyDataGridViewTextBoxColumn.DataPropertyName = "IdDostawy";
-            this.idDostawyDataGridViewTextBoxColumn.HeaderText = "IdDostawy";
-            this.idDostawyDataGridViewTextBoxColumn.Name = "idDostawyDataGridViewTextBoxColumn";
-            // 
-            // oferentBindingSource
-            // 
-            this.oferentBindingSource.DataSource = typeof(BDProjekt.Oferent);
-            // 
             // pracownikBindingSource
             // 
             this.pracownikBindingSource.DataSource = typeof(BDProjekt.Pracownik);
@@ -112,6 +102,16 @@
             // dostawaBindingSource
             // 
             this.dostawaBindingSource.DataSource = typeof(BDProjekt.Dostawa);
+            // 
+            // zatwierdzButton
+            // 
+            this.zatwierdzButton.Location = new System.Drawing.Point(404, 174);
+            this.zatwierdzButton.Name = "zatwierdzButton";
+            this.zatwierdzButton.Size = new System.Drawing.Size(75, 23);
+            this.zatwierdzButton.TabIndex = 1;
+            this.zatwierdzButton.Text = "Zatwierdź";
+            this.zatwierdzButton.UseVisualStyleBackColor = true;
+            this.zatwierdzButton.Click += new System.EventHandler(this.zatwierdzButton_Click);
             // 
             // DostawaControl
             // 

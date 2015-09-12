@@ -38,6 +38,10 @@
             this.egzemplarzComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.oferentComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.zatwierdzButton = new System.Windows.Forms.Button();
+            this.CenaHurtowaLabel = new System.Windows.Forms.Label();
+            this.searchCenaHurtowaTextBox = new System.Windows.Forms.TextBox();
+            this.searchCenaHurtowaButton = new System.Windows.Forms.Button();
+            this.resetCenaHurtowaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.egzemplarzBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oferentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ofertaOferentaBindingSource)).BeginInit();
@@ -111,20 +115,62 @@
             this.zatwierdzButton.UseVisualStyleBackColor = true;
             this.zatwierdzButton.Click += new System.EventHandler(this.zatwierdzButton_Click);
             // 
+            // CenaHurtowaLabel
+            // 
+            this.CenaHurtowaLabel.AutoSize = true;
+            this.CenaHurtowaLabel.Location = new System.Drawing.Point(29, 199);
+            this.CenaHurtowaLabel.Name = "CenaHurtowaLabel";
+            this.CenaHurtowaLabel.Size = new System.Drawing.Size(35, 13);
+            this.CenaHurtowaLabel.TabIndex = 2;
+            this.CenaHurtowaLabel.Text = "Cena ";
+            // 
+            // searchCenaHurtowaTextBox
+            // 
+            this.searchCenaHurtowaTextBox.Location = new System.Drawing.Point(70, 196);
+            this.searchCenaHurtowaTextBox.Name = "searchCenaHurtowaTextBox";
+            this.searchCenaHurtowaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchCenaHurtowaTextBox.TabIndex = 3;
+            this.searchCenaHurtowaTextBox.TextChanged += new System.EventHandler(this.searchCenaHurtowaTextBox_TextChanged);
+            // 
+            // searchCenaHurtowaButton
+            // 
+            this.searchCenaHurtowaButton.Location = new System.Drawing.Point(176, 194);
+            this.searchCenaHurtowaButton.Name = "searchCenaHurtowaButton";
+            this.searchCenaHurtowaButton.Size = new System.Drawing.Size(75, 23);
+            this.searchCenaHurtowaButton.TabIndex = 4;
+            this.searchCenaHurtowaButton.Text = "Szukaj";
+            this.searchCenaHurtowaButton.UseVisualStyleBackColor = true;
+            this.searchCenaHurtowaButton.Click += new System.EventHandler(this.searchCenaHurtowaButton_Click);
+            // 
+            // resetCenaHurtowaButton
+            // 
+            this.resetCenaHurtowaButton.Location = new System.Drawing.Point(257, 194);
+            this.resetCenaHurtowaButton.Name = "resetCenaHurtowaButton";
+            this.resetCenaHurtowaButton.Size = new System.Drawing.Size(75, 23);
+            this.resetCenaHurtowaButton.TabIndex = 5;
+            this.resetCenaHurtowaButton.Text = "Czyść";
+            this.resetCenaHurtowaButton.UseVisualStyleBackColor = true;
+            this.resetCenaHurtowaButton.Click += new System.EventHandler(this.resetCenaHurtowaButton_Click);
+            // 
             // OfertyControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.resetCenaHurtowaButton);
+            this.Controls.Add(this.searchCenaHurtowaButton);
+            this.Controls.Add(this.searchCenaHurtowaTextBox);
+            this.Controls.Add(this.CenaHurtowaLabel);
             this.Controls.Add(this.zatwierdzButton);
             this.Controls.Add(this.dataGridView1);
             this.Name = "OfertyControl";
-            this.Size = new System.Drawing.Size(473, 248);
+            this.Size = new System.Drawing.Size(473, 279);
             this.Load += new System.EventHandler(this.OfertyControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.egzemplarzBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oferentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ofertaOferentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -139,5 +185,9 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn egzemplarzComboBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn oferentComboBoxColumn;
         private System.Windows.Forms.Button zatwierdzButton;
+        private System.Windows.Forms.Label CenaHurtowaLabel;
+        private System.Windows.Forms.TextBox searchCenaHurtowaTextBox;
+        private System.Windows.Forms.Button searchCenaHurtowaButton;
+        private System.Windows.Forms.Button resetCenaHurtowaButton;
     }
 }

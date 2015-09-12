@@ -32,5 +32,35 @@ namespace BDProjekt
 		{
 			Funkcje.Instance.Login(Glowna_tabControl, (Uzytkownicy)this.logowanieComboBox.SelectedItem, this.loginTextBox.Text, this.hasloTextBox.Text);
 		}
+
+        private void pracownikOfertyPrzegladaj_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pracownikOfetyUsun_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pracownikOfertyZnajdzTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pracownikOfertyZnajdz_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pracownikOfertyListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pracownikOfertyAkceptuj_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

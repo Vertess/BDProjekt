@@ -39,6 +39,11 @@
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.confirmButton = new System.Windows.Forms.Button();
+            this.opisrabatuLabel = new System.Windows.Forms.Label();
+            this.wysokoscrabatuLabel = new System.Windows.Forms.Label();
+            this.searchWysokoscRabatuTextBox = new System.Windows.Forms.TextBox();
+            this.searchWysokoscRabatuButton = new System.Windows.Forms.Button();
+            this.resetWysokoscRabatuButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rabatBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +93,7 @@
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(249, 175);
+            this.resetButton.Location = new System.Drawing.Point(313, 159);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(75, 23);
             this.resetButton.TabIndex = 8;
@@ -98,14 +103,15 @@
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(62, 175);
+            this.searchTextBox.Location = new System.Drawing.Point(126, 162);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchTextBox.TabIndex = 7;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(168, 175);
+            this.searchButton.Location = new System.Drawing.Point(232, 159);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 6;
@@ -123,10 +129,61 @@
             this.confirmButton.UseVisualStyleBackColor = true;
             this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
+            // opisrabatuLabel
+            // 
+            this.opisrabatuLabel.AutoSize = true;
+            this.opisrabatuLabel.Location = new System.Drawing.Point(59, 164);
+            this.opisrabatuLabel.Name = "opisrabatuLabel";
+            this.opisrabatuLabel.Size = new System.Drawing.Size(61, 13);
+            this.opisrabatuLabel.TabIndex = 9;
+            this.opisrabatuLabel.Text = "Opis rabatu";
+            // 
+            // wysokoscrabatuLabel
+            // 
+            this.wysokoscrabatuLabel.AutoSize = true;
+            this.wysokoscrabatuLabel.Location = new System.Drawing.Point(59, 195);
+            this.wysokoscrabatuLabel.Name = "wysokoscrabatuLabel";
+            this.wysokoscrabatuLabel.Size = new System.Drawing.Size(90, 13);
+            this.wysokoscrabatuLabel.TabIndex = 10;
+            this.wysokoscrabatuLabel.Text = "Wysokość rabatu";
+            // 
+            // searchWysokoscRabatuTextBox
+            // 
+            this.searchWysokoscRabatuTextBox.Location = new System.Drawing.Point(155, 192);
+            this.searchWysokoscRabatuTextBox.Name = "searchWysokoscRabatuTextBox";
+            this.searchWysokoscRabatuTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchWysokoscRabatuTextBox.TabIndex = 11;
+            this.searchWysokoscRabatuTextBox.TextChanged += new System.EventHandler(this.searchWysokoscRabatuTextBox_TextChanged);
+            // 
+            // searchWysokoscRabatuButton
+            // 
+            this.searchWysokoscRabatuButton.Location = new System.Drawing.Point(261, 190);
+            this.searchWysokoscRabatuButton.Name = "searchWysokoscRabatuButton";
+            this.searchWysokoscRabatuButton.Size = new System.Drawing.Size(75, 23);
+            this.searchWysokoscRabatuButton.TabIndex = 12;
+            this.searchWysokoscRabatuButton.Text = "Szukaj";
+            this.searchWysokoscRabatuButton.UseVisualStyleBackColor = true;
+            this.searchWysokoscRabatuButton.Click += new System.EventHandler(this.searchWysokoscRabatuButton_Click);
+            // 
+            // resetWysokoscRabatuButton
+            // 
+            this.resetWysokoscRabatuButton.Location = new System.Drawing.Point(342, 190);
+            this.resetWysokoscRabatuButton.Name = "resetWysokoscRabatuButton";
+            this.resetWysokoscRabatuButton.Size = new System.Drawing.Size(75, 23);
+            this.resetWysokoscRabatuButton.TabIndex = 13;
+            this.resetWysokoscRabatuButton.Text = "Czyść";
+            this.resetWysokoscRabatuButton.UseVisualStyleBackColor = true;
+            this.resetWysokoscRabatuButton.Click += new System.EventHandler(this.resetWysokoscRabatuButton_Click);
+            // 
             // RabatControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.resetWysokoscRabatuButton);
+            this.Controls.Add(this.searchWysokoscRabatuButton);
+            this.Controls.Add(this.searchWysokoscRabatuTextBox);
+            this.Controls.Add(this.wysokoscrabatuLabel);
+            this.Controls.Add(this.opisrabatuLabel);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.searchButton);
@@ -154,5 +211,10 @@
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button confirmButton;
+        private System.Windows.Forms.Label opisrabatuLabel;
+        private System.Windows.Forms.Label wysokoscrabatuLabel;
+        private System.Windows.Forms.TextBox searchWysokoscRabatuTextBox;
+        private System.Windows.Forms.Button searchWysokoscRabatuButton;
+        private System.Windows.Forms.Button resetWysokoscRabatuButton;
     }
 }

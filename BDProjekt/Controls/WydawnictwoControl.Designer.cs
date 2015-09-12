@@ -30,14 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.wydawnictwoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idWydawnictwaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwaWydawnictwaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.egzemplarzsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wydawnictwoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.resetButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.confirmButton = new System.Windows.Forms.Button();
+            this.nazwaWydawnictwaLlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wydawnictwoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -55,10 +56,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(363, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // wydawnictwoBindingSource
-            // 
-            this.wydawnictwoBindingSource.DataSource = typeof(BDProjekt.Wydawnictwo);
             // 
             // idWydawnictwaDataGridViewTextBoxColumn
             // 
@@ -78,9 +75,13 @@
             this.egzemplarzsDataGridViewTextBoxColumn.HeaderText = "Egzemplarzs";
             this.egzemplarzsDataGridViewTextBoxColumn.Name = "egzemplarzsDataGridViewTextBoxColumn";
             // 
+            // wydawnictwoBindingSource
+            // 
+            this.wydawnictwoBindingSource.DataSource = typeof(BDProjekt.Wydawnictwo);
+            // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(190, 168);
+            this.resetButton.Location = new System.Drawing.Point(306, 166);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(75, 23);
             this.resetButton.TabIndex = 8;
@@ -90,14 +91,15 @@
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(3, 168);
+            this.searchTextBox.Location = new System.Drawing.Point(119, 168);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchTextBox.TabIndex = 7;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(109, 168);
+            this.searchButton.Location = new System.Drawing.Point(225, 166);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 6;
@@ -115,10 +117,20 @@
             this.confirmButton.UseVisualStyleBackColor = true;
             this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
+            // nazwaWydawnictwaLlabel
+            // 
+            this.nazwaWydawnictwaLlabel.AutoSize = true;
+            this.nazwaWydawnictwaLlabel.Location = new System.Drawing.Point(3, 173);
+            this.nazwaWydawnictwaLlabel.Name = "nazwaWydawnictwaLlabel";
+            this.nazwaWydawnictwaLlabel.Size = new System.Drawing.Size(110, 13);
+            this.nazwaWydawnictwaLlabel.TabIndex = 9;
+            this.nazwaWydawnictwaLlabel.Text = "Nazwa Wydawnictwa";
+            // 
             // WydawnictwoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.nazwaWydawnictwaLlabel);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.searchButton);
@@ -145,5 +157,6 @@
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button confirmButton;
+        private System.Windows.Forms.Label nazwaWydawnictwaLlabel;
     }
 }

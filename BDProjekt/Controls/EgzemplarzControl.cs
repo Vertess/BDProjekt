@@ -48,5 +48,50 @@ namespace BDProjekt.Controls
             }
         }
 
+        private void searchCenaTextBox_TextChanged(object sender, EventArgs e)
+        {
+            egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList()
+    .Where(n => n.Cena.Equals(Convert.ToInt32(this.searchCenaTextBox.Text)));
+            if (searchCenaTextBox.Text.Length == 0)
+            {
+                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
+            }
+        }
+
+        private void searchIloscTextBox_TextChanged(object sender, EventArgs e)
+        {
+            egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList()
+    .Where(n => n.Iloscc.Equals(Convert.ToInt32(this.searchIloscTextBox.Text)));
+            if (searchIloscTextBox.Text.Length == 0)
+            {
+                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
+            }
+        }
+
+        private void searchTypTextBox_TextChanged(object sender, EventArgs e)
+        {
+            /*egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList()
+    .Where(n => n.TypOkladki.Contains(this.searchTypTextBox.Text));
+            if (searchTypTextBox.Text.Length == 0)
+            {
+                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
+            }*/
+        }
+
+        private void resetCenaButton_Click(object sender, EventArgs e)
+        {
+            searchCenaTextBox.Text = string.Empty;
+        }
+
+        private void resetIloscButton_Click(object sender, EventArgs e)
+        {
+            searchIloscTextBox.Text = string.Empty;
+        }
+
+        private void resetTypButton_Click(object sender, EventArgs e)
+        {
+            searchTypTextBox.Text = string.Empty;
+        }
+
     }
 }

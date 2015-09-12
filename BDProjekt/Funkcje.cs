@@ -8,22 +8,22 @@ using System.Data.Entity;
 
 namespace BDProjekt
 {
-	class Funckje
+	class Funkcje
 	{
-		private static Funckje _instance;
+		private static Funkcje _instance;
 		public KsiegarniaEntities _context;
 		public List<TabPage> pages = new List<TabPage>();
 		public Uzytkownicy Logowanie = 0;
-		private Funckje()
+		private Funkcje()
 		{
 			_instance = this;
 			this._context = new KsiegarniaEntities();
 		}
-		public static Funckje Instance
+		public static Funkcje Instance
 		{
 			get
 			{
-				return _instance == null ? new Funckje() : _instance;
+				return _instance == null ? new Funkcje() : _instance;
 			}
 		}
 

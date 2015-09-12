@@ -23,12 +23,12 @@ namespace BDProjekt.Controls
         {
             if (!DesignMode)
             {
-                ContextInformation.Instance._context.Egzemplarzs.Load();
-                egzemplarzBindingSource.DataSource = ContextInformation.Instance._context.Egzemplarzs.Local.ToBindingList();
-                ContextInformation.Instance._context.Oferents.Load();
-                oferentBindingSource.DataSource = ContextInformation.Instance._context.Oferents.Local.ToBindingList();
-                ContextInformation.Instance._context.OfertaOferentas.Load();
-                ofertaOferentaBindingSource.DataSource = ContextInformation.Instance._context.OfertaOferentas.Local.ToBindingList();
+                Funkcje.Instance._context.Egzemplarzs.Load();
+                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
+                Funkcje.Instance._context.Oferents.Load();
+                oferentBindingSource.DataSource = Funkcje.Instance._context.Oferents.Local.ToBindingList();
+                Funkcje.Instance._context.OfertaOferentas.Load();
+                ofertaOferentaBindingSource.DataSource = Funkcje.Instance._context.OfertaOferentas.Local.ToBindingList();
             }
         }
 
@@ -44,7 +44,7 @@ namespace BDProjekt.Controls
                 oo = (OfertaOferenta)ofertaOferentaBindingSource.Current;
                 oo.Oferent_IdOferenta = of.IdOferenta;
                 ofertaOferentaBindingSource.ResetBindings(false);
-                ContextInformation.Instance._context.SaveChanges();
+                Funkcje.Instance._context.SaveChanges();
             }
         }
     }

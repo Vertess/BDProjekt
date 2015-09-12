@@ -20,12 +20,12 @@ namespace BDProjekt.Controls
 
         private void DostawaControl_Load(object sender, EventArgs e)
         {
-            ContextInformation.Instance._context.Dostawas.Load();
-            dostawaBindingSource.DataSource = ContextInformation.Instance._context.Dostawas.Local.ToBindingList();
-            ContextInformation.Instance._context.Oferents.Load();
-            oferentBindingSource.DataSource = ContextInformation.Instance._context.Oferents.Local.ToBindingList();
-            ContextInformation.Instance._context.Pracowniks.Load();
-            pracownikBindingSource.DataSource = ContextInformation.Instance._context.Pracowniks.Local.ToBindingList();
+            Funkcje.Instance._context.Dostawas.Load();
+            dostawaBindingSource.DataSource = Funkcje.Instance._context.Dostawas.Local.ToBindingList();
+            Funkcje.Instance._context.Oferents.Load();
+            oferentBindingSource.DataSource = Funkcje.Instance._context.Oferents.Local.ToBindingList();
+            Funkcje.Instance._context.Pracowniks.Load();
+            pracownikBindingSource.DataSource = Funkcje.Instance._context.Pracowniks.Local.ToBindingList();
         }
 
         private void zatwierdzButton_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace BDProjekt.Controls
             ds.Oferent_IdOferenta = of.IdOferenta;
             ds.Pracownik_IdPracownika = pr.IdPracownika;
             dostawaBindingSource.ResetBindings(false);
-            ContextInformation.Instance._context.SaveChanges();
+            Funkcje.Instance._context.SaveChanges();
         }
     }
 }

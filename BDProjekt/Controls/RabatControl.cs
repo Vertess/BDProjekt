@@ -23,26 +23,26 @@ namespace BDProjekt
             if (!DesignMode)
             {
                 rabatBindingSource.ResetBindings(false);
-                Funckje.Instance._context.SaveChanges();
+                Funkcje.Instance._context.SaveChanges();
             }
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            rabatBindingSource.DataSource = Funckje.Instance._context.Rabats.Local.ToBindingList();
+            rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            rabatBindingSource.DataSource = Funckje.Instance._context.Rabats.Local.ToBindingList().Where(n => n.OpisRabatu.Contains(this.searchTextBox.Text));
+            rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList().Where(n => n.OpisRabatu.Contains(this.searchTextBox.Text));
         }
 
         private void RabatControl_Load(object sender, EventArgs e)
         {
             if (!DesignMode)
             {
-                Funckje.Instance._context.Rabats.Load();
-                rabatBindingSource.DataSource = Funckje.Instance._context.Rabats.Local.ToBindingList();
+                Funkcje.Instance._context.Rabats.Load();
+                rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
             }
         }
     }

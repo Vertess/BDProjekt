@@ -65,6 +65,18 @@
     <Compile Include="AutorzyKsiazki.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DostawaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DostawaControl.Designer.cs">
+      <DependentUpon>DostawaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OfertyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OfertyControl.Designer.cs">
+      <DependentUpon>OfertyControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funckje.cs" />
     <Compile Include="Controls\EgzemplarzControl.cs">
       <SubType>UserControl</SubType>
@@ -181,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\EgzemplarzControl.resx">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OfertyControl.resx">
+      <DependentUpon>OfertyControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

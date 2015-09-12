@@ -22,7 +22,7 @@ namespace BDProjekt
 		{
 			foreach (TabPage item in Glowna_tabControl.TabPages)
 			{
-				Funckje.Instance.pages.Add(item);
+				Funkcje.Instance.pages.Add(item);
 			}
 			//Funckje.Instance.Login(Glowna_tabControl, Funckje.Instance.Logowanie);
 			this.logowanieComboBox.DataSource = Enum.GetValues(typeof(Uzytkownicy));
@@ -30,7 +30,7 @@ namespace BDProjekt
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Funckje.Instance.Login(Glowna_tabControl, (Uzytkownicy)this.logowanieComboBox.SelectedItem, this.loginTextBox.Text, this.hasloTextBox.Text);
+			Funkcje.Instance.Login(Glowna_tabControl, (Uzytkownicy)this.logowanieComboBox.SelectedItem, this.loginTextBox.Text, this.hasloTextBox.Text);
 		}
     }
 }

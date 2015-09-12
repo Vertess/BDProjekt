@@ -21,10 +21,10 @@ namespace BDProjekt
 		{
 			if (!DesignMode)
 			{
-				Funckje.Instance._context.Gatuneks.Load();
-				gatunekBindingSource.DataSource = Funckje.Instance._context.Gatuneks.Local.ToBindingList();
-				Funckje.Instance._context.Ksiazkas.Load();
-				ksiazkaBindingSource.DataSource = Funckje.Instance._context.Ksiazkas.Local.ToBindingList();
+				Funkcje.Instance._context.Gatuneks.Load();
+				gatunekBindingSource.DataSource = Funkcje.Instance._context.Gatuneks.Local.ToBindingList();
+				Funkcje.Instance._context.Ksiazkas.Load();
+				ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList();
 				DataGridViewComboBoxColumn gatunekColumn = dataGridView1.Columns["gatunekComboBoxColumn"] as DataGridViewComboBoxColumn;
 				gatunekColumn.ValueType = typeof(Gatunek);
 			}
@@ -39,7 +39,7 @@ namespace BDProjekt
 				ks = (Ksiazka)ksiazkaBindingSource.Current;
 				ks.Gatunek_IdGatunku = gt.IdGatunku;
 				ksiazkaBindingSource.ResetBindings(false);
-				Funckje.Instance._context.SaveChanges();
+				Funkcje.Instance._context.SaveChanges();
 			}
 
 		}

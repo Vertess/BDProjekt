@@ -23,7 +23,7 @@ namespace BDProjekt
             if (!DesignMode)
             {
               this.gatunekBindingSource.ResetBindings(false);
-                Funckje.Instance._context.SaveChanges();
+                Funkcje.Instance._context.SaveChanges();
             }
 
         }
@@ -32,8 +32,8 @@ namespace BDProjekt
         {
             if (!DesignMode)
             {
-               Funckje.Instance._context.Gatuneks.Load();
-               gatunekBindingSource.DataSource = Funckje.Instance._context.Gatuneks.Local.ToBindingList();
+               Funkcje.Instance._context.Gatuneks.Load();
+               gatunekBindingSource.DataSource = Funkcje.Instance._context.Gatuneks.Local.ToBindingList();
 
             }
 
@@ -44,19 +44,19 @@ namespace BDProjekt
             if (!DesignMode)
             {
                 gatunekBindingSource.ResetBindings(false);
-                Funckje.Instance._context.SaveChanges();
+                Funkcje.Instance._context.SaveChanges();
             }
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
 
-            gatunekBindingSource.DataSource = Funckje.Instance._context.Gatuneks.Local.ToBindingList().Where(n => n.NazwaGatunku.Contains(this.searchTextBox.Text));
+            gatunekBindingSource.DataSource = Funkcje.Instance._context.Gatuneks.Local.ToBindingList().Where(n => n.NazwaGatunku.Contains(this.searchTextBox.Text));
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            gatunekBindingSource.DataSource = Funckje.Instance._context.Gatuneks.Local.ToBindingList();
+            gatunekBindingSource.DataSource = Funkcje.Instance._context.Gatuneks.Local.ToBindingList();
         }
     }
 }

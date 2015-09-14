@@ -72,26 +72,10 @@ namespace BDProjekt
             }
         }
 
-        private void searchOpisButton_Click(object sender, EventArgs e)
-        {
-            ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList()
-                .Where(n => n.Opis.Contains(this.searchOpisTextBox.Text));
-        }
-
-        private void searchTytulButton_Click(object sender, EventArgs e)
-        {
-            ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList()
-                .Where(n => n.Tytul.Contains(this.searchTytulTextBox.Text));
-        }
-
-        private void resetOpisButton_Click(object sender, EventArgs e)
-        {
-            searchOpisTextBox.Text = string.Empty;
-        }
-
         private void resetTytulButton_Click(object sender, EventArgs e)
         {
             searchTytulTextBox.Text = string.Empty;
+            searchOpisTextBox.Text = string.Empty;
         }
 	}
 }

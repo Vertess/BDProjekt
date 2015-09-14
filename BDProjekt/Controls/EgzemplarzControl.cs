@@ -78,19 +78,11 @@ namespace BDProjekt.Controls
             }*/
         }
 
-        private void resetCenaButton_Click(object sender, EventArgs e)
-        {
-            searchCenaTextBox.Text = string.Empty;
-        }
-
-        private void resetIloscButton_Click(object sender, EventArgs e)
-        {
-            searchIloscTextBox.Text = string.Empty;
-        }
-
         private void resetTypButton_Click(object sender, EventArgs e)
         {
+            searchCenaTextBox.Text = string.Empty;
             searchTypTextBox.Text = string.Empty;
+            searchIloscTextBox.Text = string.Empty;
         }
 
     }

@@ -30,20 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.confirmButton = new System.Windows.Forms.Button();
+            this.opisrabatuLabel = new System.Windows.Forms.Label();
+            this.wysokoscrabatuLabel = new System.Windows.Forms.Label();
+            this.searchWysokoscRabatuTextBox = new System.Windows.Forms.TextBox();
+            this.resetWysokoscRabatuButton = new System.Windows.Forms.Button();
             this.idRabatuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opisRabatuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wysokoscRabatuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zamowieniesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rabatBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.resetButton = new System.Windows.Forms.Button();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.confirmButton = new System.Windows.Forms.Button();
-            this.opisrabatuLabel = new System.Windows.Forms.Label();
-            this.wysokoscrabatuLabel = new System.Windows.Forms.Label();
-            this.searchWysokoscRabatuTextBox = new System.Windows.Forms.TextBox();
-            this.searchWysokoscRabatuButton = new System.Windows.Forms.Button();
-            this.resetWysokoscRabatuButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rabatBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -63,44 +60,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(445, 150);
             this.dataGridView1.TabIndex = 0;
             // 
-            // idRabatuDataGridViewTextBoxColumn
-            // 
-            this.idRabatuDataGridViewTextBoxColumn.DataPropertyName = "IdRabatu";
-            this.idRabatuDataGridViewTextBoxColumn.HeaderText = "IdRabatu";
-            this.idRabatuDataGridViewTextBoxColumn.Name = "idRabatuDataGridViewTextBoxColumn";
-            // 
-            // opisRabatuDataGridViewTextBoxColumn
-            // 
-            this.opisRabatuDataGridViewTextBoxColumn.DataPropertyName = "OpisRabatu";
-            this.opisRabatuDataGridViewTextBoxColumn.HeaderText = "OpisRabatu";
-            this.opisRabatuDataGridViewTextBoxColumn.Name = "opisRabatuDataGridViewTextBoxColumn";
-            // 
-            // wysokoscRabatuDataGridViewTextBoxColumn
-            // 
-            this.wysokoscRabatuDataGridViewTextBoxColumn.DataPropertyName = "WysokoscRabatu";
-            this.wysokoscRabatuDataGridViewTextBoxColumn.HeaderText = "WysokoscRabatu";
-            this.wysokoscRabatuDataGridViewTextBoxColumn.Name = "wysokoscRabatuDataGridViewTextBoxColumn";
-            // 
-            // zamowieniesDataGridViewTextBoxColumn
-            // 
-            this.zamowieniesDataGridViewTextBoxColumn.DataPropertyName = "Zamowienies";
-            this.zamowieniesDataGridViewTextBoxColumn.HeaderText = "Zamowienies";
-            this.zamowieniesDataGridViewTextBoxColumn.Name = "zamowieniesDataGridViewTextBoxColumn";
-            // 
-            // rabatBindingSource
-            // 
-            this.rabatBindingSource.DataSource = typeof(BDProjekt.Rabat);
-            // 
-            // resetButton
-            // 
-            this.resetButton.Location = new System.Drawing.Point(313, 159);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(75, 23);
-            this.resetButton.TabIndex = 8;
-            this.resetButton.Text = "Czyść";
-            this.resetButton.UseVisualStyleBackColor = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
-            // 
             // searchTextBox
             // 
             this.searchTextBox.Location = new System.Drawing.Point(126, 162);
@@ -108,16 +67,6 @@
             this.searchTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchTextBox.TabIndex = 7;
             this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(232, 159);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
-            this.searchButton.TabIndex = 6;
-            this.searchButton.Text = "Szukaj";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // confirmButton
             // 
@@ -155,19 +104,9 @@
             this.searchWysokoscRabatuTextBox.TabIndex = 11;
             this.searchWysokoscRabatuTextBox.TextChanged += new System.EventHandler(this.searchWysokoscRabatuTextBox_TextChanged);
             // 
-            // searchWysokoscRabatuButton
-            // 
-            this.searchWysokoscRabatuButton.Location = new System.Drawing.Point(261, 190);
-            this.searchWysokoscRabatuButton.Name = "searchWysokoscRabatuButton";
-            this.searchWysokoscRabatuButton.Size = new System.Drawing.Size(75, 23);
-            this.searchWysokoscRabatuButton.TabIndex = 12;
-            this.searchWysokoscRabatuButton.Text = "Szukaj";
-            this.searchWysokoscRabatuButton.UseVisualStyleBackColor = true;
-            this.searchWysokoscRabatuButton.Click += new System.EventHandler(this.searchWysokoscRabatuButton_Click);
-            // 
             // resetWysokoscRabatuButton
             // 
-            this.resetWysokoscRabatuButton.Location = new System.Drawing.Point(342, 190);
+            this.resetWysokoscRabatuButton.Location = new System.Drawing.Point(274, 175);
             this.resetWysokoscRabatuButton.Name = "resetWysokoscRabatuButton";
             this.resetWysokoscRabatuButton.Size = new System.Drawing.Size(75, 23);
             this.resetWysokoscRabatuButton.TabIndex = 13;
@@ -175,18 +114,43 @@
             this.resetWysokoscRabatuButton.UseVisualStyleBackColor = true;
             this.resetWysokoscRabatuButton.Click += new System.EventHandler(this.resetWysokoscRabatuButton_Click);
             // 
+            // idRabatuDataGridViewTextBoxColumn
+            // 
+            this.idRabatuDataGridViewTextBoxColumn.DataPropertyName = "IdRabatu";
+            this.idRabatuDataGridViewTextBoxColumn.HeaderText = "IdRabatu";
+            this.idRabatuDataGridViewTextBoxColumn.Name = "idRabatuDataGridViewTextBoxColumn";
+            // 
+            // opisRabatuDataGridViewTextBoxColumn
+            // 
+            this.opisRabatuDataGridViewTextBoxColumn.DataPropertyName = "OpisRabatu";
+            this.opisRabatuDataGridViewTextBoxColumn.HeaderText = "OpisRabatu";
+            this.opisRabatuDataGridViewTextBoxColumn.Name = "opisRabatuDataGridViewTextBoxColumn";
+            // 
+            // wysokoscRabatuDataGridViewTextBoxColumn
+            // 
+            this.wysokoscRabatuDataGridViewTextBoxColumn.DataPropertyName = "WysokoscRabatu";
+            this.wysokoscRabatuDataGridViewTextBoxColumn.HeaderText = "WysokoscRabatu";
+            this.wysokoscRabatuDataGridViewTextBoxColumn.Name = "wysokoscRabatuDataGridViewTextBoxColumn";
+            // 
+            // zamowieniesDataGridViewTextBoxColumn
+            // 
+            this.zamowieniesDataGridViewTextBoxColumn.DataPropertyName = "Zamowienies";
+            this.zamowieniesDataGridViewTextBoxColumn.HeaderText = "Zamowienies";
+            this.zamowieniesDataGridViewTextBoxColumn.Name = "zamowieniesDataGridViewTextBoxColumn";
+            // 
+            // rabatBindingSource
+            // 
+            this.rabatBindingSource.DataSource = typeof(BDProjekt.Rabat);
+            // 
             // RabatControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.resetWysokoscRabatuButton);
-            this.Controls.Add(this.searchWysokoscRabatuButton);
             this.Controls.Add(this.searchWysokoscRabatuTextBox);
             this.Controls.Add(this.wysokoscrabatuLabel);
             this.Controls.Add(this.opisrabatuLabel);
-            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.searchTextBox);
-            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.dataGridView1);
             this.Name = "RabatControl";
@@ -207,14 +171,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn wysokoscRabatuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zamowieniesDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource rabatBindingSource;
-        private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.TextBox searchTextBox;
-        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button confirmButton;
         private System.Windows.Forms.Label opisrabatuLabel;
         private System.Windows.Forms.Label wysokoscrabatuLabel;
         private System.Windows.Forms.TextBox searchWysokoscRabatuTextBox;
-        private System.Windows.Forms.Button searchWysokoscRabatuButton;
         private System.Windows.Forms.Button resetWysokoscRabatuButton;
     }
 }

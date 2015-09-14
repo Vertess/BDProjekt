@@ -27,16 +27,6 @@ namespace BDProjekt
             }
         }
 
-        private void resetButton_Click(object sender, EventArgs e)
-        {
-            rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
-        }
-
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList().Where(n => n.OpisRabatu.Contains(this.searchTextBox.Text));
-        }
-
         private void RabatControl_Load(object sender, EventArgs e)
         {
             if (!DesignMode)
@@ -46,13 +36,9 @@ namespace BDProjekt
             }
         }
 
-        private void searchWysokoscRabatuButton_Click(object sender, EventArgs e)
-        {
-            rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList().Where(n => n.OpisRabatu.Contains(this.searchTextBox.Text));
-        }
-
         private void resetWysokoscRabatuButton_Click(object sender, EventArgs e)
         {
+            rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
             rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
         }
 

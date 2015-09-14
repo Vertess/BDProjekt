@@ -38,15 +38,9 @@ namespace BDProjekt
             }
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-
-            autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList()
-				.Where(n => n.Imie.Contains(this.searchTextBox.Text));
-
-        }
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
+            searchNazwiskoTextBox.Text = string.Empty;
 			autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList()
 	.Where(n => n.Imie.Contains(this.searchTextBox.Text));
 			if (searchTextBox.Text.Length == 0)
@@ -55,20 +49,9 @@ namespace BDProjekt
 			}
         }
 
-		private void resetButton_Click(object sender, EventArgs e)
-		{
-			//autorBindingSource.DataSource = Funckje.Instance._context.Autors.Local.ToBindingList();
-			searchTextBox.Text = string.Empty;
-		}
-
-        private void nazwiskoSzukajButton_Click(object sender, EventArgs e)
-        {
-            autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList()
-                .Where(n => n.Nazwisko.Contains(this.searchNazwiskoTextBox.Text));
-        }
-
         private void searchNazwiskoTextBox_TextChanged(object sender, EventArgs e)
         {
+            searchTextBox.Text = string.Empty; 
             autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList()
     .Where(n => n.Nazwisko.Contains(this.searchNazwiskoTextBox.Text));
             if (searchNazwiskoTextBox.Text.Length == 0)
@@ -80,6 +63,7 @@ namespace BDProjekt
         private void czyscNazwiskoButton_Click(object sender, EventArgs e)
         {
             searchNazwiskoTextBox.Text = string.Empty;
+            searchTextBox.Text = string.Empty; 
         }
     }
 }

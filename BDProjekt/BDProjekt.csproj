@@ -173,6 +173,12 @@
     <Compile Include="Reklamacja.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
+    <Compile Include="ReklamacjaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReklamacjaControl.Designer.cs">
+      <DependentUpon>ReklamacjaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="RodzajWysylki.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
@@ -227,6 +233,9 @@
     <EmbeddedResource Include="Controls\WydawnictwoControl.resx">
       <DependentUpon>WydawnictwoControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReklamacjaControl.resx">
+      <DependentUpon>ReklamacjaControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Ksiegarnia.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Ksiegarnia.Designer.cs</LastGenOutput>
@@ -255,6 +264,7 @@
     <None Include="Properties\DataSources\Oferent1.datasource" />
     <None Include="Properties\DataSources\Pracownik1.datasource" />
     <None Include="Properties\DataSources\Rabat.datasource" />
+    <None Include="Properties\DataSources\Reklamacja.datasource" />
     <None Include="Properties\DataSources\Wydawnictwo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

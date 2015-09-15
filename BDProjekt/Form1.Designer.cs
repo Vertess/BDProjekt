@@ -49,28 +49,19 @@
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.logowanieHasloText = new System.Windows.Forms.Label();
             this.okienkoKlienta = new System.Windows.Forms.TabPage();
-            this.ksiazkaControl1 = new BDProjekt.KsiazkaControl();
             this.okienkoPracownika = new System.Windows.Forms.TabPage();
             this.PracownikWiadomoscBleduText = new System.Windows.Forms.Label();
             this.pracownikText1 = new System.Windows.Forms.Label();
             this.pracownikWylogujButton = new System.Windows.Forms.Button();
             this.pracownikDodatkowaTabControl = new System.Windows.Forms.TabControl();
             this.pacownikStworzRabatTabPage = new System.Windows.Forms.TabPage();
-            this.rabatControl1 = new BDProjekt.RabatControl();
             this.pracownikDodajKsiazkeTabPage = new System.Windows.Forms.TabPage();
-            this.ksiazkaControl2 = new BDProjekt.KsiazkaControl();
             this.pracownikDodajAutoraTabPage = new System.Windows.Forms.TabPage();
-            this.autorzy1 = new BDProjekt.Autorzy();
             this.pracownikDodajGatunekTabPage = new System.Windows.Forms.TabPage();
-            this.gatunekControl1 = new BDProjekt.GatunekControl();
             this.pracownikDodajEgzemplarzTabPage = new System.Windows.Forms.TabPage();
-            this.egzemplarzControl1 = new BDProjekt.Controls.EgzemplarzControl();
             this.pracownikDodajWydawnictwotabPage = new System.Windows.Forms.TabPage();
-            this.wydawnictwoControl1 = new BDProjekt.WydawnictwoControl();
             this.pracownikDostawaTabPage = new System.Windows.Forms.TabPage();
-            this.dostawaControl1 = new BDProjekt.Controls.DostawaControl();
             this.pracownikOfertyTabPage = new System.Windows.Forms.TabPage();
-            this.ofertyControl1 = new BDProjekt.Controls.OfertyControl();
             this.pracownikOfertyAkceptuj_Button = new System.Windows.Forms.Button();
             this.pracownikOfetyUsun_Button = new System.Windows.Forms.Button();
             this.pracownikOfertyZnajdzTextBox = new System.Windows.Forms.TextBox();
@@ -78,21 +69,7 @@
             this.pracownikOfertyListBox = new System.Windows.Forms.ListBox();
             this.pracownikOfertyPrzegladaj_Button = new System.Windows.Forms.Button();
             this.pracownikReklamacjeTabPage = new System.Windows.Forms.TabPage();
-            this.pracownikReklamacjeZmien_Button = new System.Windows.Forms.Button();
-            this.pracownikReklamacjeZmienTextBox = new System.Windows.Forms.TextBox();
-            this.pracownikReklamacjeZnajdz_Button = new System.Windows.Forms.Button();
-            this.pracownikReklamacjeZnajdzTextBox = new System.Windows.Forms.TextBox();
-            this.pracownikReklamacjePrzegladaj_Button = new System.Windows.Forms.Button();
-            this.pracownikReklamacjePrzegladajListBox = new System.Windows.Forms.ListBox();
             this.pracownikZamowieniaTabPage = new System.Windows.Forms.TabPage();
-            this.pracownikZamowieniaZmienTextBox = new System.Windows.Forms.TextBox();
-            this.pracownikZamowieniaZmien_Button = new System.Windows.Forms.Button();
-            this.pracownikZamowieniaPrzydzielPracownika_ComboBox = new System.Windows.Forms.ComboBox();
-            this.pracownikZamowieniaPrzydziel_Button = new System.Windows.Forms.Button();
-            this.pracownikZamowieniaZnajdz_Button = new System.Windows.Forms.Button();
-            this.pracownikZamowieniaZnajdzTextBox = new System.Windows.Forms.TextBox();
-            this.pracownikZamowieniaPrzegladaj_Button = new System.Windows.Forms.Button();
-            this.pracownikZamowieniaPrzegladajListBox = new System.Windows.Forms.ListBox();
             this.pracownikNick = new System.Windows.Forms.Label();
             this.okienkoAdmina = new System.Windows.Forms.TabPage();
             this.adminFilterText = new System.Windows.Forms.Label();
@@ -141,6 +118,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.logowanieComboBox = new System.Windows.Forms.ComboBox();
+            this.ksiazkaControl1 = new BDProjekt.KsiazkaControl();
+            this.rabatControl1 = new BDProjekt.RabatControl();
+            this.ksiazkaControl2 = new BDProjekt.KsiazkaControl();
+            this.autorzy1 = new BDProjekt.Autorzy();
+            this.gatunekControl1 = new BDProjekt.GatunekControl();
+            this.egzemplarzControl1 = new BDProjekt.Controls.EgzemplarzControl();
+            this.wydawnictwoControl1 = new BDProjekt.WydawnictwoControl();
+            this.dostawaControl1 = new BDProjekt.Controls.DostawaControl();
+            this.ofertyControl1 = new BDProjekt.Controls.OfertyControl();
+            this.reklamacjaControl1 = new BDProjekt.ReklamacjaControl();
             this.Glowna_tabControl.SuspendLayout();
             this.okienkoLogowania.SuspendLayout();
             this.okienkoKlienta.SuspendLayout();
@@ -155,7 +142,6 @@
             this.pracownikDostawaTabPage.SuspendLayout();
             this.pracownikOfertyTabPage.SuspendLayout();
             this.pracownikReklamacjeTabPage.SuspendLayout();
-            this.pracownikZamowieniaTabPage.SuspendLayout();
             this.okienkoAdmina.SuspendLayout();
             this.okienkoOferenta.SuspendLayout();
             this.SuspendLayout();
@@ -363,13 +349,6 @@
             this.okienkoKlienta.Text = "Klient";
             this.okienkoKlienta.UseVisualStyleBackColor = true;
             // 
-            // ksiazkaControl1
-            // 
-            this.ksiazkaControl1.Location = new System.Drawing.Point(59, 31);
-            this.ksiazkaControl1.Name = "ksiazkaControl1";
-            this.ksiazkaControl1.Size = new System.Drawing.Size(739, 251);
-            this.ksiazkaControl1.TabIndex = 0;
-            // 
             // okienkoPracownika
             // 
             this.okienkoPracownika.Controls.Add(this.PracownikWiadomoscBleduText);
@@ -442,13 +421,6 @@
             this.pacownikStworzRabatTabPage.Text = "Stwórz rabat";
             this.pacownikStworzRabatTabPage.UseVisualStyleBackColor = true;
             // 
-            // rabatControl1
-            // 
-            this.rabatControl1.Location = new System.Drawing.Point(7, 4);
-            this.rabatControl1.Name = "rabatControl1";
-            this.rabatControl1.Size = new System.Drawing.Size(640, 245);
-            this.rabatControl1.TabIndex = 0;
-            // 
             // pracownikDodajKsiazkeTabPage
             // 
             this.pracownikDodajKsiazkeTabPage.Controls.Add(this.ksiazkaControl2);
@@ -459,13 +431,6 @@
             this.pracownikDodajKsiazkeTabPage.TabIndex = 1;
             this.pracownikDodajKsiazkeTabPage.Text = "Dodaj książkę";
             this.pracownikDodajKsiazkeTabPage.UseVisualStyleBackColor = true;
-            // 
-            // ksiazkaControl2
-            // 
-            this.ksiazkaControl2.Location = new System.Drawing.Point(-1, 3);
-            this.ksiazkaControl2.Name = "ksiazkaControl2";
-            this.ksiazkaControl2.Size = new System.Drawing.Size(699, 236);
-            this.ksiazkaControl2.TabIndex = 0;
             // 
             // pracownikDodajAutoraTabPage
             // 
@@ -478,13 +443,6 @@
             this.pracownikDodajAutoraTabPage.Text = "Dodaj autora";
             this.pracownikDodajAutoraTabPage.UseVisualStyleBackColor = true;
             // 
-            // autorzy1
-            // 
-            this.autorzy1.Location = new System.Drawing.Point(98, 6);
-            this.autorzy1.Name = "autorzy1";
-            this.autorzy1.Size = new System.Drawing.Size(631, 263);
-            this.autorzy1.TabIndex = 0;
-            // 
             // pracownikDodajGatunekTabPage
             // 
             this.pracownikDodajGatunekTabPage.Controls.Add(this.gatunekControl1);
@@ -495,13 +453,6 @@
             this.pracownikDodajGatunekTabPage.TabIndex = 5;
             this.pracownikDodajGatunekTabPage.Text = "Dodaj gatunek";
             this.pracownikDodajGatunekTabPage.UseVisualStyleBackColor = true;
-            // 
-            // gatunekControl1
-            // 
-            this.gatunekControl1.Location = new System.Drawing.Point(140, -54);
-            this.gatunekControl1.Name = "gatunekControl1";
-            this.gatunekControl1.Size = new System.Drawing.Size(590, 306);
-            this.gatunekControl1.TabIndex = 0;
             // 
             // pracownikDodajEgzemplarzTabPage
             // 
@@ -514,13 +465,6 @@
             this.pracownikDodajEgzemplarzTabPage.Text = "Dodaj egzemplarz";
             this.pracownikDodajEgzemplarzTabPage.UseVisualStyleBackColor = true;
             // 
-            // egzemplarzControl1
-            // 
-            this.egzemplarzControl1.Location = new System.Drawing.Point(58, 6);
-            this.egzemplarzControl1.Name = "egzemplarzControl1";
-            this.egzemplarzControl1.Size = new System.Drawing.Size(658, 224);
-            this.egzemplarzControl1.TabIndex = 0;
-            // 
             // pracownikDodajWydawnictwotabPage
             // 
             this.pracownikDodajWydawnictwotabPage.Controls.Add(this.wydawnictwoControl1);
@@ -532,13 +476,6 @@
             this.pracownikDodajWydawnictwotabPage.Text = "Dodaj wydawnictwo";
             this.pracownikDodajWydawnictwotabPage.UseVisualStyleBackColor = true;
             // 
-            // wydawnictwoControl1
-            // 
-            this.wydawnictwoControl1.Location = new System.Drawing.Point(7, 4);
-            this.wydawnictwoControl1.Name = "wydawnictwoControl1";
-            this.wydawnictwoControl1.Size = new System.Drawing.Size(582, 298);
-            this.wydawnictwoControl1.TabIndex = 0;
-            // 
             // pracownikDostawaTabPage
             // 
             this.pracownikDostawaTabPage.Controls.Add(this.dostawaControl1);
@@ -549,13 +486,6 @@
             this.pracownikDostawaTabPage.TabIndex = 8;
             this.pracownikDostawaTabPage.Text = "Dostawa";
             this.pracownikDostawaTabPage.UseVisualStyleBackColor = true;
-            // 
-            // dostawaControl1
-            // 
-            this.dostawaControl1.Location = new System.Drawing.Point(-4, 0);
-            this.dostawaControl1.Name = "dostawaControl1";
-            this.dostawaControl1.Size = new System.Drawing.Size(821, 240);
-            this.dostawaControl1.TabIndex = 0;
             // 
             // pracownikOfertyTabPage
             // 
@@ -573,13 +503,6 @@
             this.pracownikOfertyTabPage.TabIndex = 9;
             this.pracownikOfertyTabPage.Text = "Oferty";
             this.pracownikOfertyTabPage.UseVisualStyleBackColor = true;
-            // 
-            // ofertyControl1
-            // 
-            this.ofertyControl1.Location = new System.Drawing.Point(-4, -1);
-            this.ofertyControl1.Name = "ofertyControl1";
-            this.ofertyControl1.Size = new System.Drawing.Size(816, 237);
-            this.ofertyControl1.TabIndex = 104;
             // 
             // pracownikOfertyAkceptuj_Button
             // 
@@ -640,12 +563,7 @@
             // 
             // pracownikReklamacjeTabPage
             // 
-            this.pracownikReklamacjeTabPage.Controls.Add(this.pracownikReklamacjeZmien_Button);
-            this.pracownikReklamacjeTabPage.Controls.Add(this.pracownikReklamacjeZmienTextBox);
-            this.pracownikReklamacjeTabPage.Controls.Add(this.pracownikReklamacjeZnajdz_Button);
-            this.pracownikReklamacjeTabPage.Controls.Add(this.pracownikReklamacjeZnajdzTextBox);
-            this.pracownikReklamacjeTabPage.Controls.Add(this.pracownikReklamacjePrzegladaj_Button);
-            this.pracownikReklamacjeTabPage.Controls.Add(this.pracownikReklamacjePrzegladajListBox);
+            this.pracownikReklamacjeTabPage.Controls.Add(this.reklamacjaControl1);
             this.pracownikReklamacjeTabPage.Location = new System.Drawing.Point(4, 22);
             this.pracownikReklamacjeTabPage.Name = "pracownikReklamacjeTabPage";
             this.pracownikReklamacjeTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -654,65 +572,8 @@
             this.pracownikReklamacjeTabPage.Text = "Reklamacje";
             this.pracownikReklamacjeTabPage.UseVisualStyleBackColor = true;
             // 
-            // pracownikReklamacjeZmien_Button
-            // 
-            this.pracownikReklamacjeZmien_Button.Location = new System.Drawing.Point(9, 30);
-            this.pracownikReklamacjeZmien_Button.Name = "pracownikReklamacjeZmien_Button";
-            this.pracownikReklamacjeZmien_Button.Size = new System.Drawing.Size(75, 23);
-            this.pracownikReklamacjeZmien_Button.TabIndex = 97;
-            this.pracownikReklamacjeZmien_Button.Text = "Zmień status";
-            this.pracownikReklamacjeZmien_Button.UseVisualStyleBackColor = true;
-            // 
-            // pracownikReklamacjeZmienTextBox
-            // 
-            this.pracownikReklamacjeZmienTextBox.Location = new System.Drawing.Point(90, 31);
-            this.pracownikReklamacjeZmienTextBox.Name = "pracownikReklamacjeZmienTextBox";
-            this.pracownikReklamacjeZmienTextBox.Size = new System.Drawing.Size(100, 20);
-            this.pracownikReklamacjeZmienTextBox.TabIndex = 96;
-            // 
-            // pracownikReklamacjeZnajdz_Button
-            // 
-            this.pracownikReklamacjeZnajdz_Button.Location = new System.Drawing.Point(391, 16);
-            this.pracownikReklamacjeZnajdz_Button.Name = "pracownikReklamacjeZnajdz_Button";
-            this.pracownikReklamacjeZnajdz_Button.Size = new System.Drawing.Size(116, 23);
-            this.pracownikReklamacjeZnajdz_Button.TabIndex = 95;
-            this.pracownikReklamacjeZnajdz_Button.Text = "Znajdź reklamacje";
-            this.pracownikReklamacjeZnajdz_Button.UseVisualStyleBackColor = true;
-            // 
-            // pracownikReklamacjeZnajdzTextBox
-            // 
-            this.pracownikReklamacjeZnajdzTextBox.Location = new System.Drawing.Point(513, 16);
-            this.pracownikReklamacjeZnajdzTextBox.Name = "pracownikReklamacjeZnajdzTextBox";
-            this.pracownikReklamacjeZnajdzTextBox.Size = new System.Drawing.Size(100, 20);
-            this.pracownikReklamacjeZnajdzTextBox.TabIndex = 94;
-            // 
-            // pracownikReklamacjePrzegladaj_Button
-            // 
-            this.pracownikReklamacjePrzegladaj_Button.Location = new System.Drawing.Point(246, 74);
-            this.pracownikReklamacjePrzegladaj_Button.Name = "pracownikReklamacjePrzegladaj_Button";
-            this.pracownikReklamacjePrzegladaj_Button.Size = new System.Drawing.Size(167, 23);
-            this.pracownikReklamacjePrzegladaj_Button.TabIndex = 93;
-            this.pracownikReklamacjePrzegladaj_Button.Text = "Przeglądaj historię reklamacji";
-            this.pracownikReklamacjePrzegladaj_Button.UseVisualStyleBackColor = true;
-            // 
-            // pracownikReklamacjePrzegladajListBox
-            // 
-            this.pracownikReklamacjePrzegladajListBox.FormattingEnabled = true;
-            this.pracownikReklamacjePrzegladajListBox.Location = new System.Drawing.Point(246, 103);
-            this.pracownikReklamacjePrzegladajListBox.Name = "pracownikReklamacjePrzegladajListBox";
-            this.pracownikReklamacjePrzegladajListBox.Size = new System.Drawing.Size(367, 121);
-            this.pracownikReklamacjePrzegladajListBox.TabIndex = 72;
-            // 
             // pracownikZamowieniaTabPage
             // 
-            this.pracownikZamowieniaTabPage.Controls.Add(this.pracownikZamowieniaZmienTextBox);
-            this.pracownikZamowieniaTabPage.Controls.Add(this.pracownikZamowieniaZmien_Button);
-            this.pracownikZamowieniaTabPage.Controls.Add(this.pracownikZamowieniaPrzydzielPracownika_ComboBox);
-            this.pracownikZamowieniaTabPage.Controls.Add(this.pracownikZamowieniaPrzydziel_Button);
-            this.pracownikZamowieniaTabPage.Controls.Add(this.pracownikZamowieniaZnajdz_Button);
-            this.pracownikZamowieniaTabPage.Controls.Add(this.pracownikZamowieniaZnajdzTextBox);
-            this.pracownikZamowieniaTabPage.Controls.Add(this.pracownikZamowieniaPrzegladaj_Button);
-            this.pracownikZamowieniaTabPage.Controls.Add(this.pracownikZamowieniaPrzegladajListBox);
             this.pracownikZamowieniaTabPage.Location = new System.Drawing.Point(4, 22);
             this.pracownikZamowieniaTabPage.Name = "pracownikZamowieniaTabPage";
             this.pracownikZamowieniaTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -720,72 +581,6 @@
             this.pracownikZamowieniaTabPage.TabIndex = 11;
             this.pracownikZamowieniaTabPage.Text = "Zamówienia";
             this.pracownikZamowieniaTabPage.UseVisualStyleBackColor = true;
-            // 
-            // pracownikZamowieniaZmienTextBox
-            // 
-            this.pracownikZamowieniaZmienTextBox.Location = new System.Drawing.Point(142, 56);
-            this.pracownikZamowieniaZmienTextBox.Name = "pracownikZamowieniaZmienTextBox";
-            this.pracownikZamowieniaZmienTextBox.Size = new System.Drawing.Size(100, 20);
-            this.pracownikZamowieniaZmienTextBox.TabIndex = 101;
-            // 
-            // pracownikZamowieniaZmien_Button
-            // 
-            this.pracownikZamowieniaZmien_Button.Location = new System.Drawing.Point(18, 56);
-            this.pracownikZamowieniaZmien_Button.Name = "pracownikZamowieniaZmien_Button";
-            this.pracownikZamowieniaZmien_Button.Size = new System.Drawing.Size(116, 23);
-            this.pracownikZamowieniaZmien_Button.TabIndex = 100;
-            this.pracownikZamowieniaZmien_Button.Text = "Zmień status";
-            this.pracownikZamowieniaZmien_Button.UseVisualStyleBackColor = true;
-            // 
-            // pracownikZamowieniaPrzydzielPracownika_ComboBox
-            // 
-            this.pracownikZamowieniaPrzydzielPracownika_ComboBox.FormattingEnabled = true;
-            this.pracownikZamowieniaPrzydzielPracownika_ComboBox.Location = new System.Drawing.Point(140, 27);
-            this.pracownikZamowieniaPrzydzielPracownika_ComboBox.Name = "pracownikZamowieniaPrzydzielPracownika_ComboBox";
-            this.pracownikZamowieniaPrzydzielPracownika_ComboBox.Size = new System.Drawing.Size(102, 21);
-            this.pracownikZamowieniaPrzydzielPracownika_ComboBox.TabIndex = 99;
-            // 
-            // pracownikZamowieniaPrzydziel_Button
-            // 
-            this.pracownikZamowieniaPrzydziel_Button.Location = new System.Drawing.Point(18, 25);
-            this.pracownikZamowieniaPrzydziel_Button.Name = "pracownikZamowieniaPrzydziel_Button";
-            this.pracownikZamowieniaPrzydziel_Button.Size = new System.Drawing.Size(116, 23);
-            this.pracownikZamowieniaPrzydziel_Button.TabIndex = 98;
-            this.pracownikZamowieniaPrzydziel_Button.Text = "Przydziel pracownika";
-            this.pracownikZamowieniaPrzydziel_Button.UseVisualStyleBackColor = true;
-            // 
-            // pracownikZamowieniaZnajdz_Button
-            // 
-            this.pracownikZamowieniaZnajdz_Button.Location = new System.Drawing.Point(384, 16);
-            this.pracownikZamowieniaZnajdz_Button.Name = "pracownikZamowieniaZnajdz_Button";
-            this.pracownikZamowieniaZnajdz_Button.Size = new System.Drawing.Size(116, 23);
-            this.pracownikZamowieniaZnajdz_Button.TabIndex = 97;
-            this.pracownikZamowieniaZnajdz_Button.Text = "Znajdź zamówienie";
-            this.pracownikZamowieniaZnajdz_Button.UseVisualStyleBackColor = true;
-            // 
-            // pracownikZamowieniaZnajdzTextBox
-            // 
-            this.pracownikZamowieniaZnajdzTextBox.Location = new System.Drawing.Point(506, 16);
-            this.pracownikZamowieniaZnajdzTextBox.Name = "pracownikZamowieniaZnajdzTextBox";
-            this.pracownikZamowieniaZnajdzTextBox.Size = new System.Drawing.Size(100, 20);
-            this.pracownikZamowieniaZnajdzTextBox.TabIndex = 96;
-            // 
-            // pracownikZamowieniaPrzegladaj_Button
-            // 
-            this.pracownikZamowieniaPrzegladaj_Button.Location = new System.Drawing.Point(244, 74);
-            this.pracownikZamowieniaPrzegladaj_Button.Name = "pracownikZamowieniaPrzegladaj_Button";
-            this.pracownikZamowieniaPrzegladaj_Button.Size = new System.Drawing.Size(167, 23);
-            this.pracownikZamowieniaPrzegladaj_Button.TabIndex = 94;
-            this.pracownikZamowieniaPrzegladaj_Button.Text = "Przeglądaj historię zamówień";
-            this.pracownikZamowieniaPrzegladaj_Button.UseVisualStyleBackColor = true;
-            // 
-            // pracownikZamowieniaPrzegladajListBox
-            // 
-            this.pracownikZamowieniaPrzegladajListBox.FormattingEnabled = true;
-            this.pracownikZamowieniaPrzegladajListBox.Location = new System.Drawing.Point(244, 103);
-            this.pracownikZamowieniaPrzegladajListBox.Name = "pracownikZamowieniaPrzegladajListBox";
-            this.pracownikZamowieniaPrzegladajListBox.Size = new System.Drawing.Size(367, 121);
-            this.pracownikZamowieniaPrzegladajListBox.TabIndex = 73;
             // 
             // pracownikNick
             // 
@@ -1236,6 +1031,76 @@
             this.logowanieComboBox.Size = new System.Drawing.Size(121, 21);
             this.logowanieComboBox.TabIndex = 97;
             // 
+            // ksiazkaControl1
+            // 
+            this.ksiazkaControl1.Location = new System.Drawing.Point(59, 31);
+            this.ksiazkaControl1.Name = "ksiazkaControl1";
+            this.ksiazkaControl1.Size = new System.Drawing.Size(739, 251);
+            this.ksiazkaControl1.TabIndex = 0;
+            // 
+            // rabatControl1
+            // 
+            this.rabatControl1.Location = new System.Drawing.Point(7, 4);
+            this.rabatControl1.Name = "rabatControl1";
+            this.rabatControl1.Size = new System.Drawing.Size(640, 245);
+            this.rabatControl1.TabIndex = 0;
+            // 
+            // ksiazkaControl2
+            // 
+            this.ksiazkaControl2.Location = new System.Drawing.Point(-1, 3);
+            this.ksiazkaControl2.Name = "ksiazkaControl2";
+            this.ksiazkaControl2.Size = new System.Drawing.Size(699, 236);
+            this.ksiazkaControl2.TabIndex = 0;
+            // 
+            // autorzy1
+            // 
+            this.autorzy1.Location = new System.Drawing.Point(98, 6);
+            this.autorzy1.Name = "autorzy1";
+            this.autorzy1.Size = new System.Drawing.Size(631, 263);
+            this.autorzy1.TabIndex = 0;
+            // 
+            // gatunekControl1
+            // 
+            this.gatunekControl1.Location = new System.Drawing.Point(140, -54);
+            this.gatunekControl1.Name = "gatunekControl1";
+            this.gatunekControl1.Size = new System.Drawing.Size(590, 306);
+            this.gatunekControl1.TabIndex = 0;
+            // 
+            // egzemplarzControl1
+            // 
+            this.egzemplarzControl1.Location = new System.Drawing.Point(58, 6);
+            this.egzemplarzControl1.Name = "egzemplarzControl1";
+            this.egzemplarzControl1.Size = new System.Drawing.Size(658, 224);
+            this.egzemplarzControl1.TabIndex = 0;
+            // 
+            // wydawnictwoControl1
+            // 
+            this.wydawnictwoControl1.Location = new System.Drawing.Point(7, 4);
+            this.wydawnictwoControl1.Name = "wydawnictwoControl1";
+            this.wydawnictwoControl1.Size = new System.Drawing.Size(582, 298);
+            this.wydawnictwoControl1.TabIndex = 0;
+            // 
+            // dostawaControl1
+            // 
+            this.dostawaControl1.Location = new System.Drawing.Point(-4, 0);
+            this.dostawaControl1.Name = "dostawaControl1";
+            this.dostawaControl1.Size = new System.Drawing.Size(821, 240);
+            this.dostawaControl1.TabIndex = 0;
+            // 
+            // ofertyControl1
+            // 
+            this.ofertyControl1.Location = new System.Drawing.Point(-4, -1);
+            this.ofertyControl1.Name = "ofertyControl1";
+            this.ofertyControl1.Size = new System.Drawing.Size(816, 237);
+            this.ofertyControl1.TabIndex = 104;
+            // 
+            // reklamacjaControl1
+            // 
+            this.reklamacjaControl1.Location = new System.Drawing.Point(11, 7);
+            this.reklamacjaControl1.Name = "reklamacjaControl1";
+            this.reklamacjaControl1.Size = new System.Drawing.Size(769, 311);
+            this.reklamacjaControl1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1268,9 +1133,6 @@
             this.pracownikOfertyTabPage.ResumeLayout(false);
             this.pracownikOfertyTabPage.PerformLayout();
             this.pracownikReklamacjeTabPage.ResumeLayout(false);
-            this.pracownikReklamacjeTabPage.PerformLayout();
-            this.pracownikZamowieniaTabPage.ResumeLayout(false);
-            this.pracownikZamowieniaTabPage.PerformLayout();
             this.okienkoAdmina.ResumeLayout(false);
             this.okienkoAdmina.PerformLayout();
             this.okienkoOferenta.ResumeLayout(false);
@@ -1322,21 +1184,7 @@
         private System.Windows.Forms.ListBox pracownikOfertyListBox;
         private System.Windows.Forms.Button pracownikOfertyPrzegladaj_Button;
         private System.Windows.Forms.TabPage pracownikReklamacjeTabPage;
-        private System.Windows.Forms.Button pracownikReklamacjeZmien_Button;
-        private System.Windows.Forms.TextBox pracownikReklamacjeZmienTextBox;
-        private System.Windows.Forms.Button pracownikReklamacjeZnajdz_Button;
-        private System.Windows.Forms.TextBox pracownikReklamacjeZnajdzTextBox;
-        private System.Windows.Forms.Button pracownikReklamacjePrzegladaj_Button;
-        private System.Windows.Forms.ListBox pracownikReklamacjePrzegladajListBox;
         private System.Windows.Forms.TabPage pracownikZamowieniaTabPage;
-        private System.Windows.Forms.TextBox pracownikZamowieniaZmienTextBox;
-        private System.Windows.Forms.Button pracownikZamowieniaZmien_Button;
-        private System.Windows.Forms.ComboBox pracownikZamowieniaPrzydzielPracownika_ComboBox;
-        private System.Windows.Forms.Button pracownikZamowieniaPrzydziel_Button;
-        private System.Windows.Forms.Button pracownikZamowieniaZnajdz_Button;
-        private System.Windows.Forms.TextBox pracownikZamowieniaZnajdzTextBox;
-        private System.Windows.Forms.Button pracownikZamowieniaPrzegladaj_Button;
-        private System.Windows.Forms.ListBox pracownikZamowieniaPrzegladajListBox;
         private System.Windows.Forms.Label pracownikNick;
         private System.Windows.Forms.TabPage okienkoAdmina;
         private System.Windows.Forms.Label adminFilterText;
@@ -1395,6 +1243,7 @@
         private System.Windows.Forms.TabPage pracownikDostawaTabPage;
         private Controls.DostawaControl dostawaControl1;
         private Controls.OfertyControl ofertyControl1;
+        private ReklamacjaControl reklamacjaControl1;
     }
 }
 

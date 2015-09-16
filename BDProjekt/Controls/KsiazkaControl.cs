@@ -33,6 +33,7 @@ namespace BDProjekt
 		{
 			if (!DesignMode)
 			{
+                //cvxgfbrt unkhcnb td
 				Ksiazka ks = new Ksiazka();
 				Gatunek gt = new Gatunek();
 				gt = (Gatunek)gatunekBindingSource.Current;

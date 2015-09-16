@@ -54,28 +54,28 @@ namespace BDProjekt
 
         private void searchOpisTextBox_TextChanged(object sender, EventArgs e)
         {
-            ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList()
-    .Where(n => n.Opis.Contains(this.searchOpisTextBox.Text));
-            if (searchOpisTextBox.Text.Length == 0)
-            {
-                ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList();
-            }
+            
         }
 
         private void searchTytulTextBox_TextChanged(object sender, EventArgs e)
         {
-            ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList()
-    .Where(n => n.Tytul.Contains(this.searchTytulTextBox.Text));
-            if (searchTytulTextBox.Text.Length == 0)
-            {
-                ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList();
-            }
+            
         }
 
         private void resetTytulButton_Click(object sender, EventArgs e)
         {
             searchTytulTextBox.Text = string.Empty;
             searchOpisTextBox.Text = string.Empty;
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList()
+    .Where(n => n.Tytul.Contains(this.searchTytulTextBox.Text) && n.Opis.Contains(this.searchOpisTextBox.Text));
+            if (searchTytulTextBox.Text.Length == 0 && searchOpisTextBox.Text.Length == 0)
+            {
+                ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList();
+            }
         }
 	}
 }

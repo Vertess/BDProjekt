@@ -30,18 +30,19 @@
 		{
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tytulDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.autorzyKsiazkisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gatunekComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.gatunekBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ksiazkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zatwierdzButton = new System.Windows.Forms.Button();
             this.opisLabel = new System.Windows.Forms.Label();
             this.tytulLabel = new System.Windows.Forms.Label();
             this.searchOpisTextBox = new System.Windows.Forms.TextBox();
             this.searchTytulTextBox = new System.Windows.Forms.TextBox();
             this.resetTytulButton = new System.Windows.Forms.Button();
+            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tytulDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gatunekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ksiazkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.searchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gatunekBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ksiazkaBindingSource)).BeginInit();
@@ -62,18 +63,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(445, 143);
             this.dataGridView1.TabIndex = 0;
             // 
-            // opisDataGridViewTextBoxColumn
-            // 
-            this.opisDataGridViewTextBoxColumn.DataPropertyName = "Opis";
-            this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
-            this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
-            // 
-            // tytulDataGridViewTextBoxColumn
-            // 
-            this.tytulDataGridViewTextBoxColumn.DataPropertyName = "Tytul";
-            this.tytulDataGridViewTextBoxColumn.HeaderText = "Tytul";
-            this.tytulDataGridViewTextBoxColumn.Name = "tytulDataGridViewTextBoxColumn";
-            // 
             // autorzyKsiazkisDataGridViewTextBoxColumn
             // 
             this.autorzyKsiazkisDataGridViewTextBoxColumn.HeaderText = "AutorzyKsiazkis";
@@ -90,14 +79,6 @@
             this.gatunekComboBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.gatunekComboBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.gatunekComboBoxColumn.ValueMember = "IdGatunku";
-            // 
-            // gatunekBindingSource
-            // 
-            this.gatunekBindingSource.DataSource = typeof(BDProjekt.Gatunek);
-            // 
-            // ksiazkaBindingSource
-            // 
-            this.ksiazkaBindingSource.DataSource = typeof(BDProjekt.Ksiazka);
             // 
             // zatwierdzButton
             // 
@@ -145,7 +126,7 @@
             // 
             // resetTytulButton
             // 
-            this.resetTytulButton.Location = new System.Drawing.Point(225, 178);
+            this.resetTytulButton.Location = new System.Drawing.Point(283, 173);
             this.resetTytulButton.Name = "resetTytulButton";
             this.resetTytulButton.Size = new System.Drawing.Size(75, 23);
             this.resetTytulButton.TabIndex = 9;
@@ -153,10 +134,41 @@
             this.resetTytulButton.UseVisualStyleBackColor = true;
             this.resetTytulButton.Click += new System.EventHandler(this.resetTytulButton_Click);
             // 
+            // opisDataGridViewTextBoxColumn
+            // 
+            this.opisDataGridViewTextBoxColumn.DataPropertyName = "Opis";
+            this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
+            this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
+            // 
+            // tytulDataGridViewTextBoxColumn
+            // 
+            this.tytulDataGridViewTextBoxColumn.DataPropertyName = "Tytul";
+            this.tytulDataGridViewTextBoxColumn.HeaderText = "Tytul";
+            this.tytulDataGridViewTextBoxColumn.Name = "tytulDataGridViewTextBoxColumn";
+            // 
+            // gatunekBindingSource
+            // 
+            this.gatunekBindingSource.DataSource = typeof(BDProjekt.Gatunek);
+            // 
+            // ksiazkaBindingSource
+            // 
+            this.ksiazkaBindingSource.DataSource = typeof(BDProjekt.Ksiazka);
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(202, 173);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 10;
+            this.searchButton.Text = "Szukaj";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
             // KsiazkaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.resetTytulButton);
             this.Controls.Add(this.searchTytulTextBox);
             this.Controls.Add(this.searchOpisTextBox);
@@ -190,5 +202,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tytulDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn autorzyKsiazkisDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn gatunekComboBoxColumn;
+        private System.Windows.Forms.Button searchButton;
 	}
 }

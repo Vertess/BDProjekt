@@ -41,6 +41,7 @@
             this.czyscNazwiskoButton = new System.Windows.Forms.Button();
             this.imieLabel = new System.Windows.Forms.Label();
             this.nazwiskoLabel = new System.Windows.Forms.Label();
+            this.szukajButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autorBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +105,6 @@
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchTextBox.TabIndex = 3;
-            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // searchNazwiskoTextBox
             // 
@@ -112,11 +112,10 @@
             this.searchNazwiskoTextBox.Name = "searchNazwiskoTextBox";
             this.searchNazwiskoTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchNazwiskoTextBox.TabIndex = 5;
-            this.searchNazwiskoTextBox.TextChanged += new System.EventHandler(this.searchNazwiskoTextBox_TextChanged);
             // 
             // czyscNazwiskoButton
             // 
-            this.czyscNazwiskoButton.Location = new System.Drawing.Point(238, 168);
+            this.czyscNazwiskoButton.Location = new System.Drawing.Point(324, 168);
             this.czyscNazwiskoButton.Name = "czyscNazwiskoButton";
             this.czyscNazwiskoButton.Size = new System.Drawing.Size(75, 23);
             this.czyscNazwiskoButton.TabIndex = 8;
@@ -142,10 +141,21 @@
             this.nazwiskoLabel.TabIndex = 10;
             this.nazwiskoLabel.Text = "Nazwisko";
             // 
+            // szukajButton
+            // 
+            this.szukajButton.Location = new System.Drawing.Point(243, 168);
+            this.szukajButton.Name = "szukajButton";
+            this.szukajButton.Size = new System.Drawing.Size(75, 23);
+            this.szukajButton.TabIndex = 11;
+            this.szukajButton.Text = "Szukaj";
+            this.szukajButton.UseVisualStyleBackColor = true;
+            this.szukajButton.Click += new System.EventHandler(this.szukajButton_Click);
+            // 
             // Autorzy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.szukajButton);
             this.Controls.Add(this.nazwiskoLabel);
             this.Controls.Add(this.imieLabel);
             this.Controls.Add(this.czyscNazwiskoButton);
@@ -177,6 +187,7 @@
         private System.Windows.Forms.Button czyscNazwiskoButton;
         private System.Windows.Forms.Label imieLabel;
         private System.Windows.Forms.Label nazwiskoLabel;
+        private System.Windows.Forms.Button szukajButton;
 
     }
 }

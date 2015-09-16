@@ -30,15 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idEgzemplarzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ilosccDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typOkladkiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ksiazkaComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ksiazkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wydawnictwoComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.wydawnictwoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.egzemplarzBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zatwierdzButton = new System.Windows.Forms.Button();
             this.cenaLabel = new System.Windows.Forms.Label();
             this.iloscLabel = new System.Windows.Forms.Label();
@@ -47,6 +40,14 @@
             this.searchIloscTextBox = new System.Windows.Forms.TextBox();
             this.searchTypTextBox = new System.Windows.Forms.TextBox();
             this.resetTypButton = new System.Windows.Forms.Button();
+            this.idEgzemplarzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ilosccDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typOkladkiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ksiazkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wydawnictwoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.egzemplarzBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.szukajButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ksiazkaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wydawnictwoBindingSource)).BeginInit();
@@ -70,30 +71,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(645, 150);
             this.dataGridView1.TabIndex = 0;
             // 
-            // idEgzemplarzaDataGridViewTextBoxColumn
-            // 
-            this.idEgzemplarzaDataGridViewTextBoxColumn.DataPropertyName = "IdEgzemplarza";
-            this.idEgzemplarzaDataGridViewTextBoxColumn.HeaderText = "IdEgzemplarza";
-            this.idEgzemplarzaDataGridViewTextBoxColumn.Name = "idEgzemplarzaDataGridViewTextBoxColumn";
-            // 
-            // cenaDataGridViewTextBoxColumn
-            // 
-            this.cenaDataGridViewTextBoxColumn.DataPropertyName = "Cena";
-            this.cenaDataGridViewTextBoxColumn.HeaderText = "Cena";
-            this.cenaDataGridViewTextBoxColumn.Name = "cenaDataGridViewTextBoxColumn";
-            // 
-            // ilosccDataGridViewTextBoxColumn
-            // 
-            this.ilosccDataGridViewTextBoxColumn.DataPropertyName = "Iloscc";
-            this.ilosccDataGridViewTextBoxColumn.HeaderText = "Iloscc";
-            this.ilosccDataGridViewTextBoxColumn.Name = "ilosccDataGridViewTextBoxColumn";
-            // 
-            // typOkladkiDataGridViewCheckBoxColumn
-            // 
-            this.typOkladkiDataGridViewCheckBoxColumn.DataPropertyName = "TypOkladki";
-            this.typOkladkiDataGridViewCheckBoxColumn.HeaderText = "TypOkladki";
-            this.typOkladkiDataGridViewCheckBoxColumn.Name = "typOkladkiDataGridViewCheckBoxColumn";
-            // 
             // ksiazkaComboBoxColumn
             // 
             this.ksiazkaComboBoxColumn.DataSource = this.ksiazkaBindingSource;
@@ -104,10 +81,6 @@
             this.ksiazkaComboBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ksiazkaComboBoxColumn.ValueMember = "IdKsiazki";
             // 
-            // ksiazkaBindingSource
-            // 
-            this.ksiazkaBindingSource.DataSource = typeof(BDProjekt.Ksiazka);
-            // 
             // wydawnictwoComboBoxColumn
             // 
             this.wydawnictwoComboBoxColumn.DataSource = this.wydawnictwoBindingSource;
@@ -117,14 +90,6 @@
             this.wydawnictwoComboBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.wydawnictwoComboBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.wydawnictwoComboBoxColumn.ValueMember = "IdWydawnictwa";
-            // 
-            // wydawnictwoBindingSource
-            // 
-            this.wydawnictwoBindingSource.DataSource = typeof(BDProjekt.Wydawnictwo);
-            // 
-            // egzemplarzBindingSource
-            // 
-            this.egzemplarzBindingSource.DataSource = typeof(BDProjekt.Egzemplarz);
             // 
             // zatwierdzButton
             // 
@@ -189,7 +154,7 @@
             // 
             // resetTypButton
             // 
-            this.resetTypButton.Location = new System.Drawing.Point(206, 174);
+            this.resetTypButton.Location = new System.Drawing.Point(281, 174);
             this.resetTypButton.Name = "resetTypButton";
             this.resetTypButton.Size = new System.Drawing.Size(75, 23);
             this.resetTypButton.TabIndex = 13;
@@ -197,10 +162,57 @@
             this.resetTypButton.UseVisualStyleBackColor = true;
             this.resetTypButton.Click += new System.EventHandler(this.resetTypButton_Click);
             // 
+            // idEgzemplarzaDataGridViewTextBoxColumn
+            // 
+            this.idEgzemplarzaDataGridViewTextBoxColumn.DataPropertyName = "IdEgzemplarza";
+            this.idEgzemplarzaDataGridViewTextBoxColumn.HeaderText = "IdEgzemplarza";
+            this.idEgzemplarzaDataGridViewTextBoxColumn.Name = "idEgzemplarzaDataGridViewTextBoxColumn";
+            // 
+            // cenaDataGridViewTextBoxColumn
+            // 
+            this.cenaDataGridViewTextBoxColumn.DataPropertyName = "Cena";
+            this.cenaDataGridViewTextBoxColumn.HeaderText = "Cena";
+            this.cenaDataGridViewTextBoxColumn.Name = "cenaDataGridViewTextBoxColumn";
+            // 
+            // ilosccDataGridViewTextBoxColumn
+            // 
+            this.ilosccDataGridViewTextBoxColumn.DataPropertyName = "Iloscc";
+            this.ilosccDataGridViewTextBoxColumn.HeaderText = "Iloscc";
+            this.ilosccDataGridViewTextBoxColumn.Name = "ilosccDataGridViewTextBoxColumn";
+            // 
+            // typOkladkiDataGridViewCheckBoxColumn
+            // 
+            this.typOkladkiDataGridViewCheckBoxColumn.DataPropertyName = "TypOkladki";
+            this.typOkladkiDataGridViewCheckBoxColumn.HeaderText = "TypOkladki";
+            this.typOkladkiDataGridViewCheckBoxColumn.Name = "typOkladkiDataGridViewCheckBoxColumn";
+            // 
+            // ksiazkaBindingSource
+            // 
+            this.ksiazkaBindingSource.DataSource = typeof(BDProjekt.Ksiazka);
+            // 
+            // wydawnictwoBindingSource
+            // 
+            this.wydawnictwoBindingSource.DataSource = typeof(BDProjekt.Wydawnictwo);
+            // 
+            // egzemplarzBindingSource
+            // 
+            this.egzemplarzBindingSource.DataSource = typeof(BDProjekt.Egzemplarz);
+            // 
+            // szukajButton
+            // 
+            this.szukajButton.Location = new System.Drawing.Point(200, 174);
+            this.szukajButton.Name = "szukajButton";
+            this.szukajButton.Size = new System.Drawing.Size(75, 23);
+            this.szukajButton.TabIndex = 14;
+            this.szukajButton.Text = "Szukaj";
+            this.szukajButton.UseVisualStyleBackColor = true;
+            this.szukajButton.Click += new System.EventHandler(this.szukajButton_Click);
+            // 
             // EgzemplarzControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.szukajButton);
             this.Controls.Add(this.resetTypButton);
             this.Controls.Add(this.searchTypTextBox);
             this.Controls.Add(this.searchIloscTextBox);
@@ -242,5 +254,6 @@
         private System.Windows.Forms.TextBox searchIloscTextBox;
         private System.Windows.Forms.TextBox searchTypTextBox;
         private System.Windows.Forms.Button resetTypButton;
+        private System.Windows.Forms.Button szukajButton;
     }
 }

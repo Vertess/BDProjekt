@@ -50,18 +50,17 @@ namespace BDProjekt.Controls
 
         private void searchCenaHurtowaTextBox_TextChanged(object sender, EventArgs e)
         {
-            ofertaOferentaBindingSource.DataSource = Funkcje.Instance._context.OfertaOferentas.Local.ToBindingList()
-    .Where(n => n.CenaHurtowa.Equals(Convert.ToInt32(this.searchCenaHurtowaTextBox.Text)));
-            if (searchCenaHurtowaTextBox.Text.Length == 0)
-            {
-                ofertaOferentaBindingSource.DataSource = Funkcje.Instance._context.OfertaOferentas.Local.ToBindingList();
-            }
+            
         }
 
         private void searchCenaHurtowaButton_Click(object sender, EventArgs e)
         {
-            ofertaOferentaBindingSource.DataSource = Funkcje.Instance._context.OfertaOferentas.Local.ToBindingList()
-                .Where(n => n.CenaHurtowa.Equals(Convert.ToInt32(this.searchCenaHurtowaTextBox.Text)));
+            int tmpCenaH = 0;
+            if (Int32.TryParse(searchCenaHurtowaTextBox.Text, out tmpCenaH))
+                ofertaOferentaBindingSource.DataSource = Funkcje.Instance._context.OfertaOferentas.Local.
+                    ToBindingList().Where(c => c.CenaHurtowa.Equals(tmpCenaH));
+            else
+                ofertaOferentaBindingSource.DataSource = Funkcje.Instance._context.OfertaOferentas.Local.ToBindingList();
         }
 
         private void resetCenaHurtowaButton_Click(object sender, EventArgs e)

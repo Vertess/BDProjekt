@@ -41,6 +41,7 @@
             this.wysokoscRabatuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zamowieniesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rabatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.searchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rabatBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -106,7 +107,7 @@
             // 
             // resetWysokoscRabatuButton
             // 
-            this.resetWysokoscRabatuButton.Location = new System.Drawing.Point(274, 175);
+            this.resetWysokoscRabatuButton.Location = new System.Drawing.Point(382, 175);
             this.resetWysokoscRabatuButton.Name = "resetWysokoscRabatuButton";
             this.resetWysokoscRabatuButton.Size = new System.Drawing.Size(75, 23);
             this.resetWysokoscRabatuButton.TabIndex = 13;
@@ -142,10 +143,21 @@
             // 
             this.rabatBindingSource.DataSource = typeof(BDProjekt.Rabat);
             // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(301, 175);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 14;
+            this.searchButton.Text = "Szukaj";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
             // RabatControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.resetWysokoscRabatuButton);
             this.Controls.Add(this.searchWysokoscRabatuTextBox);
             this.Controls.Add(this.wysokoscrabatuLabel);
@@ -177,5 +189,6 @@
         private System.Windows.Forms.Label wysokoscrabatuLabel;
         private System.Windows.Forms.TextBox searchWysokoscRabatuTextBox;
         private System.Windows.Forms.Button resetWysokoscRabatuButton;
+        private System.Windows.Forms.Button searchButton;
     }
 }

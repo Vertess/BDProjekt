@@ -38,32 +38,20 @@ namespace BDProjekt
             }
         }
 
-        private void searchTextBox_TextChanged(object sender, EventArgs e)
-        {
-            searchNazwiskoTextBox.Text = string.Empty;
-			autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList()
-	.Where(n => n.Imie.Contains(this.searchTextBox.Text));
-			if (searchTextBox.Text.Length == 0)
-			{
-				autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList();
-			}
-        }
-
-        private void searchNazwiskoTextBox_TextChanged(object sender, EventArgs e)
-        {
-            searchTextBox.Text = string.Empty; 
-            autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList()
-    .Where(n => n.Nazwisko.Contains(this.searchNazwiskoTextBox.Text));
-            if (searchNazwiskoTextBox.Text.Length == 0)
-            {
-                autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList();
-            }
-        }
-
         private void czyscNazwiskoButton_Click(object sender, EventArgs e)
         {
             searchNazwiskoTextBox.Text = string.Empty;
             searchTextBox.Text = string.Empty; 
+        }
+
+        private void szukajButton_Click(object sender, EventArgs e)
+        {
+            autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList()
+    .Where(n => n.Nazwisko.Contains(this.searchNazwiskoTextBox.Text) && n.Imie.Contains(this.searchTextBox.Text));
+            if (searchNazwiskoTextBox.Text.Length == 0 && searchTextBox.Text.Length == 0)
+            {
+                autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList();
+            }
         }
     }
 }

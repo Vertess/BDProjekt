@@ -30,7 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.zamowienyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nazwaWydawnictwaLlabel = new System.Windows.Forms.Label();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.confirmButton = new System.Windows.Forms.Button();
             this.idZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kosztZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.klientIdKlientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,11 +48,7 @@
             this.rabatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.realizacjaZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rodzajWysylkiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwaWydawnictwaLlabel = new System.Windows.Forms.Label();
-            this.resetButton = new System.Windows.Forms.Button();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.confirmButton = new System.Windows.Forms.Button();
+            this.zamowienyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zamowienyBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -78,9 +78,50 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // zamowienyBindingSource
+            // nazwaWydawnictwaLlabel
             // 
-            this.zamowienyBindingSource.DataSource = typeof(BDProjekt.Zamowieny);
+            this.nazwaWydawnictwaLlabel.AutoSize = true;
+            this.nazwaWydawnictwaLlabel.Location = new System.Drawing.Point(13, 175);
+            this.nazwaWydawnictwaLlabel.Name = "nazwaWydawnictwaLlabel";
+            this.nazwaWydawnictwaLlabel.Size = new System.Drawing.Size(110, 13);
+            this.nazwaWydawnictwaLlabel.TabIndex = 14;
+            this.nazwaWydawnictwaLlabel.Text = "Nazwa Wydawnictwa";
+            // 
+            // resetButton
+            // 
+            this.resetButton.Location = new System.Drawing.Point(316, 168);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(75, 23);
+            this.resetButton.TabIndex = 13;
+            this.resetButton.Text = "Czyść";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(129, 170);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchTextBox.TabIndex = 12;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(235, 168);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 11;
+            this.searchButton.Text = "Szukaj";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // confirmButton
+            // 
+            this.confirmButton.Location = new System.Drawing.Point(480, 170);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(75, 23);
+            this.confirmButton.TabIndex = 10;
+            this.confirmButton.Text = "Zatwierdź";
+            this.confirmButton.UseVisualStyleBackColor = true;
             // 
             // idZamowieniaDataGridViewTextBoxColumn
             // 
@@ -160,48 +201,9 @@
             this.rodzajWysylkiDataGridViewTextBoxColumn.HeaderText = "RodzajWysylki";
             this.rodzajWysylkiDataGridViewTextBoxColumn.Name = "rodzajWysylkiDataGridViewTextBoxColumn";
             // 
-            // nazwaWydawnictwaLlabel
+            // zamowienyBindingSource
             // 
-            this.nazwaWydawnictwaLlabel.AutoSize = true;
-            this.nazwaWydawnictwaLlabel.Location = new System.Drawing.Point(13, 175);
-            this.nazwaWydawnictwaLlabel.Name = "nazwaWydawnictwaLlabel";
-            this.nazwaWydawnictwaLlabel.Size = new System.Drawing.Size(110, 13);
-            this.nazwaWydawnictwaLlabel.TabIndex = 14;
-            this.nazwaWydawnictwaLlabel.Text = "Nazwa Wydawnictwa";
-            // 
-            // resetButton
-            // 
-            this.resetButton.Location = new System.Drawing.Point(316, 168);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(75, 23);
-            this.resetButton.TabIndex = 13;
-            this.resetButton.Text = "Czyść";
-            this.resetButton.UseVisualStyleBackColor = true;
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Location = new System.Drawing.Point(129, 170);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(100, 20);
-            this.searchTextBox.TabIndex = 12;
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(235, 168);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
-            this.searchButton.TabIndex = 11;
-            this.searchButton.Text = "Szukaj";
-            this.searchButton.UseVisualStyleBackColor = true;
-            // 
-            // confirmButton
-            // 
-            this.confirmButton.Location = new System.Drawing.Point(480, 170);
-            this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(75, 23);
-            this.confirmButton.TabIndex = 10;
-            this.confirmButton.Text = "Zatwierdź";
-            this.confirmButton.UseVisualStyleBackColor = true;
+            this.zamowienyBindingSource.DataSource = typeof(BDProjekt.Zamowieny);
             // 
             // ZamowieniaControl
             // 

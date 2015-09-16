@@ -38,18 +38,13 @@ namespace BDProjekt
 
         private void resetWysokoscRabatuButton_Click(object sender, EventArgs e)
         {
-            rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
-            rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
+            searchTextBox.Text = string.Empty;
+            searchWysokoscRabatuTextBox.Text = string.Empty;
         }
 
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
-            rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList()
-    .Where(n => n.OpisRabatu.Contains(this.searchTextBox.Text));
-            if (searchTextBox.Text.Length == 0)
-            {
-                rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
-            }
+   
         }
 
         private void searchWysokoscRabatuTextBox_TextChanged(object sender, EventArgs e)
@@ -57,6 +52,16 @@ namespace BDProjekt
             rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList()
     .Where(n => n.WysokoscRabatu.Equals(Convert.ToInt32(this.searchWysokoscRabatuTextBox.Text)));
             if (searchWysokoscRabatuTextBox.Text.Length == 0)
+            {
+                rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
+            }
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList()
+    .Where(n => n.OpisRabatu.Contains(this.searchTextBox.Text));
+            if (searchTextBox.Text.Length == 0)
             {
                 rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
             }

@@ -83,6 +83,18 @@
     <Compile Include="Controls\EgzemplarzControl.Designer.cs">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ReklamacjaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ReklamacjaControl.Designer.cs">
+      <DependentUpon>ReklamacjaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ZamowieniaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ZamowieniaControl.Designer.cs">
+      <DependentUpon>ZamowieniaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dostawa.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
@@ -173,12 +185,6 @@
     <Compile Include="Reklamacja.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
-    <Compile Include="ReklamacjaControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ReklamacjaControl.Designer.cs">
-      <DependentUpon>ReklamacjaControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="RodzajWysylki.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
@@ -206,6 +212,12 @@
     <EmbeddedResource Include="Controls\OfertyControl.resx">
       <DependentUpon>OfertyControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReklamacjaControl.resx">
+      <DependentUpon>ReklamacjaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ZamowieniaControl.resx">
+      <DependentUpon>ZamowieniaControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,9 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\WydawnictwoControl.resx">
       <DependentUpon>WydawnictwoControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReklamacjaControl.resx">
-      <DependentUpon>ReklamacjaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Ksiegarnia.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

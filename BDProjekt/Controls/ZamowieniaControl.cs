@@ -21,5 +21,15 @@ namespace BDProjekt.Controls
         {
 
         }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -50,22 +50,12 @@ namespace BDProjekt.Controls
 
         private void searchCenaTextBox_TextChanged(object sender, EventArgs e)
         {
-            egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList()
-    .Where(n => n.Cena.Equals(Convert.ToInt32(this.searchCenaTextBox.Text)));
-            if (searchCenaTextBox.Text.Length == 0)
-            {
-                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
-            }
+            
         }
 
         private void searchIloscTextBox_TextChanged(object sender, EventArgs e)
         {
-            egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList()
-    .Where(n => n.Iloscc.Equals(Convert.ToInt32(this.searchIloscTextBox.Text)));
-            if (searchIloscTextBox.Text.Length == 0)
-            {
-                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
-            }
+
         }
 
         private void searchTypTextBox_TextChanged(object sender, EventArgs e)
@@ -83,6 +73,17 @@ namespace BDProjekt.Controls
             searchCenaTextBox.Text = string.Empty;
             searchTypTextBox.Text = string.Empty;
             searchIloscTextBox.Text = string.Empty;
+        }
+
+        private void szukajButton_Click(object sender, EventArgs e)
+        {
+            int tmpCena = 0;
+            int tmpIlosc = 0;
+            if (Int32.TryParse(searchCenaTextBox.Text, out tmpCena) || Int32.TryParse(searchIloscTextBox.Text, out tmpIlosc))
+                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.
+                    ToBindingList().Where(c => c.Cena.Equals(tmpCena) || c.Iloscc.Equals(tmpIlosc));
+            else
+                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
         }
 
     }

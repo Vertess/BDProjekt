@@ -48,16 +48,21 @@ namespace BDProjekt
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            reklamacjaBindingSource.DataSource = Funkcje.Instance._context.Reklamacjas.Local.ToBindingList();
+            searchTextBox.Text = string.Empty;
         }
 
         private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
         {
             reklamacjaBindingSource.DataSource = Funkcje.Instance._context.Reklamacjas.Local.ToBindingList()
    .Where(n => n.Opis.Contains(this.searchTextBox.Text));
             if (searchTextBox.Text.Length == 0)
             {
-               reklamacjaBindingSource.DataSource = Funkcje.Instance._context.Reklamacjas.Local.ToBindingList();
+                reklamacjaBindingSource.DataSource = Funkcje.Instance._context.Reklamacjas.Local.ToBindingList();
             }
         }
     }

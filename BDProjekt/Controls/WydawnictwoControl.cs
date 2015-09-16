@@ -38,22 +38,22 @@ namespace BDProjekt
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            wydawnictwoBindingSource.DataSource = Funkcje.Instance._context.Wydawnictwoes.Local.ToBindingList();
+            searchTextBox.Text = string.Empty;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-           wydawnictwoBindingSource.DataSource = Funkcje.Instance._context.Wydawnictwoes.Local.ToBindingList().Where(n => n.NazwaWydawnictwa.Contains(this.searchTextBox.Text));
-        }
-
-        private void searchTextBox_TextChanged(object sender, EventArgs e)
-        {
             wydawnictwoBindingSource.DataSource = Funkcje.Instance._context.Wydawnictwoes.Local.ToBindingList()
-    .Where(n => n.NazwaWydawnictwa.Contains(this.searchTextBox.Text));
+   .Where(n => n.NazwaWydawnictwa.Contains(this.searchTextBox.Text));
             if (searchTextBox.Text.Length == 0)
             {
                 wydawnictwoBindingSource.DataSource = Funkcje.Instance._context.Wydawnictwoes.Local.ToBindingList();
             }
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }

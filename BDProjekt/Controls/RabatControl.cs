@@ -40,28 +40,16 @@ namespace BDProjekt
         {
             searchTextBox.Text = string.Empty;
             searchWysokoscRabatuTextBox.Text = string.Empty;
-        }
 
-        private void searchTextBox_TextChanged(object sender, EventArgs e)
-        {
-   
+				rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
         }
-
-        private void searchWysokoscRabatuTextBox_TextChanged(object sender, EventArgs e)
-        {
-            rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList()
-    .Where(n => n.WysokoscRabatu.Equals(Convert.ToInt32(this.searchWysokoscRabatuTextBox.Text)));
-            if (searchWysokoscRabatuTextBox.Text.Length == 0)
-            {
-                rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
-            }
-        }
-
         private void searchButton_Click(object sender, EventArgs e)
         {
+			int tmpWysokoscRabatu = 0;
+			Int32.TryParse(searchWysokoscRabatuTextBox.Text, out tmpWysokoscRabatu);
             rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList()
-    .Where(n => n.OpisRabatu.Contains(this.searchTextBox.Text));
-            if (searchTextBox.Text.Length == 0)
+    .Where(n => n.OpisRabatu.Contains(this.searchTextBox.Text) && n.WysokoscRabatu.Equals(tmpWysokoscRabatu));
+            if (searchTextBox.Text.Length == 0 && searchWysokoscRabatuTextBox.Text.Length == 0)
             {
                 rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();
             }

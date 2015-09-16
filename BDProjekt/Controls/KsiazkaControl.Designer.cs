@@ -114,7 +114,6 @@
             this.searchOpisTextBox.Name = "searchOpisTextBox";
             this.searchOpisTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchOpisTextBox.TabIndex = 4;
-            this.searchOpisTextBox.TextChanged += new System.EventHandler(this.searchOpisTextBox_TextChanged);
             // 
             // searchTytulTextBox
             // 
@@ -122,7 +121,6 @@
             this.searchTytulTextBox.Name = "searchTytulTextBox";
             this.searchTytulTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchTytulTextBox.TabIndex = 5;
-            this.searchTytulTextBox.TextChanged += new System.EventHandler(this.searchTytulTextBox_TextChanged);
             // 
             // resetTytulButton
             // 

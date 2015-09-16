@@ -57,6 +57,8 @@ namespace BDProjekt
         private void resetButton_Click(object sender, EventArgs e)
         {
             searchTextBox.Text = string.Empty;
+			gatunekBindingSource.DataSource = Funkcje.Instance._context.Gatuneks.Local.ToBindingList();
+
         }
     }
 }

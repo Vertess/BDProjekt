@@ -67,7 +67,6 @@
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchTextBox.TabIndex = 7;
-            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // confirmButton
             // 
@@ -103,7 +102,6 @@
             this.searchWysokoscRabatuTextBox.Name = "searchWysokoscRabatuTextBox";
             this.searchWysokoscRabatuTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchWysokoscRabatuTextBox.TabIndex = 11;
-            this.searchWysokoscRabatuTextBox.TextChanged += new System.EventHandler(this.searchWysokoscRabatuTextBox_TextChanged);
             // 
             // resetWysokoscRabatuButton
             // 

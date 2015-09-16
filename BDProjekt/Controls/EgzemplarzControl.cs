@@ -48,41 +48,25 @@ namespace BDProjekt.Controls
             }
         }
 
-        private void searchCenaTextBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void searchIloscTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void searchTypTextBox_TextChanged(object sender, EventArgs e)
-        {
-            /*egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList()
-    .Where(n => n.TypOkladki.Contains(this.searchTypTextBox.Text));
-            if (searchTypTextBox.Text.Length == 0)
-            {
-                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
-            }*/
-        }
-
         private void resetTypButton_Click(object sender, EventArgs e)
         {
             searchCenaTextBox.Text = string.Empty;
             searchTypTextBox.Text = string.Empty;
             searchIloscTextBox.Text = string.Empty;
+
+			egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
+
         }
 
         private void szukajButton_Click(object sender, EventArgs e)
         {
             int tmpCena = 0;
             int tmpIlosc = 0;
-            if (Int32.TryParse(searchCenaTextBox.Text, out tmpCena) || Int32.TryParse(searchIloscTextBox.Text, out tmpIlosc))
+			Int32.TryParse(searchCenaTextBox.Text, out tmpCena);
+			Int32.TryParse(searchIloscTextBox.Text, out tmpIlosc);
                 egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.
-                    ToBindingList().Where(c => c.Cena.Equals(tmpCena) || c.Iloscc.Equals(tmpIlosc));
-            else
+                    ToBindingList().Where(c => c.Cena.Equals(tmpCena) && c.Iloscc.Equals(tmpIlosc));
+            if(string.IsNullOrEmpty(searchCenaTextBox.Text) && string.IsNullOrEmpty(searchIloscTextBox.Text))
                 egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
         }
 

@@ -130,7 +130,6 @@
             this.searchCenaHurtowaTextBox.Name = "searchCenaHurtowaTextBox";
             this.searchCenaHurtowaTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchCenaHurtowaTextBox.TabIndex = 3;
-            this.searchCenaHurtowaTextBox.TextChanged += new System.EventHandler(this.searchCenaHurtowaTextBox_TextChanged);
             // 
             // searchCenaHurtowaButton
             // 

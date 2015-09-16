@@ -33,7 +33,6 @@ namespace BDProjekt
 		{
 			if (!DesignMode)
 			{
-                //cvxgfbrt unkhcnb td
 				Ksiazka ks = new Ksiazka();
 				Gatunek gt = new Gatunek();
 				gt = (Gatunek)gatunekBindingSource.Current;
@@ -52,21 +51,12 @@ namespace BDProjekt
 				e.ThrowException = false;
 			}
 		}
-
-        private void searchOpisTextBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void searchTytulTextBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void resetTytulButton_Click(object sender, EventArgs e)
         {
             searchTytulTextBox.Text = string.Empty;
             searchOpisTextBox.Text = string.Empty;
+			ksiazkaBindingSource.DataSource = Funkcje.Instance._context.Ksiazkas.Local.ToBindingList();
+
         }
 
         private void searchButton_Click(object sender, EventArgs e)

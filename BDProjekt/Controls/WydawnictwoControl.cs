@@ -39,6 +39,8 @@ namespace BDProjekt
         private void resetButton_Click(object sender, EventArgs e)
         {
             searchTextBox.Text = string.Empty;
+			wydawnictwoBindingSource.DataSource = Funkcje.Instance._context.Wydawnictwoes.Local.ToBindingList();
+
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -49,11 +51,6 @@ namespace BDProjekt
             {
                 wydawnictwoBindingSource.DataSource = Funkcje.Instance._context.Wydawnictwoes.Local.ToBindingList();
             }
-        }
-
-        private void searchTextBox_TextChanged(object sender, EventArgs e)
-        {
-          
         }
     }
 }

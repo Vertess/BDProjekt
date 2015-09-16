@@ -134,7 +134,6 @@
             this.searchCenaTextBox.Name = "searchCenaTextBox";
             this.searchCenaTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchCenaTextBox.TabIndex = 5;
-            this.searchCenaTextBox.TextChanged += new System.EventHandler(this.searchCenaTextBox_TextChanged);
             // 
             // searchIloscTextBox
             // 
@@ -142,7 +141,6 @@
             this.searchIloscTextBox.Name = "searchIloscTextBox";
             this.searchIloscTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchIloscTextBox.TabIndex = 6;
-            this.searchIloscTextBox.TextChanged += new System.EventHandler(this.searchIloscTextBox_TextChanged);
             // 
             // searchTypTextBox
             // 
@@ -150,7 +148,6 @@
             this.searchTypTextBox.Name = "searchTypTextBox";
             this.searchTypTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchTypTextBox.TabIndex = 7;
-            this.searchTypTextBox.TextChanged += new System.EventHandler(this.searchTypTextBox_TextChanged);
             // 
             // resetTypButton
             // 

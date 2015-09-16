@@ -266,15 +266,16 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Autor.datasource" />
     <None Include="Properties\DataSources\AutorzyKsiazki.datasource" />
-    <None Include="Properties\DataSources\Dostawa1.datasource" />
+    <None Include="Properties\DataSources\Dostawa.datasource" />
     <None Include="Properties\DataSources\Egzemplarz.datasource" />
     <None Include="Properties\DataSources\Gatunek.datasource" />
     <None Include="Properties\DataSources\Ksiazka.datasource" />
-    <None Include="Properties\DataSources\Oferent1.datasource" />
-    <None Include="Properties\DataSources\Pracownik1.datasource" />
+    <None Include="Properties\DataSources\Oferent.datasource" />
+    <None Include="Properties\DataSources\Pracownik.datasource" />
     <None Include="Properties\DataSources\Rabat.datasource" />
     <None Include="Properties\DataSources\Reklamacja.datasource" />
     <None Include="Properties\DataSources\Wydawnictwo.datasource" />
+    <None Include="Properties\DataSources\Zamowieny.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

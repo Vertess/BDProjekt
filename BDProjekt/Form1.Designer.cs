@@ -72,29 +72,6 @@
             this.pracownikZamowieniaTabPage = new System.Windows.Forms.TabPage();
             this.pracownikNick = new System.Windows.Forms.Label();
             this.okienkoAdmina = new System.Windows.Forms.TabPage();
-            this.adminFilterText = new System.Windows.Forms.Label();
-            this.adminFilterTextBox = new System.Windows.Forms.TextBox();
-            this.adminFilterLoginText = new System.Windows.Forms.Label();
-            this.adminBladWiadomosc = new System.Windows.Forms.Label();
-            this.adminLoginTextBox = new System.Windows.Forms.TextBox();
-            this.Login = new System.Windows.Forms.Label();
-            this.adminHasloTextBox = new System.Windows.Forms.TextBox();
-            this.Haslo = new System.Windows.Forms.Label();
-            this.adminWylogujButton = new System.Windows.Forms.Button();
-            this.adminFilterLoginTextBox = new System.Windows.Forms.TextBox();
-            this.adminUsunKlientaButton = new System.Windows.Forms.Button();
-            this.adminPokazListePracownikowButton = new System.Windows.Forms.Button();
-            this.adminPokazListeKlientowButton = new System.Windows.Forms.Button();
-            this.adminUsunPracownikaButton = new System.Windows.Forms.Button();
-            this.adminDataTextBox = new System.Windows.Forms.TextBox();
-            this.adminNazwiskoTextBox = new System.Windows.Forms.TextBox();
-            this.adminImieTextBox = new System.Windows.Forms.TextBox();
-            this.dodajPracownikaButton = new System.Windows.Forms.Button();
-            this.AdminDataText = new System.Windows.Forms.Label();
-            this.AdminNazwiskoText = new System.Windows.Forms.Label();
-            this.AdminImieText = new System.Windows.Forms.Label();
-            this.adminListBox = new System.Windows.Forms.ListBox();
-            this.adminLoginWiadomosc = new System.Windows.Forms.Label();
             this.okienkoOferenta = new System.Windows.Forms.TabPage();
             this.OferentWyloguj_Button = new System.Windows.Forms.Button();
             this.oferentZlozReklamacjeTextBox = new System.Windows.Forms.TextBox();
@@ -118,6 +95,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.logowanieComboBox = new System.Windows.Forms.ComboBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.adminKlientControl1 = new BDProjekt.Controls.AdminKlientControl();
+            this.adminPracownikControl1 = new BDProjekt.AdminPracownikControl();
+            this.adminOferentControl1 = new BDProjekt.AdminOferentControl();
             this.Glowna_tabControl.SuspendLayout();
             this.okienkoLogowania.SuspendLayout();
             this.okienkoKlienta.SuspendLayout();
@@ -134,6 +118,10 @@
             this.pracownikReklamacjeTabPage.SuspendLayout();
             this.okienkoAdmina.SuspendLayout();
             this.okienkoOferenta.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // Glowna_tabControl
@@ -561,29 +549,7 @@
             // 
             // okienkoAdmina
             // 
-            this.okienkoAdmina.Controls.Add(this.adminFilterText);
-            this.okienkoAdmina.Controls.Add(this.adminFilterTextBox);
-            this.okienkoAdmina.Controls.Add(this.adminFilterLoginText);
-            this.okienkoAdmina.Controls.Add(this.adminBladWiadomosc);
-            this.okienkoAdmina.Controls.Add(this.adminLoginTextBox);
-            this.okienkoAdmina.Controls.Add(this.Login);
-            this.okienkoAdmina.Controls.Add(this.adminHasloTextBox);
-            this.okienkoAdmina.Controls.Add(this.Haslo);
-            this.okienkoAdmina.Controls.Add(this.adminWylogujButton);
-            this.okienkoAdmina.Controls.Add(this.adminFilterLoginTextBox);
-            this.okienkoAdmina.Controls.Add(this.adminUsunKlientaButton);
-            this.okienkoAdmina.Controls.Add(this.adminPokazListePracownikowButton);
-            this.okienkoAdmina.Controls.Add(this.adminPokazListeKlientowButton);
-            this.okienkoAdmina.Controls.Add(this.adminUsunPracownikaButton);
-            this.okienkoAdmina.Controls.Add(this.adminDataTextBox);
-            this.okienkoAdmina.Controls.Add(this.adminNazwiskoTextBox);
-            this.okienkoAdmina.Controls.Add(this.adminImieTextBox);
-            this.okienkoAdmina.Controls.Add(this.dodajPracownikaButton);
-            this.okienkoAdmina.Controls.Add(this.AdminDataText);
-            this.okienkoAdmina.Controls.Add(this.AdminNazwiskoText);
-            this.okienkoAdmina.Controls.Add(this.AdminImieText);
-            this.okienkoAdmina.Controls.Add(this.adminListBox);
-            this.okienkoAdmina.Controls.Add(this.adminLoginWiadomosc);
+            this.okienkoAdmina.Controls.Add(this.tabControl1);
             this.okienkoAdmina.Location = new System.Drawing.Point(4, 22);
             this.okienkoAdmina.Name = "okienkoAdmina";
             this.okienkoAdmina.Padding = new System.Windows.Forms.Padding(3);
@@ -591,202 +557,6 @@
             this.okienkoAdmina.TabIndex = 2;
             this.okienkoAdmina.Text = "Admin";
             this.okienkoAdmina.UseVisualStyleBackColor = true;
-            // 
-            // adminFilterText
-            // 
-            this.adminFilterText.AutoSize = true;
-            this.adminFilterText.Location = new System.Drawing.Point(308, 194);
-            this.adminFilterText.Name = "adminFilterText";
-            this.adminFilterText.Size = new System.Drawing.Size(66, 13);
-            this.adminFilterText.TabIndex = 93;
-            this.adminFilterText.Text = "Filter ogolny:";
-            // 
-            // adminFilterTextBox
-            // 
-            this.adminFilterTextBox.Location = new System.Drawing.Point(379, 192);
-            this.adminFilterTextBox.Name = "adminFilterTextBox";
-            this.adminFilterTextBox.Size = new System.Drawing.Size(177, 20);
-            this.adminFilterTextBox.TabIndex = 92;
-            // 
-            // adminFilterLoginText
-            // 
-            this.adminFilterLoginText.AutoSize = true;
-            this.adminFilterLoginText.Location = new System.Drawing.Point(80, 196);
-            this.adminFilterLoginText.Name = "adminFilterLoginText";
-            this.adminFilterLoginText.Size = new System.Drawing.Size(60, 13);
-            this.adminFilterLoginText.TabIndex = 91;
-            this.adminFilterLoginText.Text = "Filter(login):";
-            // 
-            // adminBladWiadomosc
-            // 
-            this.adminBladWiadomosc.AutoSize = true;
-            this.adminBladWiadomosc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminBladWiadomosc.Location = new System.Drawing.Point(317, 26);
-            this.adminBladWiadomosc.Name = "adminBladWiadomosc";
-            this.adminBladWiadomosc.Size = new System.Drawing.Size(91, 17);
-            this.adminBladWiadomosc.TabIndex = 90;
-            this.adminBladWiadomosc.Text = "Nie ma bledu";
-            this.adminBladWiadomosc.Visible = false;
-            // 
-            // adminLoginTextBox
-            // 
-            this.adminLoginTextBox.Location = new System.Drawing.Point(98, 53);
-            this.adminLoginTextBox.Name = "adminLoginTextBox";
-            this.adminLoginTextBox.Size = new System.Drawing.Size(100, 20);
-            this.adminLoginTextBox.TabIndex = 89;
-            // 
-            // Login
-            // 
-            this.Login.AutoSize = true;
-            this.Login.Location = new System.Drawing.Point(23, 58);
-            this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(33, 13);
-            this.Login.TabIndex = 88;
-            this.Login.Text = "Login";
-            // 
-            // adminHasloTextBox
-            // 
-            this.adminHasloTextBox.Location = new System.Drawing.Point(98, 77);
-            this.adminHasloTextBox.Name = "adminHasloTextBox";
-            this.adminHasloTextBox.Size = new System.Drawing.Size(100, 20);
-            this.adminHasloTextBox.TabIndex = 87;
-            // 
-            // Haslo
-            // 
-            this.Haslo.AutoSize = true;
-            this.Haslo.Location = new System.Drawing.Point(23, 81);
-            this.Haslo.Name = "Haslo";
-            this.Haslo.Size = new System.Drawing.Size(34, 13);
-            this.Haslo.TabIndex = 86;
-            this.Haslo.Text = "Haslo";
-            // 
-            // adminWylogujButton
-            // 
-            this.adminWylogujButton.Location = new System.Drawing.Point(191, 9);
-            this.adminWylogujButton.Name = "adminWylogujButton";
-            this.adminWylogujButton.Size = new System.Drawing.Size(75, 23);
-            this.adminWylogujButton.TabIndex = 85;
-            this.adminWylogujButton.Text = "Wyloguj";
-            this.adminWylogujButton.UseVisualStyleBackColor = true;
-            // 
-            // adminFilterLoginTextBox
-            // 
-            this.adminFilterLoginTextBox.Location = new System.Drawing.Point(117, 194);
-            this.adminFilterLoginTextBox.Name = "adminFilterLoginTextBox";
-            this.adminFilterLoginTextBox.Size = new System.Drawing.Size(177, 20);
-            this.adminFilterLoginTextBox.TabIndex = 83;
-            // 
-            // adminUsunKlientaButton
-            // 
-            this.adminUsunKlientaButton.Location = new System.Drawing.Point(473, 220);
-            this.adminUsunKlientaButton.Name = "adminUsunKlientaButton";
-            this.adminUsunKlientaButton.Size = new System.Drawing.Size(116, 23);
-            this.adminUsunKlientaButton.TabIndex = 80;
-            this.adminUsunKlientaButton.Text = "Usuń klienta";
-            this.adminUsunKlientaButton.UseVisualStyleBackColor = true;
-            this.adminUsunKlientaButton.Visible = false;
-            // 
-            // adminPokazListePracownikowButton
-            // 
-            this.adminPokazListePracownikowButton.Location = new System.Drawing.Point(40, 220);
-            this.adminPokazListePracownikowButton.Name = "adminPokazListePracownikowButton";
-            this.adminPokazListePracownikowButton.Size = new System.Drawing.Size(146, 23);
-            this.adminPokazListePracownikowButton.TabIndex = 79;
-            this.adminPokazListePracownikowButton.Text = "Pokaż listę pracowników";
-            this.adminPokazListePracownikowButton.UseVisualStyleBackColor = true;
-            // 
-            // adminPokazListeKlientowButton
-            // 
-            this.adminPokazListeKlientowButton.Location = new System.Drawing.Point(191, 221);
-            this.adminPokazListeKlientowButton.Name = "adminPokazListeKlientowButton";
-            this.adminPokazListeKlientowButton.Size = new System.Drawing.Size(116, 23);
-            this.adminPokazListeKlientowButton.TabIndex = 78;
-            this.adminPokazListeKlientowButton.Text = "Pokaż listę klientów";
-            this.adminPokazListeKlientowButton.UseVisualStyleBackColor = true;
-            // 
-            // adminUsunPracownikaButton
-            // 
-            this.adminUsunPracownikaButton.Location = new System.Drawing.Point(352, 220);
-            this.adminUsunPracownikaButton.Name = "adminUsunPracownikaButton";
-            this.adminUsunPracownikaButton.Size = new System.Drawing.Size(116, 23);
-            this.adminUsunPracownikaButton.TabIndex = 77;
-            this.adminUsunPracownikaButton.Text = "Usuń pracownika";
-            this.adminUsunPracownikaButton.UseVisualStyleBackColor = true;
-            this.adminUsunPracownikaButton.Visible = false;
-            // 
-            // adminDataTextBox
-            // 
-            this.adminDataTextBox.Location = new System.Drawing.Point(98, 153);
-            this.adminDataTextBox.Name = "adminDataTextBox";
-            this.adminDataTextBox.Size = new System.Drawing.Size(100, 20);
-            this.adminDataTextBox.TabIndex = 75;
-            // 
-            // adminNazwiskoTextBox
-            // 
-            this.adminNazwiskoTextBox.Location = new System.Drawing.Point(98, 127);
-            this.adminNazwiskoTextBox.Name = "adminNazwiskoTextBox";
-            this.adminNazwiskoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.adminNazwiskoTextBox.TabIndex = 74;
-            // 
-            // adminImieTextBox
-            // 
-            this.adminImieTextBox.Location = new System.Drawing.Point(98, 101);
-            this.adminImieTextBox.Name = "adminImieTextBox";
-            this.adminImieTextBox.Size = new System.Drawing.Size(100, 20);
-            this.adminImieTextBox.TabIndex = 73;
-            // 
-            // dodajPracownikaButton
-            // 
-            this.dodajPracownikaButton.Location = new System.Drawing.Point(209, 103);
-            this.dodajPracownikaButton.Name = "dodajPracownikaButton";
-            this.dodajPracownikaButton.Size = new System.Drawing.Size(116, 23);
-            this.dodajPracownikaButton.TabIndex = 72;
-            this.dodajPracownikaButton.Text = "Dodaj pracownika";
-            this.dodajPracownikaButton.UseVisualStyleBackColor = true;
-            // 
-            // AdminDataText
-            // 
-            this.AdminDataText.AutoSize = true;
-            this.AdminDataText.Location = new System.Drawing.Point(12, 155);
-            this.AdminDataText.Name = "AdminDataText";
-            this.AdminDataText.Size = new System.Drawing.Size(81, 13);
-            this.AdminDataText.TabIndex = 71;
-            this.AdminDataText.Text = "Data Urodzenia";
-            // 
-            // AdminNazwiskoText
-            // 
-            this.AdminNazwiskoText.AutoSize = true;
-            this.AdminNazwiskoText.Location = new System.Drawing.Point(21, 130);
-            this.AdminNazwiskoText.Name = "AdminNazwiskoText";
-            this.AdminNazwiskoText.Size = new System.Drawing.Size(53, 13);
-            this.AdminNazwiskoText.TabIndex = 70;
-            this.AdminNazwiskoText.Text = "Nazwisko";
-            // 
-            // AdminImieText
-            // 
-            this.AdminImieText.AutoSize = true;
-            this.AdminImieText.Location = new System.Drawing.Point(23, 105);
-            this.AdminImieText.Name = "AdminImieText";
-            this.AdminImieText.Size = new System.Drawing.Size(26, 13);
-            this.AdminImieText.TabIndex = 69;
-            this.AdminImieText.Text = "Imie";
-            // 
-            // adminListBox
-            // 
-            this.adminListBox.FormattingEnabled = true;
-            this.adminListBox.Location = new System.Drawing.Point(40, 250);
-            this.adminListBox.Name = "adminListBox";
-            this.adminListBox.Size = new System.Drawing.Size(682, 95);
-            this.adminListBox.TabIndex = 68;
-            // 
-            // adminLoginWiadomosc
-            // 
-            this.adminLoginWiadomosc.AutoSize = true;
-            this.adminLoginWiadomosc.Location = new System.Drawing.Point(21, 14);
-            this.adminLoginWiadomosc.Name = "adminLoginWiadomosc";
-            this.adminLoginWiadomosc.Size = new System.Drawing.Size(150, 13);
-            this.adminLoginWiadomosc.TabIndex = 13;
-            this.adminLoginWiadomosc.Text = "Jestes zalogowany jako admin";
             // 
             // okienkoOferenta
             // 
@@ -999,6 +769,72 @@
             this.logowanieComboBox.Size = new System.Drawing.Size(121, 21);
             this.logowanieComboBox.TabIndex = 97;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(807, 355);
+            this.tabControl1.TabIndex = 0;
+            this.tabControl1.Tag = "";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.adminKlientControl1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(799, 329);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Klienci";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.adminPracownikControl1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(799, 329);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Pracownicy";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.adminOferentControl1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(799, 329);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Oferenci";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // adminKlientControl1
+            // 
+            this.adminKlientControl1.Location = new System.Drawing.Point(-19, -13);
+            this.adminKlientControl1.Name = "adminKlientControl1";
+            this.adminKlientControl1.Size = new System.Drawing.Size(773, 421);
+            this.adminKlientControl1.TabIndex = 0;
+            // 
+            // adminPracownikControl1
+            // 
+            this.adminPracownikControl1.Location = new System.Drawing.Point(0, 0);
+            this.adminPracownikControl1.Name = "adminPracownikControl1";
+            this.adminPracownikControl1.Size = new System.Drawing.Size(769, 401);
+            this.adminPracownikControl1.TabIndex = 0;
+            // 
+            // adminOferentControl1
+            // 
+            this.adminOferentControl1.Location = new System.Drawing.Point(0, 0);
+            this.adminOferentControl1.Name = "adminOferentControl1";
+            this.adminOferentControl1.Size = new System.Drawing.Size(677, 385);
+            this.adminOferentControl1.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1032,9 +868,12 @@
             this.pracownikOfertyTabPage.PerformLayout();
             this.pracownikReklamacjeTabPage.ResumeLayout(false);
             this.okienkoAdmina.ResumeLayout(false);
-            this.okienkoAdmina.PerformLayout();
             this.okienkoOferenta.ResumeLayout(false);
             this.okienkoOferenta.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1074,29 +913,6 @@
         private System.Windows.Forms.TabPage pracownikZamowieniaTabPage;
         private System.Windows.Forms.Label pracownikNick;
         private System.Windows.Forms.TabPage okienkoAdmina;
-        private System.Windows.Forms.Label adminFilterText;
-        private System.Windows.Forms.TextBox adminFilterTextBox;
-        private System.Windows.Forms.Label adminFilterLoginText;
-        private System.Windows.Forms.Label adminBladWiadomosc;
-        private System.Windows.Forms.TextBox adminLoginTextBox;
-        private System.Windows.Forms.Label Login;
-        private System.Windows.Forms.TextBox adminHasloTextBox;
-        private System.Windows.Forms.Label Haslo;
-        private System.Windows.Forms.Button adminWylogujButton;
-        private System.Windows.Forms.TextBox adminFilterLoginTextBox;
-        private System.Windows.Forms.Button adminUsunKlientaButton;
-        private System.Windows.Forms.Button adminPokazListePracownikowButton;
-        private System.Windows.Forms.Button adminPokazListeKlientowButton;
-        private System.Windows.Forms.Button adminUsunPracownikaButton;
-        private System.Windows.Forms.TextBox adminDataTextBox;
-        private System.Windows.Forms.TextBox adminNazwiskoTextBox;
-        private System.Windows.Forms.TextBox adminImieTextBox;
-        private System.Windows.Forms.Button dodajPracownikaButton;
-        private System.Windows.Forms.Label AdminDataText;
-        private System.Windows.Forms.Label AdminNazwiskoText;
-        private System.Windows.Forms.Label AdminImieText;
-        private System.Windows.Forms.ListBox adminListBox;
-        private System.Windows.Forms.Label adminLoginWiadomosc;
         private System.Windows.Forms.TabPage okienkoOferenta;
         private System.Windows.Forms.Button OferentWyloguj_Button;
         private System.Windows.Forms.TextBox oferentZlozReklamacjeTextBox;
@@ -1132,6 +948,13 @@
 		private Controls.OfertyControl ofertyControl1;
 		private ReklamacjaControl reklamacjaControl1;
         private Controls.AddClientControl logowanieControl1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private Controls.AdminKlientControl adminKlientControl1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private AdminPracownikControl adminPracownikControl1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private AdminOferentControl adminOferentControl1;
     }
 }
 

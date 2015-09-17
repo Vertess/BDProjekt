@@ -90,6 +90,24 @@
     <Compile Include="Controls\DostawaControl.Designer.cs">
       <DependentUpon>DostawaControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\OferentDostawyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OferentDostawyControl.Designer.cs">
+      <DependentUpon>OferentDostawyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OferentOfertyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OferentOfertyControl.Designer.cs">
+      <DependentUpon>OferentOfertyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OferentReklamacjeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OferentReklamacjeControl.Designer.cs">
+      <DependentUpon>OferentReklamacjeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\OfertyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -242,6 +260,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\EgzemplarzControl.resx">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OferentOfertyControl.resx">
+      <DependentUpon>OferentOfertyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OferentReklamacjeControl.resx">
+      <DependentUpon>OferentReklamacjeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OfertyControl.resx">
       <DependentUpon>OfertyControl.cs</DependentUpon>

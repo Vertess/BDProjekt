@@ -59,10 +59,9 @@
             // 
             // StworzKontoOferentaButton
             // 
-            this.StworzKontoOferentaButton.Location = new System.Drawing.Point(179, 231);
-            this.StworzKontoOferentaButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.StworzKontoOferentaButton.Location = new System.Drawing.Point(119, 150);
             this.StworzKontoOferentaButton.Name = "StworzKontoOferentaButton";
-            this.StworzKontoOferentaButton.Size = new System.Drawing.Size(184, 35);
+            this.StworzKontoOferentaButton.Size = new System.Drawing.Size(123, 23);
             this.StworzKontoOferentaButton.TabIndex = 112;
             this.StworzKontoOferentaButton.Text = "Stwórz nowe konto";
             this.StworzKontoOferentaButton.UseVisualStyleBackColor = true;
@@ -70,110 +69,98 @@
             // 
             // KlientImieTextBox
             // 
-            this.KlientImieTextBox.Location = new System.Drawing.Point(231, 114);
-            this.KlientImieTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.KlientImieTextBox.Location = new System.Drawing.Point(154, 74);
             this.KlientImieTextBox.Name = "KlientImieTextBox";
-            this.KlientImieTextBox.Size = new System.Drawing.Size(148, 26);
+            this.KlientImieTextBox.Size = new System.Drawing.Size(100, 20);
             this.KlientImieTextBox.TabIndex = 111;
             // 
             // KlientImieText
             // 
             this.KlientImieText.AutoSize = true;
-            this.KlientImieText.Location = new System.Drawing.Point(117, 122);
-            this.KlientImieText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.KlientImieText.Location = new System.Drawing.Point(78, 79);
             this.KlientImieText.Name = "KlientImieText";
-            this.KlientImieText.Size = new System.Drawing.Size(39, 20);
+            this.KlientImieText.Size = new System.Drawing.Size(26, 13);
             this.KlientImieText.TabIndex = 110;
             this.KlientImieText.Text = "Imie";
             // 
             // KlientNazwiskoTextBox
             // 
-            this.KlientNazwiskoTextBox.Location = new System.Drawing.Point(231, 151);
-            this.KlientNazwiskoTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.KlientNazwiskoTextBox.Location = new System.Drawing.Point(154, 98);
             this.KlientNazwiskoTextBox.Name = "KlientNazwiskoTextBox";
-            this.KlientNazwiskoTextBox.Size = new System.Drawing.Size(148, 26);
+            this.KlientNazwiskoTextBox.Size = new System.Drawing.Size(100, 20);
             this.KlientNazwiskoTextBox.TabIndex = 109;
             // 
             // KlientNazwiskoText
             // 
             this.KlientNazwiskoText.AutoSize = true;
-            this.KlientNazwiskoText.Location = new System.Drawing.Point(117, 157);
-            this.KlientNazwiskoText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.KlientNazwiskoText.Location = new System.Drawing.Point(78, 102);
             this.KlientNazwiskoText.Name = "KlientNazwiskoText";
-            this.KlientNazwiskoText.Size = new System.Drawing.Size(76, 20);
+            this.KlientNazwiskoText.Size = new System.Drawing.Size(53, 13);
             this.KlientNazwiskoText.TabIndex = 108;
             this.KlientNazwiskoText.Text = "Nazwisko";
             // 
             // KlientEmailTextBox
             // 
-            this.KlientEmailTextBox.Location = new System.Drawing.Point(230, 191);
-            this.KlientEmailTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.KlientEmailTextBox.Location = new System.Drawing.Point(153, 124);
             this.KlientEmailTextBox.Name = "KlientEmailTextBox";
-            this.KlientEmailTextBox.Size = new System.Drawing.Size(148, 26);
+            this.KlientEmailTextBox.Size = new System.Drawing.Size(100, 20);
             this.KlientEmailTextBox.TabIndex = 107;
             // 
             // KlientHasloTextBox
             // 
-            this.KlientHasloTextBox.Location = new System.Drawing.Point(231, 78);
-            this.KlientHasloTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.KlientHasloTextBox.Location = new System.Drawing.Point(154, 51);
             this.KlientHasloTextBox.Name = "KlientHasloTextBox";
-            this.KlientHasloTextBox.Size = new System.Drawing.Size(148, 26);
+            this.KlientHasloTextBox.Size = new System.Drawing.Size(100, 20);
             this.KlientHasloTextBox.TabIndex = 106;
             // 
             // KlientLoginTextBox
             // 
-            this.KlientLoginTextBox.Location = new System.Drawing.Point(231, 38);
-            this.KlientLoginTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.KlientLoginTextBox.Location = new System.Drawing.Point(154, 25);
             this.KlientLoginTextBox.Name = "KlientLoginTextBox";
-            this.KlientLoginTextBox.Size = new System.Drawing.Size(148, 26);
+            this.KlientLoginTextBox.Size = new System.Drawing.Size(100, 20);
             this.KlientLoginTextBox.TabIndex = 105;
             // 
             // KlientEmailText
             // 
             this.KlientEmailText.AutoSize = true;
-            this.KlientEmailText.Location = new System.Drawing.Point(116, 194);
-            this.KlientEmailText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.KlientEmailText.Location = new System.Drawing.Point(77, 126);
             this.KlientEmailText.Name = "KlientEmailText";
-            this.KlientEmailText.Size = new System.Drawing.Size(48, 20);
+            this.KlientEmailText.Size = new System.Drawing.Size(32, 13);
             this.KlientEmailText.TabIndex = 104;
             this.KlientEmailText.Text = "Email";
             // 
             // KlientHasloText2
             // 
             this.KlientHasloText2.AutoSize = true;
-            this.KlientHasloText2.Location = new System.Drawing.Point(116, 83);
-            this.KlientHasloText2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.KlientHasloText2.Location = new System.Drawing.Point(77, 54);
             this.KlientHasloText2.Name = "KlientHasloText2";
-            this.KlientHasloText2.Size = new System.Drawing.Size(50, 20);
+            this.KlientHasloText2.Size = new System.Drawing.Size(34, 13);
             this.KlientHasloText2.TabIndex = 103;
             this.KlientHasloText2.Text = "Haslo";
             // 
             // KlientLoginText2
             // 
             this.KlientLoginText2.AutoSize = true;
-            this.KlientLoginText2.Location = new System.Drawing.Point(117, 44);
-            this.KlientLoginText2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.KlientLoginText2.Location = new System.Drawing.Point(78, 29);
             this.KlientLoginText2.Name = "KlientLoginText2";
-            this.KlientLoginText2.Size = new System.Drawing.Size(48, 20);
+            this.KlientLoginText2.Size = new System.Drawing.Size(33, 13);
             this.KlientLoginText2.TabIndex = 102;
             this.KlientLoginText2.Text = "Login";
             // 
             // WiadomoscBledu
             // 
             this.WiadomoscBledu.AutoSize = true;
-            this.WiadomoscBledu.Location = new System.Drawing.Point(224, 433);
-            this.WiadomoscBledu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.WiadomoscBledu.Location = new System.Drawing.Point(149, 281);
             this.WiadomoscBledu.Name = "WiadomoscBledu";
-            this.WiadomoscBledu.Size = new System.Drawing.Size(87, 20);
+            this.WiadomoscBledu.Size = new System.Drawing.Size(59, 13);
             this.WiadomoscBledu.TabIndex = 101;
             this.WiadomoscBledu.Text = "Brak Bledu";
             // 
             // StworzKontoKlientaButton
             // 
-            this.StworzKontoKlientaButton.Location = new System.Drawing.Point(132, 257);
-            this.StworzKontoKlientaButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.StworzKontoKlientaButton.Location = new System.Drawing.Point(88, 167);
             this.StworzKontoKlientaButton.Name = "StworzKontoKlientaButton";
-            this.StworzKontoKlientaButton.Size = new System.Drawing.Size(184, 35);
+            this.StworzKontoKlientaButton.Size = new System.Drawing.Size(123, 23);
             this.StworzKontoKlientaButton.TabIndex = 123;
             this.StworzKontoKlientaButton.Text = "Stwórz nowe konto";
             this.StworzKontoKlientaButton.UseVisualStyleBackColor = true;
@@ -181,73 +168,65 @@
             // 
             // OferentNazwaTextBox
             // 
-            this.OferentNazwaTextBox.Location = new System.Drawing.Point(246, 134);
-            this.OferentNazwaTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.OferentNazwaTextBox.Location = new System.Drawing.Point(164, 87);
             this.OferentNazwaTextBox.Name = "OferentNazwaTextBox";
-            this.OferentNazwaTextBox.Size = new System.Drawing.Size(148, 26);
+            this.OferentNazwaTextBox.Size = new System.Drawing.Size(100, 20);
             this.OferentNazwaTextBox.TabIndex = 122;
             // 
             // OferentNazwaText
             // 
             this.OferentNazwaText.AutoSize = true;
-            this.OferentNazwaText.Location = new System.Drawing.Point(132, 142);
-            this.OferentNazwaText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.OferentNazwaText.Location = new System.Drawing.Point(88, 92);
             this.OferentNazwaText.Name = "OferentNazwaText";
-            this.OferentNazwaText.Size = new System.Drawing.Size(39, 20);
+            this.OferentNazwaText.Size = new System.Drawing.Size(26, 13);
             this.OferentNazwaText.TabIndex = 121;
             this.OferentNazwaText.Text = "Imie";
             // 
             // OferentAdresTextBox
             // 
-            this.OferentAdresTextBox.Location = new System.Drawing.Point(246, 171);
-            this.OferentAdresTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.OferentAdresTextBox.Location = new System.Drawing.Point(164, 111);
             this.OferentAdresTextBox.Name = "OferentAdresTextBox";
-            this.OferentAdresTextBox.Size = new System.Drawing.Size(148, 26);
+            this.OferentAdresTextBox.Size = new System.Drawing.Size(100, 20);
             this.OferentAdresTextBox.TabIndex = 120;
             // 
             // OferentAdresText
             // 
             this.OferentAdresText.AutoSize = true;
-            this.OferentAdresText.Location = new System.Drawing.Point(132, 177);
-            this.OferentAdresText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.OferentAdresText.Location = new System.Drawing.Point(88, 115);
             this.OferentAdresText.Name = "OferentAdresText";
-            this.OferentAdresText.Size = new System.Drawing.Size(76, 20);
+            this.OferentAdresText.Size = new System.Drawing.Size(53, 13);
             this.OferentAdresText.TabIndex = 119;
             this.OferentAdresText.Text = "Nazwisko";
             // 
             // OferentHasloTextBox
             // 
-            this.OferentHasloTextBox.Location = new System.Drawing.Point(246, 98);
-            this.OferentHasloTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.OferentHasloTextBox.Location = new System.Drawing.Point(164, 64);
             this.OferentHasloTextBox.Name = "OferentHasloTextBox";
-            this.OferentHasloTextBox.Size = new System.Drawing.Size(148, 26);
+            this.OferentHasloTextBox.Size = new System.Drawing.Size(100, 20);
             this.OferentHasloTextBox.TabIndex = 117;
             // 
             // OferentLoginTextBox
             // 
-            this.OferentLoginTextBox.Location = new System.Drawing.Point(246, 58);
-            this.OferentLoginTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.OferentLoginTextBox.Location = new System.Drawing.Point(164, 38);
             this.OferentLoginTextBox.Name = "OferentLoginTextBox";
-            this.OferentLoginTextBox.Size = new System.Drawing.Size(148, 26);
+            this.OferentLoginTextBox.Size = new System.Drawing.Size(100, 20);
             this.OferentLoginTextBox.TabIndex = 116;
             // 
             // OferentHasloText
             // 
             this.OferentHasloText.AutoSize = true;
-            this.OferentHasloText.Location = new System.Drawing.Point(131, 103);
-            this.OferentHasloText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.OferentHasloText.Location = new System.Drawing.Point(87, 67);
             this.OferentHasloText.Name = "OferentHasloText";
-            this.OferentHasloText.Size = new System.Drawing.Size(50, 20);
+            this.OferentHasloText.Size = new System.Drawing.Size(34, 13);
             this.OferentHasloText.TabIndex = 114;
             this.OferentHasloText.Text = "Haslo";
             // 
             // OferentLoginText
             // 
             this.OferentLoginText.AutoSize = true;
-            this.OferentLoginText.Location = new System.Drawing.Point(132, 64);
-            this.OferentLoginText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.OferentLoginText.Location = new System.Drawing.Point(88, 42);
             this.OferentLoginText.Name = "OferentLoginText";
-            this.OferentLoginText.Size = new System.Drawing.Size(48, 20);
+            this.OferentLoginText.Size = new System.Drawing.Size(33, 13);
             this.OferentLoginText.TabIndex = 113;
             this.OferentLoginText.Text = "Login";
             // 
@@ -255,10 +234,11 @@
             // 
             this.tabControl1.Controls.Add(this.rejestracjaKlinetaTabPage);
             this.tabControl1.Controls.Add(this.rejestracjaOferentaTabPage);
-            this.tabControl1.Location = new System.Drawing.Point(40, 26);
+            this.tabControl1.Location = new System.Drawing.Point(27, 17);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(544, 388);
+            this.tabControl1.Size = new System.Drawing.Size(363, 252);
             this.tabControl1.TabIndex = 124;
             // 
             // rejestracjaKlinetaTabPage
@@ -274,12 +254,13 @@
             this.rejestracjaKlinetaTabPage.Controls.Add(this.KlientEmailTextBox);
             this.rejestracjaKlinetaTabPage.Controls.Add(this.KlientEmailText);
             this.rejestracjaKlinetaTabPage.Controls.Add(this.KlientLoginTextBox);
-            this.rejestracjaKlinetaTabPage.Location = new System.Drawing.Point(4, 29);
+            this.rejestracjaKlinetaTabPage.Location = new System.Drawing.Point(4, 22);
+            this.rejestracjaKlinetaTabPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rejestracjaKlinetaTabPage.Name = "rejestracjaKlinetaTabPage";
-            this.rejestracjaKlinetaTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.rejestracjaKlinetaTabPage.Size = new System.Drawing.Size(536, 355);
+            this.rejestracjaKlinetaTabPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rejestracjaKlinetaTabPage.Size = new System.Drawing.Size(355, 226);
             this.rejestracjaKlinetaTabPage.TabIndex = 0;
-            this.rejestracjaKlinetaTabPage.Text = "Rejestracja Klineta";
+            this.rejestracjaKlinetaTabPage.Text = "Rejestracja Klienta";
             this.rejestracjaKlinetaTabPage.UseVisualStyleBackColor = true;
             // 
             // rejestracjaOferentaTabPage
@@ -293,22 +274,24 @@
             this.rejestracjaOferentaTabPage.Controls.Add(this.OferentLoginTextBox);
             this.rejestracjaOferentaTabPage.Controls.Add(this.OferentAdresText);
             this.rejestracjaOferentaTabPage.Controls.Add(this.OferentHasloTextBox);
-            this.rejestracjaOferentaTabPage.Location = new System.Drawing.Point(4, 29);
+            this.rejestracjaOferentaTabPage.Location = new System.Drawing.Point(4, 22);
+            this.rejestracjaOferentaTabPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rejestracjaOferentaTabPage.Name = "rejestracjaOferentaTabPage";
-            this.rejestracjaOferentaTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.rejestracjaOferentaTabPage.Size = new System.Drawing.Size(536, 355);
+            this.rejestracjaOferentaTabPage.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rejestracjaOferentaTabPage.Size = new System.Drawing.Size(355, 226);
             this.rejestracjaOferentaTabPage.TabIndex = 1;
             this.rejestracjaOferentaTabPage.Text = "Rejestracja Oferenta";
             this.rejestracjaOferentaTabPage.UseVisualStyleBackColor = true;
             // 
             // RejestracjaControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.WiadomoscBledu);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RejestracjaControl";
-            this.Size = new System.Drawing.Size(607, 467);
+            this.Size = new System.Drawing.Size(405, 304);
             this.tabControl1.ResumeLayout(false);
             this.rejestracjaKlinetaTabPage.ResumeLayout(false);
             this.rejestracjaKlinetaTabPage.PerformLayout();

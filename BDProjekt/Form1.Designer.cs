@@ -30,6 +30,7 @@
         {
             this.Glowna_tabControl = new System.Windows.Forms.TabControl();
             this.okienkoLogowania = new System.Windows.Forms.TabPage();
+            this.logowanieControl1 = new BDProjekt.Controls.AddClientControl();
             this.oferentLogin = new System.Windows.Forms.Button();
             this.logowanieWiadomoscBledu = new System.Windows.Forms.Label();
             this.hasloTextBox = new System.Windows.Forms.TextBox();
@@ -38,19 +39,28 @@
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.logowanieHasloText = new System.Windows.Forms.Label();
             this.okienkoKlienta = new System.Windows.Forms.TabPage();
+            this.ksiazkaControl1 = new BDProjekt.KsiazkaControl();
             this.okienkoPracownika = new System.Windows.Forms.TabPage();
             this.PracownikWiadomoscBleduText = new System.Windows.Forms.Label();
             this.pracownikText1 = new System.Windows.Forms.Label();
             this.pracownikWylogujButton = new System.Windows.Forms.Button();
             this.pracownikDodatkowaTabControl = new System.Windows.Forms.TabControl();
             this.pacownikStworzRabatTabPage = new System.Windows.Forms.TabPage();
+            this.rabatControl1 = new BDProjekt.RabatControl();
             this.pracownikDodajKsiazkeTabPage = new System.Windows.Forms.TabPage();
+            this.ksiazkaControl2 = new BDProjekt.KsiazkaControl();
             this.pracownikDodajAutoraTabPage = new System.Windows.Forms.TabPage();
+            this.autorzy1 = new BDProjekt.Autorzy();
             this.pracownikDodajGatunekTabPage = new System.Windows.Forms.TabPage();
+            this.gatunekControl1 = new BDProjekt.GatunekControl();
             this.pracownikDodajEgzemplarzTabPage = new System.Windows.Forms.TabPage();
+            this.egzemplarzControl1 = new BDProjekt.Controls.EgzemplarzControl();
             this.pracownikDodajWydawnictwotabPage = new System.Windows.Forms.TabPage();
+            this.wydawnictwoControl1 = new BDProjekt.WydawnictwoControl();
             this.pracownikDostawaTabPage = new System.Windows.Forms.TabPage();
+            this.dostawaControl1 = new BDProjekt.Controls.DostawaControl();
             this.pracownikOfertyTabPage = new System.Windows.Forms.TabPage();
+            this.ofertyControl1 = new BDProjekt.Controls.OfertyControl();
             this.pracownikOfertyAkceptuj_Button = new System.Windows.Forms.Button();
             this.pracownikOfetyUsun_Button = new System.Windows.Forms.Button();
             this.pracownikOfertyZnajdzTextBox = new System.Windows.Forms.TextBox();
@@ -58,6 +68,7 @@
             this.pracownikOfertyListBox = new System.Windows.Forms.ListBox();
             this.pracownikOfertyPrzegladaj_Button = new System.Windows.Forms.Button();
             this.pracownikReklamacjeTabPage = new System.Windows.Forms.TabPage();
+            this.reklamacjaControl1 = new BDProjekt.ReklamacjaControl();
             this.pracownikZamowieniaTabPage = new System.Windows.Forms.TabPage();
             this.pracownikNick = new System.Windows.Forms.Label();
             this.okienkoAdmina = new System.Windows.Forms.TabPage();
@@ -107,17 +118,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.logowanieComboBox = new System.Windows.Forms.ComboBox();
-            this.ksiazkaControl1 = new BDProjekt.KsiazkaControl();
-            this.rabatControl1 = new BDProjekt.RabatControl();
-            this.ksiazkaControl2 = new BDProjekt.KsiazkaControl();
-            this.autorzy1 = new BDProjekt.Autorzy();
-            this.gatunekControl1 = new BDProjekt.GatunekControl();
-            this.egzemplarzControl1 = new BDProjekt.Controls.EgzemplarzControl();
-            this.wydawnictwoControl1 = new BDProjekt.WydawnictwoControl();
-            this.dostawaControl1 = new BDProjekt.Controls.DostawaControl();
-            this.ofertyControl1 = new BDProjekt.Controls.OfertyControl();
-            this.reklamacjaControl1 = new BDProjekt.ReklamacjaControl();
-            this.logowanieControl1 = new BDProjekt.Controls.AddClientControl();
             this.Glowna_tabControl.SuspendLayout();
             this.okienkoLogowania.SuspendLayout();
             this.okienkoKlienta.SuspendLayout();
@@ -167,6 +167,13 @@
             this.okienkoLogowania.TabIndex = 4;
             this.okienkoLogowania.Text = "Logowanie";
             this.okienkoLogowania.UseVisualStyleBackColor = true;
+            // 
+            // logowanieControl1
+            // 
+            this.logowanieControl1.Location = new System.Drawing.Point(320, 0);
+            this.logowanieControl1.Name = "logowanieControl1";
+            this.logowanieControl1.Size = new System.Drawing.Size(436, 257);
+            this.logowanieControl1.TabIndex = 49;
             // 
             // oferentLogin
             // 
@@ -240,6 +247,13 @@
             this.okienkoKlienta.Text = "Klient";
             this.okienkoKlienta.UseVisualStyleBackColor = true;
             // 
+            // ksiazkaControl1
+            // 
+            this.ksiazkaControl1.Location = new System.Drawing.Point(59, 31);
+            this.ksiazkaControl1.Name = "ksiazkaControl1";
+            this.ksiazkaControl1.Size = new System.Drawing.Size(739, 251);
+            this.ksiazkaControl1.TabIndex = 0;
+            // 
             // okienkoPracownika
             // 
             this.okienkoPracownika.Controls.Add(this.PracownikWiadomoscBleduText);
@@ -312,6 +326,13 @@
             this.pacownikStworzRabatTabPage.Text = "Stwórz rabat";
             this.pacownikStworzRabatTabPage.UseVisualStyleBackColor = true;
             // 
+            // rabatControl1
+            // 
+            this.rabatControl1.Location = new System.Drawing.Point(7, 4);
+            this.rabatControl1.Name = "rabatControl1";
+            this.rabatControl1.Size = new System.Drawing.Size(640, 245);
+            this.rabatControl1.TabIndex = 0;
+            // 
             // pracownikDodajKsiazkeTabPage
             // 
             this.pracownikDodajKsiazkeTabPage.Controls.Add(this.ksiazkaControl2);
@@ -322,6 +343,13 @@
             this.pracownikDodajKsiazkeTabPage.TabIndex = 1;
             this.pracownikDodajKsiazkeTabPage.Text = "Dodaj książkę";
             this.pracownikDodajKsiazkeTabPage.UseVisualStyleBackColor = true;
+            // 
+            // ksiazkaControl2
+            // 
+            this.ksiazkaControl2.Location = new System.Drawing.Point(-1, 3);
+            this.ksiazkaControl2.Name = "ksiazkaControl2";
+            this.ksiazkaControl2.Size = new System.Drawing.Size(699, 236);
+            this.ksiazkaControl2.TabIndex = 0;
             // 
             // pracownikDodajAutoraTabPage
             // 
@@ -334,6 +362,13 @@
             this.pracownikDodajAutoraTabPage.Text = "Dodaj autora";
             this.pracownikDodajAutoraTabPage.UseVisualStyleBackColor = true;
             // 
+            // autorzy1
+            // 
+            this.autorzy1.Location = new System.Drawing.Point(98, 6);
+            this.autorzy1.Name = "autorzy1";
+            this.autorzy1.Size = new System.Drawing.Size(631, 263);
+            this.autorzy1.TabIndex = 0;
+            // 
             // pracownikDodajGatunekTabPage
             // 
             this.pracownikDodajGatunekTabPage.Controls.Add(this.gatunekControl1);
@@ -344,6 +379,13 @@
             this.pracownikDodajGatunekTabPage.TabIndex = 5;
             this.pracownikDodajGatunekTabPage.Text = "Dodaj gatunek";
             this.pracownikDodajGatunekTabPage.UseVisualStyleBackColor = true;
+            // 
+            // gatunekControl1
+            // 
+            this.gatunekControl1.Location = new System.Drawing.Point(140, -54);
+            this.gatunekControl1.Name = "gatunekControl1";
+            this.gatunekControl1.Size = new System.Drawing.Size(590, 306);
+            this.gatunekControl1.TabIndex = 0;
             // 
             // pracownikDodajEgzemplarzTabPage
             // 
@@ -356,6 +398,13 @@
             this.pracownikDodajEgzemplarzTabPage.Text = "Dodaj egzemplarz";
             this.pracownikDodajEgzemplarzTabPage.UseVisualStyleBackColor = true;
             // 
+            // egzemplarzControl1
+            // 
+            this.egzemplarzControl1.Location = new System.Drawing.Point(58, 6);
+            this.egzemplarzControl1.Name = "egzemplarzControl1";
+            this.egzemplarzControl1.Size = new System.Drawing.Size(658, 224);
+            this.egzemplarzControl1.TabIndex = 0;
+            // 
             // pracownikDodajWydawnictwotabPage
             // 
             this.pracownikDodajWydawnictwotabPage.Controls.Add(this.wydawnictwoControl1);
@@ -367,6 +416,13 @@
             this.pracownikDodajWydawnictwotabPage.Text = "Dodaj wydawnictwo";
             this.pracownikDodajWydawnictwotabPage.UseVisualStyleBackColor = true;
             // 
+            // wydawnictwoControl1
+            // 
+            this.wydawnictwoControl1.Location = new System.Drawing.Point(7, 4);
+            this.wydawnictwoControl1.Name = "wydawnictwoControl1";
+            this.wydawnictwoControl1.Size = new System.Drawing.Size(582, 298);
+            this.wydawnictwoControl1.TabIndex = 0;
+            // 
             // pracownikDostawaTabPage
             // 
             this.pracownikDostawaTabPage.Controls.Add(this.dostawaControl1);
@@ -377,6 +433,13 @@
             this.pracownikDostawaTabPage.TabIndex = 8;
             this.pracownikDostawaTabPage.Text = "Dostawa";
             this.pracownikDostawaTabPage.UseVisualStyleBackColor = true;
+            // 
+            // dostawaControl1
+            // 
+            this.dostawaControl1.Location = new System.Drawing.Point(-4, 0);
+            this.dostawaControl1.Name = "dostawaControl1";
+            this.dostawaControl1.Size = new System.Drawing.Size(821, 240);
+            this.dostawaControl1.TabIndex = 0;
             // 
             // pracownikOfertyTabPage
             // 
@@ -394,6 +457,13 @@
             this.pracownikOfertyTabPage.TabIndex = 9;
             this.pracownikOfertyTabPage.Text = "Oferty";
             this.pracownikOfertyTabPage.UseVisualStyleBackColor = true;
+            // 
+            // ofertyControl1
+            // 
+            this.ofertyControl1.Location = new System.Drawing.Point(-4, -1);
+            this.ofertyControl1.Name = "ofertyControl1";
+            this.ofertyControl1.Size = new System.Drawing.Size(816, 237);
+            this.ofertyControl1.TabIndex = 104;
             // 
             // pracownikOfertyAkceptuj_Button
             // 
@@ -462,6 +532,13 @@
             this.pracownikReklamacjeTabPage.TabIndex = 10;
             this.pracownikReklamacjeTabPage.Text = "Reklamacje";
             this.pracownikReklamacjeTabPage.UseVisualStyleBackColor = true;
+            // 
+            // reklamacjaControl1
+            // 
+            this.reklamacjaControl1.Location = new System.Drawing.Point(11, 6);
+            this.reklamacjaControl1.Name = "reklamacjaControl1";
+            this.reklamacjaControl1.Size = new System.Drawing.Size(675, 307);
+            this.reklamacjaControl1.TabIndex = 0;
             // 
             // pracownikZamowieniaTabPage
             // 
@@ -921,83 +998,6 @@
             this.logowanieComboBox.Name = "logowanieComboBox";
             this.logowanieComboBox.Size = new System.Drawing.Size(121, 21);
             this.logowanieComboBox.TabIndex = 97;
-            // 
-            // ksiazkaControl1
-            // 
-            this.ksiazkaControl1.Location = new System.Drawing.Point(59, 31);
-            this.ksiazkaControl1.Name = "ksiazkaControl1";
-            this.ksiazkaControl1.Size = new System.Drawing.Size(739, 251);
-            this.ksiazkaControl1.TabIndex = 0;
-            // 
-            // rabatControl1
-            // 
-            this.rabatControl1.Location = new System.Drawing.Point(7, 4);
-            this.rabatControl1.Name = "rabatControl1";
-            this.rabatControl1.Size = new System.Drawing.Size(640, 245);
-            this.rabatControl1.TabIndex = 0;
-            // 
-            // ksiazkaControl2
-            // 
-            this.ksiazkaControl2.Location = new System.Drawing.Point(-1, 3);
-            this.ksiazkaControl2.Name = "ksiazkaControl2";
-            this.ksiazkaControl2.Size = new System.Drawing.Size(699, 236);
-            this.ksiazkaControl2.TabIndex = 0;
-            // 
-            // autorzy1
-            // 
-            this.autorzy1.Location = new System.Drawing.Point(98, 6);
-            this.autorzy1.Name = "autorzy1";
-            this.autorzy1.Size = new System.Drawing.Size(631, 263);
-            this.autorzy1.TabIndex = 0;
-            // 
-            // gatunekControl1
-            // 
-            this.gatunekControl1.Location = new System.Drawing.Point(140, -54);
-            this.gatunekControl1.Name = "gatunekControl1";
-            this.gatunekControl1.Size = new System.Drawing.Size(590, 306);
-            this.gatunekControl1.TabIndex = 0;
-            // 
-            // egzemplarzControl1
-            // 
-            this.egzemplarzControl1.Location = new System.Drawing.Point(58, 6);
-            this.egzemplarzControl1.Name = "egzemplarzControl1";
-            this.egzemplarzControl1.Size = new System.Drawing.Size(658, 224);
-            this.egzemplarzControl1.TabIndex = 0;
-            // 
-            // wydawnictwoControl1
-            // 
-            this.wydawnictwoControl1.Location = new System.Drawing.Point(7, 4);
-            this.wydawnictwoControl1.Name = "wydawnictwoControl1";
-            this.wydawnictwoControl1.Size = new System.Drawing.Size(582, 298);
-            this.wydawnictwoControl1.TabIndex = 0;
-            // 
-            // dostawaControl1
-            // 
-            this.dostawaControl1.Location = new System.Drawing.Point(-4, 0);
-            this.dostawaControl1.Name = "dostawaControl1";
-            this.dostawaControl1.Size = new System.Drawing.Size(821, 240);
-            this.dostawaControl1.TabIndex = 0;
-            // 
-            // ofertyControl1
-            // 
-            this.ofertyControl1.Location = new System.Drawing.Point(-4, -1);
-            this.ofertyControl1.Name = "ofertyControl1";
-            this.ofertyControl1.Size = new System.Drawing.Size(816, 237);
-            this.ofertyControl1.TabIndex = 104;
-            // 
-            // reklamacjaControl1
-            // 
-            this.reklamacjaControl1.Location = new System.Drawing.Point(11, 6);
-            this.reklamacjaControl1.Name = "reklamacjaControl1";
-            this.reklamacjaControl1.Size = new System.Drawing.Size(675, 307);
-            this.reklamacjaControl1.TabIndex = 0;
-            // 
-            // logowanieControl1
-            // 
-            this.logowanieControl1.Location = new System.Drawing.Point(320, 0);
-            this.logowanieControl1.Name = "logowanieControl1";
-            this.logowanieControl1.Size = new System.Drawing.Size(436, 257);
-            this.logowanieControl1.TabIndex = 49;
             // 
             // Form1
             // 

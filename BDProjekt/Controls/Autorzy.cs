@@ -54,5 +54,25 @@ namespace BDProjekt
 				autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList();
 			}
 		}
+
+        private void nazwiskoLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imieLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchNazwiskoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 	}
 }

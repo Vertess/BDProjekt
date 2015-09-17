@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idGatunkuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwaGatunkuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gatunekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
             this.nazwagatunkuLabel = new System.Windows.Forms.Label();
+            this.idGatunkuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwaGatunkuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gatunekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gatunekBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -55,28 +55,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(281, 191);
             this.dataGridView1.TabIndex = 0;
             // 
-            // idGatunkuDataGridViewTextBoxColumn
-            // 
-            this.idGatunkuDataGridViewTextBoxColumn.DataPropertyName = "IdGatunku";
-            this.idGatunkuDataGridViewTextBoxColumn.HeaderText = "IdGatunku";
-            this.idGatunkuDataGridViewTextBoxColumn.Name = "idGatunkuDataGridViewTextBoxColumn";
-            // 
-            // nazwaGatunkuDataGridViewTextBoxColumn
-            // 
-            this.nazwaGatunkuDataGridViewTextBoxColumn.DataPropertyName = "NazwaGatunku";
-            this.nazwaGatunkuDataGridViewTextBoxColumn.HeaderText = "NazwaGatunku";
-            this.nazwaGatunkuDataGridViewTextBoxColumn.Name = "nazwaGatunkuDataGridViewTextBoxColumn";
-            // 
-            // gatunekBindingSource
-            // 
-            this.gatunekBindingSource.DataSource = typeof(BDProjekt.Gatunek);
-            // 
             // searchTextBox
             // 
             this.searchTextBox.Location = new System.Drawing.Point(140, 261);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchTextBox.TabIndex = 6;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // searchButton
             // 
@@ -116,6 +101,22 @@
             this.nazwagatunkuLabel.Size = new System.Drawing.Size(84, 13);
             this.nazwagatunkuLabel.TabIndex = 10;
             this.nazwagatunkuLabel.Text = "Nazwa Gatunku";
+            // 
+            // idGatunkuDataGridViewTextBoxColumn
+            // 
+            this.idGatunkuDataGridViewTextBoxColumn.DataPropertyName = "IdGatunku";
+            this.idGatunkuDataGridViewTextBoxColumn.HeaderText = "IdGatunku";
+            this.idGatunkuDataGridViewTextBoxColumn.Name = "idGatunkuDataGridViewTextBoxColumn";
+            // 
+            // nazwaGatunkuDataGridViewTextBoxColumn
+            // 
+            this.nazwaGatunkuDataGridViewTextBoxColumn.DataPropertyName = "NazwaGatunku";
+            this.nazwaGatunkuDataGridViewTextBoxColumn.HeaderText = "NazwaGatunku";
+            this.nazwaGatunkuDataGridViewTextBoxColumn.Name = "nazwaGatunkuDataGridViewTextBoxColumn";
+            // 
+            // gatunekBindingSource
+            // 
+            this.gatunekBindingSource.DataSource = typeof(BDProjekt.Gatunek);
             // 
             // GatunekControl
             // 

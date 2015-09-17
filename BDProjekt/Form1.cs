@@ -63,29 +63,6 @@ namespace BDProjekt
 
         }
 
-        private void okienkoOferenta_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rabatControl2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ofertyControl1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void logowanieStworzKontoButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void oferentModyfikujDane_Button_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -54,8 +54,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\AdminOferentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminOferentControl.Designer.cs">
+      <DependentUpon>AdminOferentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminPracownikControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminPracownikControl.Designer.cs">
+      <DependentUpon>AdminPracownikControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Autor.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminKlientControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminKlientControl.Designer.cs">
+      <DependentUpon>AdminKlientControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Autorzy.cs">
       <SubType>UserControl</SubType>
@@ -71,24 +89,6 @@
     </Compile>
     <Compile Include="Controls\DostawaControl.Designer.cs">
       <DependentUpon>DostawaControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\OferentDostawyControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\OferentDostawyControl.Designer.cs">
-      <DependentUpon>OferentDostawyControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\OferentOfertyControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\OferentOfertyControl.Designer.cs">
-      <DependentUpon>OferentOfertyControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\OferentReklamacjeControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\OferentReklamacjeControl.Designer.cs">
-      <DependentUpon>OferentReklamacjeControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\OfertyControl.cs">
       <SubType>UserControl</SubType>
@@ -225,6 +225,15 @@
     <Compile Include="Zamowieny.cs">
       <DependentUpon>Ksiegarnia.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\AdminOferentControl.resx">
+      <DependentUpon>AdminOferentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AdminPracownikControl.resx">
+      <DependentUpon>AdminPracownikControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AdminKlientControl.resx">
+      <DependentUpon>AdminKlientControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Autorzy.resx">
       <DependentUpon>Autorzy.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,12 +242,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\EgzemplarzControl.resx">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\OferentOfertyControl.resx">
-      <DependentUpon>OferentOfertyControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\OferentReklamacjeControl.resx">
-      <DependentUpon>OferentReklamacjeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OfertyControl.resx">
       <DependentUpon>OfertyControl.cs</DependentUpon>
@@ -308,16 +311,11 @@
     <None Include="Properties\DataSources\Form1.datasource" />
     <None Include="Properties\DataSources\Funkcje.datasource" />
     <None Include="Properties\DataSources\Gatunek.datasource" />
-    <None Include="Properties\DataSources\GatunekControl.datasource" />
-    <None Include="Properties\DataSources\Klient.datasource" />
-    <None Include="Properties\DataSources\KlientControl.datasource" />
     <None Include="Properties\DataSources\Ksiazka.datasource" />
     <None Include="Properties\DataSources\KsiazkaControl.datasource" />
     <None Include="Properties\DataSources\KsiegarniaEntities.datasource" />
     <None Include="Properties\DataSources\Oferent.datasource" />
-    <None Include="Properties\DataSources\OfertaOferenta.datasource" />
     <None Include="Properties\DataSources\Pracownik.datasource" />
-    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\DataSources\Rabat.datasource" />
     <None Include="Properties\DataSources\RabatControl.datasource" />
     <None Include="Properties\DataSources\RealizacjaZamowienia.datasource" />

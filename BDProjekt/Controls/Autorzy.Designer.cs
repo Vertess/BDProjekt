@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idAutoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataUrodzeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.autorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.confirmButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchNazwiskoTextBox = new System.Windows.Forms.TextBox();
@@ -42,6 +37,11 @@
             this.imieLabel = new System.Windows.Forms.Label();
             this.nazwiskoLabel = new System.Windows.Forms.Label();
             this.szukajButton = new System.Windows.Forms.Button();
+            this.idAutoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataUrodzeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autorBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,72 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(443, 161);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // confirmButton
+            // 
+            this.confirmButton.Location = new System.Drawing.Point(438, 194);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(75, 23);
+            this.confirmButton.TabIndex = 1;
+            this.confirmButton.Text = "Zatwierdź";
+            this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(123, 170);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchTextBox.TabIndex = 3;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
+            // 
+            // searchNazwiskoTextBox
+            // 
+            this.searchNazwiskoTextBox.Location = new System.Drawing.Point(123, 196);
+            this.searchNazwiskoTextBox.Name = "searchNazwiskoTextBox";
+            this.searchNazwiskoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchNazwiskoTextBox.TabIndex = 5;
+            this.searchNazwiskoTextBox.TextChanged += new System.EventHandler(this.searchNazwiskoTextBox_TextChanged);
+            // 
+            // czyscNazwiskoButton
+            // 
+            this.czyscNazwiskoButton.Location = new System.Drawing.Point(324, 168);
+            this.czyscNazwiskoButton.Name = "czyscNazwiskoButton";
+            this.czyscNazwiskoButton.Size = new System.Drawing.Size(75, 23);
+            this.czyscNazwiskoButton.TabIndex = 8;
+            this.czyscNazwiskoButton.Text = "Czyść";
+            this.czyscNazwiskoButton.UseVisualStyleBackColor = true;
+            this.czyscNazwiskoButton.Click += new System.EventHandler(this.czyscNazwiskoButton_Click);
+            // 
+            // imieLabel
+            // 
+            this.imieLabel.AutoSize = true;
+            this.imieLabel.Location = new System.Drawing.Point(91, 175);
+            this.imieLabel.Name = "imieLabel";
+            this.imieLabel.Size = new System.Drawing.Size(26, 13);
+            this.imieLabel.TabIndex = 9;
+            this.imieLabel.Text = "Imie";
+            this.imieLabel.Click += new System.EventHandler(this.imieLabel_Click);
+            // 
+            // nazwiskoLabel
+            // 
+            this.nazwiskoLabel.AutoSize = true;
+            this.nazwiskoLabel.Location = new System.Drawing.Point(64, 199);
+            this.nazwiskoLabel.Name = "nazwiskoLabel";
+            this.nazwiskoLabel.Size = new System.Drawing.Size(53, 13);
+            this.nazwiskoLabel.TabIndex = 10;
+            this.nazwiskoLabel.Text = "Nazwisko";
+            this.nazwiskoLabel.Click += new System.EventHandler(this.nazwiskoLabel_Click);
+            // 
+            // szukajButton
+            // 
+            this.szukajButton.Location = new System.Drawing.Point(243, 168);
+            this.szukajButton.Name = "szukajButton";
+            this.szukajButton.Size = new System.Drawing.Size(75, 23);
+            this.szukajButton.TabIndex = 11;
+            this.szukajButton.Text = "Szukaj";
+            this.szukajButton.UseVisualStyleBackColor = true;
+            this.szukajButton.Click += new System.EventHandler(this.szukajButton_Click);
             // 
             // idAutoraDataGridViewTextBoxColumn
             // 
@@ -88,68 +154,6 @@
             // autorBindingSource
             // 
             this.autorBindingSource.DataSource = typeof(BDProjekt.Autor);
-            // 
-            // confirmButton
-            // 
-            this.confirmButton.Location = new System.Drawing.Point(438, 194);
-            this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(75, 23);
-            this.confirmButton.TabIndex = 1;
-            this.confirmButton.Text = "Zatwierdź";
-            this.confirmButton.UseVisualStyleBackColor = true;
-            this.confirmButton.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Location = new System.Drawing.Point(123, 170);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(100, 20);
-            this.searchTextBox.TabIndex = 3;
-            // 
-            // searchNazwiskoTextBox
-            // 
-            this.searchNazwiskoTextBox.Location = new System.Drawing.Point(123, 196);
-            this.searchNazwiskoTextBox.Name = "searchNazwiskoTextBox";
-            this.searchNazwiskoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.searchNazwiskoTextBox.TabIndex = 5;
-            // 
-            // czyscNazwiskoButton
-            // 
-            this.czyscNazwiskoButton.Location = new System.Drawing.Point(324, 168);
-            this.czyscNazwiskoButton.Name = "czyscNazwiskoButton";
-            this.czyscNazwiskoButton.Size = new System.Drawing.Size(75, 23);
-            this.czyscNazwiskoButton.TabIndex = 8;
-            this.czyscNazwiskoButton.Text = "Czyść";
-            this.czyscNazwiskoButton.UseVisualStyleBackColor = true;
-            this.czyscNazwiskoButton.Click += new System.EventHandler(this.czyscNazwiskoButton_Click);
-            // 
-            // imieLabel
-            // 
-            this.imieLabel.AutoSize = true;
-            this.imieLabel.Location = new System.Drawing.Point(91, 175);
-            this.imieLabel.Name = "imieLabel";
-            this.imieLabel.Size = new System.Drawing.Size(26, 13);
-            this.imieLabel.TabIndex = 9;
-            this.imieLabel.Text = "Imie";
-            // 
-            // nazwiskoLabel
-            // 
-            this.nazwiskoLabel.AutoSize = true;
-            this.nazwiskoLabel.Location = new System.Drawing.Point(64, 199);
-            this.nazwiskoLabel.Name = "nazwiskoLabel";
-            this.nazwiskoLabel.Size = new System.Drawing.Size(53, 13);
-            this.nazwiskoLabel.TabIndex = 10;
-            this.nazwiskoLabel.Text = "Nazwisko";
-            // 
-            // szukajButton
-            // 
-            this.szukajButton.Location = new System.Drawing.Point(243, 168);
-            this.szukajButton.Name = "szukajButton";
-            this.szukajButton.Size = new System.Drawing.Size(75, 23);
-            this.szukajButton.TabIndex = 11;
-            this.szukajButton.Text = "Szukaj";
-            this.szukajButton.UseVisualStyleBackColor = true;
-            this.szukajButton.Click += new System.EventHandler(this.szukajButton_Click);
             // 
             // Autorzy
             // 

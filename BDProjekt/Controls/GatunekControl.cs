@@ -60,5 +60,10 @@ namespace BDProjekt
 			gatunekBindingSource.DataSource = Funkcje.Instance._context.Gatuneks.Local.ToBindingList();
 
         }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

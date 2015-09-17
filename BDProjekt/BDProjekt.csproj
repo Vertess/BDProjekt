@@ -43,6 +43,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,6 +72,24 @@
     <Compile Include="Controls\DostawaControl.Designer.cs">
       <DependentUpon>DostawaControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\OferentDostawyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OferentDostawyControl.Designer.cs">
+      <DependentUpon>OferentDostawyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OferentOfertyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OferentOfertyControl.Designer.cs">
+      <DependentUpon>OferentOfertyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OferentReklamacjeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OferentReklamacjeControl.Designer.cs">
+      <DependentUpon>OferentReklamacjeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\OfertyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,6 +101,12 @@
     </Compile>
     <Compile Include="Controls\EgzemplarzControl.Designer.cs">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RejestracjaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RejestracjaControl.Designer.cs">
+      <DependentUpon>RejestracjaControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ReklamacjaControl.cs">
       <SubType>UserControl</SubType>
@@ -209,8 +234,17 @@
     <EmbeddedResource Include="Controls\EgzemplarzControl.resx">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OferentOfertyControl.resx">
+      <DependentUpon>OferentOfertyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OferentReklamacjeControl.resx">
+      <DependentUpon>OferentReklamacjeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\OfertyControl.resx">
       <DependentUpon>OfertyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RejestracjaControl.resx">
+      <DependentUpon>RejestracjaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ReklamacjaControl.resx">
       <DependentUpon>ReklamacjaControl.cs</DependentUpon>
@@ -265,16 +299,35 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Autor.datasource" />
+    <None Include="Properties\DataSources\Autorzy.datasource" />
     <None Include="Properties\DataSources\AutorzyKsiazki.datasource" />
     <None Include="Properties\DataSources\Dostawa.datasource" />
     <None Include="Properties\DataSources\Egzemplarz.datasource" />
+    <None Include="Properties\DataSources\ElementyDostawy.datasource" />
+    <None Include="Properties\DataSources\ElementyZamowienia.datasource" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Funkcje.datasource" />
     <None Include="Properties\DataSources\Gatunek.datasource" />
+    <None Include="Properties\DataSources\GatunekControl.datasource" />
+    <None Include="Properties\DataSources\Klient.datasource" />
+    <None Include="Properties\DataSources\KlientControl.datasource" />
     <None Include="Properties\DataSources\Ksiazka.datasource" />
+    <None Include="Properties\DataSources\KsiazkaControl.datasource" />
+    <None Include="Properties\DataSources\KsiegarniaEntities.datasource" />
     <None Include="Properties\DataSources\Oferent.datasource" />
+    <None Include="Properties\DataSources\OfertaOferenta.datasource" />
     <None Include="Properties\DataSources\Pracownik.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\DataSources\Rabat.datasource" />
+    <None Include="Properties\DataSources\RabatControl.datasource" />
+    <None Include="Properties\DataSources\RealizacjaZamowienia.datasource" />
+    <None Include="Properties\DataSources\RealizacjeReklamacji.datasource" />
     <None Include="Properties\DataSources\Reklamacja.datasource" />
+    <None Include="Properties\DataSources\Reklamacja1.datasource" />
+    <None Include="Properties\DataSources\ReklamacjaControl.datasource" />
+    <None Include="Properties\DataSources\RodzajWysylki.datasource" />
     <None Include="Properties\DataSources\Wydawnictwo.datasource" />
+    <None Include="Properties\DataSources\WydawnictwoControl.datasource" />
     <None Include="Properties\DataSources\Zamowieny.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

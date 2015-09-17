@@ -71,6 +71,12 @@
     <Compile Include="Controls\DostawaControl.Designer.cs">
       <DependentUpon>DostawaControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AddClientControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AddClientControl.Designer.cs">
+      <DependentUpon>AddClientControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\OfertyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\EgzemplarzControl.resx">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AddClientControl.resx">
+      <DependentUpon>AddClientControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OfertyControl.resx">
       <DependentUpon>OfertyControl.cs</DependentUpon>

@@ -339,6 +339,7 @@
     <None Include="Properties\DataSources\KsiazkaControl.datasource" />
     <None Include="Properties\DataSources\KsiegarniaEntities.datasource" />
     <None Include="Properties\DataSources\Oferent.datasource" />
+    <None Include="Properties\DataSources\OfertaOferenta1.datasource" />
     <None Include="Properties\DataSources\Pracownik.datasource" />
     <None Include="Properties\DataSources\Rabat.datasource" />
     <None Include="Properties\DataSources\RabatControl.datasource" />

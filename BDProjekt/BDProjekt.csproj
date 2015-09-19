@@ -261,6 +261,9 @@
     <EmbeddedResource Include="Controls\EgzemplarzControl.resx">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OferentDostawyControl.resx">
+      <DependentUpon>OferentDostawyControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\OferentOfertyControl.resx">
       <DependentUpon>OferentOfertyControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +332,8 @@
     <None Include="Properties\DataSources\Autorzy.datasource" />
     <None Include="Properties\DataSources\AutorzyKsiazki.datasource" />
     <None Include="Properties\DataSources\Dostawa.datasource" />
+    <None Include="Properties\DataSources\Dostawa1.datasource" />
+    <None Include="Properties\DataSources\Dostawa2.datasource" />
     <None Include="Properties\DataSources\Egzemplarz.datasource" />
     <None Include="Properties\DataSources\ElementyDostawy.datasource" />
     <None Include="Properties\DataSources\ElementyZamowienia.datasource" />
@@ -345,6 +350,7 @@
     <None Include="Properties\DataSources\RabatControl.datasource" />
     <None Include="Properties\DataSources\RealizacjaZamowienia.datasource" />
     <None Include="Properties\DataSources\RealizacjeReklamacji.datasource" />
+    <None Include="Properties\DataSources\RealizacjeReklamacji1.datasource" />
     <None Include="Properties\DataSources\Reklamacja.datasource" />
     <None Include="Properties\DataSources\Reklamacja1.datasource" />
     <None Include="Properties\DataSources\ReklamacjaControl.datasource" />

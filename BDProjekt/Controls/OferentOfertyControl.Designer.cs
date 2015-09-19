@@ -32,6 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TytolKsiazki = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NazwaWydawnictwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Dodaj = new System.Windows.Forms.DataGridViewButtonColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,15 +41,18 @@
             this.Ksiazka2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wydawnictwo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypOkladki = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Usun = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zatwierdzButton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cenaHurtowaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idOfertyOferentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Egzemplarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ofertaOferentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typOkladkiDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IdEgzemplarza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ksiazka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wydawnictwo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +72,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TytolKsiazki,
             this.NazwaWydawnictwa,
-            this.typOkladkiDataGridViewCheckBoxColumn,
+            this.dataGridViewCheckBoxColumn1,
             this.Dodaj,
             this.IdEgzemplarza,
             this.Ksiazka,
@@ -78,7 +82,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(571, 215);
+            this.dataGridView1.Size = new System.Drawing.Size(509, 215);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -94,6 +98,15 @@
             this.NazwaWydawnictwa.HeaderText = "Wydawnictwo";
             this.NazwaWydawnictwa.Name = "NazwaWydawnictwa";
             this.NazwaWydawnictwa.ReadOnly = true;
+            this.NazwaWydawnictwa.Width = 80;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "TypOkladki";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Okladka";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Width = 50;
             // 
             // Dodaj
             // 
@@ -101,6 +114,7 @@
             this.Dodaj.HeaderText = "Dodaj";
             this.Dodaj.Name = "Dodaj";
             this.Dodaj.ReadOnly = true;
+            this.Dodaj.Width = 60;
             // 
             // contextMenuStrip1
             // 
@@ -131,15 +145,16 @@
             this.Wydawnictwo2,
             this.TypOkladki,
             this.cenaHurtowaDataGridViewTextBoxColumn,
+            this.Usun,
             this.idOfertyOferentaDataGridViewTextBoxColumn,
             this.Egzemplarz});
             this.dataGridView2.DataSource = this.ofertaOferentaBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(567, 3);
+            this.dataGridView2.Location = new System.Drawing.Point(515, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(609, 215);
+            this.dataGridView2.Size = new System.Drawing.Size(665, 215);
             this.dataGridView2.TabIndex = 3;
-            this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // Ksiazka2
             // 
@@ -155,11 +170,17 @@
             // 
             // TypOkladki
             // 
-            this.TypOkladki.HeaderText = "TypOkladki";
+            this.TypOkladki.HeaderText = "Okladki";
             this.TypOkladki.Name = "TypOkladki";
             this.TypOkladki.ReadOnly = true;
             this.TypOkladki.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.TypOkladki.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TypOkladki.Width = 50;
+            // 
+            // Usun
+            // 
+            this.Usun.HeaderText = "Usun";
+            this.Usun.Name = "Usun";
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -172,9 +193,9 @@
             // 
             this.zatwierdzButton.Location = new System.Drawing.Point(883, 224);
             this.zatwierdzButton.Name = "zatwierdzButton";
-            this.zatwierdzButton.Size = new System.Drawing.Size(151, 84);
+            this.zatwierdzButton.Size = new System.Drawing.Size(139, 84);
             this.zatwierdzButton.TabIndex = 5;
-            this.zatwierdzButton.Text = "Przeladuj / Zatwierdz zmiany";
+            this.zatwierdzButton.Text = "Zaladuj / Zatwierdz zmiany";
             this.zatwierdzButton.UseVisualStyleBackColor = true;
             this.zatwierdzButton.Click += new System.EventHandler(this.zatwierdzButton_Click);
             // 
@@ -194,11 +215,33 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Filter:";
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Egzemplarz";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Egzemplarz";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Egzemplarz";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Egzemplarz";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Egzemplarz";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Egzemplarz";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            // 
             // cenaHurtowaDataGridViewTextBoxColumn
             // 
             this.cenaHurtowaDataGridViewTextBoxColumn.DataPropertyName = "CenaHurtowa";
-            this.cenaHurtowaDataGridViewTextBoxColumn.HeaderText = "CenaHurtowa";
+            this.cenaHurtowaDataGridViewTextBoxColumn.HeaderText = "Cena";
             this.cenaHurtowaDataGridViewTextBoxColumn.Name = "cenaHurtowaDataGridViewTextBoxColumn";
+            this.cenaHurtowaDataGridViewTextBoxColumn.Width = 40;
             // 
             // idOfertyOferentaDataGridViewTextBoxColumn
             // 
@@ -217,14 +260,6 @@
             // ofertaOferentaBindingSource
             // 
             this.ofertaOferentaBindingSource.DataSource = typeof(BDProjekt.OfertaOferenta);
-            // 
-            // typOkladkiDataGridViewCheckBoxColumn
-            // 
-            this.typOkladkiDataGridViewCheckBoxColumn.DataPropertyName = "TypOkladki";
-            this.typOkladkiDataGridViewCheckBoxColumn.HeaderText = "TypOkladki";
-            this.typOkladkiDataGridViewCheckBoxColumn.Name = "typOkladkiDataGridViewCheckBoxColumn";
-            this.typOkladkiDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.typOkladkiDataGridViewCheckBoxColumn.Width = 30;
             // 
             // IdEgzemplarza
             // 
@@ -287,9 +322,14 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource ofertaOferentaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Button zatwierdzButton;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn TytolKsiazki;
         private System.Windows.Forms.DataGridViewTextBoxColumn NazwaWydawnictwa;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn typOkladkiDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn Dodaj;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdEgzemplarza;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ksiazka;
@@ -298,10 +338,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Wydawnictwo2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TypOkladki;
         private System.Windows.Forms.DataGridViewTextBoxColumn cenaHurtowaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Usun;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOfertyOferentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Egzemplarz;
-        private System.Windows.Forms.Button zatwierdzButton;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

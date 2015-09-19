@@ -16,5 +16,14 @@ namespace BDProjekt.Controls
         {
             InitializeComponent();
         }
+
+        private void OferentDostawyControl_Load(object sender, EventArgs e)
+        {
+            if (!DesignMode)
+            {
+           //     Funkcje.Instance._context.Dostawas.Load();
+             //   dostawaBindingSource.DataSource = Funkcje.Instance._context.Dostawas.Local.ToBindingList();
+            }
+        }
     }
 }

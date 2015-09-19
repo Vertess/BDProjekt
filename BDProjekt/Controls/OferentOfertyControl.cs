@@ -44,6 +44,7 @@ namespace BDProjekt.Controls
                     row.Cells["Wydawnictwo2"].Value = ((Wydawnictwo)((Egzemplarz)row.Cells["Egzemplarz"].Value).Wydawnictwo).NazwaWydawnictwa;
                     row.Cells["TypOkladki"].Value = ((Egzemplarz)row.Cells["Egzemplarz"].Value).TypOkladki;
                 }
+                row.Cells["Usun"].Value = "Usun";
             }
 
         }
@@ -85,9 +86,9 @@ namespace BDProjekt.Controls
         }
 
 
-        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 4)
                 try
                 {
                     dataGridView2.Rows.Remove(dataGridView2.Rows[e.RowIndex]);
@@ -134,13 +135,16 @@ namespace BDProjekt.Controls
             dataGridView2.Columns["TypOkladki"].ValueType = typeof(bool);
             dataGridView1.Columns["NazwaWydawnictwa"].ValueType = typeof(string);
             dataGridView1.Columns["TytolKsiazki"].ValueType = typeof(string);
+            foreach (DataGridViewColumn c in dataGridView1.Columns)
+            {
+                c.DefaultCellStyle.Font = new Font("Arial", 10.5F, GraphicsUnit.Pixel);
+            }
+            foreach (DataGridViewColumn c in dataGridView2.Columns)
+            {
+                c.DefaultCellStyle.Font = new Font("Arial", 10.5F, GraphicsUnit.Pixel);
+            }
         }
 
- 
-
-
-
- 
 
     }
 }

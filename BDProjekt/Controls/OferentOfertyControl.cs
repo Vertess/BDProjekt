@@ -19,46 +19,7 @@ namespace BDProjekt.Controls
             InitializeComponent();
         }
 
-
-
-
-        private void OferentOfertyControl_Load(object sender, EventArgs e)
-        {
-            
-            using (var db = new KsiegarniaEntities())
-            {
-                try
-                {
-                    var oferty = from b in db.OfertaOferentas
-                                  select b;
-
-                }
-                catch (Exception)
-                {
-                    return ;
-                }
-            }
-
-            if (!DesignMode)
-            {
-                Funkcje.Instance._context.Egzemplarzs.Load();
-                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
-                dataGridView1.Columns["NazwaWydawnictwa"].ValueType = typeof(string);
-                dataGridView1.Columns["TytolKsiazki"].ValueType = typeof(string);
-
-                Funkcje.Instance._context.OfertaOferentas.Load();
-                ofertaOferentaBindingSource.DataSource = Funkcje.Instance._context.OfertaOferentas.Local.ToBindingList();
-                dataGridView2.Columns["Ksiazka2"].ValueType = typeof(string);
-                dataGridView2.Columns["Wydawnictwo2"].ValueType = typeof(string);
-                dataGridView2.Columns["TypOkladki"].ValueType = typeof(bool);
-
-
-                    return;
-            }
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void DajNazwy()
         {
 
 
@@ -90,10 +51,15 @@ namespace BDProjekt.Controls
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 3)
-            {
+            if (e.ColumnIndex == 3) {
+
                 try
                 {
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    if (((Egzemplarz)row.Cells["Egzemplarz"].Value).IdEgzemplarza == (int)dataGridView1.Rows[e.RowIndex].Cells["IdEgzemplarza"].Value)
+                        return;
+                }
                     using (var db = new KsiegarniaEntities())
                     {
                         Egzemplarz egzemplarz = ((Egzemplarz)egzemplarzBindingSource[0]);
@@ -106,25 +72,73 @@ namespace BDProjekt.Controls
 
                         db.OfertaOferentas.Add(oferta);
                         db.SaveChanges();
+                        reload(sender, e);
+                        return;
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    textBox1.Text = ex.ToString();
                     return ;
                 }
             }
 
-
-
-
-
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            OferentOfertyControl_Load(sender, e);
+            if (e.ColumnIndex == 0)
+                try
+                {
+                    dataGridView2.Rows.Remove(dataGridView2.Rows[e.RowIndex]);
+                    reload(sender, e);
+                }
+                catch (Exception)
+                {
+                    return;
+                }
         }
+
+        private void reload(object sender, EventArgs e)
+        {
+            if (!DesignMode)
+            {
+                Funkcje.Instance._context.Egzemplarzs.Load();
+                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList().Where(n => (((Ksiazka)n.Ksiazka).Tytul.Contains(this.textBox2.Text)));
+
+                Funkcje.Instance._context.OfertaOferentas.Load();
+                ofertaOferentaBindingSource.DataSource = Funkcje.Instance._context.OfertaOferentas.Local.ToBindingList();
+                DajNazwy();
+
+                return;
+            }
+        }
+
+        private void zatwierdzButton_Click(object sender, EventArgs e)
+        {
+            if (!DesignMode)
+            {
+            ofertaOferentaBindingSource.ResetBindings(false);
+            Funkcje.Instance._context.SaveChanges();
+            reload(sender, e);
+
+                return;
+            }
+        }
+
+        private void OferentOfertyControl_Load(object sender, EventArgs e)
+        {
+
+            dataGridView2.Columns["Ksiazka2"].ValueType = typeof(string);
+            dataGridView2.Columns["Wydawnictwo2"].ValueType = typeof(string);
+            dataGridView2.Columns["TypOkladki"].ValueType = typeof(bool);
+            dataGridView1.Columns["NazwaWydawnictwa"].ValueType = typeof(string);
+            dataGridView1.Columns["TytolKsiazki"].ValueType = typeof(string);
+        }
+
+ 
+
+
 
  
 

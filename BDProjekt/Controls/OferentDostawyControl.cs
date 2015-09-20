@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace BDProjekt.Controls
 {
@@ -21,7 +22,7 @@ namespace BDProjekt.Controls
         {
             if (!DesignMode)
             {
-           //     Funkcje.Instance._context.Dostawas.Load();
+                Funkcje.Instance._context.Dostawas.Load();
              //   dostawaBindingSource.DataSource = Funkcje.Instance._context.Dostawas.Local.ToBindingList();
             }
         }

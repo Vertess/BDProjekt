@@ -23,8 +23,29 @@ namespace BDProjekt.Controls
             if (!DesignMode)
             {
                 Funkcje.Instance._context.Dostawas.Load();
-             //   dostawaBindingSource.DataSource = Funkcje.Instance._context.Dostawas.Local.ToBindingList();
+                dostawaBindingSource.DataSource = Funkcje.Instance._context.Dostawas.Local.ToBindingList();
             }
+        }
+
+        private void zatwierdzButton_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+                try
+                {
+                    
+                    Funkcje.Instance._context.ElementyDostawies.Load();
+                    elementyDostawyBindingSource.DataSource = Funkcje.Instance._context.ElementyDostawies.Local.ToBindingList().Where(n => (n.IdDostawy ==(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idDostawyDataGridViewTextBoxColumn"].Value))));                   
+                }
+                catch (Exception)
+                {
+                    return;
+                }
         }
     }
 }

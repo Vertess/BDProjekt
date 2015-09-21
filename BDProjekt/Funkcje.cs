@@ -29,6 +29,13 @@ namespace BDProjekt
 				return _instance == null ? new Funkcje() : _instance;
 			}
 		}
+		public void dataGridView1_DataError(object sender, System.Windows.Forms.DataGridViewDataErrorEventArgs e)
+		{
+			if (e.Context == DataGridViewDataErrorContexts.Formatting || e.Context == DataGridViewDataErrorContexts.PreferredSize)
+			{
+				e.ThrowException = false;
+			}
+		}
 
 		public void Login(TabControl tab, Uzytkownicy uzytkownik, string login = "", string password = "")
 		{

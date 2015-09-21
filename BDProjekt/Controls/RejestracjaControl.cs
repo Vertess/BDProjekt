@@ -54,7 +54,7 @@ namespace BDProjekt.Controls
                     };
                     db.Klients.Add(klient);
                     db.SaveChanges();
-                    MessageBox.Show("Poprawnie zarejestrowano, możesz teraz sięzalogować");
+                    MessageBox.Show("Poprawnie zarejestrowano, możesz teraz się zalogować");
                     return;
                 }
                 catch (Exception)
@@ -71,16 +71,16 @@ namespace BDProjekt.Controls
             {
                 try
                 {
-                   /* var oferenci = from b in db.Oferents
+                    var oferenci = from b in db.Oferents
                                   where b.Login.Equals(OferentLoginTextBox.Text)
                                   select b;
 
 
                     if (oferenci.Count() > 0)
                     {
-                        WiadomoscBledu.Text = "login jest juz zajety";
+                        MessageBox.Show("login jest juz zajety");
                         return;
-                    }*/
+                    }
                     if (OferentHasloTextBox.Text == "")
                     {
                         MessageBox.Show("Musisz podac jakies haslo");
@@ -104,9 +104,9 @@ namespace BDProjekt.Controls
                     MessageBox.Show("Poprawnie zarejestrowano, możesz teraz sięzalogować");
                     return;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Wystąpił nieznany błąd");
+                    MessageBox.Show(""+ex);
                     return ;
                 }
             }

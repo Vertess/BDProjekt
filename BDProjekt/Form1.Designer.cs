@@ -883,7 +883,7 @@
         }
 
         #endregion
-
+        
 		private System.Windows.Forms.TabControl Glowna_tabControl;
         private System.Windows.Forms.TabPage okienkoLogowania;
         private System.Windows.Forms.TextBox hasloTextBox;
@@ -926,7 +926,7 @@
 		private KsiazkaControl ksiazkaControl1;
         private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.ComboBox logowanieComboBox;
         private Controls.EgzemplarzControl egzemplarzControl1;
         private System.Windows.Forms.TabPage pracownikDostawaTabPage;

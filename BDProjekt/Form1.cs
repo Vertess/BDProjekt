@@ -25,7 +25,7 @@ namespace BDProjekt
 			{
 				Funkcje.Instance.pages.Add(item);
 			}
-			Funkcje.Instance.Login(Glowna_tabControl, Funkcje.Instance.Logowanie);
+            Funkcje.Instance.Login(Glowna_tabControl, Funkcje.Instance.Logowanie, this.button1);
 			this.logowanieComboBox.DataSource = Enum.GetValues(typeof(Uzytkownicy));
 		}
 
@@ -33,13 +33,11 @@ namespace BDProjekt
 		{
 			if (!this.loginOption)
 			{
-				Funkcje.Instance.Login(Glowna_tabControl, (Uzytkownicy)this.logowanieComboBox.SelectedItem, this.loginOption, this.loginTextBox.Text, this.hasloTextBox.Text);
-				this.button1.Text = "Wyloguj";
+                Funkcje.Instance.Login(Glowna_tabControl, (Uzytkownicy)this.logowanieComboBox.SelectedItem, this.button1 ,this.loginOption, this.loginTextBox.Text, this.hasloTextBox.Text);
 			}
 			else
 			{
-				Funkcje.Instance.Login(Glowna_tabControl, Funkcje.Instance.Logowanie);
-				this.button1.Text = "Zaloguj";
+                Funkcje.Instance.Login(Glowna_tabControl, Funkcje.Instance.Logowanie, this.button1);
 			}
 
 			this.loginOption = !loginOption;

@@ -141,7 +141,7 @@
             this.okienkoLogowania.Controls.Add(this.rejestracjaControl1);
             this.okienkoLogowania.Location = new System.Drawing.Point(4, 29);
             this.okienkoLogowania.Name = "okienkoLogowania";
-            this.okienkoLogowania.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.okienkoLogowania.Padding = new System.Windows.Forms.Padding(3);
             this.okienkoLogowania.Size = new System.Drawing.Size(1272, 556);
             this.okienkoLogowania.TabIndex = 4;
             this.okienkoLogowania.Text = "Rejestracja";
@@ -150,7 +150,7 @@
             // rejestracjaControl1
             // 
             this.rejestracjaControl1.Location = new System.Drawing.Point(28, 18);
-            this.rejestracjaControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rejestracjaControl1.Margin = new System.Windows.Forms.Padding(2);
             this.rejestracjaControl1.Name = "rejestracjaControl1";
             this.rejestracjaControl1.Size = new System.Drawing.Size(608, 468);
             this.rejestracjaControl1.TabIndex = 0;
@@ -635,7 +635,7 @@
             this.OferentOfertyTab.Controls.Add(this.oferentOfertyControl1);
             this.OferentOfertyTab.Location = new System.Drawing.Point(4, 29);
             this.OferentOfertyTab.Name = "OferentOfertyTab";
-            this.OferentOfertyTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.OferentOfertyTab.Padding = new System.Windows.Forms.Padding(3);
             this.OferentOfertyTab.Size = new System.Drawing.Size(1232, 399);
             this.OferentOfertyTab.TabIndex = 0;
             this.OferentOfertyTab.Text = "Oferty";
@@ -644,7 +644,7 @@
             // oferentOfertyControl1
             // 
             this.oferentOfertyControl1.Location = new System.Drawing.Point(20, 6);
-            this.oferentOfertyControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.oferentOfertyControl1.Margin = new System.Windows.Forms.Padding(2);
             this.oferentOfertyControl1.Name = "oferentOfertyControl1";
             this.oferentOfertyControl1.Size = new System.Drawing.Size(1180, 469);
             this.oferentOfertyControl1.TabIndex = 0;
@@ -654,7 +654,7 @@
             this.OferentDostawyTab.Controls.Add(this.oferentDostawyControl1);
             this.OferentDostawyTab.Location = new System.Drawing.Point(4, 29);
             this.OferentDostawyTab.Name = "OferentDostawyTab";
-            this.OferentDostawyTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.OferentDostawyTab.Padding = new System.Windows.Forms.Padding(3);
             this.OferentDostawyTab.Size = new System.Drawing.Size(1232, 399);
             this.OferentDostawyTab.TabIndex = 1;
             this.OferentDostawyTab.Text = "Dostawy";
@@ -672,7 +672,7 @@
             this.OferentReklamacjeTab.Controls.Add(this.oferentReklamacjeControl1);
             this.OferentReklamacjeTab.Location = new System.Drawing.Point(4, 29);
             this.OferentReklamacjeTab.Name = "OferentReklamacjeTab";
-            this.OferentReklamacjeTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.OferentReklamacjeTab.Padding = new System.Windows.Forms.Padding(3);
             this.OferentReklamacjeTab.Size = new System.Drawing.Size(1232, 399);
             this.OferentReklamacjeTab.TabIndex = 2;
             this.OferentReklamacjeTab.Text = "Reklamacje";
@@ -681,7 +681,7 @@
             // oferentReklamacjeControl1
             // 
             this.oferentReklamacjeControl1.Location = new System.Drawing.Point(20, 6);
-            this.oferentReklamacjeControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.oferentReklamacjeControl1.Margin = new System.Windows.Forms.Padding(2);
             this.oferentReklamacjeControl1.Name = "oferentReklamacjeControl1";
             this.oferentReklamacjeControl1.Size = new System.Drawing.Size(1203, 379);
             this.oferentReklamacjeControl1.TabIndex = 0;
@@ -838,7 +838,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 660);
+            this.ClientSize = new System.Drawing.Size(1446, 673);
             this.Controls.Add(this.logowanieComboBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.hasloTextBox);

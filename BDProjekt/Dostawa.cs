@@ -22,6 +22,7 @@ namespace BDProjekt
         public int IdDostawy { get; set; }
         public int Oferent_IdOferenta { get; set; }
         public int Pracownik_IdPracownika { get; set; }
+        public Nullable<bool> Status { get; set; }
     
         public virtual Oferent Oferent { get; set; }
         public virtual Pracownik Pracownik { get; set; }

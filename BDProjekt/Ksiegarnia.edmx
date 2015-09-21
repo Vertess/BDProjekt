@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="KsiegarniaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="KsiegarniaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Autors">
           <Key>
             <PropertyRef Name="IdAutora" />
@@ -16,9 +16,9 @@
         </EntityType>
         <EntityType Name="AutorzyKsiazkis">
           <Key>
-            <PropertyRef Name="IDAutorzyKsiazki" />
+            <PropertyRef Name="Autor_IdAutora" />
+            <PropertyRef Name="IdKsiazka_IdKsiazki" />
           </Key>
-          <Property Name="IDAutorzyKsiazki" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Autor_IdAutora" Type="int" Nullable="false" />
           <Property Name="IdKsiazka_IdKsiazki" Type="int" Nullable="false" />
         </EntityType>
@@ -29,6 +29,7 @@
           <Property Name="IdDostawy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Oferent_IdOferenta" Type="int" Nullable="false" />
           <Property Name="Pracownik_IdPracownika" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="Egzemplarzs">
           <Key>
@@ -93,6 +94,8 @@
           <Property Name="IdOferenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Adres" Type="nvarchar(max)" />
           <Property Name="NazwaFirmy" Type="nvarchar(max)" />
+          <Property Name="Login" Type="nvarchar(max)" />
+          <Property Name="Haslo" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="OfertaOferentas">
           <Key>
@@ -536,8 +539,7 @@
             <End Role="Zamowienies" EntitySet="Zamowienies" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KsiegarniaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -553,9 +555,9 @@
         </EntityType>
         <EntityType Name="AutorzyKsiazki">
           <Key>
-            <PropertyRef Name="IDAutorzyKsiazki" />
+            <PropertyRef Name="Autor_IdAutora" />
+            <PropertyRef Name="IdKsiazka_IdKsiazki" />
           </Key>
-          <Property Name="IDAutorzyKsiazki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Autor_IdAutora" Type="Int32" Nullable="false" />
           <Property Name="IdKsiazka_IdKsiazki" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Autor" Relationship="Self.FK_dbo_AutorzyKsiazkis_dbo_Autors_Autor_IdAutora" FromRole="AutorzyKsiazkis" ToRole="Autors" />
@@ -571,6 +573,7 @@
           <NavigationProperty Name="Oferent" Relationship="Self.FK_dbo_Dostawas_dbo_Oferents_Oferent_IdOferenta" FromRole="Dostawas" ToRole="Oferents" />
           <NavigationProperty Name="Pracownik" Relationship="Self.FK_dbo_Dostawas_dbo_Pracowniks_Pracownik_IdPracownika" FromRole="Dostawas" ToRole="Pracowniks" />
           <NavigationProperty Name="ElementyDostawies" Relationship="Self.FK_dbo_ElementyDostawies_dbo_Dostawas_IdDostawy" FromRole="Dostawas" ToRole="ElementyDostawies" />
+          <Property Name="Status" Type="Boolean" />
         </EntityType>
         <EntityType Name="Egzemplarz">
           <Key>
@@ -651,6 +654,8 @@
           <Property Name="NazwaFirmy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Dostawas" Relationship="Self.FK_dbo_Dostawas_dbo_Oferents_Oferent_IdOferenta" FromRole="Oferents" ToRole="Dostawas" />
           <NavigationProperty Name="OfertaOferentas" Relationship="Self.FK_dbo_OfertaOferentas_dbo_Oferents_Oferent_IdOferenta" FromRole="Oferents" ToRole="OfertaOferentas" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Haslo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OfertaOferenta">
           <Key>
@@ -1126,18 +1131,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="AutorzyKsiazkis">
-            <EntityTypeMapping TypeName="KsiegarniaModel.AutorzyKsiazki">
-              <MappingFragment StoreEntitySet="AutorzyKsiazkis">
-                <ScalarProperty Name="IDAutorzyKsiazki" ColumnName="IDAutorzyKsiazki" />
-                <ScalarProperty Name="Autor_IdAutora" ColumnName="Autor_IdAutora" />
-                <ScalarProperty Name="IdKsiazka_IdKsiazki" ColumnName="IdKsiazka_IdKsiazki" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Dostawas">
             <EntityTypeMapping TypeName="KsiegarniaModel.Dostawa">
               <MappingFragment StoreEntitySet="Dostawas">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="IdDostawy" ColumnName="IdDostawy" />
                 <ScalarProperty Name="Oferent_IdOferenta" ColumnName="Oferent_IdOferenta" />
                 <ScalarProperty Name="Pracownik_IdPracownika" ColumnName="Pracownik_IdPracownika" />
@@ -1207,6 +1204,8 @@
           <EntitySetMapping Name="Oferents">
             <EntityTypeMapping TypeName="KsiegarniaModel.Oferent">
               <MappingFragment StoreEntitySet="Oferents">
+                <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="IdOferenta" ColumnName="IdOferenta" />
                 <ScalarProperty Name="Adres" ColumnName="Adres" />
                 <ScalarProperty Name="NazwaFirmy" ColumnName="NazwaFirmy" />
@@ -1298,6 +1297,14 @@
                 <ScalarProperty Name="Rabat_IdRabatu" ColumnName="Rabat_IdRabatu" />
                 <ScalarProperty Name="RealizacjaZamowienia_IdRealizacji" ColumnName="RealizacjaZamowienia_IdRealizacji" />
                 <ScalarProperty Name="RodzajuWysylki_IdRodzajWysylki" ColumnName="RodzajuWysylki_IdRodzajWysylki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AutorzyKsiazkis">
+            <EntityTypeMapping TypeName="IsTypeOf(KsiegarniaModel.AutorzyKsiazki)">
+              <MappingFragment StoreEntitySet="AutorzyKsiazkis">
+                <ScalarProperty Name="IdKsiazka_IdKsiazki" ColumnName="IdKsiazka_IdKsiazki" />
+                <ScalarProperty Name="Autor_IdAutora" ColumnName="Autor_IdAutora" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -14,7 +14,6 @@ namespace BDProjekt
     
     public partial class AutorzyKsiazki
     {
-        public int IDAutorzyKsiazki { get; set; }
         public int Autor_IdAutora { get; set; }
         public int IdKsiazka_IdKsiazki { get; set; }
     

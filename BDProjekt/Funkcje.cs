@@ -17,6 +17,8 @@ namespace BDProjekt
 		public Klient klient { get; set; }
 		public Pracownik pracownik { get; set; }
 		public Oferent oferent { get; set; }
+		private string adminPassword = "admin";
+		private string adminLogin = "admin";
 		private Funkcje()
 		{
 			_instance = this;
@@ -37,7 +39,7 @@ namespace BDProjekt
 			}
 		}
 
-		public void Login(TabControl tab, Uzytkownicy uzytkownik, string login = "", string password = "")
+		public void Login(TabControl tab, Uzytkownicy uzytkownik, bool type = false, string login = "", string password = "")
 		{
 			switch (uzytkownik)
 			{
@@ -45,6 +47,7 @@ namespace BDProjekt
 					_context.Klients.Load();
 					if (_context.Klients.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
 					{
+						this.Login(tab, Logowanie,true);
 						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Klient]);
 						this.klient = _context.Klients.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
 					}
@@ -53,6 +56,7 @@ namespace BDProjekt
 					_context.Pracowniks.Load();
 					if (_context.Klients.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
 					{
+						this.Login(tab, Logowanie,true);
 						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Pracownik]);
 						this.pracownik = _context.Pracowniks.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
 					}
@@ -61,11 +65,14 @@ namespace BDProjekt
 					_context.Oferents.Load();
 					if (_context.Klients.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
 					{
+						this.Login(tab, Logowanie,true);
 						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Oferent]);
-						//this.oferent = _context.Oferents.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
+						this.oferent = _context.Oferents.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
 					}
 					break;
 				case Uzytkownicy.Admin:
+					if (login.Equals(this.adminLogin) && password.Equals(this.adminPassword))
+						this.Login(tab, Logowanie,true);
 						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Admin]);
 					break;
 				default:
@@ -73,7 +80,8 @@ namespace BDProjekt
 					{
 						tab.TabPages.Remove(item);
 					}
-					tab.TabPages.Add(this.pages[((int)this.Logowanie)]);
+					if(!type)
+						tab.TabPages.Add(this.pages[((int)this.Logowanie)]);
 					break;
 			}
 		}
@@ -82,7 +90,7 @@ namespace BDProjekt
 	{
 		Klient = 1,
 		Pracownik = 2,
-		Oferent = 3,
-		Admin = 4
+		Oferent = 4,
+		Admin = 3
 	};
 }

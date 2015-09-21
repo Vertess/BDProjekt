@@ -23,6 +23,8 @@ namespace BDProjekt
         public int IdOferenta { get; set; }
         public string Adres { get; set; }
         public string NazwaFirmy { get; set; }
+        public string Login { get; set; }
+        public string Haslo { get; set; }
     
         public virtual ICollection<Dostawa> Dostawas { get; set; }
         public virtual ICollection<OfertaOferenta> OfertaOferentas { get; set; }

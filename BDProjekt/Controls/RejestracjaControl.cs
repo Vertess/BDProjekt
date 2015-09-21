@@ -30,17 +30,17 @@ namespace BDProjekt.Controls
 
                     if (klienci.Count() > 0)
                     {
-                        WiadomoscBledu.Text = "login jest juz zajety";
+                        MessageBox.Show("login jest juz zajety");
                         return;
                     }
                     if (KlientHasloTextBox.Text == "")
                     {
-                        WiadomoscBledu.Text = "Musisz podac jakies haslo";
+                        MessageBox.Show("Musisz podac jakies haslo");
                         return;
                     }
                     if (KlientLoginTextBox.Text == "")
                     {
-                        WiadomoscBledu.Text = "Musisz podac jakis login";
+                        MessageBox.Show("Musisz podac jakis login");
                         return;
                     }
 
@@ -54,12 +54,12 @@ namespace BDProjekt.Controls
                     };
                     db.Klients.Add(klient);
                     db.SaveChanges();
-                    WiadomoscBledu.Text = "Poprawnie zarejestrowano, możesz teraz sięzalogować";
+                    MessageBox.Show("Poprawnie zarejestrowano, możesz teraz sięzalogować");
                     return;
                 }
                 catch (Exception)
                 {
-                    WiadomoscBledu.Text = "Wystąpił nieznany błąd";
+                    MessageBox.Show("Wystąpił nieznany błąd");
                     return ;
                 }
             }
@@ -83,12 +83,12 @@ namespace BDProjekt.Controls
                     }*/
                     if (OferentHasloTextBox.Text == "")
                     {
-                        WiadomoscBledu.Text = "Musisz podac jakies haslo";
+                        MessageBox.Show("Musisz podac jakies haslo");
                         return;
                     }
                     if (OferentLoginTextBox.Text == "")
                     {
-                        WiadomoscBledu.Text = "Musisz podac jakis login";
+                        MessageBox.Show("Musisz podac jakis login");
                         return;
                     }
 
@@ -101,12 +101,12 @@ namespace BDProjekt.Controls
                     };
                     db.Oferents.Add(oferent);
                     db.SaveChanges();
-                    WiadomoscBledu.Text = "Poprawnie zarejestrowano, możesz teraz sięzalogować";
+                    MessageBox.Show("Poprawnie zarejestrowano, możesz teraz sięzalogować");
                     return;
                 }
                 catch (Exception)
                 {
-                    WiadomoscBledu.Text = "Wystąpił nieznany błąd";
+                    MessageBox.Show("Wystąpił nieznany błąd");
                     return ;
                 }
             }

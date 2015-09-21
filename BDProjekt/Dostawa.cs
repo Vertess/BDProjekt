@@ -16,13 +16,14 @@ namespace BDProjekt
     {
         public Dostawa()
         {
+            this.Status = false;
             this.ElementyDostawies = new HashSet<ElementyDostawy>();
         }
     
         public int IdDostawy { get; set; }
         public int Oferent_IdOferenta { get; set; }
         public int Pracownik_IdPracownika { get; set; }
-        public Nullable<bool> Status { get; set; }
+        public bool Status { get; set; }
     
         public virtual Oferent Oferent { get; set; }
         public virtual Pracownik Pracownik { get; set; }

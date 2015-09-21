@@ -20,7 +20,7 @@ namespace BDProjekt
         }
     
         public int IdAutora { get; set; }
-        public int DataUrodzenia { get; set; }
+        public System.DateTime DataUrodzenia { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
     

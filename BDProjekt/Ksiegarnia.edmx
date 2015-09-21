@@ -10,7 +10,7 @@
             <PropertyRef Name="IdAutora" />
           </Key>
           <Property Name="IdAutora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DataUrodzenia" Type="int" Nullable="false" />
+          <Property Name="DataUrodzenia" Type="datetime" Nullable="false" />
           <Property Name="Imie" Type="nvarchar(max)" />
           <Property Name="Nazwisko" Type="nvarchar(max)" />
         </EntityType>
@@ -29,7 +29,7 @@
           <Property Name="IdDostawy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Oferent_IdOferenta" Type="int" Nullable="false" />
           <Property Name="Pracownik_IdPracownika" Type="int" Nullable="false" />
-          <Property Name="Status" Type="bit" />
+          <Property Name="Status" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Egzemplarzs">
           <Key>
@@ -74,8 +74,8 @@
           <Property Name="IdKlienta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Imie" Type="nvarchar(max)" />
           <Property Name="Nazwisko" Type="nvarchar(max)" />
-          <Property Name="Login" Type="nvarchar(max)" />
-          <Property Name="Haslo" Type="nvarchar(max)" />
+          <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Haslo" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Email" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Ksiazkas">
@@ -94,8 +94,8 @@
           <Property Name="IdOferenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Adres" Type="nvarchar(max)" />
           <Property Name="NazwaFirmy" Type="nvarchar(max)" />
-          <Property Name="Login" Type="nvarchar(max)" />
-          <Property Name="Haslo" Type="nvarchar(max)" />
+          <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Haslo" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="OfertaOferentas">
           <Key>
@@ -113,8 +113,8 @@
           <Property Name="IdPracownika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Imie" Type="nvarchar(max)" />
           <Property Name="Nazwisko" Type="nvarchar(max)" />
-          <Property Name="Login" Type="nvarchar(max)" />
-          <Property Name="Haslo" Type="nvarchar(max)" />
+          <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Haslo" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Rabats">
           <Key>
@@ -548,7 +548,7 @@
             <PropertyRef Name="IdAutora" />
           </Key>
           <Property Name="IdAutora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DataUrodzenia" Type="Int32" Nullable="false" />
+          <Property Name="DataUrodzenia" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Imie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Nazwisko" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AutorzyKsiazkis" Relationship="Self.FK_dbo_AutorzyKsiazkis_dbo_Autors_Autor_IdAutora" FromRole="Autors" ToRole="AutorzyKsiazkis" />
@@ -573,7 +573,7 @@
           <NavigationProperty Name="Oferent" Relationship="Self.FK_dbo_Dostawas_dbo_Oferents_Oferent_IdOferenta" FromRole="Dostawas" ToRole="Oferents" />
           <NavigationProperty Name="Pracownik" Relationship="Self.FK_dbo_Dostawas_dbo_Pracowniks_Pracownik_IdPracownika" FromRole="Dostawas" ToRole="Pracowniks" />
           <NavigationProperty Name="ElementyDostawies" Relationship="Self.FK_dbo_ElementyDostawies_dbo_Dostawas_IdDostawy" FromRole="Dostawas" ToRole="ElementyDostawies" />
-          <Property Name="Status" Type="Boolean" />
+          <Property Name="Status" Type="Boolean" Nullable="false" DefaultValue="False" />
         </EntityType>
         <EntityType Name="Egzemplarz">
           <Key>
@@ -628,8 +628,8 @@
           <Property Name="IdKlienta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Imie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Nazwisko" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Haslo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Haslo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Zamowienies" Relationship="Self.FK_dbo_Zamowienies_dbo_Klients_Klient_IdKlienta" FromRole="Klients" ToRole="Zamowienies" />
         </EntityType>
@@ -654,8 +654,8 @@
           <Property Name="NazwaFirmy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Dostawas" Relationship="Self.FK_dbo_Dostawas_dbo_Oferents_Oferent_IdOferenta" FromRole="Oferents" ToRole="Dostawas" />
           <NavigationProperty Name="OfertaOferentas" Relationship="Self.FK_dbo_OfertaOferentas_dbo_Oferents_Oferent_IdOferenta" FromRole="Oferents" ToRole="OfertaOferentas" />
-          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Haslo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Haslo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="OfertaOferenta">
           <Key>
@@ -675,8 +675,8 @@
           <Property Name="IdPracownika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Imie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Nazwisko" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Haslo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Haslo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Dostawas" Relationship="Self.FK_dbo_Dostawas_dbo_Pracowniks_Pracownik_IdPracownika" FromRole="Pracowniks" ToRole="Dostawas" />
           <NavigationProperty Name="Zamowienies" Relationship="Self.FK_dbo_Zamowienies_dbo_Pracowniks_Pracownik_IdPracownika" FromRole="Pracowniks" ToRole="Zamowienies" />
         </EntityType>

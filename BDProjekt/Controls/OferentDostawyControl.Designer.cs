@@ -30,10 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Szczegoly = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idDostawyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elementyDostawiesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oferentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pracownikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dostawaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zatwierdzButton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Szczegoly = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tytolKsiazkiColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elementyDostawyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tytulKsiazkiColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwaWydawnictwaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.okladkaColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.iloscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,16 +47,10 @@
             this.dostawaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEgzemplarzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDostawyDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elementyDostawyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDostawyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elementyDostawiesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oferentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pracownikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dostawaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dostawaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elementyDostawyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dostawaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -74,6 +74,49 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // Szczegoly
+            // 
+            this.Szczegoly.DataPropertyName = "IdDostawy";
+            this.Szczegoly.HeaderText = "Dostawa";
+            this.Szczegoly.Name = "Szczegoly";
+            this.Szczegoly.ReadOnly = true;
+            // 
+            // idDostawyDataGridViewTextBoxColumn
+            // 
+            this.idDostawyDataGridViewTextBoxColumn.DataPropertyName = "IdDostawy";
+            this.idDostawyDataGridViewTextBoxColumn.HeaderText = "IdDostawy";
+            this.idDostawyDataGridViewTextBoxColumn.Name = "idDostawyDataGridViewTextBoxColumn";
+            this.idDostawyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDostawyDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // elementyDostawiesDataGridViewTextBoxColumn
+            // 
+            this.elementyDostawiesDataGridViewTextBoxColumn.DataPropertyName = "ElementyDostawies";
+            this.elementyDostawiesDataGridViewTextBoxColumn.HeaderText = "ElementyDostawies";
+            this.elementyDostawiesDataGridViewTextBoxColumn.Name = "elementyDostawiesDataGridViewTextBoxColumn";
+            this.elementyDostawiesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.elementyDostawiesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // oferentDataGridViewTextBoxColumn
+            // 
+            this.oferentDataGridViewTextBoxColumn.DataPropertyName = "Oferent";
+            this.oferentDataGridViewTextBoxColumn.HeaderText = "Oferent";
+            this.oferentDataGridViewTextBoxColumn.Name = "oferentDataGridViewTextBoxColumn";
+            this.oferentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.oferentDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // pracownikDataGridViewTextBoxColumn
+            // 
+            this.pracownikDataGridViewTextBoxColumn.DataPropertyName = "Pracownik";
+            this.pracownikDataGridViewTextBoxColumn.HeaderText = "Pracownik";
+            this.pracownikDataGridViewTextBoxColumn.Name = "pracownikDataGridViewTextBoxColumn";
+            this.pracownikDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pracownikDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dostawaBindingSource
+            // 
+            this.dostawaBindingSource.DataSource = typeof(BDProjekt.Dostawa);
+            // 
             // zatwierdzButton
             // 
             this.zatwierdzButton.Location = new System.Drawing.Point(1075, 16);
@@ -90,7 +133,7 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tytolKsiazkiColumn,
+            this.tytulKsiazkiColumn,
             this.nazwaWydawnictwaColumn,
             this.okladkaColumn,
             this.iloscDataGridViewTextBoxColumn,
@@ -105,18 +148,15 @@
             this.dataGridView2.Size = new System.Drawing.Size(793, 416);
             this.dataGridView2.TabIndex = 7;
             // 
-            // Szczegoly
+            // elementyDostawyBindingSource
             // 
-            this.Szczegoly.DataPropertyName = "IdDostawy";
-            this.Szczegoly.HeaderText = "Dostawa";
-            this.Szczegoly.Name = "Szczegoly";
-            this.Szczegoly.ReadOnly = true;
+            this.elementyDostawyBindingSource.DataSource = typeof(BDProjekt.ElementyDostawy);
             // 
-            // tytolKsiazkiColumn
+            // tytulKsiazkiColumn
             // 
-            this.tytolKsiazkiColumn.HeaderText = "Tytół Ksiązki";
-            this.tytolKsiazkiColumn.Name = "tytolKsiazkiColumn";
-            this.tytolKsiazkiColumn.Width = 150;
+            this.tytulKsiazkiColumn.HeaderText = "Tytuł Ksiazki";
+            this.tytulKsiazkiColumn.Name = "tytulKsiazkiColumn";
+            this.tytulKsiazkiColumn.Width = 150;
             // 
             // nazwaWydawnictwaColumn
             // 
@@ -164,46 +204,6 @@
             this.idDostawyDataGridViewTextBoxColumn1.Name = "idDostawyDataGridViewTextBoxColumn1";
             this.idDostawyDataGridViewTextBoxColumn1.Visible = false;
             // 
-            // elementyDostawyBindingSource
-            // 
-            this.elementyDostawyBindingSource.DataSource = typeof(BDProjekt.ElementyDostawy);
-            // 
-            // idDostawyDataGridViewTextBoxColumn
-            // 
-            this.idDostawyDataGridViewTextBoxColumn.DataPropertyName = "IdDostawy";
-            this.idDostawyDataGridViewTextBoxColumn.HeaderText = "IdDostawy";
-            this.idDostawyDataGridViewTextBoxColumn.Name = "idDostawyDataGridViewTextBoxColumn";
-            this.idDostawyDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDostawyDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // elementyDostawiesDataGridViewTextBoxColumn
-            // 
-            this.elementyDostawiesDataGridViewTextBoxColumn.DataPropertyName = "ElementyDostawies";
-            this.elementyDostawiesDataGridViewTextBoxColumn.HeaderText = "ElementyDostawies";
-            this.elementyDostawiesDataGridViewTextBoxColumn.Name = "elementyDostawiesDataGridViewTextBoxColumn";
-            this.elementyDostawiesDataGridViewTextBoxColumn.ReadOnly = true;
-            this.elementyDostawiesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // oferentDataGridViewTextBoxColumn
-            // 
-            this.oferentDataGridViewTextBoxColumn.DataPropertyName = "Oferent";
-            this.oferentDataGridViewTextBoxColumn.HeaderText = "Oferent";
-            this.oferentDataGridViewTextBoxColumn.Name = "oferentDataGridViewTextBoxColumn";
-            this.oferentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.oferentDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // pracownikDataGridViewTextBoxColumn
-            // 
-            this.pracownikDataGridViewTextBoxColumn.DataPropertyName = "Pracownik";
-            this.pracownikDataGridViewTextBoxColumn.HeaderText = "Pracownik";
-            this.pracownikDataGridViewTextBoxColumn.Name = "pracownikDataGridViewTextBoxColumn";
-            this.pracownikDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pracownikDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dostawaBindingSource
-            // 
-            this.dostawaBindingSource.DataSource = typeof(BDProjekt.Dostawa);
-            // 
             // OferentDostawyControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -215,9 +215,9 @@
             this.Size = new System.Drawing.Size(1257, 514);
             this.Load += new System.EventHandler(this.OferentDostawyControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dostawaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.elementyDostawyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dostawaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -234,7 +234,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn elementyDostawiesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oferentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pracownikDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tytolKsiazkiColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tytulKsiazkiColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwaWydawnictwaColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn okladkaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iloscDataGridViewTextBoxColumn;

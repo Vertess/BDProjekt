@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TytolKsiazki = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TytulKsiazki = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NazwaWydawnictwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Dodaj = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -70,7 +70,7 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TytolKsiazki,
+            this.TytulKsiazki,
             this.NazwaWydawnictwa,
             this.dataGridViewCheckBoxColumn1,
             this.Dodaj,
@@ -86,12 +86,12 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // TytolKsiazki
+            // TytulKsiazki
             // 
-            this.TytolKsiazki.DataPropertyName = "int";
-            this.TytolKsiazki.HeaderText = "Ksiazka";
-            this.TytolKsiazki.Name = "TytolKsiazki";
-            this.TytolKsiazki.ReadOnly = true;
+            this.TytulKsiazki.DataPropertyName = "int";
+            this.TytulKsiazki.HeaderText = "Ksiazka";
+            this.TytulKsiazki.Name = "TytulKsiazki";
+            this.TytulKsiazki.ReadOnly = true;
             // 
             // NazwaWydawnictwa
             // 
@@ -327,7 +327,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TytolKsiazki;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TytulKsiazki;
         private System.Windows.Forms.DataGridViewTextBoxColumn NazwaWydawnictwa;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn Dodaj;

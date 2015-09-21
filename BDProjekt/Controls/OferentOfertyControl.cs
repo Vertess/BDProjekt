@@ -27,7 +27,7 @@ namespace BDProjekt.Controls
             {
                 if (row.Cells["Ksiazka"].Value != null)
                 {
-                    row.Cells["TytolKsiazki"].Value = ((Ksiazka)row.Cells["Ksiazka"].Value).Tytul;
+                    row.Cells["TytulKsiazki"].Value = ((Ksiazka)row.Cells["Ksiazka"].Value).Tytul;
                 }
                 if (row.Cells["Wydawnictwo"].Value != null)
                 {
@@ -134,7 +134,7 @@ namespace BDProjekt.Controls
             dataGridView2.Columns["Wydawnictwo2"].ValueType = typeof(string);
             dataGridView2.Columns["TypOkladki"].ValueType = typeof(bool);
             dataGridView1.Columns["NazwaWydawnictwa"].ValueType = typeof(string);
-            dataGridView1.Columns["TytolKsiazki"].ValueType = typeof(string);
+            dataGridView1.Columns["TytulKsiazki"].ValueType = typeof(string);
             foreach (DataGridViewColumn c in dataGridView1.Columns)
             {
                 c.DefaultCellStyle.Font = new Font("Arial", 10.5F, GraphicsUnit.Pixel);

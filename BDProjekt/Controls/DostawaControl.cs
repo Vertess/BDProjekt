@@ -106,7 +106,7 @@ namespace BDProjekt.Controls
             {
                 if (row.Cells["egzemplarzColumn"].Value != null)
                 {
-                    row.Cells["tytolColumn"].Value = ((Ksiazka)((((Egzemplarz)row.Cells["egzemplarzColumn"].Value).Ksiazka))).Tytul;
+                    row.Cells["tytulColumn"].Value = ((Ksiazka)((((Egzemplarz)row.Cells["egzemplarzColumn"].Value).Ksiazka))).Tytul;
                     row.Cells["wydawnictwoColumn"].Value = ((Wydawnictwo)(((Egzemplarz)row.Cells["egzemplarzColumn"].Value).Wydawnictwo)).NazwaWydawnictwa;
                     row.Cells["okladkaColumn"].Value = ((Egzemplarz)(row.Cells["egzemplarzColumn"].Value)).TypOkladki;
                 }
@@ -116,7 +116,7 @@ namespace BDProjekt.Controls
             {
                 if (row.Cells["egzemplarzColumn1"].Value != null)
                 {
-                    row.Cells["tytolColumn2"].Value = ((Ksiazka)((((Egzemplarz)row.Cells["egzemplarzColumn1"].Value).Ksiazka))).Tytul;
+                    row.Cells["tytulColumn2"].Value = ((Ksiazka)((((Egzemplarz)row.Cells["egzemplarzColumn1"].Value).Ksiazka))).Tytul;
                     row.Cells["wydawnictwoColumn2"].Value = ((Wydawnictwo)(((Egzemplarz)row.Cells["egzemplarzColumn1"].Value).Wydawnictwo)).NazwaWydawnictwa;
                     row.Cells["okladkaColumn2"].Value = ((Egzemplarz)(row.Cells["egzemplarzColumn1"].Value)).TypOkladki;
                 }

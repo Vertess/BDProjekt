@@ -27,10 +27,35 @@ namespace BDProjekt.Controls
             }
         }
 
-        private void zatwierdzButton_Click(object sender, EventArgs e)
+        private void DajNazwy()
         {
 
+            try
+            {
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    if (row.Cells["egzemplarzDataGridViewTextBoxColumn"].Value != null)
+                    {
+                        row.Cells["tytulKsiazkiColumn"].Value = ((Ksiazka)((((Egzemplarz)row.Cells["egzemplarzDataGridViewTextBoxColumn"].Value).Ksiazka))).Tytul;
+                        row.Cells["nazwaWydawnictwaColumn"].Value = ((Wydawnictwo)(((Egzemplarz)row.Cells["egzemplarzDataGridViewTextBoxColumn"].Value).Wydawnictwo)).NazwaWydawnictwa;
+                        row.Cells["okladkaColumn"].Value = ((Egzemplarz)(row.Cells["egzemplarzDataGridViewTextBoxColumn"].Value)).TypOkladki;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(""+ex);
+            }
 
+
+        }
+
+
+        private void zatwierdzButton_Click(object sender, EventArgs e)
+        {
+            elementyDostawyBindingSource.ResetBindings(false);
+            Funkcje.Instance._context.SaveChanges();
+            DajNazwy();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -40,7 +65,8 @@ namespace BDProjekt.Controls
                 {
                     
                     Funkcje.Instance._context.ElementyDostawies.Load();
-                    elementyDostawyBindingSource.DataSource = Funkcje.Instance._context.ElementyDostawies.Local.ToBindingList().Where(n => (n.IdDostawy ==(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idDostawyDataGridViewTextBoxColumn"].Value))));                   
+                    elementyDostawyBindingSource.DataSource = Funkcje.Instance._context.ElementyDostawies.Local.ToBindingList().Where(n => (n.IdDostawy ==(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idDostawyDataGridViewTextBoxColumn"].Value))));
+                    DajNazwy();
                 }
                 catch (Exception)
                 {

@@ -14,8 +14,9 @@ namespace BDProjekt
 		public KsiegarniaEntities _context;
 		public List<TabPage> pages = new List<TabPage>();
 		public Uzytkownicy Logowanie = 0;
-		public string login { get; set; }
-		public string loginId { get; set; }
+		public Klient klient { get; set; }
+		public Pracownik pracownik { get; set; }
+		public Oferent oferent { get; set; }
 		private Funkcje()
 		{
 			_instance = this;
@@ -38,8 +39,7 @@ namespace BDProjekt
 					if (_context.Klients.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
 					{
 						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Klient]);
-						this.login = login;
-						this.loginId = _context.Klients.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k.IdKlienta).First();
+						this.klient = _context.Klients.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
 					}
 					break;
 				case Uzytkownicy.Pracownik:
@@ -47,8 +47,7 @@ namespace BDProjekt
 					if (_context.Klients.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
 					{
 						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Pracownik]);
-						this.login = login;
-						this.loginId = _context.Pracowniks.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k.IdPracownika).First();
+						this.pracownik = _context.Pracowniks.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
 					}
 						break;
 				case Uzytkownicy.Oferent:
@@ -56,8 +55,7 @@ namespace BDProjekt
 					if (_context.Klients.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
 					{
 						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Oferent]);
-						//this.login = login;
-						//this.loginId = _context.Oferents.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k.IdOferenta).First();
+						//this.oferent = _context.Oferents.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
 					}
 					break;
 				case Uzytkownicy.Admin:

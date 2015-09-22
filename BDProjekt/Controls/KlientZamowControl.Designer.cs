@@ -35,17 +35,17 @@
             this.tytulColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.zamowienyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tytulColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wydawnictwoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.okladkaColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.zatwierdzButton = new System.Windows.Forms.Button();
-            this.zamowienyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nowaButton = new System.Windows.Forms.Button();
             this.idZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zamowienyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // AddColumn
@@ -88,11 +88,11 @@
             this.wydawnictwoColumn2,
             this.okladkaColumn2,
             this.AddColumn});
-            this.dataGridView3.Location = new System.Drawing.Point(794, 53);
+            this.dataGridView3.Location = new System.Drawing.Point(721, 3);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowTemplate.Height = 28;
-            this.dataGridView3.Size = new System.Drawing.Size(468, 271);
+            this.dataGridView3.Size = new System.Drawing.Size(518, 319);
             this.dataGridView3.TabIndex = 7;
             // 
             // dataGridView1
@@ -102,11 +102,15 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idZamowieniaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.zamowienyBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 55);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 5);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(335, 269);
+            this.dataGridView1.Size = new System.Drawing.Size(191, 319);
             this.dataGridView1.TabIndex = 4;
+            // 
+            // zamowienyBindingSource
+            // 
+            this.zamowienyBindingSource.DataSource = typeof(BDProjekt.Zamowieny);
             // 
             // dataGridView2
             // 
@@ -116,10 +120,10 @@
             this.tytulColumn,
             this.wydawnictwoColumn,
             this.okladkaColumn});
-            this.dataGridView2.Location = new System.Drawing.Point(346, 53);
+            this.dataGridView2.Location = new System.Drawing.Point(202, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(433, 271);
+            this.dataGridView2.Size = new System.Drawing.Size(513, 319);
             this.dataGridView2.TabIndex = 6;
             // 
             // tytulColumn
@@ -140,20 +144,16 @@
             this.okladkaColumn.Name = "okladkaColumn";
             this.okladkaColumn.Width = 60;
             // 
-            // zatwierdzButton
+            // nowaButton
             // 
-            this.zatwierdzButton.Location = new System.Drawing.Point(36, 349);
-            this.zatwierdzButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.zatwierdzButton.Name = "zatwierdzButton";
-            this.zatwierdzButton.Size = new System.Drawing.Size(112, 35);
-            this.zatwierdzButton.TabIndex = 5;
-            this.zatwierdzButton.Text = "Zatwierdź";
-            this.zatwierdzButton.UseVisualStyleBackColor = true;
-            this.zatwierdzButton.Click += new System.EventHandler(this.zatwierdzButton_Click);
-            // 
-            // zamowienyBindingSource
-            // 
-            this.zamowienyBindingSource.DataSource = typeof(BDProjekt.Zamowieny);
+            this.nowaButton.Location = new System.Drawing.Point(36, 349);
+            this.nowaButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nowaButton.Name = "nowaButton";
+            this.nowaButton.Size = new System.Drawing.Size(112, 35);
+            this.nowaButton.TabIndex = 5;
+            this.nowaButton.Text = "Nowe zamowienie";
+            this.nowaButton.UseVisualStyleBackColor = true;
+            this.nowaButton.Click += new System.EventHandler(this.zatwierdzButton_Click);
             // 
             // idZamowieniaDataGridViewTextBoxColumn
             // 
@@ -162,6 +162,7 @@
             this.idZamowieniaDataGridViewTextBoxColumn.Name = "idZamowieniaDataGridViewTextBoxColumn";
             this.idZamowieniaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.idZamowieniaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idZamowieniaDataGridViewTextBoxColumn.Width = 70;
             // 
             // KlientZamowControl
             // 
@@ -170,13 +171,14 @@
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.zatwierdzButton);
+            this.Controls.Add(this.nowaButton);
             this.Name = "KlientZamowControl";
             this.Size = new System.Drawing.Size(1303, 437);
+            this.Load += new System.EventHandler(this.KlientZamowControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zamowienyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,8 +195,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tytulColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wydawnictwoColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn okladkaColumn;
-        private System.Windows.Forms.Button zatwierdzButton;
-        private System.Windows.Forms.DataGridViewButtonColumn idZamowieniaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button nowaButton;
         private System.Windows.Forms.BindingSource zamowienyBindingSource;
+        private System.Windows.Forms.DataGridViewButtonColumn idZamowieniaDataGridViewTextBoxColumn;
     }
 }

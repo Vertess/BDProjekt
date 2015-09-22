@@ -96,6 +96,12 @@
     <Compile Include="Controls\DostawaControl.Designer.cs">
       <DependentUpon>DostawaControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\KlientZamowControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\KlientZamowControl.Designer.cs">
+      <DependentUpon>KlientZamowControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\OferentDostawyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -269,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\EgzemplarzControl.resx">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\KlientZamowControl.resx">
+      <DependentUpon>KlientZamowControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OferentDostawyControl.resx">
       <DependentUpon>OferentDostawyControl.cs</DependentUpon>

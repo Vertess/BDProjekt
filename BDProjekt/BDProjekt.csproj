@@ -114,6 +114,12 @@
     <Compile Include="Controls\KlientZamowControl.Designer.cs">
       <DependentUpon>KlientZamowControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\KlientZamowienieControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\KlientZamowienieControl.Designer.cs">
+      <DependentUpon>KlientZamowienieControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\OferentDostawyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -296,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\KlientZamowControl.resx">
       <DependentUpon>KlientZamowControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\KlientZamowienieControl.resx">
+      <DependentUpon>KlientZamowienieControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OferentDostawyControl.resx">
       <DependentUpon>OferentDostawyControl.cs</DependentUpon>

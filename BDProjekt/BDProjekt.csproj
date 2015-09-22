@@ -279,9 +279,6 @@
     <EmbeddedResource Include="Controls\KlientZamowControl.resx">
       <DependentUpon>KlientZamowControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\OferentDostawyControl.resx">
-      <DependentUpon>OferentDostawyControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\OferentOfertyControl.resx">
       <DependentUpon>OferentOfertyControl.cs</DependentUpon>
     </EmbeddedResource>

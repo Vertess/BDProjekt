@@ -13,6 +13,7 @@ namespace BDProjekt
 {
 	public partial class Form1 : Form
 	{
+		private bool loginOption = false;
 		public Form1()
 		{
 			InitializeComponent();
@@ -32,13 +33,13 @@ namespace BDProjekt
 		{
 			if (this.button1.Text.Equals("Zaloguj"))
 			{
-                Funkcje.Instance.Login(Glowna_tabControl, (Uzytkownicy)this.logowanieComboBox.SelectedItem, this.button1, this.loginTextBox.Text, this.hasloTextBox.Text);
+                Funkcje.Instance.Login(Glowna_tabControl, (Uzytkownicy)this.logowanieComboBox.SelectedItem, this.button1,false, this.loginTextBox.Text, this.hasloTextBox.Text);
 			}
 			else
 			{
                 Funkcje.Instance.Login(Glowna_tabControl, Funkcje.Instance.Logowanie, this.button1);
 			}
-
+			loginOption = !loginOption;
             try
             {
                 label4.Text = Funkcje.Instance.oferent.Login;

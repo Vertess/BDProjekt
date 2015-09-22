@@ -96,6 +96,12 @@
     <Compile Include="Controls\DostawaControl.Designer.cs">
       <DependentUpon>DostawaControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ElementyZamowieniaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ElementyZamowieniaControl.Designer.cs">
+      <DependentUpon>ElementyZamowieniaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\KlientKsiazkaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,12 +113,6 @@
     </Compile>
     <Compile Include="Controls\KlientZamowControl.Designer.cs">
       <DependentUpon>KlientZamowControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\KlientZamowieniaControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\KlientZamowieniaControl.Designer.cs">
-      <DependentUpon>KlientZamowieniaControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\OferentDostawyControl.cs">
       <SubType>UserControl</SubType>
@@ -288,14 +288,17 @@
     <EmbeddedResource Include="Controls\EgzemplarzControl.resx">
       <DependentUpon>EgzemplarzControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ElementyZamowieniaControl.resx">
+      <DependentUpon>ElementyZamowieniaControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\KlientKsiazkaControl.resx">
       <DependentUpon>KlientKsiazkaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\KlientZamowControl.resx">
       <DependentUpon>KlientZamowControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\KlientZamowieniaControl.resx">
-      <DependentUpon>KlientZamowieniaControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\OferentDostawyControl.resx">
+      <DependentUpon>OferentDostawyControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OferentOfertyControl.resx">
       <DependentUpon>OferentOfertyControl.cs</DependentUpon>

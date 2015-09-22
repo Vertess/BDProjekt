@@ -25,7 +25,7 @@ namespace BDProjekt
 			{
 				Funkcje.Instance.pages.Add(item);
 			}
-            Funkcje.Instance.Login(Glowna_tabControl, Funkcje.Instance.Logowanie, this.button1);
+            //Funkcje.Instance.Login(Glowna_tabControl, Funkcje.Instance.Logowanie, this.button1);
 			this.logowanieComboBox.DataSource = Enum.GetValues(typeof(Uzytkownicy));
 		}
 

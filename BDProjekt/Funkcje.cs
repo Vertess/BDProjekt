@@ -39,7 +39,7 @@ namespace BDProjekt
 			}
 		}
 
-        public void Login(TabControl tab, Uzytkownicy uzytkownik, System.Windows.Forms.Button button, bool type = false, string login = "", string password = "")
+        public void Login(TabControl tab, Uzytkownicy uzytkownik, System.Windows.Forms.Button button, string login = "", string password = "")
 		{
 			switch (uzytkownik)
 			{
@@ -47,8 +47,9 @@ namespace BDProjekt
 				case Uzytkownicy.Klient:
 					_context.Klients.Load();
 					if (_context.Klients.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
-					{
-						this.Login(tab, Logowanie,button,true);
+                    {
+                        button.Text = "Wyloguj";
+						this.Login(tab, Logowanie,button);
                         button.Text = "Wyloguj";
 						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Klient]);
 						this.klient = _context.Klients.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
@@ -56,9 +57,10 @@ namespace BDProjekt
 					break;
 				case Uzytkownicy.Pracownik:
 					_context.Pracowniks.Load();
-					if (_context.Klients.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
-					{
-						this.Login(tab, Logowanie,button,true);
+					if (_context.Pracowniks.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
+                    {
+                        button.Text = "Wyloguj";
+						this.Login(tab, Logowanie,button);
                         button.Text = "Wyloguj";
 						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Pracownik]);
 						this.pracownik = _context.Pracowniks.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
@@ -66,9 +68,10 @@ namespace BDProjekt
 						break;
 				case Uzytkownicy.Oferent:
 					_context.Oferents.Load();
-					if (_context.Klients.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
-					{
-						this.Login(tab, Logowanie,button,true);
+					if (_context.Oferents.Local.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password)))
+                    {
+                        button.Text = "Wyloguj";
+						this.Login(tab, Logowanie,button);
                         button.Text = "Wyloguj";
 						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Oferent]);
 						this.oferent = _context.Oferents.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
@@ -77,19 +80,21 @@ namespace BDProjekt
 				case Uzytkownicy.Admin:
                     if (login.Equals(this.adminLogin) && password.Equals(this.adminPassword))
                     {
-                        this.Login(tab, Logowanie, button, true);
+                        button.Text = "Wyloguj";
+                        this.Login(tab, Logowanie, button);
                         button.Text = "Wyloguj";
                         tab.TabPages.Add(this.pages[(int)Uzytkownicy.Admin]);
                     }
 					break;
 				default:
-                    button.Text = "Zaloguj";
 					foreach (TabPage item in tab.TabPages)
 					{
 						tab.TabPages.Remove(item);
 					}
-					if(!type)
-						tab.TabPages.Add(this.pages[((int)this.Logowanie)]);
+                    if (button.Text.Equals("Zaloguj"))
+                        tab.TabPages.Add(this.pages[((int)this.Logowanie)]);
+
+                    button.Text = "Zaloguj";
 					break;
 			}
 		}

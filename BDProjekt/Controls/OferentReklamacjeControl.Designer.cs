@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.OferentReklamacjeDataGridView = new System.Windows.Forms.DataGridView();
             this.zatwierdzButton = new System.Windows.Forms.Button();
-            this.IdDostawy = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Realizacja = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dostawaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.realizacjeReklamacjiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reklamacjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.IdDostawy = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Realizacja = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.realizacjeReklamacjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.idTypuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idReklamacjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reklamacjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.OferentReklamacjeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dostawaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.realizacjeReklamacjiBindingSource)).BeginInit();
@@ -49,6 +49,8 @@
             // 
             // OferentReklamacjeDataGridView
             // 
+            this.OferentReklamacjeDataGridView.AllowUserToAddRows = false;
+            this.OferentReklamacjeDataGridView.AllowUserToDeleteRows = false;
             this.OferentReklamacjeDataGridView.AutoGenerateColumns = false;
             this.OferentReklamacjeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OferentReklamacjeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -77,27 +79,27 @@
             this.zatwierdzButton.UseVisualStyleBackColor = true;
             this.zatwierdzButton.Click += new System.EventHandler(this.zatwierdzButton_Click);
             // 
+            // dostawaBindingSource
+            // 
+            this.dostawaBindingSource.DataSource = typeof(BDProjekt.Dostawa);
+            // 
+            // realizacjeReklamacjiBindingSource
+            // 
+            this.realizacjeReklamacjiBindingSource.DataSource = typeof(BDProjekt.RealizacjeReklamacji);
+            // 
+            // reklamacjaBindingSource
+            // 
+            this.reklamacjaBindingSource.DataSource = typeof(BDProjekt.Reklamacja);
+            // 
             // IdDostawy
             // 
+            this.IdDostawy.DataPropertyName = "IdTypu";
             this.IdDostawy.DataSource = this.dostawaBindingSource;
             this.IdDostawy.DisplayMember = "IdDostawy";
             this.IdDostawy.HeaderText = "Id Dostawy";
             this.IdDostawy.Name = "IdDostawy";
             this.IdDostawy.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.IdDostawy.ValueMember = "IdDostawy";
-            // 
-            // Realizacja
-            // 
-            this.Realizacja.DataSource = this.realizacjeReklamacjiBindingSource;
-            this.Realizacja.DisplayMember = "Opis";
-            this.Realizacja.HeaderText = "Realizacja";
-            this.Realizacja.Name = "Realizacja";
-            this.Realizacja.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Realizacja.ValueMember = "IdRealizacji";
-            // 
-            // dostawaBindingSource
-            // 
-            this.dostawaBindingSource.DataSource = typeof(BDProjekt.Dostawa);
             // 
             // opisDataGridViewTextBoxColumn
             // 
@@ -106,9 +108,15 @@
             this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
             this.opisDataGridViewTextBoxColumn.Width = 300;
             // 
-            // realizacjeReklamacjiBindingSource
+            // Realizacja
             // 
-            this.realizacjeReklamacjiBindingSource.DataSource = typeof(BDProjekt.RealizacjeReklamacji);
+            this.Realizacja.DataPropertyName = "RealizacjeReklamacji_IdRealizacji";
+            this.Realizacja.DataSource = this.realizacjeReklamacjiBindingSource;
+            this.Realizacja.DisplayMember = "Opis";
+            this.Realizacja.HeaderText = "Realizacja";
+            this.Realizacja.Name = "Realizacja";
+            this.Realizacja.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Realizacja.ValueMember = "IdRealizacji";
             // 
             // realizacjeReklamacjiDataGridViewTextBoxColumn
             // 
@@ -141,10 +149,6 @@
             this.idReklamacjiDataGridViewTextBoxColumn.Name = "idReklamacjiDataGridViewTextBoxColumn";
             this.idReklamacjiDataGridViewTextBoxColumn.ReadOnly = true;
             this.idReklamacjiDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // reklamacjaBindingSource
-            // 
-            this.reklamacjaBindingSource.DataSource = typeof(BDProjekt.Reklamacja);
             // 
             // OferentReklamacjeControl
             // 

@@ -51,7 +51,6 @@ namespace BDProjekt.Controls
         private void resetTypButton_Click(object sender, EventArgs e)
         {
             searchCenaTextBox.Text = string.Empty;
-            searchTypTextBox.Text = string.Empty;
             searchIloscTextBox.Text = string.Empty;
 
 			egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
@@ -64,8 +63,28 @@ namespace BDProjekt.Controls
             int tmpIlosc = 0;
 			Int32.TryParse(searchCenaTextBox.Text, out tmpCena);
 			Int32.TryParse(searchIloscTextBox.Text, out tmpIlosc);
-                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.
-                    ToBindingList().Where(c => c.Cena.Equals(tmpCena) && c.Iloscc.Equals(tmpIlosc));
+
+            if (cenaCheckBox.Checked)
+            {
+                if (iloscCheckBox.Checked)
+                {
+                    egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.
+                        ToBindingList().Where(c => c.Cena.Equals(tmpCena) && c.Iloscc.Equals(tmpIlosc));
+                }
+                else
+                {
+                    egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.
+                        ToBindingList().Where(c => c.Cena.Equals(tmpCena));
+                }
+            }
+            else
+            { 
+                if (iloscCheckBox.Checked)
+                {
+                    egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.
+                        ToBindingList().Where(c => c.Iloscc.Equals(tmpIlosc));
+                }
+            }
             if(string.IsNullOrEmpty(searchCenaTextBox.Text) && string.IsNullOrEmpty(searchIloscTextBox.Text))
                 egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList();
         }

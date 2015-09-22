@@ -35,11 +35,6 @@ namespace BDProjekt.Controls
                 ds.Pracownik_IdPracownika = pr.IdPracownika;
                 dostawaBindingSource.ResetBindings(false);
                 Funkcje.Instance._context.SaveChanges();
-
-
-              /*  elementyDostawyBindingSource.ResetBindings(false);
-                Funkcje.Instance._context.SaveChanges();*/
-
             }
         }
 
@@ -49,10 +44,13 @@ namespace BDProjekt.Controls
             {
                 Funkcje.Instance._context.Dostawas.Load();
                 dostawaBindingSource.DataSource = Funkcje.Instance._context.Dostawas.Local.ToBindingList();
-                Funkcje.Instance._context.Oferents.Load();
-                oferentBindingSource.DataSource = Funkcje.Instance._context.Oferents.Local.ToBindingList();
                 Funkcje.Instance._context.Pracowniks.Load();
                 pracownikBindingSource.DataSource = Funkcje.Instance._context.Pracowniks.Local.ToBindingList();
+
+                /*Funkcje.Instance._context.Dostawas.Load();
+                dostawaBindingSource.DataSource = Funkcje.Instance._context.Dostawas.Local.ToBindingList().Where(c => c.Pracownik_IdPracownika== Funkcje.Instance.pracownik.IdPracownika);*/
+                Funkcje.Instance._context.Oferents.Load();
+                oferentBindingSource.DataSource = Funkcje.Instance._context.Oferents.Local.ToBindingList();
 
 
 
@@ -90,10 +88,11 @@ namespace BDProjekt.Controls
                     Funkcje.Instance._context.OfertaOferentas.Load();
                     ofertaOferentaBindingSource.DataSource = Funkcje.Instance._context.OfertaOferentas.Local.ToBindingList().Where(n => (n.Oferent_IdOferenta == (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Oferent_IdOferenta"].Value))));
                 }
-                catch (Exception)
-                {
-                    return;
-                }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+                return;
+            }
             DajNazwy();
         }
 

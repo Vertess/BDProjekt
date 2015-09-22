@@ -44,13 +44,6 @@ namespace BDProjekt
 
 		}
 
-		void dataGridView1_DataError(object sender, System.Windows.Forms.DataGridViewDataErrorEventArgs e)
-		{
-			if (e.Context == DataGridViewDataErrorContexts.Formatting || e.Context == DataGridViewDataErrorContexts.PreferredSize)
-			{
-				e.ThrowException = false;
-			}
-		}
         private void resetTytulButton_Click(object sender, EventArgs e)
         {
             searchTytulTextBox.Text = string.Empty;

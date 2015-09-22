@@ -47,8 +47,17 @@ namespace BDProjekt
         {
 			int tmpWysokoscRabatu = 0;
 			Int32.TryParse(searchWysokoscRabatuTextBox.Text, out tmpWysokoscRabatu);
-            rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList()
-    .Where(n => n.OpisRabatu.Contains(this.searchTextBox.Text) && n.WysokoscRabatu.Equals(tmpWysokoscRabatu));
+
+            if (tmpWysokoscRabatu == 0)
+            {
+                rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList()
+        .Where(n => n.OpisRabatu.Contains(this.searchTextBox.Text));
+            }
+            else
+            {
+                rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList()
+        .Where(n => n.OpisRabatu.Contains(this.searchTextBox.Text) && n.WysokoscRabatu.Equals(tmpWysokoscRabatu));
+            }
             if (searchTextBox.Text.Length == 0 && searchWysokoscRabatuTextBox.Text.Length == 0)
             {
                 rabatBindingSource.DataSource = Funkcje.Instance._context.Rabats.Local.ToBindingList();

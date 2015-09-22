@@ -182,9 +182,9 @@
             this.OferentNazwaText.Location = new System.Drawing.Point(132, 142);
             this.OferentNazwaText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OferentNazwaText.Name = "OferentNazwaText";
-            this.OferentNazwaText.Size = new System.Drawing.Size(39, 20);
+            this.OferentNazwaText.Size = new System.Drawing.Size(99, 20);
             this.OferentNazwaText.TabIndex = 121;
-            this.OferentNazwaText.Text = "Imie";
+            this.OferentNazwaText.Text = "Nazwa Firmy";
             // 
             // OferentAdresTextBox
             // 
@@ -200,9 +200,9 @@
             this.OferentAdresText.Location = new System.Drawing.Point(132, 177);
             this.OferentAdresText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OferentAdresText.Name = "OferentAdresText";
-            this.OferentAdresText.Size = new System.Drawing.Size(76, 20);
+            this.OferentAdresText.Size = new System.Drawing.Size(51, 20);
             this.OferentAdresText.TabIndex = 119;
-            this.OferentAdresText.Text = "Nazwisko";
+            this.OferentAdresText.Text = "Adres";
             // 
             // OferentHasloTextBox
             // 
@@ -265,7 +265,7 @@
             this.rejestracjaKlinetaTabPage.Controls.Add(this.KlientLoginTextBox);
             this.rejestracjaKlinetaTabPage.Location = new System.Drawing.Point(4, 29);
             this.rejestracjaKlinetaTabPage.Name = "rejestracjaKlinetaTabPage";
-            this.rejestracjaKlinetaTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.rejestracjaKlinetaTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.rejestracjaKlinetaTabPage.Size = new System.Drawing.Size(536, 355);
             this.rejestracjaKlinetaTabPage.TabIndex = 0;
             this.rejestracjaKlinetaTabPage.Text = "Rejestracja Klienta";
@@ -284,7 +284,7 @@
             this.rejestracjaOferentaTabPage.Controls.Add(this.OferentHasloTextBox);
             this.rejestracjaOferentaTabPage.Location = new System.Drawing.Point(4, 29);
             this.rejestracjaOferentaTabPage.Name = "rejestracjaOferentaTabPage";
-            this.rejestracjaOferentaTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.rejestracjaOferentaTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.rejestracjaOferentaTabPage.Size = new System.Drawing.Size(536, 355);
             this.rejestracjaOferentaTabPage.TabIndex = 1;
             this.rejestracjaOferentaTabPage.Text = "Rejestracja Oferenta";

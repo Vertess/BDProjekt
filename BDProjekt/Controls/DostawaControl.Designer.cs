@@ -34,6 +34,7 @@
             this.oferentComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.oferentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.EdytujDostawe = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Oferent_IdOferenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ElementyDostawies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pracownikComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -41,9 +42,6 @@
             this.dostawaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zatwierdzButton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.elementyDostawyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.ofertaOferentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tytulColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wydawnictwoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.okladkaColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -52,6 +50,8 @@
             this.egzemplarzColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEgzemplarzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDostawyDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elementyDostawyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tytulColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wydawnictwoColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.okladkaColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -62,6 +62,7 @@
             this.oferentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idOfertyOferentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oferentIdOferentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ofertaOferentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oferentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pracownikBindingSource)).BeginInit();
@@ -80,6 +81,7 @@
             this.idDostawyDataGridViewTextBoxColumn,
             this.oferentComboBoxColumn,
             this.EdytujDostawe,
+            this.Status,
             this.Oferent_IdOferenta,
             this.ElementyDostawies,
             this.pracownikComboBoxColumn});
@@ -87,9 +89,10 @@
             this.dataGridView1.Location = new System.Drawing.Point(4, 5);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(302, 269);
+            this.dataGridView1.Size = new System.Drawing.Size(335, 269);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.DataError += Funkcje.Instance.dataGridView1_DataError;
             // 
             // idDostawyDataGridViewTextBoxColumn
             // 
@@ -97,10 +100,12 @@
             this.idDostawyDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDostawyDataGridViewTextBoxColumn.Name = "idDostawyDataGridViewTextBoxColumn";
             this.idDostawyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDostawyDataGridViewTextBoxColumn.Visible = false;
             this.idDostawyDataGridViewTextBoxColumn.Width = 50;
             // 
             // oferentComboBoxColumn
             // 
+            this.oferentComboBoxColumn.DataPropertyName = "Oferent_IdOferenta";
             this.oferentComboBoxColumn.DataSource = this.oferentBindingSource;
             this.oferentComboBoxColumn.DisplayMember = "NazwaFirmy";
             this.oferentComboBoxColumn.HeaderText = "Oferent";
@@ -122,7 +127,14 @@
             this.EdytujDostawe.ReadOnly = true;
             this.EdytujDostawe.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.EdytujDostawe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.EdytujDostawe.Width = 40;
+            this.EdytujDostawe.Width = 60;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.Width = 50;
             // 
             // Oferent_IdOferenta
             // 
@@ -142,15 +154,16 @@
             // 
             // pracownikComboBoxColumn
             // 
+            this.pracownikComboBoxColumn.DataPropertyName = "Pracownik_IdPracownika";
             this.pracownikComboBoxColumn.DataSource = this.pracownikBindingSource;
-            this.pracownikComboBoxColumn.DisplayMember = "Nazwisko";
-            this.pracownikComboBoxColumn.HeaderText = "Pracownik";
+            this.pracownikComboBoxColumn.DisplayMember = "IdPracownika";
+            this.pracownikComboBoxColumn.HeaderText = "id_Pr";
             this.pracownikComboBoxColumn.Name = "pracownikComboBoxColumn";
             this.pracownikComboBoxColumn.ReadOnly = true;
             this.pracownikComboBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.pracownikComboBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.pracownikComboBoxColumn.ValueMember = "IdPracownika";
-            this.pracownikComboBoxColumn.Visible = false;
+            this.pracownikComboBoxColumn.Width = 50;
             // 
             // pracownikBindingSource
             // 
@@ -186,45 +199,11 @@
             this.idEgzemplarzaDataGridViewTextBoxColumn,
             this.idDostawyDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.elementyDostawyBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(313, 3);
+            this.dataGridView2.Location = new System.Drawing.Point(346, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 28;
             this.dataGridView2.Size = new System.Drawing.Size(433, 271);
             this.dataGridView2.TabIndex = 2;
-            // 
-            // elementyDostawyBindingSource
-            // 
-            this.elementyDostawyBindingSource.DataSource = typeof(BDProjekt.ElementyDostawy);
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tytulColumn2,
-            this.wydawnictwoColumn2,
-            this.okladkaColumn2,
-            this.cenaHurtowaDataGridViewTextBoxColumn,
-            this.AddColumn,
-            this.egzemplarzIdEgzemplarzaDataGridViewTextBoxColumn,
-            this.egzemplarzColumn1,
-            this.oferentDataGridViewTextBoxColumn,
-            this.idOfertyOferentaDataGridViewTextBoxColumn,
-            this.oferentIdOferentaDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.ofertaOferentaBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(752, 3);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowTemplate.Height = 28;
-            this.dataGridView3.Size = new System.Drawing.Size(468, 271);
-            this.dataGridView3.TabIndex = 3;
-            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
-            // 
-            // ofertaOferentaBindingSource
-            // 
-            this.ofertaOferentaBindingSource.DataSource = typeof(BDProjekt.OfertaOferenta);
             // 
             // tytulColumn
             // 
@@ -278,6 +257,36 @@
             this.idDostawyDataGridViewTextBoxColumn1.HeaderText = "IdDostawy";
             this.idDostawyDataGridViewTextBoxColumn1.Name = "idDostawyDataGridViewTextBoxColumn1";
             this.idDostawyDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // elementyDostawyBindingSource
+            // 
+            this.elementyDostawyBindingSource.DataSource = typeof(BDProjekt.ElementyDostawy);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tytulColumn2,
+            this.wydawnictwoColumn2,
+            this.okladkaColumn2,
+            this.cenaHurtowaDataGridViewTextBoxColumn,
+            this.AddColumn,
+            this.egzemplarzIdEgzemplarzaDataGridViewTextBoxColumn,
+            this.egzemplarzColumn1,
+            this.oferentDataGridViewTextBoxColumn,
+            this.idOfertyOferentaDataGridViewTextBoxColumn,
+            this.oferentIdOferentaDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.ofertaOferentaBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(785, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowTemplate.Height = 28;
+            this.dataGridView3.Size = new System.Drawing.Size(468, 271);
+            this.dataGridView3.TabIndex = 3;
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
             // tytulColumn2
             // 
@@ -357,6 +366,10 @@
             this.oferentIdOferentaDataGridViewTextBoxColumn.ReadOnly = true;
             this.oferentIdOferentaDataGridViewTextBoxColumn.Visible = false;
             // 
+            // ofertaOferentaBindingSource
+            // 
+            this.ofertaOferentaBindingSource.DataSource = typeof(BDProjekt.OfertaOferenta);
+            // 
             // DostawaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -367,7 +380,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DostawaControl";
-            this.Size = new System.Drawing.Size(1264, 367);
+            this.Size = new System.Drawing.Size(1296, 367);
             this.Load += new System.EventHandler(this.DostawaControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oferentBindingSource)).EndInit();
@@ -385,19 +398,12 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource oferentBindingSource;
-        private System.Windows.Forms.BindingSource pracownikBindingSource;
         private System.Windows.Forms.BindingSource dostawaBindingSource;
         private System.Windows.Forms.Button zatwierdzButton;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource elementyDostawyBindingSource;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.BindingSource ofertaOferentaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDostawyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn oferentComboBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn EdytujDostawe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Oferent_IdOferenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ElementyDostawies;
-        private System.Windows.Forms.DataGridViewComboBoxColumn pracownikComboBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tytulColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wydawnictwoColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn okladkaColumn;
@@ -416,5 +422,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oferentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOfertyOferentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oferentIdOferentaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource pracownikBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDostawyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn oferentComboBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn EdytujDostawe;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Oferent_IdOferenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ElementyDostawies;
+        private System.Windows.Forms.DataGridViewComboBoxColumn pracownikComboBoxColumn;
     }
 }

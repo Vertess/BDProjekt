@@ -26,16 +26,18 @@ namespace BDProjekt
 			{
 				Funkcje.Instance._context.Autors.Load();
 				autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList();
+
+
 			}
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			if (!DesignMode)
-			{
-				autorBindingSource.ResetBindings(false);
-				Funkcje.Instance._context.SaveChanges();
-			}
+            if (!DesignMode)
+            {
+                autorBindingSource.ResetBindings(false);
+                Funkcje.Instance._context.SaveChanges();
+            }
 		}
 
 		private void czyscNazwiskoButton_Click(object sender, EventArgs e)
@@ -47,12 +49,25 @@ namespace BDProjekt
 
 		private void szukajButton_Click(object sender, EventArgs e)
 		{
-			autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList()
-	.Where(n => n.Nazwisko.Contains(this.searchNazwiskoTextBox.Text) && n.Imie.Contains(this.searchTextBox.Text));
-			if (searchNazwiskoTextBox.Text.Length == 0 && searchTextBox.Text.Length == 0)
-			{
-				autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList();
-			}
+            if (dataUrodzeniaCheckBox.Checked)
+            {
+                autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList()
+        .Where(n => n.Nazwisko.Contains(this.searchNazwiskoTextBox.Text) && n.Imie.Contains(this.searchTextBox.Text) && (n.DataUrodzenia >= dateTimePicker1.Value) && (n.DataUrodzenia <= dateTimePicker2.Value));
+
+             
+            
+            }
+            else
+            {
+                autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList()
+        .Where(n => n.Nazwisko.Contains(this.searchNazwiskoTextBox.Text) && n.Imie.Contains(this.searchTextBox.Text));
+                if (searchNazwiskoTextBox.Text.Length == 0 && searchTextBox.Text.Length == 0)
+                {
+                    autorBindingSource.DataSource = Funkcje.Instance._context.Autors.Local.ToBindingList();
+                }
+            }
+
+
 		}
 
         private void nazwiskoLabel_Click(object sender, EventArgs e)

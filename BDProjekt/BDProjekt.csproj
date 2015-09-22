@@ -75,6 +75,12 @@
     <Compile Include="Controls\AdminKlientControl.Designer.cs">
       <DependentUpon>AdminKlientControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AutorDoKsiazkiControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AutorDoKsiazkiControl.Designer.cs">
+      <DependentUpon>AutorDoKsiazkiControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Autorzy.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     <EmbeddedResource Include="Controls\AdminKlientControl.resx">
       <DependentUpon>AdminKlientControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AutorDoKsiazkiControl.resx">
+      <DependentUpon>AutorDoKsiazkiControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Autorzy.resx">
       <DependentUpon>Autorzy.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,6 +355,8 @@
     <None Include="Properties\DataSources\Oferent.datasource" />
     <None Include="Properties\DataSources\OfertaOferenta1.datasource" />
     <None Include="Properties\DataSources\Pracownik.datasource" />
+    <None Include="Properties\DataSources\Pracownik11.datasource" />
+    <None Include="Properties\DataSources\Pracownik2.datasource" />
     <None Include="Properties\DataSources\Rabat.datasource" />
     <None Include="Properties\DataSources\RabatControl.datasource" />
     <None Include="Properties\DataSources\RealizacjaZamowienia.datasource" />

@@ -77,9 +77,10 @@ namespace BDProjekt.Controls
                         return;
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    return ;
+                    MessageBox.Show("" + ex);
+                    return;
                 }
             }
 
@@ -94,8 +95,9 @@ namespace BDProjekt.Controls
                     dataGridView2.Rows.Remove(dataGridView2.Rows[e.RowIndex]);
                     reload(sender, e);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    MessageBox.Show("" + ex);
                     return;
                 }
         }

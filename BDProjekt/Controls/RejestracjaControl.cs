@@ -96,12 +96,12 @@ namespace BDProjekt.Controls
                     {
                         NazwaFirmy = OferentNazwaTextBox.Text,
                         Adres = OferentAdresTextBox.Text,
-                      //  Login = OferentLoginTextBox.Text,
-                      //  Haslo = OferentHasloTextBox.Text,
+                        Login = OferentLoginTextBox.Text,
+                        Haslo = OferentHasloTextBox.Text,
                     };
                     db.Oferents.Add(oferent);
                     db.SaveChanges();
-                    MessageBox.Show("Poprawnie zarejestrowano, możesz teraz sięzalogować");
+                    MessageBox.Show("Poprawnie zarejestrowano, możesz teraz się zalogować");
                     return;
                 }
                 catch (Exception ex)

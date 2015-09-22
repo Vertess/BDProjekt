@@ -34,14 +34,16 @@
             this.okienkoKlienta = new System.Windows.Forms.TabPage();
             this.ksiazkaControl1 = new BDProjekt.KsiazkaControl();
             this.okienkoPracownika = new System.Windows.Forms.TabPage();
-            this.PracownikWiadomoscBleduText = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.IdLabel = new System.Windows.Forms.Label();
             this.pracownikText1 = new System.Windows.Forms.Label();
-            this.pracownikWylogujButton = new System.Windows.Forms.Button();
             this.pracownikDodatkowaTabControl = new System.Windows.Forms.TabControl();
             this.pacownikStworzRabatTabPage = new System.Windows.Forms.TabPage();
             this.rabatControl1 = new BDProjekt.RabatControl();
             this.pracownikDodajKsiazkeTabPage = new System.Windows.Forms.TabPage();
             this.ksiazkaControl2 = new BDProjekt.KsiazkaControl();
+            this.autorDoKsiazkitabPage = new System.Windows.Forms.TabPage();
+            this.autorDoKsiazkiControl1 = new BDProjekt.Controls.AutorDoKsiazkiControl();
             this.pracownikDodajAutoraTabPage = new System.Windows.Forms.TabPage();
             this.autorzy1 = new BDProjekt.Autorzy();
             this.pracownikDodajGatunekTabPage = new System.Windows.Forms.TabPage();
@@ -80,13 +82,7 @@
             this.oferentDostawyControl1 = new BDProjekt.Controls.OferentDostawyControl();
             this.OferentReklamacjeTab = new System.Windows.Forms.TabPage();
             this.oferentReklamacjeControl1 = new BDProjekt.Controls.OferentReklamacjeControl();
-            this.OferentLoginTextBox = new System.Windows.Forms.TextBox();
             this.OferentLoginText = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.OferentHasloText = new System.Windows.Forms.Label();
-            this.oferentModyfikujDane_Button = new System.Windows.Forms.Button();
-            this.OferentAdresTextBox = new System.Windows.Forms.TextBox();
-            this.OferentNazwaTextBox = new System.Windows.Forms.TextBox();
             this.OferentAdresText = new System.Windows.Forms.Label();
             this.OferentNazwaText = new System.Windows.Forms.Label();
             this.OferentDaneText = new System.Windows.Forms.Label();
@@ -96,6 +92,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.logowanieComboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.Glowna_tabControl.SuspendLayout();
             this.okienkoLogowania.SuspendLayout();
             this.okienkoKlienta.SuspendLayout();
@@ -103,6 +102,7 @@
             this.pracownikDodatkowaTabControl.SuspendLayout();
             this.pacownikStworzRabatTabPage.SuspendLayout();
             this.pracownikDodajKsiazkeTabPage.SuspendLayout();
+            this.autorDoKsiazkitabPage.SuspendLayout();
             this.pracownikDodajAutoraTabPage.SuspendLayout();
             this.pracownikDodajGatunekTabPage.SuspendLayout();
             this.pracownikDodajEgzemplarzTabPage.SuspendLayout();
@@ -133,7 +133,7 @@
             this.Glowna_tabControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Glowna_tabControl.Name = "Glowna_tabControl";
             this.Glowna_tabControl.SelectedIndex = 0;
-            this.Glowna_tabControl.Size = new System.Drawing.Size(1280, 589);
+            this.Glowna_tabControl.Size = new System.Drawing.Size(1340, 589);
             this.Glowna_tabControl.TabIndex = 91;
             // 
             // okienkoLogowania
@@ -142,7 +142,7 @@
             this.okienkoLogowania.Location = new System.Drawing.Point(4, 29);
             this.okienkoLogowania.Name = "okienkoLogowania";
             this.okienkoLogowania.Padding = new System.Windows.Forms.Padding(3);
-            this.okienkoLogowania.Size = new System.Drawing.Size(1272, 556);
+            this.okienkoLogowania.Size = new System.Drawing.Size(1332, 556);
             this.okienkoLogowania.TabIndex = 4;
             this.okienkoLogowania.Text = "Rejestracja";
             this.okienkoLogowania.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@
             this.okienkoKlienta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.okienkoKlienta.Name = "okienkoKlienta";
             this.okienkoKlienta.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.okienkoKlienta.Size = new System.Drawing.Size(1272, 556);
+            this.okienkoKlienta.Size = new System.Drawing.Size(1332, 556);
             this.okienkoKlienta.TabIndex = 0;
             this.okienkoKlienta.Text = "Klient";
             this.okienkoKlienta.UseVisualStyleBackColor = true;
@@ -178,30 +178,39 @@
             // 
             // okienkoPracownika
             // 
-            this.okienkoPracownika.Controls.Add(this.PracownikWiadomoscBleduText);
+            this.okienkoPracownika.Controls.Add(this.label3);
+            this.okienkoPracownika.Controls.Add(this.IdLabel);
             this.okienkoPracownika.Controls.Add(this.pracownikText1);
-            this.okienkoPracownika.Controls.Add(this.pracownikWylogujButton);
             this.okienkoPracownika.Controls.Add(this.pracownikDodatkowaTabControl);
             this.okienkoPracownika.Controls.Add(this.pracownikNick);
             this.okienkoPracownika.Location = new System.Drawing.Point(4, 29);
             this.okienkoPracownika.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.okienkoPracownika.Name = "okienkoPracownika";
             this.okienkoPracownika.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.okienkoPracownika.Size = new System.Drawing.Size(1272, 556);
+            this.okienkoPracownika.Size = new System.Drawing.Size(1332, 556);
             this.okienkoPracownika.TabIndex = 1;
             this.okienkoPracownika.Text = "Pracownik";
             this.okienkoPracownika.UseVisualStyleBackColor = true;
             // 
-            // PracownikWiadomoscBleduText
+            // label3
             // 
-            this.PracownikWiadomoscBleduText.AutoSize = true;
-            this.PracownikWiadomoscBleduText.Location = new System.Drawing.Point(526, 29);
-            this.PracownikWiadomoscBleduText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.PracownikWiadomoscBleduText.Name = "PracownikWiadomoscBleduText";
-            this.PracownikWiadomoscBleduText.Size = new System.Drawing.Size(101, 20);
-            this.PracownikWiadomoscBleduText.TabIndex = 93;
-            this.PracownikWiadomoscBleduText.Text = "Nie ma bledu";
-            this.PracownikWiadomoscBleduText.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(434, 29);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 20);
+            this.label3.TabIndex = 84;
+            this.label3.Text = "Twoj ID:";
+            // 
+            // IdLabel
+            // 
+            this.IdLabel.AutoSize = true;
+            this.IdLabel.Location = new System.Drawing.Point(508, 29);
+            this.IdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.IdLabel.Name = "IdLabel";
+            this.IdLabel.Size = new System.Drawing.Size(169, 20);
+            this.IdLabel.TabIndex = 83;
+            this.IdLabel.Text = "Nie jesteś zalogowany!";
             // 
             // pracownikText1
             // 
@@ -213,20 +222,11 @@
             this.pracownikText1.TabIndex = 82;
             this.pracownikText1.Text = "Jestes zalogowany jako:";
             // 
-            // pracownikWylogujButton
-            // 
-            this.pracownikWylogujButton.Location = new System.Drawing.Point(50, 65);
-            this.pracownikWylogujButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pracownikWylogujButton.Name = "pracownikWylogujButton";
-            this.pracownikWylogujButton.Size = new System.Drawing.Size(112, 35);
-            this.pracownikWylogujButton.TabIndex = 79;
-            this.pracownikWylogujButton.Text = "Wyloguj";
-            this.pracownikWylogujButton.UseVisualStyleBackColor = true;
-            // 
             // pracownikDodatkowaTabControl
             // 
             this.pracownikDodatkowaTabControl.Controls.Add(this.pacownikStworzRabatTabPage);
             this.pracownikDodatkowaTabControl.Controls.Add(this.pracownikDodajKsiazkeTabPage);
+            this.pracownikDodatkowaTabControl.Controls.Add(this.autorDoKsiazkitabPage);
             this.pracownikDodatkowaTabControl.Controls.Add(this.pracownikDodajAutoraTabPage);
             this.pracownikDodatkowaTabControl.Controls.Add(this.pracownikDodajGatunekTabPage);
             this.pracownikDodatkowaTabControl.Controls.Add(this.pracownikDodajEgzemplarzTabPage);
@@ -235,11 +235,11 @@
             this.pracownikDodatkowaTabControl.Controls.Add(this.pracownikOfertyTabPage);
             this.pracownikDodatkowaTabControl.Controls.Add(this.pracownikReklamacjeTabPage);
             this.pracownikDodatkowaTabControl.Controls.Add(this.pracownikZamowieniaTabPage);
-            this.pracownikDodatkowaTabControl.Location = new System.Drawing.Point(36, 118);
+            this.pracownikDodatkowaTabControl.Location = new System.Drawing.Point(20, 74);
             this.pracownikDodatkowaTabControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pracownikDodatkowaTabControl.Name = "pracownikDodatkowaTabControl";
             this.pracownikDodatkowaTabControl.SelectedIndex = 0;
-            this.pracownikDodatkowaTabControl.Size = new System.Drawing.Size(1228, 403);
+            this.pracownikDodatkowaTabControl.Size = new System.Drawing.Size(1304, 447);
             this.pracownikDodatkowaTabControl.TabIndex = 14;
             // 
             // pacownikStworzRabatTabPage
@@ -249,7 +249,7 @@
             this.pacownikStworzRabatTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pacownikStworzRabatTabPage.Name = "pacownikStworzRabatTabPage";
             this.pacownikStworzRabatTabPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pacownikStworzRabatTabPage.Size = new System.Drawing.Size(1220, 370);
+            this.pacownikStworzRabatTabPage.Size = new System.Drawing.Size(1296, 414);
             this.pacownikStworzRabatTabPage.TabIndex = 0;
             this.pacownikStworzRabatTabPage.Text = "Stwórz rabat";
             this.pacownikStworzRabatTabPage.UseVisualStyleBackColor = true;
@@ -269,7 +269,7 @@
             this.pracownikDodajKsiazkeTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pracownikDodajKsiazkeTabPage.Name = "pracownikDodajKsiazkeTabPage";
             this.pracownikDodajKsiazkeTabPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pracownikDodajKsiazkeTabPage.Size = new System.Drawing.Size(1220, 370);
+            this.pracownikDodajKsiazkeTabPage.Size = new System.Drawing.Size(1296, 414);
             this.pracownikDodajKsiazkeTabPage.TabIndex = 1;
             this.pracownikDodajKsiazkeTabPage.Text = "Dodaj książkę";
             this.pracownikDodajKsiazkeTabPage.UseVisualStyleBackColor = true;
@@ -282,6 +282,24 @@
             this.ksiazkaControl2.Size = new System.Drawing.Size(1048, 363);
             this.ksiazkaControl2.TabIndex = 0;
             // 
+            // autorDoKsiazkitabPage
+            // 
+            this.autorDoKsiazkitabPage.Controls.Add(this.autorDoKsiazkiControl1);
+            this.autorDoKsiazkitabPage.Location = new System.Drawing.Point(4, 29);
+            this.autorDoKsiazkitabPage.Name = "autorDoKsiazkitabPage";
+            this.autorDoKsiazkitabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.autorDoKsiazkitabPage.Size = new System.Drawing.Size(1296, 414);
+            this.autorDoKsiazkitabPage.TabIndex = 12;
+            this.autorDoKsiazkitabPage.Text = "Autor do Ksiazki";
+            this.autorDoKsiazkitabPage.UseVisualStyleBackColor = true;
+            // 
+            // autorDoKsiazkiControl1
+            // 
+            this.autorDoKsiazkiControl1.Location = new System.Drawing.Point(20, 17);
+            this.autorDoKsiazkiControl1.Name = "autorDoKsiazkiControl1";
+            this.autorDoKsiazkiControl1.Size = new System.Drawing.Size(1268, 462);
+            this.autorDoKsiazkiControl1.TabIndex = 0;
+            // 
             // pracownikDodajAutoraTabPage
             // 
             this.pracownikDodajAutoraTabPage.Controls.Add(this.autorzy1);
@@ -289,17 +307,17 @@
             this.pracownikDodajAutoraTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pracownikDodajAutoraTabPage.Name = "pracownikDodajAutoraTabPage";
             this.pracownikDodajAutoraTabPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pracownikDodajAutoraTabPage.Size = new System.Drawing.Size(1220, 370);
+            this.pracownikDodajAutoraTabPage.Size = new System.Drawing.Size(1296, 414);
             this.pracownikDodajAutoraTabPage.TabIndex = 3;
             this.pracownikDodajAutoraTabPage.Text = "Dodaj autora";
             this.pracownikDodajAutoraTabPage.UseVisualStyleBackColor = true;
             // 
             // autorzy1
             // 
-            this.autorzy1.Location = new System.Drawing.Point(147, 9);
+            this.autorzy1.Location = new System.Drawing.Point(10, 8);
             this.autorzy1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.autorzy1.Name = "autorzy1";
-            this.autorzy1.Size = new System.Drawing.Size(946, 405);
+            this.autorzy1.Size = new System.Drawing.Size(1006, 354);
             this.autorzy1.TabIndex = 0;
             // 
             // pracownikDodajGatunekTabPage
@@ -309,7 +327,7 @@
             this.pracownikDodajGatunekTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pracownikDodajGatunekTabPage.Name = "pracownikDodajGatunekTabPage";
             this.pracownikDodajGatunekTabPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pracownikDodajGatunekTabPage.Size = new System.Drawing.Size(1220, 370);
+            this.pracownikDodajGatunekTabPage.Size = new System.Drawing.Size(1296, 414);
             this.pracownikDodajGatunekTabPage.TabIndex = 5;
             this.pracownikDodajGatunekTabPage.Text = "Dodaj gatunek";
             this.pracownikDodajGatunekTabPage.UseVisualStyleBackColor = true;
@@ -329,7 +347,7 @@
             this.pracownikDodajEgzemplarzTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pracownikDodajEgzemplarzTabPage.Name = "pracownikDodajEgzemplarzTabPage";
             this.pracownikDodajEgzemplarzTabPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pracownikDodajEgzemplarzTabPage.Size = new System.Drawing.Size(1220, 370);
+            this.pracownikDodajEgzemplarzTabPage.Size = new System.Drawing.Size(1296, 414);
             this.pracownikDodajEgzemplarzTabPage.TabIndex = 6;
             this.pracownikDodajEgzemplarzTabPage.Text = "Dodaj egzemplarz";
             this.pracownikDodajEgzemplarzTabPage.UseVisualStyleBackColor = true;
@@ -349,7 +367,7 @@
             this.pracownikDodajWydawnictwotabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pracownikDodajWydawnictwotabPage.Name = "pracownikDodajWydawnictwotabPage";
             this.pracownikDodajWydawnictwotabPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pracownikDodajWydawnictwotabPage.Size = new System.Drawing.Size(1220, 370);
+            this.pracownikDodajWydawnictwotabPage.Size = new System.Drawing.Size(1296, 414);
             this.pracownikDodajWydawnictwotabPage.TabIndex = 7;
             this.pracownikDodajWydawnictwotabPage.Text = "Dodaj wydawnictwo";
             this.pracownikDodajWydawnictwotabPage.UseVisualStyleBackColor = true;
@@ -369,7 +387,7 @@
             this.pracownikDostawaTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pracownikDostawaTabPage.Name = "pracownikDostawaTabPage";
             this.pracownikDostawaTabPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pracownikDostawaTabPage.Size = new System.Drawing.Size(1220, 370);
+            this.pracownikDostawaTabPage.Size = new System.Drawing.Size(1296, 414);
             this.pracownikDostawaTabPage.TabIndex = 8;
             this.pracownikDostawaTabPage.Text = "Dostawa";
             this.pracownikDostawaTabPage.UseVisualStyleBackColor = true;
@@ -395,7 +413,7 @@
             this.pracownikOfertyTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pracownikOfertyTabPage.Name = "pracownikOfertyTabPage";
             this.pracownikOfertyTabPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pracownikOfertyTabPage.Size = new System.Drawing.Size(1220, 370);
+            this.pracownikOfertyTabPage.Size = new System.Drawing.Size(1296, 414);
             this.pracownikOfertyTabPage.TabIndex = 9;
             this.pracownikOfertyTabPage.Text = "Oferty";
             this.pracownikOfertyTabPage.UseVisualStyleBackColor = true;
@@ -479,7 +497,7 @@
             this.pracownikReklamacjeTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pracownikReklamacjeTabPage.Name = "pracownikReklamacjeTabPage";
             this.pracownikReklamacjeTabPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pracownikReklamacjeTabPage.Size = new System.Drawing.Size(1220, 370);
+            this.pracownikReklamacjeTabPage.Size = new System.Drawing.Size(1296, 414);
             this.pracownikReklamacjeTabPage.TabIndex = 10;
             this.pracownikReklamacjeTabPage.Text = "Reklamacje";
             this.pracownikReklamacjeTabPage.UseVisualStyleBackColor = true;
@@ -498,7 +516,7 @@
             this.pracownikZamowieniaTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pracownikZamowieniaTabPage.Name = "pracownikZamowieniaTabPage";
             this.pracownikZamowieniaTabPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pracownikZamowieniaTabPage.Size = new System.Drawing.Size(1220, 370);
+            this.pracownikZamowieniaTabPage.Size = new System.Drawing.Size(1296, 414);
             this.pracownikZamowieniaTabPage.TabIndex = 11;
             this.pracownikZamowieniaTabPage.Text = "Zamówienia";
             this.pracownikZamowieniaTabPage.UseVisualStyleBackColor = true;
@@ -520,7 +538,7 @@
             this.okienkoAdmina.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.okienkoAdmina.Name = "okienkoAdmina";
             this.okienkoAdmina.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.okienkoAdmina.Size = new System.Drawing.Size(1272, 556);
+            this.okienkoAdmina.Size = new System.Drawing.Size(1332, 556);
             this.okienkoAdmina.TabIndex = 2;
             this.okienkoAdmina.Text = "Admin";
             this.okienkoAdmina.UseVisualStyleBackColor = true;
@@ -599,14 +617,11 @@
             // 
             // okienkoOferenta
             // 
+            this.okienkoOferenta.Controls.Add(this.label6);
+            this.okienkoOferenta.Controls.Add(this.label5);
+            this.okienkoOferenta.Controls.Add(this.label4);
             this.okienkoOferenta.Controls.Add(this.OferentTabControl);
-            this.okienkoOferenta.Controls.Add(this.OferentLoginTextBox);
             this.okienkoOferenta.Controls.Add(this.OferentLoginText);
-            this.okienkoOferenta.Controls.Add(this.textBox1);
-            this.okienkoOferenta.Controls.Add(this.OferentHasloText);
-            this.okienkoOferenta.Controls.Add(this.oferentModyfikujDane_Button);
-            this.okienkoOferenta.Controls.Add(this.OferentAdresTextBox);
-            this.okienkoOferenta.Controls.Add(this.OferentNazwaTextBox);
             this.okienkoOferenta.Controls.Add(this.OferentAdresText);
             this.okienkoOferenta.Controls.Add(this.OferentNazwaText);
             this.okienkoOferenta.Controls.Add(this.OferentDaneText);
@@ -614,7 +629,7 @@
             this.okienkoOferenta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.okienkoOferenta.Name = "okienkoOferenta";
             this.okienkoOferenta.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.okienkoOferenta.Size = new System.Drawing.Size(1272, 556);
+            this.okienkoOferenta.Size = new System.Drawing.Size(1332, 556);
             this.okienkoOferenta.TabIndex = 3;
             this.okienkoOferenta.Text = "Oferent";
             this.okienkoOferenta.UseVisualStyleBackColor = true;
@@ -686,14 +701,6 @@
             this.oferentReklamacjeControl1.Size = new System.Drawing.Size(1203, 379);
             this.oferentReklamacjeControl1.TabIndex = 0;
             // 
-            // OferentLoginTextBox
-            // 
-            this.OferentLoginTextBox.Location = new System.Drawing.Point(198, 29);
-            this.OferentLoginTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.OferentLoginTextBox.Name = "OferentLoginTextBox";
-            this.OferentLoginTextBox.Size = new System.Drawing.Size(148, 26);
-            this.OferentLoginTextBox.TabIndex = 98;
-            // 
             // OferentLoginText
             // 
             this.OferentLoginText.AutoSize = true;
@@ -704,54 +711,10 @@
             this.OferentLoginText.TabIndex = 97;
             this.OferentLoginText.Text = "Login";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(428, 29);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 26);
-            this.textBox1.TabIndex = 96;
-            // 
-            // OferentHasloText
-            // 
-            this.OferentHasloText.AutoSize = true;
-            this.OferentHasloText.Location = new System.Drawing.Point(370, 29);
-            this.OferentHasloText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.OferentHasloText.Name = "OferentHasloText";
-            this.OferentHasloText.Size = new System.Drawing.Size(50, 20);
-            this.OferentHasloText.TabIndex = 95;
-            this.OferentHasloText.Text = "Haslo";
-            // 
-            // oferentModyfikujDane_Button
-            // 
-            this.oferentModyfikujDane_Button.Location = new System.Drawing.Point(1107, 23);
-            this.oferentModyfikujDane_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.oferentModyfikujDane_Button.Name = "oferentModyfikujDane_Button";
-            this.oferentModyfikujDane_Button.Size = new System.Drawing.Size(134, 35);
-            this.oferentModyfikujDane_Button.TabIndex = 85;
-            this.oferentModyfikujDane_Button.Text = "Modyfikuj dane";
-            this.oferentModyfikujDane_Button.UseVisualStyleBackColor = true;
-            // 
-            // OferentAdresTextBox
-            // 
-            this.OferentAdresTextBox.Location = new System.Drawing.Point(928, 29);
-            this.OferentAdresTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.OferentAdresTextBox.Name = "OferentAdresTextBox";
-            this.OferentAdresTextBox.Size = new System.Drawing.Size(148, 26);
-            this.OferentAdresTextBox.TabIndex = 83;
-            // 
-            // OferentNazwaTextBox
-            // 
-            this.OferentNazwaTextBox.Location = new System.Drawing.Point(658, 29);
-            this.OferentNazwaTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.OferentNazwaTextBox.Name = "OferentNazwaTextBox";
-            this.OferentNazwaTextBox.Size = new System.Drawing.Size(148, 26);
-            this.OferentNazwaTextBox.TabIndex = 82;
-            // 
             // OferentAdresText
             // 
             this.OferentAdresText.AutoSize = true;
-            this.OferentAdresText.Location = new System.Drawing.Point(832, 32);
+            this.OferentAdresText.Location = new System.Drawing.Point(612, 32);
             this.OferentAdresText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OferentAdresText.Name = "OferentAdresText";
             this.OferentAdresText.Size = new System.Drawing.Size(88, 20);
@@ -761,7 +724,7 @@
             // OferentNazwaText
             // 
             this.OferentNazwaText.AutoSize = true;
-            this.OferentNazwaText.Location = new System.Drawing.Point(592, 28);
+            this.OferentNazwaText.Location = new System.Drawing.Point(363, 32);
             this.OferentNazwaText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OferentNazwaText.Name = "OferentNazwaText";
             this.OferentNazwaText.Size = new System.Drawing.Size(57, 20);
@@ -834,6 +797,36 @@
             this.logowanieComboBox.Size = new System.Drawing.Size(180, 28);
             this.logowanieComboBox.TabIndex = 97;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(172, 32);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(169, 20);
+            this.label4.TabIndex = 100;
+            this.label4.Text = "Nie jesteś zalogowany!";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(435, 32);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(169, 20);
+            this.label5.TabIndex = 101;
+            this.label5.Text = "Nie jesteś zalogowany!";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(708, 32);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(169, 20);
+            this.label6.TabIndex = 102;
+            this.label6.Text = "Nie jesteś zalogowany!";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -858,6 +851,7 @@
             this.pracownikDodatkowaTabControl.ResumeLayout(false);
             this.pacownikStworzRabatTabPage.ResumeLayout(false);
             this.pracownikDodajKsiazkeTabPage.ResumeLayout(false);
+            this.autorDoKsiazkitabPage.ResumeLayout(false);
             this.pracownikDodajAutoraTabPage.ResumeLayout(false);
             this.pracownikDodajGatunekTabPage.ResumeLayout(false);
             this.pracownikDodajEgzemplarzTabPage.ResumeLayout(false);
@@ -890,9 +884,7 @@
         private System.Windows.Forms.TextBox loginTextBox;
         private System.Windows.Forms.TabPage okienkoKlienta;
         private System.Windows.Forms.TabPage okienkoPracownika;
-        private System.Windows.Forms.Label PracownikWiadomoscBleduText;
         private System.Windows.Forms.Label pracownikText1;
-        private System.Windows.Forms.Button pracownikWylogujButton;
         private System.Windows.Forms.TabControl pracownikDodatkowaTabControl;
         private System.Windows.Forms.TabPage pacownikStworzRabatTabPage;
         private System.Windows.Forms.TabPage pracownikDodajKsiazkeTabPage;
@@ -912,12 +904,6 @@
         private System.Windows.Forms.Label pracownikNick;
         private System.Windows.Forms.TabPage okienkoAdmina;
         private System.Windows.Forms.TabPage okienkoOferenta;
-        private System.Windows.Forms.Button oferentModyfikujDane_Button;
-        private System.Windows.Forms.TextBox OferentAdresTextBox;
-        private System.Windows.Forms.TextBox OferentNazwaTextBox;
-        private System.Windows.Forms.Label OferentAdresText;
-        private System.Windows.Forms.Label OferentNazwaText;
-        private System.Windows.Forms.Label OferentDaneText;
         private Autorzy autorzy1;
 		private GatunekControl gatunekControl1;
         private RabatControl rabatControl1;
@@ -934,10 +920,6 @@
 		private Controls.OfertyControl ofertyControl1;
 		private ReklamacjaControl reklamacjaControl1;
         private Controls.RejestracjaControl rejestracjaControl1;
-        private System.Windows.Forms.TextBox OferentLoginTextBox;
-        private System.Windows.Forms.Label OferentLoginText;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label OferentHasloText;
         private System.Windows.Forms.TabControl OferentTabControl;
         private System.Windows.Forms.TabPage OferentOfertyTab;
         private System.Windows.Forms.TabPage OferentDostawyTab;
@@ -952,6 +934,17 @@
         private AdminPracownikControl adminPracownikControl1;
         private System.Windows.Forms.TabPage tabPage3;
         private AdminOferentControl adminOferentControl1;
+        private System.Windows.Forms.TabPage autorDoKsiazkitabPage;
+        private Controls.AutorDoKsiazkiControl autorDoKsiazkiControl1;
+        private System.Windows.Forms.Label OferentLoginText;
+        private System.Windows.Forms.Label OferentAdresText;
+        private System.Windows.Forms.Label OferentNazwaText;
+        private System.Windows.Forms.Label OferentDaneText;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label IdLabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
         //private Controls.AddClientControl logowanieControl1;
     }
 }

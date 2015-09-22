@@ -23,7 +23,7 @@ namespace BDProjekt.Controls
             if (!DesignMode)
             {
                 Funkcje.Instance._context.Dostawas.Load();
-                dostawaBindingSource.DataSource = Funkcje.Instance._context.Dostawas.Local.ToBindingList();
+                dostawaBindingSource.DataSource = Funkcje.Instance._context.Dostawas.Local.ToBindingList().Where(n => n.Oferent_IdOferenta == Funkcje.Instance.oferent.IdOferenta);
             }
         }
 
@@ -68,8 +68,34 @@ namespace BDProjekt.Controls
                     elementyDostawyBindingSource.DataSource = Funkcje.Instance._context.ElementyDostawies.Local.ToBindingList().Where(n => (n.IdDostawy ==(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idDostawyDataGridViewTextBoxColumn"].Value))));
                     DajNazwy();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    MessageBox.Show("" + ex);
+                    return;
+                }
+            if (e.ColumnIndex == 2)
+                try
+                {
+
+                    using (var db = new KsiegarniaEntities())
+                    {
+                        var reklamacja = new Reklamacja
+                        {
+                            Typ=false,
+                            RealizacjeReklamacji_IdRealizacji = db.RealizacjeReklamacjis.FirstOrDefault().IdRealizacji,
+                            IdTypu = (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idDostawyDataGridViewTextBoxColumn"].Value)),
+                        };
+
+                        db.Reklamacjas.Add(reklamacja);
+                        db.SaveChanges();
+                        MessageBox.Show("Utworzono reklamacje");
+                        return;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex);
                     return;
                 }
         }

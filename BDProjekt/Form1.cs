@@ -13,7 +13,6 @@ namespace BDProjekt
 {
 	public partial class Form1 : Form
 	{
-		private bool loginOption = false;
 		public Form1()
 		{
 			InitializeComponent();
@@ -31,16 +30,36 @@ namespace BDProjekt
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			if (!this.loginOption)
+			if (this.button1.Text.Equals("Zaloguj"))
 			{
-                Funkcje.Instance.Login(Glowna_tabControl, (Uzytkownicy)this.logowanieComboBox.SelectedItem, this.button1 ,this.loginOption, this.loginTextBox.Text, this.hasloTextBox.Text);
+                Funkcje.Instance.Login(Glowna_tabControl, (Uzytkownicy)this.logowanieComboBox.SelectedItem, this.button1, this.loginTextBox.Text, this.hasloTextBox.Text);
 			}
 			else
 			{
                 Funkcje.Instance.Login(Glowna_tabControl, Funkcje.Instance.Logowanie, this.button1);
 			}
 
-			this.loginOption = !loginOption;
+            try
+            {
+                label4.Text = Funkcje.Instance.oferent.Login;
+                label5.Text = Funkcje.Instance.oferent.NazwaFirmy;
+                label6.Text = Funkcje.Instance.oferent.Adres;
+            }
+            catch (Exception)
+            {
+
+            }
+            try
+            {
+                IdLabel.Text = Funkcje.Instance.pracownik.IdPracownika.ToString();
+                pracownikNick.Text = Funkcje.Instance.pracownik.Login.ToString();
+            }
+            catch (Exception)
+            {
+
+            }
+
+
 		}
 
 		private void pracownikOfertyPrzegladaj_Button_Click(object sender, EventArgs e)
@@ -72,6 +91,12 @@ namespace BDProjekt
 		{
 
 		}
+
+        private void oferentModyfikujDane_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 	}

@@ -31,5 +31,10 @@ namespace BDProjekt.Controls
         {
 
         }
+
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

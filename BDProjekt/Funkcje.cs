@@ -19,6 +19,8 @@ namespace BDProjekt
 		public Oferent oferent { get; set; }
 		private string adminPassword = "admin";
 		private string adminLogin = "admin";
+
+		public List<Egzemplarz> stateBlockList = new List<Egzemplarz>();
 		private Funkcje()
 		{
 			_instance = this;
@@ -37,6 +39,22 @@ namespace BDProjekt
 			{
 				e.ThrowException = false;
 			}
+		}
+		public void ChangeState(bool type = false)
+		{
+			if (!type)
+			{
+					_context.Entry(stateBlockList[stateBlockList.Count-1]).State = EntityState.Modified;
+			}
+			else
+			{
+				foreach (Egzemplarz item in stateBlockList)
+				{
+					_context.Entry(item).State = EntityState.Unchanged;
+				}
+				stateBlockList.Clear();
+			}
+
 		}
 
         public void Login(TabControl tab, Uzytkownicy uzytkownik, System.Windows.Forms.Button button,bool type = false, string login = "", string password = "")

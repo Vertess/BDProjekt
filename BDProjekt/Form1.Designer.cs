@@ -33,9 +33,10 @@
             this.rejestracjaControl1 = new BDProjekt.Controls.RejestracjaControl();
             this.okienkoKlienta = new System.Windows.Forms.TabPage();
             this.clientTabControl = new System.Windows.Forms.TabControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.ksiazkTabPage = new System.Windows.Forms.TabPage();
+            this.klientZamowTabPage = new System.Windows.Forms.TabPage();
             this.klientZamowControl1 = new BDProjekt.Controls.KlientZamowControl();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.historiaZamowienTabPage = new System.Windows.Forms.TabPage();
             this.okienkoPracownika = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.IdLabel = new System.Windows.Forms.Label();
@@ -98,12 +99,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.logowanieComboBox = new System.Windows.Forms.ComboBox();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.klientKsiazkaControl1 = new BDProjekt.Controls.KlientKsiazkaControl();
             this.Glowna_tabControl.SuspendLayout();
             this.okienkoLogowania.SuspendLayout();
             this.okienkoKlienta.SuspendLayout();
             this.clientTabControl.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.ksiazkTabPage.SuspendLayout();
+            this.klientZamowTabPage.SuspendLayout();
             this.okienkoPracownika.SuspendLayout();
             this.pracownikDodatkowaTabControl.SuspendLayout();
             this.pacownikStworzRabatTabPage.SuspendLayout();
@@ -176,42 +178,53 @@
             // 
             // clientTabControl
             // 
-            this.clientTabControl.Controls.Add(this.tabPage6);
-            this.clientTabControl.Controls.Add(this.tabPage4);
-            this.clientTabControl.Controls.Add(this.tabPage5);
+            this.clientTabControl.Controls.Add(this.ksiazkTabPage);
+            this.clientTabControl.Controls.Add(this.klientZamowTabPage);
+            this.clientTabControl.Controls.Add(this.historiaZamowienTabPage);
             this.clientTabControl.Location = new System.Drawing.Point(25, 67);
             this.clientTabControl.Name = "clientTabControl";
             this.clientTabControl.SelectedIndex = 0;
             this.clientTabControl.Size = new System.Drawing.Size(1300, 481);
             this.clientTabControl.TabIndex = 0;
             // 
-            // tabPage4
+            // ksiazkTabPage
             // 
-            this.tabPage4.Controls.Add(this.klientZamowControl1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1292, 448);
-            this.tabPage4.TabIndex = 0;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.ksiazkTabPage.Controls.Add(this.klientKsiazkaControl1);
+            this.ksiazkTabPage.Location = new System.Drawing.Point(4, 29);
+            this.ksiazkTabPage.Name = "ksiazkTabPage";
+            this.ksiazkTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ksiazkTabPage.Size = new System.Drawing.Size(1292, 448);
+            this.ksiazkTabPage.TabIndex = 2;
+            this.ksiazkTabPage.Text = "Ksiazki";
+            this.ksiazkTabPage.UseVisualStyleBackColor = true;
+            // 
+            // klientZamowTabPage
+            // 
+            this.klientZamowTabPage.Controls.Add(this.klientZamowControl1);
+            this.klientZamowTabPage.Location = new System.Drawing.Point(4, 29);
+            this.klientZamowTabPage.Name = "klientZamowTabPage";
+            this.klientZamowTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.klientZamowTabPage.Size = new System.Drawing.Size(1292, 448);
+            this.klientZamowTabPage.TabIndex = 0;
+            this.klientZamowTabPage.Text = "Zamow";
+            this.klientZamowTabPage.UseVisualStyleBackColor = true;
             // 
             // klientZamowControl1
             // 
-            this.klientZamowControl1.Location = new System.Drawing.Point(6, 15);
+            this.klientZamowControl1.Location = new System.Drawing.Point(9, 11);
             this.klientZamowControl1.Name = "klientZamowControl1";
             this.klientZamowControl1.Size = new System.Drawing.Size(1280, 437);
             this.klientZamowControl1.TabIndex = 0;
             // 
-            // tabPage5
+            // historiaZamowienTabPage
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 29);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1292, 448);
-            this.tabPage5.TabIndex = 1;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.historiaZamowienTabPage.Location = new System.Drawing.Point(4, 29);
+            this.historiaZamowienTabPage.Name = "historiaZamowienTabPage";
+            this.historiaZamowienTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.historiaZamowienTabPage.Size = new System.Drawing.Size(1292, 448);
+            this.historiaZamowienTabPage.TabIndex = 1;
+            this.historiaZamowienTabPage.Text = "Historia Zamowien";
+            this.historiaZamowienTabPage.UseVisualStyleBackColor = true;
             // 
             // okienkoPracownika
             // 
@@ -815,6 +828,7 @@
             this.hasloTextBox.Name = "hasloTextBox";
             this.hasloTextBox.Size = new System.Drawing.Size(148, 26);
             this.hasloTextBox.TabIndex = 11;
+            this.hasloTextBox.Text = "haslok1";
             // 
             // loginTextBox
             // 
@@ -823,6 +837,7 @@
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(148, 26);
             this.loginTextBox.TabIndex = 10;
+            this.loginTextBox.Text = "klient1";
             // 
             // label1
             // 
@@ -864,15 +879,12 @@
             this.logowanieComboBox.Size = new System.Drawing.Size(180, 28);
             this.logowanieComboBox.TabIndex = 97;
             // 
-            // tabPage6
+            // klientKsiazkaControl1
             // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 29);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1292, 448);
-            this.tabPage6.TabIndex = 2;
-            this.tabPage6.Text = "tabPage6";
-            this.tabPage6.UseVisualStyleBackColor = true;
+            this.klientKsiazkaControl1.Location = new System.Drawing.Point(44, 35);
+            this.klientKsiazkaControl1.Name = "klientKsiazkaControl1";
+            this.klientKsiazkaControl1.Size = new System.Drawing.Size(897, 329);
+            this.klientKsiazkaControl1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -894,7 +906,8 @@
             this.okienkoLogowania.ResumeLayout(false);
             this.okienkoKlienta.ResumeLayout(false);
             this.clientTabControl.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
+            this.ksiazkTabPage.ResumeLayout(false);
+            this.klientZamowTabPage.ResumeLayout(false);
             this.okienkoPracownika.ResumeLayout(false);
             this.okienkoPracownika.PerformLayout();
             this.pracownikDodatkowaTabControl.ResumeLayout(false);
@@ -994,10 +1007,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabControl clientTabControl;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage klientZamowTabPage;
+        private System.Windows.Forms.TabPage historiaZamowienTabPage;
         private Controls.KlientZamowControl klientZamowControl1;
-        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TabPage ksiazkTabPage;
+        private Controls.KlientKsiazkaControl klientKsiazkaControl1;
         //private Controls.AddClientControl logowanieControl1;
     }
 }

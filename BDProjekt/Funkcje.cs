@@ -50,8 +50,8 @@ namespace BDProjekt
                     {
 						this.Login(tab, Logowanie,button, true);
                         button.Text = "Wyloguj";
-						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Klient]);
 						this.klient = _context.Klients.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
+						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Klient]);
 					}
 					break;
 				case Uzytkownicy.Pracownik:
@@ -60,8 +60,8 @@ namespace BDProjekt
                     {
 						this.Login(tab, Logowanie,button, true);
                         button.Text = "Wyloguj";
-						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Pracownik]);
 						this.pracownik = _context.Pracowniks.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
+						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Pracownik]);
 					}
 						break;
 				case Uzytkownicy.Oferent:
@@ -70,8 +70,8 @@ namespace BDProjekt
                     {
 						this.Login(tab, Logowanie,button, true );
                         button.Text = "Wyloguj";
-						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Oferent]);
 						this.oferent = _context.Oferents.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
+						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Oferent]);
 					}
 					break;
 				case Uzytkownicy.Admin:

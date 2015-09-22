@@ -130,6 +130,24 @@ namespace BDProjekt.Controls
                     {
                         using (var db = new KsiegarniaEntities())
                         {
+                             int tmp= Convert.ToInt32(dataGridView3.Rows[e.RowIndex].Cells["idEgzemplarzaDataGridViewTextBoxColumn1"].Value);
+
+                             foreach (DataGridViewRow row in dataGridView2.Rows)
+                             {
+                                 try
+                                 {
+                                     if (((int)(row.Cells["idEgzemplarzaDataGridViewTextBoxColumn"]).Value) == tmp)
+                                     {
+                                         return;
+                                     }
+                                 }
+                                 catch(Exception)
+                                 {
+
+                                 }
+                             }
+
+
                             var element = new ElementyZamowienia
                             {
                                 IdEgzemplarza = Convert.ToInt32(dataGridView3.Rows[e.RowIndex].Cells["idEgzemplarzaDataGridViewTextBoxColumn1"].Value),
@@ -141,8 +159,11 @@ namespace BDProjekt.Controls
                             db.ElementyZamowienias.Add(element);
                             db.SaveChanges();
                             zaladujElementyZamowienia();
+
+                            potwierdzButton.Visible = true;
                             return;
                         }
+
                     }
 
                 }
@@ -171,7 +192,6 @@ namespace BDProjekt.Controls
                 int suma=0;
                 foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
-                    MessageBox.Show("" + ((Egzemplarz)(row.Cells["egzemplarzDataGridViewTextBoxColumn"]).Value).Iloscc);
                     ((Egzemplarz)(row.Cells["egzemplarzDataGridViewTextBoxColumn"]).Value).Iloscc -= (int)(row.Cells["iloscDataGridViewTextBoxColumn"].Value);
                     suma +=(int)(row.Cells["iloscDataGridViewTextBoxColumn"].Value)*(((Egzemplarz)(row.Cells["egzemplarzDataGridViewTextBoxColumn"]).Value).Cena);
                 }
@@ -189,13 +209,24 @@ namespace BDProjekt.Controls
                 egzemplarzBindingSource.ResetBindings(false);
                 Funkcje.Instance._context.SaveChanges();
                 elementyZamowieniaBindingSource.Clear();
-
+                dajNazwy();
                 KlientZamowControl_Load(sender, e);
+                nrZamowienia = 0;
+                potwierdzButton.Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("" + ex);
                 return;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(nrZamowienia!=0){
+                Funkcje.Instance._context.Egzemplarzs.Load();
+                egzemplarzBindingSource.DataSource = Funkcje.Instance._context.Egzemplarzs.Local.ToBindingList().Where(n => n.Ksiazka.Tytul.Contains(textBox1.Text));
+                dajNazwy();
             }
         }
 

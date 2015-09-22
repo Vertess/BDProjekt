@@ -46,6 +46,10 @@
             this.ofertaOferentasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.egzemplarzBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Rabat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RealizacjaZamowienia_IdRealizacji = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zamowienyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tytulColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,10 +66,8 @@
             this.rodzajWysylkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.potwierdzButton = new System.Windows.Forms.Button();
-            this.idZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Rabat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RealizacjaZamowienia_IdRealizacji = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.egzemplarzBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -234,6 +236,36 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // idZamowieniaDataGridViewTextBoxColumn
+            // 
+            this.idZamowieniaDataGridViewTextBoxColumn.DataPropertyName = "IdZamowienia";
+            this.idZamowieniaDataGridViewTextBoxColumn.HeaderText = "IdZamowienia";
+            this.idZamowieniaDataGridViewTextBoxColumn.Name = "idZamowieniaDataGridViewTextBoxColumn";
+            this.idZamowieniaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idZamowieniaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idZamowieniaDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // Rabat
+            // 
+            this.Rabat.DataPropertyName = "Rabat";
+            this.Rabat.HeaderText = "Rabat";
+            this.Rabat.Name = "Rabat";
+            this.Rabat.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "KosztZamowienia";
+            this.dataGridViewTextBoxColumn1.HeaderText = "KosztZamowienia";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // RealizacjaZamowienia_IdRealizacji
+            // 
+            this.RealizacjaZamowienia_IdRealizacji.DataPropertyName = "RealizacjaZamowienia_IdRealizacji";
+            this.RealizacjaZamowienia_IdRealizacji.HeaderText = "RealizacjaZamowienia_IdRealizacji";
+            this.RealizacjaZamowienia_IdRealizacji.Name = "RealizacjaZamowienia_IdRealizacji";
+            this.RealizacjaZamowienia_IdRealizacji.Visible = false;
+            // 
             // zamowienyBindingSource
             // 
             this.zamowienyBindingSource.DataSource = typeof(BDProjekt.Zamowieny);
@@ -358,42 +390,32 @@
             this.potwierdzButton.TabIndex = 10;
             this.potwierdzButton.Text = "Potwierdz zamowienie";
             this.potwierdzButton.UseVisualStyleBackColor = true;
+            this.potwierdzButton.Visible = false;
             this.potwierdzButton.Click += new System.EventHandler(this.potwierdzButton_Click);
             // 
-            // idZamowieniaDataGridViewTextBoxColumn
+            // textBox1
             // 
-            this.idZamowieniaDataGridViewTextBoxColumn.DataPropertyName = "IdZamowienia";
-            this.idZamowieniaDataGridViewTextBoxColumn.HeaderText = "IdZamowienia";
-            this.idZamowieniaDataGridViewTextBoxColumn.Name = "idZamowieniaDataGridViewTextBoxColumn";
-            this.idZamowieniaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idZamowieniaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.idZamowieniaDataGridViewTextBoxColumn.Width = 70;
+            this.textBox1.Location = new System.Drawing.Point(785, 336);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.TabIndex = 11;
             // 
-            // Rabat
+            // button1
             // 
-            this.Rabat.DataPropertyName = "Rabat";
-            this.Rabat.HeaderText = "Rabat";
-            this.Rabat.Name = "Rabat";
-            this.Rabat.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "KosztZamowienia";
-            this.dataGridViewTextBoxColumn1.HeaderText = "KosztZamowienia";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // RealizacjaZamowienia_IdRealizacji
-            // 
-            this.RealizacjaZamowienia_IdRealizacji.DataPropertyName = "RealizacjaZamowienia_IdRealizacji";
-            this.RealizacjaZamowienia_IdRealizacji.HeaderText = "RealizacjaZamowienia_IdRealizacji";
-            this.RealizacjaZamowienia_IdRealizacji.Name = "RealizacjaZamowienia_IdRealizacji";
-            this.RealizacjaZamowienia_IdRealizacji.Visible = false;
+            this.button1.Location = new System.Drawing.Point(917, 336);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(231, 36);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Szukaj";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // KlientZamowControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.potwierdzButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -456,5 +478,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Rabat;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn RealizacjaZamowienia_IdRealizacji;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

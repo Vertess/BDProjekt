@@ -32,6 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.odswierzbutton = new System.Windows.Forms.Button();
             this.idRodzajWysylkiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +48,6 @@
             this.RabatColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.PracownikColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Realizacjazamowienia = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Zatwierdz = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pracownikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.klientIdKlientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rabatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +81,6 @@
             this.RabatColumn,
             this.PracownikColumn,
             this.Realizacjazamowienia,
-            this.Zatwierdz,
             this.pracownikDataGridViewTextBoxColumn,
             this.klientIdKlientaDataGridViewTextBoxColumn,
             this.rabatDataGridViewTextBoxColumn,
@@ -99,7 +98,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1184, 231);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // dataGridView2
             // 
@@ -125,6 +123,16 @@
             this.label1.Size = new System.Drawing.Size(120, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Rodzaje wysyłki";
+            // 
+            // odswierzbutton
+            // 
+            this.odswierzbutton.Location = new System.Drawing.Point(740, 254);
+            this.odswierzbutton.Name = "odswierzbutton";
+            this.odswierzbutton.Size = new System.Drawing.Size(158, 67);
+            this.odswierzbutton.TabIndex = 4;
+            this.odswierzbutton.Text = "odswierz";
+            this.odswierzbutton.UseVisualStyleBackColor = true;
+            this.odswierzbutton.Click += new System.EventHandler(this.odswierzbutton_Click);
             // 
             // idRodzajWysylkiDataGridViewTextBoxColumn
             // 
@@ -230,11 +238,6 @@
             this.Realizacjazamowienia.ReadOnly = true;
             this.Realizacjazamowienia.ValueMember = "IdRealizacji";
             // 
-            // Zatwierdz
-            // 
-            this.Zatwierdz.HeaderText = "Zatwierdz";
-            this.Zatwierdz.Name = "Zatwierdz";
-            // 
             // pracownikDataGridViewTextBoxColumn
             // 
             this.pracownikDataGridViewTextBoxColumn.DataPropertyName = "Pracownik";
@@ -316,6 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.odswierzbutton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -348,13 +352,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cenaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zamowieniesDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button odswierzbutton;
         private System.Windows.Forms.DataGridViewTextBoxColumn idZamowieniaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn RodzajWysylkiColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kosztZamowieniaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn RabatColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn PracownikColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn Realizacjazamowienia;
-        private System.Windows.Forms.DataGridViewButtonColumn Zatwierdz;
         private System.Windows.Forms.DataGridViewTextBoxColumn pracownikDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn klientIdKlientaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rabatDataGridViewTextBoxColumn;

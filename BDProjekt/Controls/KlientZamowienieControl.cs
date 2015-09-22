@@ -35,33 +35,11 @@ namespace BDProjekt.Controls
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void odswierzbutton_Click(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == 6)
-            {
-
-                try
-                {
-                    dataGridView1.Rows[e.RowIndex].Cells["realizacjaZamowieniaIdRealizacjiDataGridViewTextBoxColumn"].Value = Funkcje.Instance._context.RealizacjaZamowienias.ToList()[1].IdRealizacji;
-                    foreach (ElementyZamowienia item in Funkcje.Instance._context.ElementyZamowienias)
-                    {
-                        if (item.IdZamowienia == Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idZamowieniaDataGridViewTextBoxColumn"].Value))
-                        {
-
-
-                        }
-                            
-                    }
-                    
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("" + ex);
-                    return;
-                }
-            }
+            Funkcje.Instance._context.Zamowienies.Load();
+            zamowienyBindingSource.DataSource = Funkcje.Instance._context.Zamowienies.Local.ToBindingList().Where(n => n.Klient_IdKlienta == Funkcje.Instance.klient.IdKlienta);
         }
     }
 }

@@ -50,8 +50,7 @@ namespace BDProjekt
                     {
 						this.Login(tab, Logowanie,button, true);
                         button.Text = "Wyloguj";
-						tab.TabPages.Add(this.pages[(int)Uzytkownicy.Klient]);
-						this.klient = _context.Klients.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
+                        this.klient = _context.Klients.Local.Where(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Select(k => k).First();
 					}
 					break;
 				case Uzytkownicy.Pracownik:

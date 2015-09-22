@@ -42,6 +42,7 @@ namespace BDProjekt.Controls
         private void KlientZamowControl_Load(object sender, EventArgs e)
         {
             Funkcje.Instance._context.Zamowienies.Load();
+            MessageBox.Show("" + Funkcje.Instance.klient.ToString());
             zamowienyBindingSource.DataSource = Funkcje.Instance._context.Zamowienies.Local.ToBindingList().Where(n => n.Klient_IdKlienta==Funkcje.Instance.klient.IdKlienta /*&& n.RealizacjaZamowienia.Equals(Funkcje.Instance._context.RealizacjaZamowienias.FirstOrDefault())*/); 
         }
     }

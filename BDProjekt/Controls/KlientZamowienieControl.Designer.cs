@@ -30,17 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.zamowienyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.idRodzajWysylkiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zamowieniesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rodzajWysylkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rabatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pracownikBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rodzajWysylkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.realizacjaZamowieniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zamowienyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RodzajWysylkiColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.kosztZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RabatColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.PracownikColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Realizacjazamowienia = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Zatwierdz = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pracownikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.klientIdKlientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rabatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,11 +60,12 @@
             this.klientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.realizacjaZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamowienyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rodzajWysylkiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rabatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pracownikBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rodzajWysylkiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.realizacjaZamowieniaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zamowienyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -73,6 +81,7 @@
             this.RabatColumn,
             this.PracownikColumn,
             this.Realizacjazamowienia,
+            this.Zatwierdz,
             this.pracownikDataGridViewTextBoxColumn,
             this.klientIdKlientaDataGridViewTextBoxColumn,
             this.rabatDataGridViewTextBoxColumn,
@@ -90,10 +99,62 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1184, 231);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // zamowienyBindingSource
+            // dataGridView2
             // 
-            this.zamowienyBindingSource.DataSource = typeof(BDProjekt.Zamowieny);
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idRodzajWysylkiDataGridViewTextBoxColumn,
+            this.nazwaDataGridViewTextBoxColumn,
+            this.cenaDataGridViewTextBoxColumn,
+            this.zamowieniesDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.rodzajWysylkiBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(13, 284);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(376, 162);
+            this.dataGridView2.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(89, 254);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Rodzaje wysyłki";
+            // 
+            // idRodzajWysylkiDataGridViewTextBoxColumn
+            // 
+            this.idRodzajWysylkiDataGridViewTextBoxColumn.DataPropertyName = "IdRodzajWysylki";
+            this.idRodzajWysylkiDataGridViewTextBoxColumn.HeaderText = "IdRodzajWysylki";
+            this.idRodzajWysylkiDataGridViewTextBoxColumn.Name = "idRodzajWysylkiDataGridViewTextBoxColumn";
+            this.idRodzajWysylkiDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nazwaDataGridViewTextBoxColumn
+            // 
+            this.nazwaDataGridViewTextBoxColumn.DataPropertyName = "Nazwa";
+            this.nazwaDataGridViewTextBoxColumn.HeaderText = "Nazwa";
+            this.nazwaDataGridViewTextBoxColumn.Name = "nazwaDataGridViewTextBoxColumn";
+            // 
+            // cenaDataGridViewTextBoxColumn
+            // 
+            this.cenaDataGridViewTextBoxColumn.DataPropertyName = "Cena";
+            this.cenaDataGridViewTextBoxColumn.HeaderText = "Cena";
+            this.cenaDataGridViewTextBoxColumn.Name = "cenaDataGridViewTextBoxColumn";
+            // 
+            // zamowieniesDataGridViewTextBoxColumn
+            // 
+            this.zamowieniesDataGridViewTextBoxColumn.DataPropertyName = "Zamowienies";
+            this.zamowieniesDataGridViewTextBoxColumn.HeaderText = "Zamowienies";
+            this.zamowieniesDataGridViewTextBoxColumn.Name = "zamowieniesDataGridViewTextBoxColumn";
+            this.zamowieniesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // rodzajWysylkiBindingSource
+            // 
+            this.rodzajWysylkiBindingSource.DataSource = typeof(BDProjekt.RodzajWysylki);
             // 
             // rabatBindingSource
             // 
@@ -103,19 +164,20 @@
             // 
             this.pracownikBindingSource.DataSource = typeof(BDProjekt.Pracownik);
             // 
-            // rodzajWysylkiBindingSource
-            // 
-            this.rodzajWysylkiBindingSource.DataSource = typeof(BDProjekt.RodzajWysylki);
-            // 
             // realizacjaZamowieniaBindingSource
             // 
             this.realizacjaZamowieniaBindingSource.DataSource = typeof(BDProjekt.RealizacjaZamowienia);
+            // 
+            // zamowienyBindingSource
+            // 
+            this.zamowienyBindingSource.DataSource = typeof(BDProjekt.Zamowieny);
             // 
             // idZamowieniaDataGridViewTextBoxColumn
             // 
             this.idZamowieniaDataGridViewTextBoxColumn.DataPropertyName = "IdZamowienia";
             this.idZamowieniaDataGridViewTextBoxColumn.HeaderText = "IdZamowienia";
             this.idZamowieniaDataGridViewTextBoxColumn.Name = "idZamowieniaDataGridViewTextBoxColumn";
+            this.idZamowieniaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // RodzajWysylkiColumn
             // 
@@ -124,6 +186,7 @@
             this.RodzajWysylkiColumn.DisplayMember = "Nazwa";
             this.RodzajWysylkiColumn.HeaderText = "Rodzaj wysylki";
             this.RodzajWysylkiColumn.Name = "RodzajWysylkiColumn";
+            this.RodzajWysylkiColumn.ReadOnly = true;
             this.RodzajWysylkiColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.RodzajWysylkiColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.RodzajWysylkiColumn.ValueMember = "IdRodzajWysylki";
@@ -133,6 +196,7 @@
             this.kosztZamowieniaDataGridViewTextBoxColumn.DataPropertyName = "KosztZamowienia";
             this.kosztZamowieniaDataGridViewTextBoxColumn.HeaderText = "KosztZamowienia";
             this.kosztZamowieniaDataGridViewTextBoxColumn.Name = "kosztZamowieniaDataGridViewTextBoxColumn";
+            this.kosztZamowieniaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // RabatColumn
             // 
@@ -151,6 +215,7 @@
             this.PracownikColumn.DisplayMember = "Login";
             this.PracownikColumn.HeaderText = "Pracownik";
             this.PracownikColumn.Name = "PracownikColumn";
+            this.PracownikColumn.ReadOnly = true;
             this.PracownikColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.PracownikColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.PracownikColumn.ValueMember = "IdPracownika";
@@ -164,6 +229,11 @@
             this.Realizacjazamowienia.Name = "Realizacjazamowienia";
             this.Realizacjazamowienia.ReadOnly = true;
             this.Realizacjazamowienia.ValueMember = "IdRealizacji";
+            // 
+            // Zatwierdz
+            // 
+            this.Zatwierdz.HeaderText = "Zatwierdz";
+            this.Zatwierdz.Name = "Zatwierdz";
             // 
             // pracownikDataGridViewTextBoxColumn
             // 
@@ -246,17 +316,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "KlientZamowienieControl";
             this.Size = new System.Drawing.Size(1245, 520);
             this.Load += new System.EventHandler(this.KlientZamowienieControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamowienyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rodzajWysylkiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rabatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pracownikBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rodzajWysylkiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.realizacjaZamowieniaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zamowienyBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -267,13 +341,20 @@
         private System.Windows.Forms.BindingSource rodzajWysylkiBindingSource;
         private System.Windows.Forms.BindingSource rabatBindingSource;
         private System.Windows.Forms.BindingSource pracownikBindingSource;
+        private System.Windows.Forms.BindingSource realizacjaZamowieniaBindingSource;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idRodzajWysylkiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazwaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cenaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zamowieniesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idZamowieniaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn RodzajWysylkiColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kosztZamowieniaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn RabatColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn PracownikColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn Realizacjazamowienia;
-        private System.Windows.Forms.BindingSource realizacjaZamowieniaBindingSource;
+        private System.Windows.Forms.DataGridViewButtonColumn Zatwierdz;
         private System.Windows.Forms.DataGridViewTextBoxColumn pracownikDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn klientIdKlientaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rabatDataGridViewTextBoxColumn;

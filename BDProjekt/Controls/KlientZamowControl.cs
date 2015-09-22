@@ -26,6 +26,7 @@ namespace BDProjekt.Controls
             {
                 using (var db = new KsiegarniaEntities())
                 {
+                    MessageBox.Show("" + comboBox1.SelectedValue);
                     var zamow = new Zamowieny
                     {
                         KosztZamowienia = 0,
@@ -33,7 +34,7 @@ namespace BDProjekt.Controls
                         Pracownik_IdPracownika = Funkcje.Instance._context.Pracowniks.FirstOrDefault().IdPracownika,
                         Rabat_IdRabatu = Funkcje.Instance._context.Rabats.FirstOrDefault().IdRabatu,
                         RealizacjaZamowienia_IdRealizacji = Funkcje.Instance._context.RealizacjaZamowienias.FirstOrDefault().IdRealizacji,
-                        RodzajuWysylki_IdRodzajWysylki = Funkcje.Instance._context.RodzajWysylkis.FirstOrDefault().IdRodzajWysylki
+                        RodzajuWysylki_IdRodzajWysylki = (Funkcje.Instance._context.RodzajWysylkis.ToList()[(int)(comboBox1.SelectedValue)-1].IdRodzajWysylki)
                     };
 
                     db.Zamowienies.Add(zamow);
@@ -50,6 +51,11 @@ namespace BDProjekt.Controls
             {
                 Funkcje.Instance._context.Zamowienies.Load();
                 zamowienyBindingSource.DataSource = Funkcje.Instance._context.Zamowienies.Local.ToBindingList().Where(n => n.Klient_IdKlienta == Funkcje.Instance.klient.IdKlienta && n.RealizacjaZamowienia.Equals(Funkcje.Instance._context.RealizacjaZamowienias.FirstOrDefault()));
+            
+                Funkcje.Instance._context.RodzajWysylkis.Load();
+                rodzajWysylkiBindingSource.DataSource = Funkcje.Instance._context.RodzajWysylkis.Local.ToBindingList();
+                
+            
             }
         }
         private void zaladujElementyZamowienia()
@@ -148,9 +154,49 @@ namespace BDProjekt.Controls
             }
         }
 
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+ 
 
+        private void potwierdzButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    if (((Egzemplarz)(row.Cells["egzemplarzDataGridViewTextBoxColumn"]).Value).Iloscc < (int)(row.Cells["iloscDataGridViewTextBoxColumn"].Value))
+                    {
+                        MessageBox.Show("Nie posiadamy na stanie wybranej ilosci ksiazek");
+                        return;
+                    }
+                }
+                int suma=0;
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    MessageBox.Show("" + ((Egzemplarz)(row.Cells["egzemplarzDataGridViewTextBoxColumn"]).Value).Iloscc);
+                    ((Egzemplarz)(row.Cells["egzemplarzDataGridViewTextBoxColumn"]).Value).Iloscc -= (int)(row.Cells["iloscDataGridViewTextBoxColumn"].Value);
+                    suma +=(int)(row.Cells["iloscDataGridViewTextBoxColumn"].Value)*(((Egzemplarz)(row.Cells["egzemplarzDataGridViewTextBoxColumn"]).Value).Cena);
+                }
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (((int)(row.Cells["idZamowieniaDataGridViewTextBoxColumn"].Value)) == nrZamowienia)
+                    {
+                        row.Cells["dataGridViewTextBoxColumn1"].Value = ((Funkcje.Instance._context.RodzajWysylkis.ToList()[(int)(comboBox1.SelectedValue) - 1].Cena)) + suma - ((int)((Rabat)(row.Cells["Rabat"].Value)).WysokoscRabatu);
+                        row.Cells["RealizacjaZamowienia_IdRealizacji"].Value = Funkcje.Instance._context.RealizacjaZamowienias.ToList()[1].IdRealizacji;
+
+                    }
+                }
+
+                zamowienyBindingSource.ResetBindings(false);
+                egzemplarzBindingSource.ResetBindings(false);
+                Funkcje.Instance._context.SaveChanges();
+                elementyZamowieniaBindingSource.Clear();
+
+                KlientZamowControl_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+                return;
+            }
         }
 
     }

@@ -105,5 +105,11 @@ namespace BDProjekt.Controls
 			}
 
 		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			ExcelRaport ex = new ExcelRaport();
+			ex.CreateRaport();
+		}
     }
 }

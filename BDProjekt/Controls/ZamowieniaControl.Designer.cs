@@ -39,6 +39,7 @@
 			this.idKlientaTextBox = new System.Windows.Forms.TextBox();
 			this.idPracownikaTextBox = new System.Windows.Forms.TextBox();
 			this.idPracownikaLabel = new System.Windows.Forms.Label();
+			this.elementyButton = new System.Windows.Forms.Button();
 			this.idZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.kosztZamowieniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.klientIdKlientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +59,7 @@
 			this.rodzajWysylkiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
 			this.rodzajWysylkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.zamowienyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.elementyButton = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.klientBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pracownikBindingSource)).BeginInit();
@@ -172,6 +173,16 @@
 			this.idPracownikaLabel.Size = new System.Drawing.Size(75, 13);
 			this.idPracownikaLabel.TabIndex = 17;
 			this.idPracownikaLabel.Text = "Id Pracownika";
+			// 
+			// elementyButton
+			// 
+			this.elementyButton.Location = new System.Drawing.Point(480, 220);
+			this.elementyButton.Name = "elementyButton";
+			this.elementyButton.Size = new System.Drawing.Size(137, 23);
+			this.elementyButton.TabIndex = 19;
+			this.elementyButton.Text = "Elementy Zamowienia";
+			this.elementyButton.UseVisualStyleBackColor = true;
+			this.elementyButton.Click += new System.EventHandler(this.elementyButton_Click);
 			// 
 			// idZamowieniaDataGridViewTextBoxColumn
 			// 
@@ -319,20 +330,21 @@
 			// 
 			this.zamowienyBindingSource.DataSource = typeof(BDProjekt.Zamowieny);
 			// 
-			// elementyButton
+			// button1
 			// 
-			this.elementyButton.Location = new System.Drawing.Point(480, 220);
-			this.elementyButton.Name = "elementyButton";
-			this.elementyButton.Size = new System.Drawing.Size(137, 23);
-			this.elementyButton.TabIndex = 19;
-			this.elementyButton.Text = "Elementy Zamowienia";
-			this.elementyButton.UseVisualStyleBackColor = true;
-			this.elementyButton.Click += new System.EventHandler(this.elementyButton_Click);
+			this.button1.Location = new System.Drawing.Point(663, 173);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 20;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// ZamowieniaControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.elementyButton);
 			this.Controls.Add(this.idPracownikaTextBox);
 			this.Controls.Add(this.idPracownikaLabel);
@@ -391,5 +403,6 @@
 		private System.Windows.Forms.DataGridViewComboBoxColumn rodzajWysylkiDataGridViewTextBoxColumn;
 		private System.Windows.Forms.BindingSource rodzajWysylkiBindingSource;
 		private System.Windows.Forms.Button elementyButton;
+		private System.Windows.Forms.Button button1;
     }
 }

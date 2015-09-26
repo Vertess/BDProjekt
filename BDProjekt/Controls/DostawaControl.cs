@@ -35,6 +35,8 @@ namespace BDProjekt.Controls
                 ds.Pracownik_IdPracownika = pr.IdPracownika;
                 dostawaBindingSource.ResetBindings(false);
                 Funkcje.Instance._context.SaveChanges();
+                Funkcje.Instance._context.Dostawas.Load();
+                dostawaBindingSource.DataSource = Funkcje.Instance._context.Dostawas.Local.ToBindingList();
             }
         }
 
@@ -82,8 +84,8 @@ namespace BDProjekt.Controls
             if (e.ColumnIndex == 2)
             try
                 {
-                    iddostawy = (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idDostawyDataGridViewTextBoxColumn"].Value));
                     zatwierdzButton_Click(sender, e);
+                    iddostawy = (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idDostawyDataGridViewTextBoxColumn"].Value));
                     zaladujElementyDostawy();
                     Funkcje.Instance._context.OfertaOferentas.Load();
                     ofertaOferentaBindingSource.DataSource = Funkcje.Instance._context.OfertaOferentas.Local.ToBindingList().Where(n => (n.Oferent_IdOferenta == (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Oferent_IdOferenta"].Value))));

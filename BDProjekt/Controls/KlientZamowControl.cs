@@ -26,7 +26,6 @@ namespace BDProjekt.Controls
             {
                 using (var db = new KsiegarniaEntities())
                 {
-                    MessageBox.Show("" + comboBox1.SelectedValue);
                     var zamow = new Zamowieny
                     {
                         KosztZamowienia = 0,

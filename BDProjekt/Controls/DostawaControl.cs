@@ -21,24 +21,8 @@ namespace BDProjekt.Controls
             InitializeComponent();
         }
 
-        private void zatwierdzButton_Click(object sender, EventArgs e)
-        {
-            if (!DesignMode)
-            {
-                Dostawa ds = new Dostawa();
-                Oferent of = new Oferent();
-                Pracownik pr = new Pracownik();
-                ds = (Dostawa)dostawaBindingSource.Current;
-                of = (Oferent)oferentBindingSource.Current;
-                pr = (Pracownik)pracownikBindingSource.Current;
-                ds.Oferent_IdOferenta = of.IdOferenta;
-                ds.Pracownik_IdPracownika = pr.IdPracownika;
-                dostawaBindingSource.ResetBindings(false);
-                Funkcje.Instance._context.SaveChanges();
-                Funkcje.Instance._context.Dostawas.Load();
-                dostawaBindingSource.DataSource = Funkcje.Instance._context.Dostawas.Local.ToBindingList();
-            }
-        }
+
+
 
         private void DostawaControl_Load(object sender, EventArgs e)
         {
@@ -53,6 +37,7 @@ namespace BDProjekt.Controls
                 dostawaBindingSource.DataSource = Funkcje.Instance._context.Dostawas.Local.ToBindingList().Where(c => c.Pracownik_IdPracownika== Funkcje.Instance.pracownik.IdPracownika);*/
                 Funkcje.Instance._context.Oferents.Load();
                 oferentBindingSource.DataSource = Funkcje.Instance._context.Oferents.Local.ToBindingList();
+                DajNazwy();
 
 
 
@@ -82,26 +67,29 @@ namespace BDProjekt.Controls
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 2)
-            try
+                try
                 {
-                    zatwierdzButton_Click(sender, e);
                     iddostawy = (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["idDostawyDataGridViewTextBoxColumn"].Value));
                     zaladujElementyDostawy();
                     Funkcje.Instance._context.OfertaOferentas.Load();
                     ofertaOferentaBindingSource.DataSource = Funkcje.Instance._context.OfertaOferentas.Local.ToBindingList().Where(n => (n.Oferent_IdOferenta == (Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Oferent_IdOferenta"].Value))));
                 }
-            catch (Exception ex)
-            {
-                MessageBox.Show("" + ex);
-                return;
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex);
+                    return;
+                }
             DajNazwy();
         }
 
 
         private void DajNazwy()
         {
-
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Cells["EdytujDostawe"].Value = "edit";
+                
+            }
 
             foreach (DataGridViewRow row in dataGridView2.Rows)
             {
@@ -161,6 +149,27 @@ namespace BDProjekt.Controls
                     return;
                 }
             DajNazwy();
+        }
+
+        private void dodajDostaweButton_Click(object sender, EventArgs e)
+        {
+            if (!DesignMode)
+            {
+                using (var db = new KsiegarniaEntities())
+                {
+                    var dostawa = new Dostawa
+                    {
+                        Oferent_IdOferenta = (Funkcje.Instance._context.Oferents.ToList()[(int)(comboBox1.SelectedValue) - 1].IdOferenta),
+                        Pracownik_IdPracownika = Funkcje.Instance.pracownik.IdPracownika,
+                        Status = false
+                    };
+
+                    db.Dostawas.Add(dostawa);
+                    db.SaveChanges();
+                    DostawaControl_Load(sender, e);
+                    return;
+                }
+            }
         }
 
 
